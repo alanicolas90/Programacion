@@ -16,9 +16,5 @@ public class Alternativas12 {
             System.out.println("El año NO es bisiesto.");
         }
 
-
-
-
-
     }
 }

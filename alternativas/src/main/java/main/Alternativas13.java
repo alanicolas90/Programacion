@@ -34,9 +34,5 @@ public class Alternativas13 {
         else{
             System.out.println("INCORRECTO");
         }
-
-
-
-
     }
 }

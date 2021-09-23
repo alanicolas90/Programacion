@@ -18,16 +18,6 @@ public class Alternativas8 {
         String sexo=sc.nextLine();
 
         if (nota>=5){
-            //System.out.println("ACEPTADA");
-
-            /*
-            System.out.print("Dime tu EDAD; ");
-            int edad= sc.nextInt();
-
-            System.out.print("Dime tu SEXO(SOLO DIME F/M): ");
-            String sexo=sc.nextLine();
-            */
-
             if(edad>=18) {
 
                 if(sexo.equalsIgnoreCase("F")){
