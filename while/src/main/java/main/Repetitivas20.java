@@ -28,12 +28,7 @@ public class Repetitivas20 {
                 System.out.println(contador + ") " + numero);
             }
             numero = numero + 2;
-
         }
-
-
     }
-
-
 }
 
