@@ -3,7 +3,7 @@ package main;
 import java.util.Scanner;
 
 public class Repetitivas2 {
-    public void media(Scanner sc, int i){
+    public void media(Scanner sc){
         int numeroRandom =(int) (Math.random() * 101);
         int intentosRestantes = 10;
         System.out.println("Intenta adivinar el numero entre 1 y 100, solo tienes 10 intentos.");

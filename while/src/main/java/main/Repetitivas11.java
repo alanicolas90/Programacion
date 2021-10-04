@@ -4,7 +4,7 @@ import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Repetitivas11 {
-    public void media(Scanner sc, int i) {
+    public void media(Scanner sc) {
 
         System.out.print("Dime un numero y yo te digo si es primo o no: ");
         double numeroEscrito = sc.nextInt();

@@ -3,7 +3,7 @@ package main;
 import java.util.Scanner;
 
 public class Repetitivas13 {
-    public void media(Scanner sc,int i) {
+    public void media(Scanner sc) {
         int week = 6;
         int day = 1;
         int totalHoursWorked = 0;

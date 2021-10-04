@@ -4,7 +4,7 @@ import java.util.Locale;
 import java.util.Scanner;
 
 public class Repetitivas5 {
-    public void media(Scanner sc, int i){
+    public void media(Scanner sc){
         System.out.print("Dime un caracter(ponga un espacio para parar el programa): ");
         String palabra = sc.nextLine();
 

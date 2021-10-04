@@ -3,7 +3,7 @@ package main;
 import java.util.Scanner;
 
 public class Repetitivas3 {
-    public void media(Scanner sc, int i){
+    public void media(Scanner sc){
         System.out.println("El ejercicio te pide que le pongas numeros y luego si pones el 0 suma todos los numeros anteriores y la media tambien.");
         int sumaNums=0;
         int cantidadNumsEscritos=0;

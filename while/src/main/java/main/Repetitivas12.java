@@ -3,7 +3,7 @@ package main;
 import java.util.Scanner;
 
 public class Repetitivas12 {
-    public void media(Scanner sc,int i) {
+    public void media(Scanner sc) {
         int ahorrado = 0;
 
         for (int mes = 1; mes != 12 + 1; mes++) {

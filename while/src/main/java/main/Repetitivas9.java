@@ -3,7 +3,7 @@ package main;
 import java.util.Scanner;
 
 public class Repetitivas9 {
-    public void media(Scanner sc, int i) {
+    public void media(Scanner sc) {
         int potencia = 1;
         int numeroExponente;
 

@@ -3,7 +3,7 @@ package main;
 import java.util.Scanner;
 
 public class Repetitivas20 {
-    public void media(Scanner sc, int i) {
+    public void media(Scanner sc) {
         boolean esPrimo;
         int numero = 3;
         int contador = 1;
