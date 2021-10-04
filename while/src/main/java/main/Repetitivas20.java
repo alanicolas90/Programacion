@@ -17,7 +17,7 @@ public class Repetitivas20 {
         while (contador < cantidadPrimos) {
             esPrimo = true;
             divisor = 3;
-            while ((divisor <= Math.sqrt(numero)) && esPrimo) {
+            while ((divisor <numero) && esPrimo) {
                 if (numero % divisor == 0) {
                     esPrimo = false;
                 }
