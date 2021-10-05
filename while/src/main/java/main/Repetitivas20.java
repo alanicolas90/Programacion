@@ -3,7 +3,7 @@ package main;
 import java.util.Scanner;
 
 public class Repetitivas20 {
-    public void media(Scanner sc, int i) {
+    public void media(Scanner sc) {
         boolean esPrimo;
         int numero = 3;
         int contador = 1;
@@ -17,7 +17,7 @@ public class Repetitivas20 {
         while (contador < cantidadPrimos) {
             esPrimo = true;
             divisor = 3;
-            while ((divisor <= Math.sqrt(numero)) && esPrimo) {
+            while ((divisor <numero) && esPrimo) {
                 if (numero % divisor == 0) {
                     esPrimo = false;
                 }
@@ -28,12 +28,7 @@ public class Repetitivas20 {
                 System.out.println(contador + ") " + numero);
             }
             numero = numero + 2;
-
         }
-
-
     }
-
-
 }
 

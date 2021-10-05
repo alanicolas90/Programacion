@@ -3,7 +3,7 @@ package main;
 import java.util.Scanner;
 
 public class Repetitivas16 {
-    public void media(Scanner sc, int i) {
+    public void media(Scanner sc) {
         int sueldoTrabajadores = 0;
 
         System.out.print("Dime el sueldo de los trabajadores por hora: ");

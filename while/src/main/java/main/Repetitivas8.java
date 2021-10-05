@@ -3,7 +3,7 @@ package main;
 import java.util.Scanner;
 
 public class Repetitivas8 {
-    public void media(Scanner sc, int i){
+    public void media(Scanner sc){
         int limiteInferior;
         int limiteSuperior;
         int numeroInsertado;

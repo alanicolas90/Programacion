@@ -3,7 +3,7 @@ package main;
 import java.util.Scanner;
 
 public class Repetitivas6 {
-    public void media(Scanner sc,int i){
+    public void media(Scanner sc){
         int numMinimo;
         int numMaximo;
 

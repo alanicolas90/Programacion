@@ -3,7 +3,7 @@ package main;
 import java.util.Scanner;
 
 public class Repetitivas1 {
-    public void media(Scanner sc, int i){
+    public void media(Scanner sc){
 
         int factorial = 1;
         System.out.print("Escribeme el numero que te haga el factorial: ");

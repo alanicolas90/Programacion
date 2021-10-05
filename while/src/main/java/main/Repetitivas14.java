@@ -3,7 +3,7 @@ package main;
 import java.util.Scanner;
 
 public class Repetitivas14 {
-    public void media(Scanner sc,int i) {
+    public void media(Scanner sc) {
         int position1 = 70;
         int position2 = 150;
 

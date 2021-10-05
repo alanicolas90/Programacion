@@ -3,7 +3,7 @@ package main;
 import java.util.Scanner;
 
 public class Repetitivas15 {
-    public void media(Scanner sc, int i) {
+    public void media(Scanner sc) {
         int mes = 1;
         int dinero;
 

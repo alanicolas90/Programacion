@@ -3,7 +3,7 @@ package main;
 import java.util.Scanner;
 
 public class Repetitivas10 {
-    public void media(Scanner sc,int i) {
+    public void media(Scanner sc) {
         for (int tablaMultiplicar = 5; tablaMultiplicar != -1; tablaMultiplicar--) {
             System.out.println("TABLA DEL " + tablaMultiplicar);
 
