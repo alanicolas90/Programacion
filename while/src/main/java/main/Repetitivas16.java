@@ -12,11 +12,11 @@ public class Repetitivas16 {
         System.out.print("Cuantos trabajadores tienes? ");
         int cantidadTrabajadores = sc.nextInt();
 
-        for (int trabajadores=1; trabajadores != cantidadTrabajadores+1; trabajadores++) {
+        for (int trabajadores = 1; trabajadores != cantidadTrabajadores + 1; trabajadores++) {
             System.out.println("Ponga las horas trabajadas del empleado numero " + trabajadores);
             int horasTrabajador = sc.nextInt();
             sueldoTrabajadores = sueldoTrabajadores + (sueldoHora * horasTrabajador);
-            System.out.println("El sueldo del empleado "+trabajadores+" es de: "+(sueldoHora * horasTrabajador)+"€");
+            System.out.println("El sueldo del empleado " + trabajadores + " es de: " + (sueldoHora * horasTrabajador) + "€");
         }
         System.out.println("La empresa tiene que pagar por " + cantidadTrabajadores + " empleados: " + sueldoTrabajadores + " €");
 
