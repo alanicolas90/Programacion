@@ -3,9 +3,7 @@ package MAIN;
 import java.util.Scanner;
 
 public class Strings8 {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-
+    public void media(Scanner sc) {
         System.out.println("Pon una frase con mayusculas y minusculas: ");
         String frase = sc.nextLine();
 
@@ -18,5 +16,6 @@ public class Strings8 {
                 System.out.print(" ");
             }
         }
+        System.out.println();
     }
 }

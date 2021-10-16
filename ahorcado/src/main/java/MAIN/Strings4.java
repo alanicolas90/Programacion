@@ -3,9 +3,7 @@ package MAIN;
 import java.util.Scanner;
 
 public class Strings4 {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-
+    public void media(Scanner sc) {
         System.out.println("Introduce una frase a continuacion: ");
         String frase = sc.nextLine();
         int counter = 1;
