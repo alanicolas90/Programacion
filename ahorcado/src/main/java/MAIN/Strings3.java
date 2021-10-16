@@ -13,8 +13,6 @@ public class Strings3 {
         System.out.println("Dime una letra para decir cuantas veces aparece (solo tomara la primera letra): ");
         char comprobacion= sc.next().toLowerCase().charAt(0);
 
-        //String comprobacion=sc.next();
-
         int contador=0;
 
         for (int i = 0; i < frase.length(); i++) {
@@ -24,19 +22,5 @@ public class Strings3 {
             }
         }
         System.out.println("aparece: "+contador+" veces.");
-
-        /*int cantidadLetras = 0;
-        for (int i = 0; i < linea.length(); i++) {
-            i = linea.indexOf(comprobacion, i);
-            if (i != -1) {
-                cantidadLetras++;
-
-            } else {
-                i = linea.length();
-            }
-        }
-        System.out.println("cantidad " + cantidadLetras);
-
-         */
     }
 }
