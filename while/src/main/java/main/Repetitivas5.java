@@ -1,6 +1,7 @@
 package main;
 
 import java.util.Locale;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Repetitivas5 {
@@ -25,6 +26,7 @@ public class Repetitivas5 {
             System.out.print("Dime otros caracteres: ");
             palabra = sc.nextLine();
         }
+
 
         if (palabra.equals(" ")) {
             System.out.println("FIN");
