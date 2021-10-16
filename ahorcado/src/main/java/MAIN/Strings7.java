@@ -3,9 +3,7 @@ package MAIN;
 import java.util.Scanner;
 
 public class Strings7 {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-
+    public void media(Scanner sc) {
         System.out.println("Dime una frase cualquiera: ");
         String frase = sc.nextLine();
 

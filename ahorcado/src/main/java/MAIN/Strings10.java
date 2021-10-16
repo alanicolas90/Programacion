@@ -3,9 +3,7 @@ package MAIN;
 import java.util.Scanner;
 
 public class Strings10 {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-
+    public void media(Scanner sc) {
         System.out.println("Escribeme una palabra palindroma (solo una palabra y sin espacios: ");
         String palindromo = sc.nextLine();
         boolean esPalindromo = true;

@@ -4,9 +4,7 @@ import java.util.Locale;
 import java.util.Scanner;
 
 public class Strings5 {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-
+    public void media(Scanner sc) {
         System.out.println("Dime tu nombre y apellido: ");
         String nombreApellido = sc.nextLine().toUpperCase();
 
@@ -17,5 +15,6 @@ public class Strings5 {
                 System.out.print(nombreApellido.charAt(i + 1));
             }
         }
+        System.out.println();
     }
 }

@@ -4,23 +4,21 @@ import java.util.Locale;
 import java.util.Scanner;
 
 public class Strings3 {
-    public static void main(String[] args) {
-        Scanner sc= new Scanner(System.in);
-
+    public void media(Scanner sc) {
         System.out.println("Ponga una frase: ");
-        String frase= sc.nextLine().toLowerCase();
+        String frase = sc.nextLine().toLowerCase();
 
         System.out.println("Dime una letra para decir cuantas veces aparece (solo tomara la primera letra): ");
-        char comprobacion= sc.next().toLowerCase().charAt(0);
+        char comprobacion = sc.next().toLowerCase().charAt(0);
 
-        int contador=0;
+        int contador = 0;
 
         for (int i = 0; i < frase.length(); i++) {
 
-            if(frase.charAt(i)==comprobacion){
+            if (frase.charAt(i) == comprobacion) {
                 contador++;
             }
         }
-        System.out.println("aparece: "+contador+" veces.");
+        System.out.println("aparece: " + contador + " veces.");
     }
 }
