@@ -22,6 +22,7 @@ public class Strings11 {
                 System.out.print(frase.charAt(i));
             }
         }
+        System.out.println();
 
 
     }
