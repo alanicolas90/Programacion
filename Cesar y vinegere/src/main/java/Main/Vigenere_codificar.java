@@ -1,11 +1,10 @@
 package Main;
 
-import java.util.Locale;
 import java.util.Scanner;
 
 public class Vigenere_codificar {
     public void media(Scanner sc) {
-        System.out.println("Introduzca aqui el texto para cifrarlo: ");
+        System.out.println("Introduzca aqui el texto para cifrarlo en Vinegere: ");
         String fraseCodificar = sc.nextLine();
 
         System.out.println("Ahora la palabra para cifrar: ");

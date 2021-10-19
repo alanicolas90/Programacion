@@ -6,9 +6,10 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc= new Scanner(System.in);
 
-        int numeroEjercicio=1;
+        int numeroEjercicio;
 
         do{
+            System.out.println("PULSE 0 PARA SALIR");
             System.out.println("Pulse 1 para cifrar en Cesar");
             System.out.println("Pulse 2 para descifrar en Cesar");
             System.out.println("Pulse 3 para cifrar en Vigenere");
