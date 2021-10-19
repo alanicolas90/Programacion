@@ -11,8 +11,11 @@ public class Cesar_codificar {
         int numeroSaltos = sc.nextInt();
         char letraNueva;
 
+        //ñ- 241 y Ñ- 209
+
         for (int i = 0; i < fraseCodificar.length(); i++) {
             if (Character.isLowerCase(fraseCodificar.charAt(i))) {
+
                 letraNueva = fraseCodificar.charAt(i);
                 letraNueva = (char) (letraNueva - 97);
                 letraNueva = (char) (((letraNueva + numeroSaltos) % 26) + 97);
@@ -21,7 +24,7 @@ public class Cesar_codificar {
             } else if (Character.isUpperCase(fraseCodificar.charAt(i))) {
                 letraNueva = fraseCodificar.charAt(i);
                 letraNueva = (char) (letraNueva - 65);
-                letraNueva = (char) (((letraNueva + numeroSaltos + 26) % 26) + 65);
+                letraNueva = (char) (((letraNueva + numeroSaltos) % 26) + 65);
                 System.out.print(letraNueva);
             } else {
                 System.out.print(fraseCodificar.charAt(i));
