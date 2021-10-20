@@ -18,7 +18,7 @@ public class Cesar_codificar {
 
                 letraNueva = fraseCodificar.charAt(i);
                 letraNueva = (char) (letraNueva - 97);
-                letraNueva = (char) (((letraNueva + numeroSaltos) % 26) + 97);
+                letraNueva = (char) (((letraNueva + (numeroSaltos) % 26) + 97));
                 System.out.print(letraNueva);
 
             } else if (Character.isUpperCase(fraseCodificar.charAt(i))) {

@@ -13,12 +13,13 @@ public class Vigenere_codificar {
         char letraClave;
         int posClave;
         int cambio;
+        int contador=0;
 
         for (int i = 0; i < fraseCodificar.length(); i++) {
 
             if (Character.isLowerCase(fraseCodificar.charAt(i))) {
                 cifrado=cifrado.toLowerCase();
-                posClave = i % cifrado.length();
+                posClave = (i+contador) % cifrado.length();
                 letraClave = cifrado.charAt(posClave);
                 cambio = letraClave - 97;
 
@@ -29,7 +30,7 @@ public class Vigenere_codificar {
 
             } else if (Character.isUpperCase(fraseCodificar.charAt(i))) {
                 cifrado=cifrado.toUpperCase();
-                posClave = i % cifrado.length();
+                posClave = (i+contador) % cifrado.length();
                 letraClave = cifrado.charAt(posClave);
                 cambio = letraClave - 65;
 
@@ -38,6 +39,7 @@ public class Vigenere_codificar {
                 letraNueva = (char) (((sumaChares) % 26) + 65);
                 System.out.print(letraNueva);
             } else {
+                contador--;
                 System.out.print(fraseCodificar.charAt(i));
             }
         }
