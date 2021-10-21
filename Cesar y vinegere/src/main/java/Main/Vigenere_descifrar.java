@@ -22,18 +22,15 @@ public class Vigenere_descifrar {
                 posClave = (i+contador) % cifrado.length();
                 letraClave = cifrado.charAt(posClave);
                 cambio = letraClave - 97;
-
                 letraNueva = fraseCodificar.charAt(i);
                 int sumaChares = letraNueva - cambio - 97;
                 letraNueva = (char) (((sumaChares+26) % 26) + 97);
                 System.out.print(letraNueva);
-
             } else if (Character.isUpperCase(fraseCodificar.charAt(i))) {
                 cifrado=cifrado.toUpperCase();
                 posClave = (i+contador) % cifrado.length();
                 letraClave = cifrado.charAt(posClave);
                 cambio = letraClave - 65;
-
                 letraNueva = fraseCodificar.charAt(i);
                 int sumaChares = letraNueva - cambio - 65;
                 letraNueva = (char) (((sumaChares +26) % 26) + 65);
