@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] arg){
 
         Scanner sc = new Scanner(System.in);
-        int numeroEjercicio = 1;
+        int numeroEjercicio;
 
         do {
             System.out.print("Dime el número del ejercicio y te lo muestra (pusla 0 para salir)(ejercicios del 1-12): ");

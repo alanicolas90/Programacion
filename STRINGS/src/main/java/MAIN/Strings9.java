@@ -9,7 +9,6 @@ public class Strings9 {
 
         System.out.println("Ahora el fragmento que buscas: ");
         String loQueBuscas = sc.nextLine();
-        frase.contains(loQueBuscas);
         if (frase.contains(loQueBuscas)) {
             System.out.println("Si contiene ese fragmento.");
         } else {
