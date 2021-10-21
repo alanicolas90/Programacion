@@ -19,7 +19,9 @@ public class Vigenere_descifrar {
 
             if (Character.isLowerCase(fraseCodificar.charAt(i))) {
                 cifrado=cifrado.toLowerCase();
+
                 posClave = (i+contador) % cifrado.length();
+
                 letraClave = cifrado.charAt(posClave);
                 cambio = letraClave - 97;
 
@@ -27,6 +29,7 @@ public class Vigenere_descifrar {
                 int sumaChares = letraNueva - cambio - 97;
                 letraNueva = (char) (((sumaChares+26) % 26) + 97);
                 System.out.print(letraNueva);
+
             } else if (Character.isUpperCase(fraseCodificar.charAt(i))) {
                 cifrado=cifrado.toUpperCase();
                 posClave = (i+contador) % cifrado.length();
@@ -37,8 +40,10 @@ public class Vigenere_descifrar {
                 int sumaChares = letraNueva - cambio - 65;
                 letraNueva = (char) (((sumaChares +26) % 26) + 65);
                 System.out.print(letraNueva);
+
             } else {
                 contador--;
+
                 System.out.print(fraseCodificar.charAt(i));
             }
         }
