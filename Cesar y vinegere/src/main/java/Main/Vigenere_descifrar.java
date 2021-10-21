@@ -30,6 +30,7 @@ public class Vigenere_descifrar {
                 int sumaChares = letraNueva - cambio - 97;
                 letraNueva = (char) (((sumaChares+26) % 26) + 97);
                 System.out.print(letraNueva);
+
             } else if (Character.isUpperCase(fraseCodificar.charAt(i))) {
                 cifrado=cifrado.toUpperCase();
                 posClave = (i+contador) % cifrado.length();
