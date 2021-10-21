@@ -11,7 +11,7 @@ public class Strings2 {
         System.out.println("Ahora pon como empezaba: ");
         String comprobacion=sc.nextLine();
 
-        if(frase.indexOf(comprobacion,0)==0){
+        if(frase.indexOf(comprobacion)==0){
             System.out.println("Si comienza");
         }else{
             System.out.println("No comienza");

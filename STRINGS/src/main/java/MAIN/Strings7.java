@@ -9,6 +9,7 @@ public class Strings7 {
 
         System.out.println("La letra que quieres cambiar de la frase: ");
         String letraCambiar = sc.nextLine();
+        //MAS FACIL sc.nextInt().charAt(0);   Character.isAlphabetic
         if (letraCambiar.length() != 1) {
             do {
                 System.out.println("VALOR INCORRECTO, porfavor introduzca solo 1 caracter porfavor:");

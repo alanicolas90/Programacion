@@ -13,7 +13,7 @@ public class Strings8 {
             } else if (Character.isUpperCase(frase.charAt(i))) {
                 System.out.print(Character.toLowerCase(frase.charAt(i)));
             } else {
-                System.out.print(" ");
+                System.out.print(frase.charAt(i));
             }
         }
         System.out.println();
