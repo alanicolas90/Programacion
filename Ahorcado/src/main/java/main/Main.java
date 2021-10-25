@@ -33,23 +33,23 @@ public class Main {
             System.out.println("Tienes " + intentosRestantes + " intentos restantes.");
             System.out.println("Escribeme la siguiente letra(escriba solo un caracter): ");
             letraPrueba = sc.nextLine();
-            if (letraPrueba.length() != 1) {
-                do {
+            do {
+                //que sea una sola letra
+                if (letraPrueba.length() != 1) {
                     System.out.println("VALOR INCORRECTO, porfavor introduzca solo 1 caracter porfavor:");
                     letraPrueba = sc.nextLine();
-
-                } while (letraPrueba.length() != 1);
-            }
-
-            //saber si la letra ha sido utilizado antes o no
-            do {
-                if (letrasUtilizadas.indexOf(letraPrueba) == -1) {
-                    letrasUtilizadas.append(letraPrueba);
-                } else {
-                    System.out.println("Esta letra ya ha sido utilizada anteriormente, porfavor pruebe con otro.");
-
                 }
-            } while (letrasUtilizadas.indexOf(letraPrueba) == -1);
+                // pedirle letra, comprobar que la letra sea nueva
+                //saber si la letra ha sido utilizado antes o no
+                if (letrasUtilizadas.indexOf(letraPrueba) != -1) {
+                    System.out.println("La letra escrita ya existe, porfavor pruebe con otro: ");
+                    letraPrueba = sc.nextLine();
+                }
+            } while (letraPrueba.length() != 1 || letrasUtilizadas.indexOf(letraPrueba) != -1 || letraPrueba.length()==palabra.length());
+
+            letrasUtilizadas.append(letraPrueba);
+
+
 
 
             System.out.println(letrasUtilizadas);
@@ -59,7 +59,6 @@ public class Main {
 
             // DIFICIL mostrar palabra ocultada *** ****   *A* *****
 
-            // pedirle letra, comprobar que la letra sea nueva
             // o pedir frase  jugarsela
 
             // ver si esta  o no
