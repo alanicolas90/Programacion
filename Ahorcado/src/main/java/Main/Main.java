@@ -8,7 +8,7 @@ public class Main {
 
         // el numero de oportunidades
 
-        int intentosRestantes = 7;
+        int intentosRestantes = 8;
         System.out.println("Tienes " + intentosRestantes + " intentos restantes.");
 
 
