@@ -9,7 +9,7 @@ public class Main {
         int numeroEjercicio;
 
         do {
-            System.out.print("Dime el número del ejercicio y te lo muestra (pusla 0 para salir)(ejercicios del 1-12): ");
+            System.out.print("Dime el número del ejercicio y te lo muestra (pulsa 0 para salir)(ejercicios del 1-12): ");
             numeroEjercicio = sc.nextInt();
             switch (numeroEjercicio) {
                 case 1:
