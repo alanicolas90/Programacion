@@ -59,8 +59,6 @@ public class Main {
 
             // DIFICIL mostrar palabra ocultada *** ****   *A* *****
 
-            // o pedir frase  jugarsela
-
             // ver si esta  o no
 
             // si no esta saco ahorcado
