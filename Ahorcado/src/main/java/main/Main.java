@@ -65,8 +65,21 @@ public class Main {
 
             letrasUtilizadas.append(letraPrueba);
             //si la letra está o no en la palabra
-            intentosRestantes = Estaenlapalabraono.getIntentosRestantes(palabraOcultada, intentosRestantes, letraPrueba, intentoAdivinar, palabra);
 
+            if (palabra.indexOf(intentoAdivinar) > -1) {
+                System.out.println("esta letra si está en la palabra");
+                // DIFICIL mostrar palabra ocultada *** ****   *A* *****
+                for (int i = 0; i < palabra.length(); i++) {
+                    if (palabra.charAt(i) == letraPrueba) {
+                        palabraOcultada.setCharAt(i, palabra.charAt(i));
+                    }
+                }
+            }
+            //si la letra no está que me quite un intento
+            else {
+                System.out.println("la letra no está en la palabra");
+                intentosRestantes--;
+            }
             //bucle hasta oportunidades o que acierte
 
             if (palabraOcultada.toString().equals(palabra)) {
