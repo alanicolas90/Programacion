@@ -28,12 +28,12 @@ public class Main {
                 palabraOcultada.append(palabra.charAt(letraPalabra));
             }
         }
-        System.out.println(palabraOcultada);
-        // el numero de oportunidades
+        System.out.println(palabra);
         do {
             do {
                 System.out.println("Tienes " + intentosRestantes + " intentos restantes.");
                 System.out.println("Las letras utilizadas y no estan en la palabra:" + letrasUtilizadas);
+                System.out.println(palabraOcultada);
                 System.out.println("Escribeme la siguiente letra(escriba solo un caracter): ");
                 intentoAdivinar = sc.nextLine().toLowerCase();
                 //que sea una sola letra
