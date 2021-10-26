@@ -2,6 +2,9 @@ package main;
 
 public class Dibujitos {
 
+    public Dibujitos(int intentosRestantes) {
+    }
+
     public static void extracted(int intentosRestantes) {
         if (intentosRestantes <= 8) {
             switch (intentosRestantes) {
