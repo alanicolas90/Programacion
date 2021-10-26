@@ -29,21 +29,28 @@ public class Main {
             }
         }
 
-
         // el numero de oportunidades
-        do {
-            System.out.println("Tienes " + intentosRestantes + " intentos restantes.");
-            System.out.println(palabra);
+        System.out.println("Tienes " + intentosRestantes + " intentos restantes.");
 
-            System.out.println("Las letras utilizadas y no estan en la palabra:" + letrasUtilizadas);
-            System.out.println("Escribeme la siguiente letra(escriba solo un caracter): ");
-            intentoAdivinar = sc.nextLine().toLowerCase();
+        do {
+            System.out.println(palabraOcultada);
+            System.out.println("Las letras utilizadas y no están en la palabra:" + letrasUtilizadas);
             do {
-                //que sea una sola letra
-                if (intentoAdivinar.length() != 1) {
-                    System.out.println("VALOR INCORRECTO, porfavor introduzca solo 1 caracter porfavor o la palabra entera(que tenga la longitud de la palabra o será invalido:");
-                    intentoAdivinar = sc.nextLine().toLowerCase();
+                System.out.println("Escribeme la siguiente letra(escriba solo un caracter) o la solución: ");
+                intentoAdivinar = sc.nextLine().toLowerCase();
+
+                if (intentoAdivinar.length() == palabra.length()) {
+                    if (intentoAdivinar.equals(palabra)) {
+                        adivinado = true;
+                    } else {
+                        System.out.println("Esta no es la solución, se te va a restar un intento. ");
+                        intentosRestantes--;
+                        Dibujitos.extracted(intentosRestantes);
+                    }
+                } else if (intentoAdivinar.length() != 1) {
+                    System.out.println("VALOR INCORRECTO, se te ca a restar un intento.");
                 }
+                //que sea una sola letra
                 if (intentoAdivinar.length() == 1) {
                     letraPrueba = intentoAdivinar.charAt(0);
                 }
@@ -53,25 +60,13 @@ public class Main {
                     System.out.println("La letra escrita ya la has utilizado, porfavor pruebe con otro: ");
                     intentoAdivinar = sc.nextLine().toLowerCase();
                 }
-            } while (intentoAdivinar.length() != 1 || letrasUtilizadas.indexOf(intentoAdivinar) != -1);
+                System.out.println("Tienes " + intentosRestantes + " intentos restantes.");
+            } while (!adivinado && intentoAdivinar.length() != 1 || letrasUtilizadas.indexOf(intentoAdivinar) != -1);
 
             letrasUtilizadas.append(letraPrueba);
             //si la letra está o no en la palabra
-            if (palabra.indexOf(intentoAdivinar) > -1) {
-                System.out.println("esta letra si está en la palabra");
-                // DIFICIL mostrar palabra ocultada *** ****   *A* *****
-                for (int i = 0; i < palabra.length(); i++) {
-                    if (palabra.charAt(i) == letraPrueba) {
-                        palabraOcultada.setCharAt(i, palabra.charAt(i));
-                    }
-                }
-            }
-            //si la letra no está que me quite un intento
-            else {
-                System.out.println("la letra no está en la palabra");
-                intentosRestantes--;
-            }
-            System.out.println(palabraOcultada);
+            intentosRestantes = Estaenlapalabraono.getIntentosRestantes(palabraOcultada, intentosRestantes, letraPrueba, intentoAdivinar, palabra);
+
             //bucle hasta oportunidades o que acierte
 
             if (palabraOcultada.toString().equals(palabra)) {
@@ -85,6 +80,7 @@ public class Main {
             System.out.println("FELICIDADES HAS GANADO");
         } else {
             System.out.println("HAS PERDIDO");
+            System.out.println("La solución era: "+palabra);
         }
         System.out.println("Se acabó la partida.");
     }
