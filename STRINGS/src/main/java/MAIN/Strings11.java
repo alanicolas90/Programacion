@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Strings11 {
     public void media(Scanner sc) {
-        System.out.println("Escribe a continuacion un texto en el que quieras que se cambien las letras: ");
+        System.out.println("Escribe a continuación un texto en el que quieras que se cambien las letras: ");
         String frase = sc.nextLine();
 
         System.out.println("La letra que quieres intercambiar(cogerá la primera letra escrita): ");
