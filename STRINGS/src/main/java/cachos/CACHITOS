@@ -1,12 +1,4 @@
-package cachos;
-
-import javax.print.DocFlavor;
-
-public class
-cachitos {
-    StringBuilder nombre = new StringBuilder();
-
-/*
+StringBuilder nombre = new StringBuilder();
     string.replace(string que quieres cambiar, el valor nuevo);
     string.append();
     string.subtring(inicial,final);
@@ -21,13 +13,18 @@ cachitos {
    car = (char)(car+3%26; %26)+65 (modulo 26 cuando supere el 26 vuelve a 1). SOLO PAAR SUMAS
    car=(char)(((car-3+26)%26)+65) (para que siempre sea positivo)
 
-
-
-
-
-
     ctr*enter --- ctrl+q
-*/
+    ctrl+shift+alt+l -- para borrar
+    ctrl+alt+L -- ordenar código
+    CTR+C
+    CTRL+Z
+    CTRL+V
+    CTRL+X
+    SHIFT+SHIFT(PARA BUSCAR POR TODOS LOS FICHEROS)
+    CTRL+SHIFT+FLECHA ARRIBA/ABAJO
 
+    REFACTROR
+    ----------
+    SHIFT+F6
 
-}
+JOption --
