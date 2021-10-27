@@ -1,4 +1,4 @@
-package Main;
+package main_principal;
 
 public class Ocultar {
     public static void extracted(StringBuilder palabraOcultada, String palabra) {

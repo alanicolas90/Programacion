@@ -1,4 +1,4 @@
-package Main;
+package main_principal;
 
 public class Dibujitos {
 
