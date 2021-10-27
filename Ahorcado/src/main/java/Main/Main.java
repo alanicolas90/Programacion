@@ -21,14 +21,8 @@ public class Main {
         String palabra = crearPalabra.animal().name();//palabra que queremos encontrar(serán animales en inglés)
 
         // la palabra ocultada.
-        for (int letraPalabra = 0; letraPalabra < palabra.length(); letraPalabra++) {
-            if (Character.isLetter(palabra.charAt(letraPalabra))) {
-                palabraOcultada.append("*");
-            } else {
-                palabraOcultada.append(palabra.charAt(letraPalabra));
-            }
-        }
-        System.out.println(palabra);
+        Ocultar.extracted(palabraOcultada, palabra);
+
         do {
             do {
                 System.out.println("Tienes " + intentosRestantes + " intentos restantes.");
