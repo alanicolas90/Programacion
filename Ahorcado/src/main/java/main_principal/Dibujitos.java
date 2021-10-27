@@ -5,12 +5,11 @@ public class Dibujitos {
 
     public static void extracted(int intentosRestantes) {
         if (intentosRestantes <= 8) {
-            extracted1(intentosRestantes);
+            dibujo(intentosRestantes);
         }
     }
 
-
-    private static void extracted1(int intentosRestantes) {
+    private static void dibujo(int intentosRestantes) {
         switch (intentosRestantes) {
             case 8:
                 System.out.println(" ___________\n |         \n |\n |\n |\n |\n/ \\");
@@ -35,6 +34,8 @@ public class Dibujitos {
                 break;
             case 1:
                 System.out.println(" ___________\n |         |\n |        ( )\n |        /|\\ \n |        / \\ \n |\n/ \\");
+                break;
+            default:
                 break;
         }
     }
