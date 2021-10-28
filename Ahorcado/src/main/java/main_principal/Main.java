@@ -24,12 +24,12 @@ public class Main {
         Ocultar.extracted(palabraOcultada, palabra);
 
         do {
+            System.out.println("Tienes " + intentosRestantes + " intentos restantes.");
+            System.out.println("Las letras utilizadas y no están en la palabra:" + letrasUtilizadas);
+            System.out.println(palabraOcultada);
+            System.out.println("Escríbeme la siguiente letra(escriba solo un carácter): ");
+            intentoAdivinar = sc.nextLine().toLowerCase();
             do {
-                System.out.println("Tienes " + intentosRestantes + " intentos restantes.");
-                System.out.println("Las letras utilizadas y no están en la palabra:" + letrasUtilizadas);
-                System.out.println(palabraOcultada);
-                System.out.println("Escríbeme la siguiente letra(escriba solo un carácter): ");
-                intentoAdivinar = sc.nextLine().toLowerCase();
                 //que sea una sola letra
 
                 if (intentoAdivinar.length() == palabra.length()) {
@@ -45,17 +45,20 @@ public class Main {
                 }
                 // pedirle letra, comprobar que la letra sea nueva
                 //saber si la letra ha sido utilizado antes o no
-                if (letrasUtilizadas.indexOf(intentoAdivinar)!=-1) {
-                    System.out.println("La letra escrita ya la has utilizado, por favor pruebe con otro: ");
-                    intentoAdivinar = sc.nextLine().toLowerCase();
-                }
+                do {
+                    if (letrasUtilizadas.indexOf(intentoAdivinar) != -1) {
+                        System.out.println("La letra escrita ya la has utilizado, por favor pruebe con otro: ");
+                        intentoAdivinar = sc.nextLine().toLowerCase();
+                    }
+                } while(letrasUtilizadas.indexOf(intentoAdivinar)!=-1);
             } while (!adivinado && intentoAdivinar.length() != 1 || letrasUtilizadas.indexOf(intentoAdivinar) != -1);
-            letrasUtilizadas.append(intentoAdivinar);
+
+            letrasUtilizadas.append(intentoAdivinar + " ");
             //si la letra está o no en la palabra
             if (palabra.contains(intentoAdivinar)) {
                 // DIFÍCIL mostrar palabra ocultada *** ****   *A* *****
                 if (intentoAdivinar.length() == 1) {
-                    letraPrueba=intentoAdivinar.charAt(0);
+                    letraPrueba = intentoAdivinar.charAt(0);
                     for (int i = 0; i < palabra.length(); i++) {
 
                         if (palabra.charAt(i) == letraPrueba) {
@@ -78,9 +81,12 @@ public class Main {
                 adivinado = true;
             }
             // si no esta saco ahorcado
-            Dibujitos.extracted(intentosRestantes);
+            if (!adivinado) {
+                Dibujitos.extracted(intentosRestantes);
+            }
 
         } while (!adivinado && intentosRestantes > 0);
+
         if (adivinado) {
             System.out.println("FELICIDADES HAS GANADO");
         } else {
@@ -89,5 +95,4 @@ public class Main {
         }
         System.out.println("Se acabó la partida.");
     }
-
 }
