@@ -48,12 +48,13 @@ public class Main {
                 do {
                     if (letrasUtilizadas.indexOf(intentoAdivinar) != -1) {
                         System.out.println("La letra escrita ya la has utilizado, por favor pruebe con otro: ");
+                        System.out.println("Las letras utilizadas anteriormente:" + letrasUtilizadas);
                         intentoAdivinar = sc.nextLine().toLowerCase();
                     }
                 } while(letrasUtilizadas.indexOf(intentoAdivinar)!=-1);
             } while (!adivinado && intentoAdivinar.length() != 1 || letrasUtilizadas.indexOf(intentoAdivinar) != -1);
 
-            letrasUtilizadas.append(intentoAdivinar + " ");
+            letrasUtilizadas.append(intentoAdivinar).append(" ");
             //si la letra está o no en la palabra
             if (palabra.contains(intentoAdivinar)) {
                 // DIFÍCIL mostrar palabra ocultada *** ****   *A* *****
@@ -74,9 +75,7 @@ public class Main {
                 intentosRestantes--;
                 System.out.println(palabraOcultada);
             }
-
             //bucle hasta oportunidades o que acierte
-
             if (palabraOcultada.toString().equals(palabra)) {
                 adivinado = true;
             }
