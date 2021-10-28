@@ -3,7 +3,7 @@ package main_principal;
 public class Dibujitos {
 
 
-    public static void extracted(int intentosRestantes) {
+    public void extracted(int intentosRestantes) {
         switch (intentosRestantes) {
             case 8:
                 System.out.println(" ___________\n |         \n |\n |\n |\n |\n/ \\");

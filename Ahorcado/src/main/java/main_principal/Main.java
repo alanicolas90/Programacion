@@ -21,7 +21,7 @@ public class Main {
         String palabra = crearPalabra.animal().name();//palabra que queremos encontrar(serán animales en inglés)
 
         // la palabra ocultada.
-        Ocultar.extracted(palabraOcultada, palabra);
+        new Ocultar().extracted(palabraOcultada, palabra);
 
         do {
             System.out.println("Tienes " + intentosRestantes + " intentos restantes.");
@@ -37,7 +37,7 @@ public class Main {
                         adivinado = true;
                     } else {
                         intentosRestantes--;
-                        Dibujitos.extracted(intentosRestantes);
+                        new Dibujitos().extracted(intentosRestantes);
                     }
                 } else if (intentoAdivinar.length() != 1) {
                     System.out.println("VALOR INCORRECTO, por favor introduzca solo 1 carácter por favor o la palabra entera(que tenga la longitud de la palabra o será invalido:");
@@ -82,7 +82,7 @@ public class Main {
             }
             // si no esta saco ahorcado
             if (!adivinado) {
-                Dibujitos.extracted(intentosRestantes);
+                new Dibujitos().extracted(intentosRestantes);
             }
 
         } while (!adivinado && intentosRestantes > 0);
