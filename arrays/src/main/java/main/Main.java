@@ -17,15 +17,15 @@ public class Main {
             switch (numeroEjercicio) {
                 case 1:
                     Arrays1 ejercicio1=new Arrays1();
-                    ejercicio1.media(sc);
+                    ejercicio1.media();
                     break;
                 case 2:
                     Arrays2 ejercicio2=new Arrays2();
-                    ejercicio2.media(sc);
+                    ejercicio2.media();
                     break;
                 case 3:
                     Arrays3 ejercicio3=new Arrays3();
-                    ejercicio3.media(sc);
+                    ejercicio3.media();
                     break;
                 case 4:
                     Arrays4 ejercicio4=new Arrays4();
