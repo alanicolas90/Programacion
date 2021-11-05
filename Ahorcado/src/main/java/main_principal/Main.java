@@ -22,6 +22,7 @@ public class Main {
 
         // la palabra ocultada.
         new Ocultar().extracted(palabraOcultada, palabra);
+        System.out.println(palabra);
 
         do {
             System.out.println("Tienes " + intentosRestantes + " intentos restantes.");
