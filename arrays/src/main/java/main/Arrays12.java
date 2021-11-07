@@ -11,7 +11,7 @@ public class Arrays12 {
 
         for (int i = 0; i < numbers.length; i++) {
             numbers[i] = r.nextInt(20);
-            System.out.println("La posicion (" + i + ") la ocupa:\n" + numbers[i] + " ");
+            System.out.println("La posición (" + i + ") la ocupa:\n" + numbers[i] + " ");
         }
 
         System.out.println("Dime una posición entre 0-9 y la eliminaré");

@@ -25,9 +25,9 @@ public class Arrays10 {
         for (int i = (numbers.length - 1 - mover); i >= 0; i--) {
             numbers[i + mover] = numbers[i];
         }
-        int contador= (numbers.length-mover);
+        int contador = (numbers.length - mover);
         for (int i = 0; i < mover; i++) {
-            numbers[i]=guardar[contador];
+            numbers[i] = guardar[contador];
             contador++;
         }
 

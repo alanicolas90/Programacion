@@ -13,13 +13,13 @@ public class Arrays14 {
         for (int i = 0; i < numbers1.length; i++) {
             numbers1[i] = contador + contador;
             contador++;
+            System.out.println(numbers1[i]);
         }
         for (int i = 0; i < numbers2.length; i++) {
             numbers2[i] = contador + 3;
             contador++;
+            System.out.println(numbers2[i]);
         }
-        System.out.println(Arrays.toString(numbers1));
-        System.out.println(Arrays.toString(numbers2));
 
         int positionNumber1 = 0;
         int positionNumber2 = 0;

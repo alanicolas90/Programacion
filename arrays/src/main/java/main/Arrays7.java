@@ -25,7 +25,7 @@ public class Arrays7 {
 
 
         //numero aleatorio
-        Random r = new Random();
+        Random r = getR();
 
         for (int i = 0; i < numbers.length; i++) {
             int randomNumber = r.nextInt(10);
@@ -54,6 +54,10 @@ public class Arrays7 {
         //saber si es decreciente
         //es aleatorio
 
+    }
+
+    private Random getR() {
+        return new Random();
     }
 }
 
