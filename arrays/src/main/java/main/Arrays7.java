@@ -25,12 +25,12 @@ public class Arrays7 {
 
 
         //numero aleatorio
-        Random r= new Random();
+        Random r = new Random();
 
         for (int i = 0; i < numbers.length; i++) {
             int randomNumber = r.nextInt(10);
-            numbers[i]= randomNumber;
-            System.out.print(numbers[i]+" ");
+            numbers[i] = randomNumber;
+            System.out.print(numbers[i] + " ");
         }
 
         System.out.println();

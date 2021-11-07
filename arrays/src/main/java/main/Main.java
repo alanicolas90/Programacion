@@ -10,7 +10,7 @@ public class Main {
         int numeroEjercicio;
 
         do {
-            System.out.print("Dime el número del ejercicio y te lo muestra (pulsa 0 para salir)(ejercicios del 1-12): ");
+            System.out.print("Dime el número del ejercicio y te lo muestra (pulsa 0 para salir)(ejercicios del 1-16): ");
             numeroEjercicio = sc.nextInt();
             sc.nextLine();
 
@@ -53,31 +53,31 @@ public class Main {
                     break;
                 case 10:
                     Arrays10 ejercicio10=new Arrays10();
-                    ejercicio10.media(sc);
+                    ejercicio10.media();
                     break;
                 case 11:
                     Arrays11 ejercicio11=new Arrays11();
-                    ejercicio11.media(sc);
+                    ejercicio11.media();
                     break;
                 case 12:
                     Arrays12 ejercicio12=new Arrays12();
-                    ejercicio12.media(sc);
+                    ejercicio12.media();
                     break;
                 case 13:
                     Arrays13 ejercicio13=new Arrays13();
-                    ejercicio13.media(sc);
+                    ejercicio13.media();
                     break;
                 case 14:
                     Arrays14 ejercicio14=new Arrays14();
-                    ejercicio14.media(sc);
+                    ejercicio14.media();
                     break;
                 case 15:
                     Arrays15 ejercicio15=new Arrays15();
-                    ejercicio15.media(sc);
+                    ejercicio15.media();
                     break;
                 case 16:
                     Arrays16 ejercicio16=new Arrays16();
-                    ejercicio16.media(sc);
+                    ejercicio16.media();
                     break;
                 default:
                     System.out.println("There are only 16 exercises please type a number between 1-16.");

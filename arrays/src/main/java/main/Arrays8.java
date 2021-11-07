@@ -20,8 +20,8 @@ public class Arrays8 {
         int position=sc.nextInt();
 
         position=position-1;
-        for (int i = (numbers.length-2); i >= position; i--) {
-            numbers[i+1]=numbers[i];
+        for (int i = (numbers.length - 2); i >= position; i--) {
+            numbers[i + 1] = numbers[i];
         }
         numbers[position]=number;
 

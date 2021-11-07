@@ -9,11 +9,11 @@ public class Arrays2 {
         Random r = getR();
         for (int i = 0; i < numbers.length; i++) {
             int randomNumber = r.nextInt(10);
-            numbers[i]= randomNumber;
+            numbers[i] = randomNumber;
             System.out.println(randomNumber);
         }
-        for (int i = numbers.length-1; i!=-1; i--) {
-            System.out.print(numbers[i]+" ");
+        for (int i = numbers.length - 1; i != -1; i--) {
+            System.out.print(numbers[i] + " ");
         }
         System.out.println();
     }

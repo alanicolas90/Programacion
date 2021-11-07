@@ -1,8 +1,8 @@
 package main;
 
-import java.util.Scanner;
-
 public class Arrays13 {
-    public void media(Scanner sc){
+    public void media() {
+
+
     }
 }
