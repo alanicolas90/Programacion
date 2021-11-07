@@ -29,27 +29,27 @@ public class Main {
                     break;
                 case 4:
                     Arrays4 ejercicio4=new Arrays4();
-                    ejercicio4.media(sc);
+                    ejercicio4.media();
                     break;
                 case 5:
                     Arrays5 ejercicio5=new Arrays5();
-                    ejercicio5.media(sc);
+                    ejercicio5.media();
                     break;
                 case 6:
                     Arrays6 ejercicio6=new Arrays6();
-                    ejercicio6.media(sc);
+                    ejercicio6.media();
                     break;
                 case 7:
                     Arrays7 ejercicio7=new Arrays7();
-                    ejercicio7.media(sc);
+                    ejercicio7.media();
                     break;
                 case 8:
                     Arrays8 ejercicio8=new Arrays8();
-                    ejercicio8.media(sc);
+                    ejercicio8.media();
                     break;
                 case 9:
                     Arrays9 ejercicio9=new Arrays9();
-                    ejercicio9.media(sc);
+                    ejercicio9.media();
                     break;
                 case 10:
                     Arrays10 ejercicio10=new Arrays10();

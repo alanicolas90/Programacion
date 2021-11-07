@@ -1,13 +1,12 @@
 package main;
 
-import java.util.Arrays;
 import java.util.Random;
 
 public class Arrays1 {
     public void media() {
 
         int[] numbers = new int[5];
-        Random r = new Random();
+        Random r = getR();
         for (int i = 0; i < numbers.length; i++) {
             int randomNumber = r.nextInt(10);
             numbers[i]= randomNumber;
@@ -16,5 +15,9 @@ public class Arrays1 {
             System.out.print(numbers[i]+" ");
         }
         System.out.println();
+    }
+
+    private Random getR() {
+        return new Random();
     }
 }

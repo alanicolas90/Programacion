@@ -13,7 +13,7 @@ public class Arrays3 {
         boolean hayPositivos=false;
 
         int[] numbers = new int[5];
-        Random r = new Random();
+        Random r = getR();
         for (int i = 0; i < numbers.length; i++) {
             int randomNumber = r.nextInt(10);
             numbers[i]= randomNumber;
@@ -43,5 +43,9 @@ public class Arrays3 {
             System.out.println("No hay valores negativos");
         }
         System.out.println("The quantity of 0 is:" +counterZeros);
+    }
+
+    private Random getR() {
+        return new Random();
     }
 }

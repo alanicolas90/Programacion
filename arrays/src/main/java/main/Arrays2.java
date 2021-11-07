@@ -6,7 +6,7 @@ public class Arrays2 {
     public void media(){
 
         int[] numbers = new int[5];
-        Random r = new Random();
+        Random r = getR();
         for (int i = 0; i < numbers.length; i++) {
             int randomNumber = r.nextInt(10);
             numbers[i]= randomNumber;
@@ -16,5 +16,9 @@ public class Arrays2 {
             System.out.print(numbers[i]+" ");
         }
         System.out.println();
+    }
+
+    private Random getR() {
+        return new Random();
     }
 }
