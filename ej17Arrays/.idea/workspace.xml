@@ -4,13 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2fffe34-7384-478c-80f5-f21449f297ea" name="Changes" comment="Main hecho para seleccion de juegos y comienzo ejer17">
+    <list default="true" id="e2fffe34-7384-478c-80f5-f21449f297ea" name="Changes" comment="cositassssss">
+      <change afterPath="$PROJECT_DIR$/src/main/java/constantes/Constantes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/c/6c1e6bfa11e93e68a4f13675f6ed68d7628c6f18" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/BlackJack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/BlackJack.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/Ejercicio17.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Ejercicio17.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servicios/ServiciosCartas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servicios/ServiciosCartas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/SieteYMedia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/SieteYMedia.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/main/Ejercicio17.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/Ejercicio17.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/servicios/ServiciosCartas.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/servicios/ServiciosCartas.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,11 +74,16 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../BOOTSTRAP/gridexercise" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/gridexercise" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+  </component>
+  <component name="RecentsManager">
+    <key name="IntroduceConstantDialog.RECENTS_KEY">
+      <recent name="main.Ejercicio17" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -107,6 +116,8 @@
       <workItem from="1636361783015" duration="689000" />
       <workItem from="1636364187217" duration="62000" />
       <workItem from="1636457288586" duration="6591000" />
+      <workItem from="1636542824132" duration="749000" />
+      <workItem from="1636562783690" duration="3432000" />
     </task>
     <task id="LOCAL-00001" summary="creation ej17">
       <created>1636363583236</created>
@@ -122,7 +133,21 @@
       <option name="project" value="LOCAL" />
       <updated>1636537087825</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="cositassssss">
+      <created>1636544016214</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1636544016214</updated>
+    </task>
+    <task id="LOCAL-00004" summary="cositassssss">
+      <created>1636544027788</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1636544027788</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -157,6 +182,7 @@
     <MESSAGE value="organización de ej17, sieteymedia y blackjack&#10;Agregar marcas que no me he enterado" />
     <MESSAGE value="Agregar marcas que no me he enterado" />
     <MESSAGE value="Main hecho para seleccion de juegos y comienzo ejer17" />
-    <option name="LAST_COMMIT_MESSAGE" value="Main hecho para seleccion de juegos y comienzo ejer17" />
+    <MESSAGE value="cositassssss" />
+    <option name="LAST_COMMIT_MESSAGE" value="cositassssss" />
   </component>
 </project>
