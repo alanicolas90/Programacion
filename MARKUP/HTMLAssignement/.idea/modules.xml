@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/HTMLAssignement.iml" filepath="$PROJECT_DIR$/HTMLAssignement.iml" />
+      <module fileurl="file://$PROJECT_DIR$/siteroot/siteroot.iml" filepath="$PROJECT_DIR$/siteroot/siteroot.iml" />
+    </modules>
+  </component>
+</project>

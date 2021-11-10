@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario</title>
+</head>
+<body>
+<div style="text-align: center;"><h1>RELLENA EL FORMULARIO</h1></div>
+
+<form action="https://jkorpela.fi/cgi-bin/echo.cgi">
+    <fieldset>
+        <legend>Personal information</legend>
+        <label for="dni">DNI:</label><br>
+        <input type="text" id="dni" name="dni" pattern="[0-9]{8}[A-Z]{1}" placeholder="00000000Z" required><br><br>
+
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="name" maxlength="15"><br><br>
+
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="surname" maxlength="30"><br><br>
+
+        <label for="fechaNacimiento">Date of birth: </label><br>
+        <input id="fechaNacimiento" type="date" max="2021-09-29" min="1920/12/31" name="Date of birth">
+        <br><br>
+
+        <label for="nationality">Nationality:</label><br>
+        <select name="nationality" id="nationality">
+            <optgroup label="Europe">
+                <option value="Poland">Poland</option>
+                <option value="Spain">Spain</option>
+                <option value="England">England</option>
+            </optgroup>
+            <optgroup label="Asia">
+                <option value="China">China</option>
+                <option value="Vietnam">Vietnam</option>
+                <option value="Mongolia">Mongolia</option>
+            </optgroup>
+        </select><br><br>
+
+        <label>Sex:</label><br>
+        <input type="radio" id="male" value="Male" name="sex">
+        <label for="male">Male</label><br>
+
+        <input type="radio" id="female" value="Female" name="sex">
+        <label for="female">Female</label>
+    </fieldset>
+    <fieldset>
+        <legend>Login credentials</legend>
+        <label for="email">Email: </label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" maxlength="10" required>
+    </fieldset>
+    <fieldset>
+        <legend>Communication</legend>
+        <label for="comments">Other comments:</label><br>
+        <textarea id="comments" name="comments" rows="4" cols="50"></textarea><br><br>
+
+        <label for="notification">Do you wish to get information to your email?</label>
+        <input type="checkbox" id="notification" name="notification">
+
+
+    </fieldset>
+
+    <input type="submit" value="Submit now"/>
+    <input type="reset" value="Clear form"/>
+</form>
+
+
+</body>
+</html>
