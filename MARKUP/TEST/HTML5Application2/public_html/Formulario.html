@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+<head><h1> Personal Registration</h1>
+</head>
+<body>
+<form action="https://jkorpela.fi/cgi-bin/echo.cgi">
+    <table>
+        <tr>
+            <td>
+                <label for="DNI">Id card number</label>
+            </td>
+            <td>
+                <input type="text" id="DNI" value="" placeholder="0000000X">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="lname">Last name:</label>
+            </td>
+            <td>
+                <input type="text" value="" id="lname" placeholder="Apellido" maxlength="30">
+            </td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td>
+                <input type="text" placeholder="Nombre" maxlength="10">
+            </td>
+        </tr>
+        <tr>
+            <td>Date of birth</td>
+            <td>
+                <input type="date" id="start" name="date birth" value="2018-07-22" max="2021-01-01" min="1988-12-31">
+            </td>
+        </tr>
+        <tr>
+            <td>Nacionality:</td>
+            <td>
+                <select name="nationality" id="nationality">
+                    <option value="spain">Spain</option>
+                    <option value="poland">Poland</option>
+                    <option value="portugal">Portugal</option>
+                    <option value="argentina">Argentina</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Email Address:
+            </td>
+
+            <td>
+                <input type=”mail” placeholder="EmailAddress@gmail.com" name=”email”>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Password
+            </td>
+            <td>
+                <input type="password" placeholder="password">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Sex:
+            </td>
+        </tr>
+        <tr>
+            <td>
+
+                <input type="radio" id="sexoM" name="sexo" value="masculino">
+                <label for="sexoM">Male</label><br>
+                <input type="radio" id="sexoF" name="sexo" value="femenino">
+                <label for="sexoF">Female</label><br>
+
+            </td>
+
+        </tr>
+        <tr>
+            <td>Other comments:</td>
+            <td>
+                <textarea id="w3review" name="w3review" rows="4" cols="50"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Do you wish to recieve Email Adress?
+            </td>
+            <td>
+                <input type="checkbox" name="">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Group from data:
+            </td>
+            <td>
+                <input type="password" name="">
+            </td>
+        </tr>
+    </table>
+    <input type="reset" value="Clear form"/>
+    <input type="submit" value="Submit now"/>
+</form>
+</body>
+</html>

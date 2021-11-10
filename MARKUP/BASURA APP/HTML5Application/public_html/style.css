@@ -1,0 +1,170 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+@import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Saira+Extra+Condensed');
+}
+
+.container {
+    width: 100%;
+}
+
+.main {
+    background-color: blueviolet;
+    margin-left: 2%;
+    width: 78%;
+    text-align: center;
+    height: 400px;
+    float: left;
+}
+
+.menu {
+    background-color: darkseagreen;
+    width: 20%;
+    text-align: center;
+    height: 400px;
+    float: left;
+}
+
+.box1, .box2 {
+    background-color: lightblue;
+    width: 50%;
+    border: solid 2px;
+    text-align: center;
+    height: 300px;
+    float: left;
+}
+
+.box3 {
+    background-color: lightblue;
+    width: 48%;
+    margin: 1%;
+    text-align: center;
+    height: 300px;
+    float: left;
+    padding: 2%;
+}
+
+.box3_Menu {
+    display: inline;
+    background-color: greenyellow;
+    width: 20%;
+    float: left;
+
+}
+
+.box3_Menu_list {
+    list-style-type: none;
+}
+
+.box3_Menu ul a:hover {
+    background-color: #3646d4;
+    color: white;
+}
+
+.box3_Menu ul a:link {
+    text-decoration: none;
+}
+
+.option1, .option2, .option3, .option4 {
+    background-color: orange;
+    margin: 1%;
+    border-style: dotted;
+}
+
+.articles {
+    width: 80%;
+    float: left;
+}
+
+.box_article1 {
+    background-color: pink;
+    float: left;
+    width: 40%;
+    height: 200px;
+    padding: 1em;
+    margin-left: 4%;
+    font-family: 'Gloria Hallelujah', cursive;
+}
+
+.box_article2, .box_article3 {
+    background-color: pink;
+    float: left;
+    height: 93px;
+    width: 100%;
+    margin: 1%;
+    padding: 1%;
+    border: solid blueviolet 4px;
+    font-family: 'Gloria Hallelujah', cursive;
+}
+
+.box_article2 {
+    clear: both;
+}
+
+.box_article2_3 {
+    background-color: pink;
+    float: left;
+    margin-left: 2%;
+    width: 50%;
+
+}
+
+.content_article {
+    background-color: yellow;
+    margin: 2%;
+    font-family: 'Gloria Hallelujah', cursive;
+
+}
+
+.box4 {
+    background-color: lightblue;
+    width: 48%;
+    margin: 1%;
+    text-align: center;
+    height: 300px;
+    float: left;
+    padding: 2%;
+}
+
+.box4_Menu {
+    width: 100%;
+    background-color: greenyellow;
+    float: left;
+    margin: 1.5%;
+
+}
+
+.submenu1, .submenu2, .submenu3, .submenu4 {
+    display: inline;
+    margin: 4%;
+}
+
+.submenuOptions {
+    background-color: orange;
+    float: left;
+    margin: 1.5%;
+    border-style: dotted;
+    width: 22%;
+    font-family: 'Gloria Hallelujah', cursive;
+}
+
+.chapter {
+    float:left;
+    display: inline;
+    width: 22%;
+    margin: 1.5%;
+    font-family: 'Gloria Hallelujah', cursive;
+}
+
+.square {
+    float: left;
+    width: 22%;
+    height: 22%;
+    margin: 1.5%;
+}
+
+.image1, .image2, .image3, .image4 {
+    width: 100%;
+    float: left;
+}
