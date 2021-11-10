@@ -1,0 +1,135 @@
+Index: ../entrega 2 noviembre/videoclub_Esther/.idea/$PRODUCT_WORKSPACE_FILE$
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../entrega 2 noviembre/videoclub_Esther/.idea/$PRODUCT_WORKSPACE_FILE$ b/../entrega 2 noviembre/videoclub_Esther/.idea/$PRODUCT_WORKSPACE_FILE$
+new file mode 100644
+--- /dev/null	
++++ b/../entrega 2 noviembre/videoclub_Esther/.idea/$PRODUCT_WORKSPACE_FILE$	
+@@ -0,0 +1,30 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="masterDetails">
++    <states>
++      <state key="ProjectJDKs.UI">
++        <settings>
++          <last-edited>1.8</last-edited>
++          <splitter-proportions>
++            <option name="proportions">
++              <list>
++                <option value="0.2" />
++              </list>
++            </option>
++          </splitter-proportions>
++        </settings>
++      </state>
++      <state key="ScopeChooserConfigurable.UI">
++        <settings>
++          <splitter-proportions>
++            <option name="proportions">
++              <list>
++                <option value="0.2" />
++              </list>
++            </option>
++          </splitter-proportions>
++        </settings>
++      </state>
++    </states>
++  </component>
++</project>
+\ No newline at end of file
+Index: src/main/java/main/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package main;\r\n\r\npublic class Main {\r\n    public static void main(String[] args) {\r\n\r\n\r\n    }\r\n}\r\n
+===================================================================
+diff --git a/src/main/java/main/Main.java b/src/main/java/main/Main.java
+--- a/src/main/java/main/Main.java	
++++ b/src/main/java/main/Main.java	
+@@ -1,8 +1,40 @@
+ package main;
+ 
++import servicios.ServiciosCartas;
++
++import java.util.Scanner;
++
+ public class Main {
+     public static void main(String[] args) {
++        Scanner sc = new Scanner(System.in);
++
++        int tipoBaraja;
+ 
++        do {
++            System.out.println("Pulse 1 para el ejercicio 17." +
++                    "Pulse 1 para la baraja española (si seleccionas este jugaras a las 7 y media).\n" +
++                    "Pulse 2 para la baraja inglesa (si seleccionas este jugarás al blackjack).");
++            tipoBaraja = sc.nextInt();
+ 
++            if (tipoBaraja > 3 || tipoBaraja < 1) {
++                System.out.println("Valor introducido incorrecto. Inténtelo de nuevo.\n");
++            }
++        } while (tipoBaraja > 3 || tipoBaraja < 1);
++
++        //creamos la baraja por el ejercicio seleccionado.
++        switch (tipoBaraja){
++            case 1:
++                Ejercicio17 e17=new Ejercicio17();
++                e17.juegoEjercicio17();
++                break;
++            case 2:
++                SieteYMedia sym=new SieteYMedia();
++                sym.juegoSieteYMedia();
++                break;
++            case 3:
++                BlackJack bj=new BlackJack();
++                bj.juegoBlackJack();
++                break;
++        }
+     }
+ }
+Index: ../entrega 2 noviembre/videoclub_Esther/.idea/$PRODUCT_WORKSPACE_FILE$
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../entrega 2 noviembre/videoclub_Esther/.idea/$PRODUCT_WORKSPACE_FILE$ b/../entrega 2 noviembre/videoclub_Esther/.idea/$PRODUCT_WORKSPACE_FILE$
+new file mode 100644
+--- /dev/null	
++++ b/../entrega 2 noviembre/videoclub_Esther/.idea/$PRODUCT_WORKSPACE_FILE$	
+@@ -0,0 +1,30 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="masterDetails">
++    <states>
++      <state key="ProjectJDKs.UI">
++        <settings>
++          <last-edited>1.8</last-edited>
++          <splitter-proportions>
++            <option name="proportions">
++              <list>
++                <option value="0.2" />
++              </list>
++            </option>
++          </splitter-proportions>
++        </settings>
++      </state>
++      <state key="ScopeChooserConfigurable.UI">
++        <settings>
++          <splitter-proportions>
++            <option name="proportions">
++              <list>
++                <option value="0.2" />
++              </list>
++            </option>
++          </splitter-proportions>
++        </settings>
++      </state>
++    </states>
++  </component>
++</project>
+\ No newline at end of file
+diff --git a/../entrega b/2
+new file mode 100644
+diff --git a/../entrega b/2
+new file mode 100644
