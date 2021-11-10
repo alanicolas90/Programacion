@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2fffe34-7384-478c-80f5-f21449f297ea" name="Changes" comment="Agregar marcas que no me he enterado">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_10_11_2021_10_12__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_10_11_2021_10_12__Changes_.xml" afterDir="false" />
+    <list default="true" id="e2fffe34-7384-478c-80f5-f21449f297ea" name="Changes" comment="Main hecho para seleccion de juegos y comienzo ejer17">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/Ejercicio17.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Ejercicio17.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servicios/ServiciosCartas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servicios/ServiciosCartas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/Ejercicio17.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/Ejercicio17.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/servicios/ServiciosCartas.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/servicios/ServiciosCartas.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +115,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636363583236</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Main hecho para seleccion de juegos y comienzo ejer17">
+      <created>1636537087825</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1636537087825</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -147,6 +156,7 @@
     <MESSAGE value="creation ej17" />
     <MESSAGE value="organización de ej17, sieteymedia y blackjack&#10;Agregar marcas que no me he enterado" />
     <MESSAGE value="Agregar marcas que no me he enterado" />
-    <option name="LAST_COMMIT_MESSAGE" value="Agregar marcas que no me he enterado" />
+    <MESSAGE value="Main hecho para seleccion de juegos y comienzo ejer17" />
+    <option name="LAST_COMMIT_MESSAGE" value="Main hecho para seleccion de juegos y comienzo ejer17" />
   </component>
 </project>
