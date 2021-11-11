@@ -9,7 +9,8 @@ public class SieteYMedia {
         int[] cartas = new int[40];
         servicios.crearBarajaSpain(cartas);
         servicios.shuffleBaraja(cartas);
-        int numJugadores=4;
         //1 vs 1?? o cuantos jugadores?
+        System.out.println("Disculpe por las molestias, este juego está en mantenimiento ahora mismo.\n" +
+                "Pruebe otra opción, muchas gracias.");
     }
 }
