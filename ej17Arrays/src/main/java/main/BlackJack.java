@@ -61,11 +61,11 @@ public class BlackJack {
         for (int i = 0; i < jugadores; i++) {
             boolean seguirJugando = true;
             int puntosJugador = 0;
-            int cartasJugador = 2;
+            cartasRepartidas=2;
             System.out.println("Turno del jugador número " + (i + 1));
 
             //los puntos desde el principio.
-            for (int k = 0; k < cartasJugador; k++) {
+            for (int k = 0; k < cartasRepartidas; k++) {
                 if (cardsPlayers[i][k] >= 10) {
                     puntosJugador = puntosJugador + 10;
                 } else if (cardsPlayers[i][k] < 10) {
@@ -76,9 +76,9 @@ public class BlackJack {
             System.out.println(puntosJugador);
 
 
-            for (int j = 2; seguirJugando; j++, cartasJugador++) {
+            for (int j = 2; seguirJugando; j++, cartasRepartidas++) {
                 //imprime las cartas del jugador1
-                for (int k = 0; k < cartasJugador; k++) {
+                for (int k = 0; k < cartasRepartidas; k++) {
                     System.out.print(cardsPlayers[i][k] + " ");
                 }
                 System.out.println();
