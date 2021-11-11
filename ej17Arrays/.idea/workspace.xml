@@ -4,14 +4,63 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2fffe34-7384-478c-80f5-f21449f297ea" name="Changes" comment="ejercicio 17 finiquitao falta BJ y 7,5">
+    <list default="true" id="e2fffe34-7384-478c-80f5-f21449f297ea" name="Changes" comment="blackjack semihecho">
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/Bootrstrap exercise 3/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/Bootrstrap exercise 3/.idea/Bootrstrap exercise 3.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/Bootrstrap exercise 3/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/Bootrstrap exercise 3/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/Bootrstrap exercise 3/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/Bootrstrap exercise 3/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/Bootrstrap exercise 3/public_html/css/bootstrap-grid.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/Bootrstrap exercise 3/public_html/css/bootstrap-grid.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/Bootrstrap exercise 3/public_html/css/bootstrap-grid.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/Bootrstrap exercise 3/public_html/css/bootstrap-grid.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/Bootrstrap exercise 3/public_html/css/bootstrap-grid.rtl.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/Bootrstrap exercise 3/public_html/css/bootstrap-grid.rtl.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/Bootrstrap exercise 3/public_html/css/bootstrap-grid.rtl.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/Bootrstrap exercise 3/public_html/css/bootstrap-grid.rtl.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/Bootrstrap exercise 3/public_html/css/bootstrap-reboot.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/Bootrstrap exercise 3/public_html/css/bootstrap-reboot.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/Bootrstrap exercise 3/public_html/css/bootstrap-reboot.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/Bootrstrap exercise 3/public_html/css/bootstrap-reboot.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/Bootrstrap exercise 3/public_html/css/bootstrap-reboot.rtl.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/Bootrstrap exercise 3/public_html/css/bootstrap-reboot.rtl.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/Bootrstrap exercise 3/public_html/css/bootstrap-reboot.rtl.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/Bootrstrap exercise 3/public_html/css/bootstrap-reboot.rtl.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/Bootrstrap exercise 3/public_html/css/bootstrap-utilities.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/Bootrstrap exercise 3/public_html/css/bootstrap-utilities.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/Bootrstrap exercise 3/public_html/css/bootstrap-utilities.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/Bootrstrap exercise 3/public_html/css/bootstrap-utilities.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/Bootrstrap exercise 3/public_html/css/bootstrap-utilities.rtl.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/Bootrstrap exercise 3/public_html/css/bootstrap-utilities.rtl.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/Bootrstrap exercise 3/public_html/css/bootstrap-utilities.rtl.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/Bootrstrap exercise 3/public_html/css/bootstrap-utilities.rtl.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/Bootrstrap exercise 3/public_html/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/Bootrstrap exercise 3/public_html/css/bootstrap.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/Bootrstrap exercise 3/public_html/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/Bootrstrap exercise 3/public_html/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/Bootrstrap exercise 3/public_html/css/bootstrap.rtl.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/Bootrstrap exercise 3/public_html/css/bootstrap.rtl.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/Bootrstrap exercise 3/public_html/css/bootstrap.rtl.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/Bootrstrap exercise 3/public_html/css/bootstrap.rtl.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/Bootrstrap exercise 3/public_html/js/bootstrap.bundle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/Bootrstrap exercise 3/public_html/js/bootstrap.bundle.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/Bootrstrap exercise 3/public_html/js/bootstrap.bundle.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/Bootrstrap exercise 3/public_html/js/bootstrap.bundle.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/Bootrstrap exercise 3/public_html/js/bootstrap.esm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/Bootrstrap exercise 3/public_html/js/bootstrap.esm.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/Bootrstrap exercise 3/public_html/js/bootstrap.esm.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/Bootrstrap exercise 3/public_html/js/bootstrap.esm.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/Bootrstrap exercise 3/public_html/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/Bootrstrap exercise 3/public_html/js/bootstrap.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/Bootrstrap exercise 3/public_html/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/Bootrstrap exercise 3/public_html/js/bootstrap.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/f/9fe84ebb15faf917b7def6236dba604453cc61e0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/Bootrstrap exercise 3/public_html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/Bootrstrap exercise 3/public_html/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/gridexercise/HTML5Application1/nbproject/private/private.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/gridexercise/HTML5Application1/nbproject/private/private.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/BlackJack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/BlackJack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servicios/ServiciosCartas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servicios/ServiciosCartas.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/main/BlackJack.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/BlackJack.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/SieteYMedia.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/SieteYMedia.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/servicios/ServiciosCartas.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/servicios/ServiciosCartas.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,9 +118,10 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/gridexercise" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/Bootrstrap exercise 3" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -116,7 +166,8 @@
       <workItem from="1636542824132" duration="749000" />
       <workItem from="1636562783690" duration="3737000" />
       <workItem from="1636616644400" duration="8797000" />
-      <workItem from="1636630782371" duration="3248000" />
+      <workItem from="1636630782371" duration="3437000" />
+      <workItem from="1636634368687" duration="627000" />
     </task>
     <task id="LOCAL-00001" summary="creation ej17">
       <created>1636363583236</created>
@@ -160,7 +211,21 @@
       <option name="project" value="LOCAL" />
       <updated>1636566475141</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="blackjack semihecho">
+      <created>1636634126306</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1636634126306</updated>
+    </task>
+    <task id="LOCAL-00008" summary="blackjack semihecho">
+      <created>1636634239551</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1636634239551</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -197,6 +262,7 @@
     <MESSAGE value="Main hecho para seleccion de juegos y comienzo ejer17" />
     <MESSAGE value="cositassssss" />
     <MESSAGE value="ejercicio 17 finiquitao falta BJ y 7,5" />
-    <option name="LAST_COMMIT_MESSAGE" value="ejercicio 17 finiquitao falta BJ y 7,5" />
+    <MESSAGE value="blackjack semihecho" />
+    <option name="LAST_COMMIT_MESSAGE" value="blackjack semihecho" />
   </component>
 </project>
