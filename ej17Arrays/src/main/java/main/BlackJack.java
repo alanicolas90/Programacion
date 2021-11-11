@@ -1,9 +1,7 @@
 package main;
 
-import jdk.swing.interop.SwingInterOpUtils;
 import servicios.ServiciosCartas;
 
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 import static constantes.Constantes.SEPARATION;
@@ -17,8 +15,8 @@ public class BlackJack {
         int cartasRepartidasCrupier = 0;
         int positionCardBaraja = 0;
         int cartasRepartidas = 0;
-        int puntosCrupier = 0;
-        boolean seguirJugando = true;
+        int puntosCrupier;
+        boolean seguirJugando;
 
         int[] cartas = new int[52];
         int[] crupier = new int[10];
