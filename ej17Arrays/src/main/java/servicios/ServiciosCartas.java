@@ -17,20 +17,24 @@ public class ServiciosCartas {
 
     public void crearBarajaEnglish(int[] cartas) {
         for (int i = 0; i < 52; i++) {
-            cartas[i] = (i % 12) + 1;
+            cartas[i] = (i % 13) + 1;
         }
     }
 
     public void shuffleBaraja(int[] cartas) {
-        Random r = new Random();
-        for (int i = 0; i < 1000; i++) {
+        Random r = getR();
+        for (int i = 0; i < 10000; i++) {
             int randomPosition1 = r.nextInt(cartas.length);
             int randomPosition2 = r.nextInt(cartas.length);
             int saveCard = cartas[randomPosition1];
 
             cartas[randomPosition1] = cartas[randomPosition2];
             cartas[randomPosition2] = saveCard;
-
         }
+    }
+
+
+    private Random getR() {
+        return new Random();
     }
 }

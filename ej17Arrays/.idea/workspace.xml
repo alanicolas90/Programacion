@@ -4,17 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2fffe34-7384-478c-80f5-f21449f297ea" name="Changes" comment="cositassssss">
-      <change afterPath="$PROJECT_DIR$/src/main/java/constantes/Constantes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/c/6c1e6bfa11e93e68a4f13675f6ed68d7628c6f18" beforeDir="false" />
+    <list default="true" id="e2fffe34-7384-478c-80f5-f21449f297ea" name="Changes" comment="ejercicio 17 finiquitao falta BJ y 7,5">
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/BlackJack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/BlackJack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/Ejercicio17.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Ejercicio17.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/SieteYMedia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/SieteYMedia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/Ejercicio17.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/Ejercicio17.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servicios/ServiciosCartas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servicios/ServiciosCartas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/BlackJack.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/BlackJack.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/SieteYMedia.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/SieteYMedia.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/servicios/ServiciosCartas.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/servicios/ServiciosCartas.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +114,9 @@
       <workItem from="1636364187217" duration="62000" />
       <workItem from="1636457288586" duration="6591000" />
       <workItem from="1636542824132" duration="749000" />
-      <workItem from="1636562783690" duration="3432000" />
+      <workItem from="1636562783690" duration="3737000" />
+      <workItem from="1636616644400" duration="8797000" />
+      <workItem from="1636630782371" duration="3248000" />
     </task>
     <task id="LOCAL-00001" summary="creation ej17">
       <created>1636363583236</created>
@@ -147,7 +146,21 @@
       <option name="project" value="LOCAL" />
       <updated>1636544027788</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="ejercicio 17 finiquitao falta BJ y 7,5">
+      <created>1636566454311</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1636566454311</updated>
+    </task>
+    <task id="LOCAL-00006" summary="ejercicio 17 finiquitao falta BJ y 7,5">
+      <created>1636566475141</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1636566475141</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -183,6 +196,7 @@
     <MESSAGE value="Agregar marcas que no me he enterado" />
     <MESSAGE value="Main hecho para seleccion de juegos y comienzo ejer17" />
     <MESSAGE value="cositassssss" />
-    <option name="LAST_COMMIT_MESSAGE" value="cositassssss" />
+    <MESSAGE value="ejercicio 17 finiquitao falta BJ y 7,5" />
+    <option name="LAST_COMMIT_MESSAGE" value="ejercicio 17 finiquitao falta BJ y 7,5" />
   </component>
 </project>
