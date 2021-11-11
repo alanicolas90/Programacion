@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2fffe34-7384-478c-80f5-f21449f297ea" name="Changes" comment="blackjack hechisimo y funcional">
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/BlackJack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/BlackJack.java" afterDir="false" />
-    </list>
+    <list default="true" id="e2fffe34-7384-478c-80f5-f21449f297ea" name="Changes" comment="blackjack hechisimo y sin errores(creo)" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -114,7 +112,7 @@
       <workItem from="1636630782371" duration="3437000" />
       <workItem from="1636634368687" duration="693000" />
       <workItem from="1636654195012" duration="1451000" />
-      <workItem from="1636658984176" duration="6374000" />
+      <workItem from="1636658984176" duration="6723000" />
     </task>
     <task id="LOCAL-00001" summary="creation ej17">
       <created>1636363583236</created>
@@ -186,7 +184,21 @@
       <option name="project" value="LOCAL" />
       <updated>1636665277162</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="blackjack hechisimo y sin errores(creo)">
+      <created>1636665478935</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1636665478935</updated>
+    </task>
+    <task id="LOCAL-00012" summary="blackjack hechisimo y sin errores(creo)">
+      <created>1636665741314</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1636665741314</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -225,6 +237,7 @@
     <MESSAGE value="ejercicio 17 finiquitao falta BJ y 7,5" />
     <MESSAGE value="blackjack semihecho" />
     <MESSAGE value="blackjack hechisimo y funcional" />
-    <option name="LAST_COMMIT_MESSAGE" value="blackjack hechisimo y funcional" />
+    <MESSAGE value="blackjack hechisimo y sin errores(creo)" />
+    <option name="LAST_COMMIT_MESSAGE" value="blackjack hechisimo y sin errores(creo)" />
   </component>
 </project>
