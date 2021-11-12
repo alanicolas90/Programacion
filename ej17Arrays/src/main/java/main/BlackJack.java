@@ -63,6 +63,8 @@ public class BlackJack {
 
         System.out.println("\n-------------------------------------------------------------------------\n");
 
+        int[] puntosJugadores = new int[jugadores];
+
         //aquí cada jugador juega
         for (int i = 0; i < jugadores; i++) {
             seguirJugando = true;
@@ -84,7 +86,7 @@ public class BlackJack {
             System.out.println(puntosJugador);
 
 
-            for (int j = 2; seguirJugando; j++, cartasRepartidas++) {
+            for (int j = 2; seguirJugando; j++) {
                 //imprime las cartas del jugador1
                 for (int k = 0; k < cartasRepartidas; k++) {
                     System.out.print(cardsPlayers[i][k] + " ");
@@ -101,7 +103,7 @@ public class BlackJack {
                         switch (optionGame) {
                             case 1:
                                 cardsPlayers[i][j] = cartas[positionCardBaraja];
-                                System.out.println(cardsPlayers[i][j]);
+                                System.out.println("la carta es: " + cardsPlayers[i][j]);
 
                                 if (cardsPlayers[i][j] >= 10) {
                                     puntosJugador = puntosJugador + 10;
@@ -110,10 +112,11 @@ public class BlackJack {
                                 } else if (cardsPlayers[i][j] < 10) {
                                     puntosJugador = puntosJugador + cardsPlayers[i][j];
                                 }
+                                cartasRepartidas++;
                                 positionCardBaraja++;
                                 break;
                             case 2:
-                                cardsPlayers[i][9] = puntosJugador;
+                                puntosJugadores[i] = puntosJugador;
                                 System.out.println("Su puntuación final es: " + puntosJugador);
                                 seguirJugando = false;
                                 break;
@@ -124,7 +127,7 @@ public class BlackJack {
                     } while (optionGame < 0 || optionGame > 4);
                 }
 
-                cardsPlayers[i][9] = puntosJugador;
+                puntosJugadores[i] = puntosJugador;
 
                 if (puntosJugador == 21) {
                     System.out.println("Felicidades usted tiene 21 puntos(Blackjack)!!");
@@ -139,12 +142,11 @@ public class BlackJack {
                     }
                     if (!seguirJugando) {
                         System.out.println("Lo sentimos mucho,has perdido.\n" +
-                                "Te has pasado con los puntos. Siendo estos: " + cardsPlayers[i][9]);
+                                "Te has pasado con los puntos. Siendo estos: " + puntosJugadores[i]);
                     }
                 }
             }
         }
-
 
         //Ahora es turno de CRUPIER
         do {
@@ -172,11 +174,12 @@ public class BlackJack {
             //Normas crupier, siempre echar cartas cuando los puntos son 16 o menos y si es 17 o más no echar más.
             if (puntosCrupier <= 16) {
                 System.out.println("Crupier decide pedir otra carta.");
-                crupier[cartasRepartidasCrupier]=cartas[cartasRepartidas];
+                crupier[cartasRepartidasCrupier] = cartas[cartasRepartidas];
                 System.out.println(cartas[cartasRepartidas]);
                 cartasRepartidasCrupier++;
                 cartasRepartidas++;
             } else {
+                //Comprobamos de que no haya un 1 (porque vale 11), si tiene un 1 que cambie de valor a 1.
                 seguirJugando = false;
                 for (int i = 0; i < cartasRepartidas && !seguirJugando; i++) {
                     if (crupier[i] == 1) {
@@ -185,27 +188,31 @@ public class BlackJack {
                     }
                 }
             }
-            if(puntosCrupier>21){
-                puntosCrupier=0;
+            // En el caso que el crupier se pase de 21 entonces ganan todos los que hayan apostado
+            if (puntosCrupier > 21) {
+                System.out.println("La puntuación del crupier es superior a 21, por lo que los puntos del crupier es 0.");
+                puntosCrupier = 0;
             }
         } while (seguirJugando);
+
         System.out.println();
         System.out.println("Adelante los jugadores que se hayan pasado de 21, automáticamente han perdido.");
         System.out.println("Por lo que automáticamente gana la banca.");
+        System.out.println("\n-------------------------------------------------------------------------------------\n");
         System.out.println("Recuento:");
 
         //Puntos de cada jugador
         for (int i = 0; i < jugadores; i++) {
-            if(cardsPlayers[i][9]<=21){
+            if (puntosJugadores[i] <= 21) {
                 System.out.print("Jugador número " + (i + 1) + ": ");
-                System.out.println(cardsPlayers[i][9] + " puntos");
+                System.out.println(puntosJugadores[i] + " puntos");
 
-                System.out.println("Crupier tiene: "+puntosCrupier+" puntos");
+                System.out.println("Crupier tiene: " + puntosCrupier + " puntos");
                 //en el blackjack si empatas contra la banca, la banca gana
-                if(puntosCrupier>=cardsPlayers[i][9]){
+                if (puntosCrupier >= puntosJugadores[i]) {
                     System.out.println("Ha ganado la banca");
-                }else{
-                    System.out.println("Felicidades al jugador "+(i+1)+" por ganar!!");
+                } else {
+                    System.out.println("Felicidades al jugador " + (i + 1) + " por ganar!!");
                 }
             }
         }
