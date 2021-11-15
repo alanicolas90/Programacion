@@ -1,6 +1,5 @@
 package main;
 
-import java.util.Arrays;
 
 public class Arrays14 {
     public void media() {
@@ -13,7 +12,7 @@ public class Arrays14 {
         for (int i = 0; i < numbers1.length; i++) {
             numbers1[i] = contador + contador;
             contador++;
-            System.out.println(numbers1[i]);
+            System.out.print(numbers1[i]+" ");
         }
         for (int i = 0; i < numbers2.length; i++) {
             numbers2[i] = contador + 3;

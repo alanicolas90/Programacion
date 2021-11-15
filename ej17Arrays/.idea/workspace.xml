@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2fffe34-7384-478c-80f5-f21449f297ea" name="Changes" comment="actualizar">
+    <list default="true" id="e2fffe34-7384-478c-80f5-f21449f297ea" name="Changes" comment="BJ arreglao detallitos">
+      <change afterPath="$PROJECT_DIR$/../examensorpresa/src/main/java/main/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../examensorpresa/src/main/java/main/Utilities.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/BlackJack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/BlackJack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/SieteYMedia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/SieteYMedia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/BlackJack.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/BlackJack.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/SieteYMedia.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/SieteYMedia.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +71,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/Bootrstrap exercise 3" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -119,7 +121,9 @@
       <workItem from="1636654195012" duration="1451000" />
       <workItem from="1636658984176" duration="6795000" />
       <workItem from="1636665878268" duration="64000" />
-      <workItem from="1636702727681" duration="3519000" />
+      <workItem from="1636702727681" duration="3622000" />
+      <workItem from="1636961540449" duration="29000" />
+      <workItem from="1636961915972" duration="362000" />
     </task>
     <task id="LOCAL-00001" summary="creation ej17">
       <created>1636363583236</created>
@@ -219,7 +223,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636665908191</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="BJ arreglao detallitos">
+      <created>1636706472245</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1636706472245</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -260,6 +271,7 @@
     <MESSAGE value="blackjack hechisimo y funcional" />
     <MESSAGE value="blackjack hechisimo y sin errores(creo)" />
     <MESSAGE value="actualizar" />
-    <option name="LAST_COMMIT_MESSAGE" value="actualizar" />
+    <MESSAGE value="BJ arreglao detallitos" />
+    <option name="LAST_COMMIT_MESSAGE" value="BJ arreglao detallitos" />
   </component>
 </project>
