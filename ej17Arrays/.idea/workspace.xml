@@ -5,12 +5,58 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e2fffe34-7384-478c-80f5-f21449f297ea" name="Changes" comment="BJ arreglao detallitos">
-      <change afterPath="$PROJECT_DIR$/../examensorpresa/src/main/java/main/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../examensorpresa/src/main/java/main/Utilities.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/BOOTSTRAPCOMPULSORY/public_html/css/bootstrap-grid.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/BOOTSTRAPCOMPULSORY/public_html/css/bootstrap-grid.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/BOOTSTRAPCOMPULSORY/public_html/css/bootstrap-grid.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/BOOTSTRAPCOMPULSORY/public_html/css/bootstrap-grid.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/BOOTSTRAPCOMPULSORY/public_html/css/bootstrap-grid.rtl.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/BOOTSTRAPCOMPULSORY/public_html/css/bootstrap-grid.rtl.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/BOOTSTRAPCOMPULSORY/public_html/css/bootstrap-grid.rtl.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/BOOTSTRAPCOMPULSORY/public_html/css/bootstrap-grid.rtl.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/BOOTSTRAPCOMPULSORY/public_html/css/bootstrap-reboot.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/BOOTSTRAPCOMPULSORY/public_html/css/bootstrap-reboot.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/BOOTSTRAPCOMPULSORY/public_html/css/bootstrap-reboot.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/BOOTSTRAPCOMPULSORY/public_html/css/bootstrap-reboot.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/BOOTSTRAPCOMPULSORY/public_html/css/bootstrap-reboot.rtl.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/BOOTSTRAPCOMPULSORY/public_html/css/bootstrap-reboot.rtl.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/BOOTSTRAPCOMPULSORY/public_html/css/bootstrap-reboot.rtl.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/BOOTSTRAPCOMPULSORY/public_html/css/bootstrap-reboot.rtl.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/BOOTSTRAPCOMPULSORY/public_html/css/bootstrap-utilities.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/BOOTSTRAPCOMPULSORY/public_html/css/bootstrap-utilities.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/BOOTSTRAPCOMPULSORY/public_html/css/bootstrap-utilities.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/BOOTSTRAPCOMPULSORY/public_html/css/bootstrap-utilities.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/BOOTSTRAPCOMPULSORY/public_html/css/bootstrap-utilities.rtl.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/BOOTSTRAPCOMPULSORY/public_html/css/bootstrap-utilities.rtl.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/BOOTSTRAPCOMPULSORY/public_html/css/bootstrap-utilities.rtl.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/BOOTSTRAPCOMPULSORY/public_html/css/bootstrap-utilities.rtl.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/BOOTSTRAPCOMPULSORY/public_html/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/BOOTSTRAPCOMPULSORY/public_html/css/bootstrap.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/BOOTSTRAPCOMPULSORY/public_html/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/BOOTSTRAPCOMPULSORY/public_html/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/BOOTSTRAPCOMPULSORY/public_html/css/bootstrap.rtl.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/BOOTSTRAPCOMPULSORY/public_html/css/bootstrap.rtl.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/BOOTSTRAPCOMPULSORY/public_html/css/bootstrap.rtl.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/BOOTSTRAPCOMPULSORY/public_html/css/bootstrap.rtl.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/BOOTSTRAPCOMPULSORY/public_html/js/bootstrap.bundle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/BOOTSTRAPCOMPULSORY/public_html/js/bootstrap.bundle.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/BOOTSTRAPCOMPULSORY/public_html/js/bootstrap.bundle.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/BOOTSTRAPCOMPULSORY/public_html/js/bootstrap.bundle.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/BOOTSTRAPCOMPULSORY/public_html/js/bootstrap.esm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/BOOTSTRAPCOMPULSORY/public_html/js/bootstrap.esm.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/BOOTSTRAPCOMPULSORY/public_html/js/bootstrap.esm.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/BOOTSTRAPCOMPULSORY/public_html/js/bootstrap.esm.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/BOOTSTRAPCOMPULSORY/public_html/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/BOOTSTRAPCOMPULSORY/public_html/js/bootstrap.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/BOOTSTRAPCOMPULSORY/public_html/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/BOOTSTRAPCOMPULSORY/public_html/js/bootstrap.min.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ahorcado/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Ahorcado/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/f/7f08be4e9c62f2e5f8f02242af89b918cb9a135f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/b/9b719769abbcbce75823eba94267ca6dc391b73f" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/main/BlackJack.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/BlackJack.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/SieteYMedia.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/SieteYMedia.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../examensorpresa2/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/../examensorpresa2/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +117,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../MARKUP/BOOTSTRAP/BOOTSTRAPCOMPULSORY" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -124,6 +170,8 @@
       <workItem from="1636702727681" duration="3622000" />
       <workItem from="1636961540449" duration="29000" />
       <workItem from="1636961915972" duration="362000" />
+      <workItem from="1636980213713" duration="683000" />
+      <workItem from="1636983358501" duration="35000" />
     </task>
     <task id="LOCAL-00001" summary="creation ej17">
       <created>1636363583236</created>
