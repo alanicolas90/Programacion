@@ -1,0 +1,16 @@
+body {
+    background-color: powderblue;
+}
+h1 {
+    color: #0000ff;
+}
+p {
+    color: red;
+}
+input, select, textarea{
+    background-color:pink;
+    color: black;
+}
+label{
+    color: #0000ff;
+}

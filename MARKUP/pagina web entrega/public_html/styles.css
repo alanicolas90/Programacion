@@ -1,0 +1,147 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+#header{
+    background: linear-gradient(to bottom, #7fa246, #466216);
+}
+h1, h4{
+    color: white;
+    margin-bottom: 5px;
+}
+#menu{
+    margin-top: 8px;
+    background-color: #567e16;
+    width: 100%;
+    float: left;
+}
+#menu li{
+    list-style-type: none;
+    float: left;
+}
+#menu li a{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 9px;
+    text-decoration: none;
+}
+#menu li a:hover{
+    background-color: #42620b;
+}
+h3{
+    color: #5c831d;
+}
+#box1{
+    width: 75%;
+    padding: 1.5%;
+    float: left;
+    text-align: justify;
+}
+#box1 hr{
+    border: solid #5c831d 1px;
+}
+#box2{
+    width:22%;
+    padding: 1.5%;
+    float: left;
+}
+.smallbox1{
+    height: 28px;
+    width:100%;
+    background-color: #5c831d; opacity: 25%;
+
+}
+#smallbox2{
+    width: 80%;
+    margin: 8%;
+}
+#smallbox2 ul{
+    list-style-type: none;
+    color: #5c831d;
+}
+#smallbox2 a{
+    text-decoration: none;
+    color: #5c831d;
+}
+#smallbox2 a:hover{
+    color:red;
+}
+#box3,#box4,#box5{
+    width: 70%;
+    margin-left: 4%;
+    float: left;
+}
+#images_box{
+    height: 100px;
+    width: 15%;
+    float: right;
+
+}
+.imag img{
+    height: auto;
+    width:100%;
+}
+.imag{
+    margin: 1%;
+    width:30%;
+    height: auto;
+    float: left;
+    object-fit: fill;
+}
+.underbox{
+    width: 80%;
+    margin: 2%;
+    color: #6c8808;
+}
+.bold{
+    font-weight: 700;
+}
+.underbox ul{
+    list-style-type: none;
+    
+}
+.underbox ul li:before{
+    content: '';
+    display: inline-block;
+    height: 12px;
+    width: 12px;
+    background-size: 12px;
+    background-image: url(images/tickverde.jpg);
+    background-repeat: no-repeat;
+    margin-right: 5px;
+}
+.underbox hr{
+    border: solid #7dcf7d 1px;
+}
+#images_down{
+    margin-left: 4%;
+    margin-bottom: 50px;
+    height: auto;
+    width: 100%;
+    float: left;
+}
+.image1{
+    margin-right: -30px;
+    height: auto;
+    float: left;
+    object-fit: fill;
+
+}
+.image2{
+    margin-top: 30px;
+    height: auto;
+    margin-left: 1%;
+    float: left;
+    object-fit: fill;
+}
+#images_down img{
+    width:80%;
+    margin-right: -100px;
+}
+
+
+
+
+
