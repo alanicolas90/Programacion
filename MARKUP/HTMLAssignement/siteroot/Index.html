@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>INDEX</title>
+</head>
+<link rel="stylesheet" href="CSS/css.css">
+<body>
+
+<table class="default" border="1">
+    <tr>
+        <th colspan="4">Library</th>
+    </tr>
+    <tr>
+        <th colspan="3">CATALOG</th>
+        <th>APPLICATION FORM</th>
+    </tr>
+    <tr>
+        <td rowspan="2">BOOKS</td>
+        <td>Novels:
+            <ul>
+                <li>Science-fiction</li>
+                <li>Fantasy</li>
+            </ul>
+        </td>
+        <td rowspan="2">
+            <a href="html/libros.html">
+            <img src="Images/libros.PNG" height="230" width="175"/>
+            </a>
+        </td>
+        <td rowspan="4">
+            <form action="https://jkorpela.fi/cgi-bin/echo.cgi">
+                <fieldset>
+                    <legend>Credentials</legend>
+                    <label for="User">User:</label><br>
+                    <input type="text" id="User" name="username"><br>
+
+                    <label for="password">Password:</label><br>
+                    <input type="password" id="password" name="password" required><br><br>
+                </fieldset>
+                <fieldset>
+                    <legend>Personal information</legend>
+                    <label for="nombre">Name:</label><br>
+                    <input type="text" id="nombre" placeholder="John Smith" name="name"><br>
+
+                    <label for="correo">E-mail:</label><br>
+                    <input type="email" id="correo" placeholder="Doe@gmail.com" name="email">
+                    <br>
+                    <label for="nacionality">Nacionality:</label><br>
+                    <select id="nacionality" name="nacionality">
+                        <option value="spain" selected>Spanish</option>
+                        <option value="poland">Polish</option>
+                        <option value="germany">German</option>
+                    </select><br><br><br>
+
+                    <label for="comments">Comments:</label><br>
+                    <textarea id="comments" name="comments" cols="20" rows="8"></textarea>
+                    <br>
+                    <input type="reset" value="Clear"/>
+                    <input type="submit" value="Submit"/>
+                </fieldset>
+            </form>
+        </td>
+
+    </tr>
+    <tr>
+        <td>Tales:
+            <ul>
+                <li>Fables</li>
+                <li>Fairy tales</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="2">FILMS</td>
+        <td>Thrillers:
+            <ul>
+                <li>Psychological Thriller</li>
+                <li>Crime Thriller</li>
+            </ul>
+        </td>
+        <td rowspan="2"><img src="Images/pelicula.PNG" height="230" width="175"/></td>
+    </tr>
+    <tr>
+        <td>Others:
+            <ul>
+                <li>Western
+                    <ol>
+                        <li>American western</li>
+                        <li>European western</li>
+                    </ol>
+                </li>
+                <li>Comedies</li>
+            </ul>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

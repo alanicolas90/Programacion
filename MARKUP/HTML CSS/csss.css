@@ -1,0 +1,48 @@
+th {
+    background-color: #04AA6D;
+    color: white;
+}
+tr:nth-child(even) {background-color: #f2f2f2;}
+
+ul{
+    list-style-type: square;
+}
+h1{
+    text-align: center;
+}
+*{
+    background-color: #1c1a1a;
+    color:white;
+}
+a:link {
+    color: #168f31;
+}
+a:visited {
+    color: green;
+}
+a:hover {
+    color: #cc0e14;
+}
+a:active {
+    color: blue;
+}
+#Why, #What, #Sintax, #Tables{
+    border: 2px solid red;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+#Why, #Sintax{
+    padding-bottom:40px;
+}
+#imagen{
+    height: 153px ;
+    width: 330px;
+}
+#nav{
+    background-color: yellow;
+    list-style-type: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
