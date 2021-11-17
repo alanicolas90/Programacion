@@ -102,3 +102,5 @@ K
 gulpfile.js,e\e\ee9d2cf188170ffae6c24450b921d4dd26b8dfaf
 E
 nbproject/project.xml,8\0\80da317e63b4bda3df77cdf6f56dad6f1e658f84
+F
+public_html/index.html,1\5\15c0e0b5c357b213c5d6acadd3b119a4da5c10b0
