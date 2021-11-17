@@ -1,14 +1,0 @@
-
-h
-java:S3776"RRefactor this method to reduce its Cognitive Complexity from 28 to the 15 allowed.(Çµí‘
-U
-java:S1854"?Remove this useless assignment to local variable "encriptado1".(¿Ñúå
-F
-java:S1481"0Remove this unused "encriptado1" local variable.(¿Ñúå
-N	java:S106"9Replace this use of System.out or System.err by a logger.(ş¶Ô­
-S	java:S106"9Replace this use of System.out or System.err by a logger.(ş´ÿÿÿÿÿ
-N	java:S106'"9Replace this use of System.out or System.err by a logger.(ÜÑ
-S	java:S106("9Replace this use of System.out or System.err by a logger.(Ö”¯¬ûÿÿÿÿ
-N	java:S106)"9Replace this use of System.out or System.err by a logger.(–‡Î
-N	java:S1069"9Replace this use of System.out or System.err by a logger.(ş¶Ô­
-N	java:S106G"9Replace this use of System.out or System.err by a logger.(ş¶Ô­
