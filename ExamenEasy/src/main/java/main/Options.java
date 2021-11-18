@@ -80,7 +80,9 @@ public class Options {
 
         double solution = numbers[0];
         System.out.print(numbers[0]);
-        for (int i = 0; i < operations.length; i++) {
+        boolean posible = true;
+
+        for (int i = 0; i < operations.length && posible; i++) {
 
             switch (operations[i]) {
                 case 1:
@@ -97,13 +99,19 @@ public class Options {
                     break;
                 case 4:
                     System.out.print(" / " + numbers[i + 1]);
-                    solution = solution / numbers[i + 1];
+                    if (numbers[i + 1] != 0)
+                        solution = solution / numbers[i + 1];
+                    else
+                        posible= false;
                     break;
                 default:
                     break;
             }
         }
         System.out.println();
-        System.out.println(solution);
+        if (posible)
+            System.out.println(solution);
+        else
+            System.out.println("Lo siento no se puede hacer la operación.");
     }
 }
