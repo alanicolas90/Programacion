@@ -14,15 +14,18 @@ public class Main {
                         "1) Option1 exercises easy\n" +
                         "2) Option2 exercises easy\n" +
                         "3) Sith exercise 1\n" +
-                        "4) Sith exercise 2");
+                        "4) Sith exercise 2\n" +
+                        "5) Jedi exercise 1\n" +
+                        "6) Jedi exercise 2");
                 option = sc.nextInt();
-                if (option < 1 || option > 2)
+                if (option < 1 || option > 6)
                     System.out.println("We are sorry, the number you typed is invalid");
-            } while (option < 0 || option > 2);
+            } while (option < 0 || option > 6);
 
 
             Options o = new Options();
-            Sith sith= new Sith();
+            Sith sith = new Sith();
+            Jedi jedi= new Jedi();
             switch (option) {
                 case 1:
                     o.option1();
@@ -36,6 +39,13 @@ public class Main {
                 case 4:
                     sith.exercise2();
                     break;
+                case 5:
+                    jedi.exercise1();
+                    break;
+                case 6:
+                    jedi.exercise2();
+                    break;
+
 
                 default:
                     System.out.println("Adiós, hasta la próxima.");

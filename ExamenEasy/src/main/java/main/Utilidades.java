@@ -22,7 +22,7 @@ public class Utilidades {
         for (int i = 0; i < numbers.length; i++) {
             System.out.print(numbers[i]);
             if (i < numbers.length - 1)
-                System.out.print("-");
+                System.out.print(" ");
         }
         System.out.print(" }");
         System.out.println();
@@ -46,16 +46,36 @@ public class Utilidades {
         }
     }
 
-    public void generateRandomOptions(int[] operations){
-        Random r= getRandom();
+    public void generateRandomOptions(int[] operations) {
+        Random r = getRandom();
         for (int i = 0; i < operations.length; i++) {
             int randomNum = r.nextInt(5);
-            if(randomNum==0)
-                randomNum=randomNum+1;
-            operations[i]=randomNum;
+            if (randomNum == 0)
+                randomNum = randomNum + 1;
+            operations[i] = randomNum;
         }
     }
 
+    public int sumaTodosNumbers(int[] numbers) {
+        int sumaTodosNumbers = 0;
+        for (int i = 0; i < numbers.length; i++) {
+            sumaTodosNumbers += numbers[i];
+        }
+        return sumaTodosNumbers;
+    }
+
+    public boolean esPrimo(int sumaPosImpares) {
+        boolean primo = true;
+        if (sumaPosImpares % 2 == 0)
+            primo = false;
+        for (int j = 3; j < sumaPosImpares && primo; j += 2) {
+            if (sumaPosImpares % j == 0) {
+                primo = false;
+            }
+        }
+
+        return primo;
+    }
 
 
     private Random getRandom() {

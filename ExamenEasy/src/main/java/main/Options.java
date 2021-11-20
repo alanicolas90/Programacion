@@ -68,6 +68,7 @@ public class Options {
 
         utils.printArray(positions);
         System.out.println("-----------------------------------------------------------\n");
+
         int[] numbers = new int[10];
         int[] operations = new int[9];
 
