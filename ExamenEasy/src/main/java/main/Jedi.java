@@ -37,7 +37,7 @@ public class Jedi {
 
             System.out.println("El jugador " + (i + 1) + " barajando y repartiendo las cartas a cada jugador.");
             //barajamos las cartas
-            barajar(baraja);
+            utils.barajarCeros(baraja);
 
             //se reparten las cartas a cada jugador y quitando las cartas ya repartidas
             for (int j = 0; j < cantidadJugadores; j++) {
@@ -46,7 +46,7 @@ public class Jedi {
             }
 
             //ordenamos las cartas de tal manera que las usadas quitarlas
-            sort(baraja, cantidadJugadores);
+            utils.sort(baraja, cantidadJugadores);
 
             //imprimir cartas jugadores
             System.out.println("Ronda " + (i + 1));
@@ -131,7 +131,7 @@ public class Jedi {
 
 
             //ordenamos las cartas de tal manera que las usadas quitarlas
-            sort(baraja, cantidadJugadores);
+            utils.sort(baraja, cantidadJugadores);
         }
         //ver quien es el que menos puntos tiene
         int menosPuntos = puntosJugadoresPerdidos[0];
@@ -219,35 +219,6 @@ public class Jedi {
         utils.barajar(numbers);
     }
 
-    private void sort(int[] baraja, int cantidadJugadores) {
-        boolean continuar;
-        for (int i = 0; i <= cantidadJugadores + 1; i++) {
-            continuar = true;
-            if (baraja[i] == 0) {
-                for (int j = baraja.length - 1; j > cantidadJugadores + 1 && continuar; j--) {
-                    if (baraja[j] != 0) {
-                        baraja[i] = baraja[j];
-                        baraja[j] = 0;
-                        continuar = false;
-                    }
-                }
-            }
-        }
-    }
-
-    private void barajar(int[] baraja) {
-        Random r = getRandom();
-        for (int i = 0; i < 100000000; i++) {
-            int pos1 = r.nextInt(baraja.length - 1);
-            int pos2 = r.nextInt(baraja.length - 1);
-
-            if (baraja[pos1] != 0 && baraja[pos2] != 0) {
-                int aux = baraja[pos1];
-                baraja[pos1] = baraja[pos2];
-                baraja[pos2] = aux;
-            }
-        }
-    }
 
     private Random getRandom() {
         return new Random();

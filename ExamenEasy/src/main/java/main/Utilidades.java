@@ -9,6 +9,34 @@ public class Utilidades {
             numbers[i] = r.nextInt(20);
         }
     }
+    public void barajarCeros(int[] baraja) {
+        Random r = getRandom();
+        for (int i = 0; i < 100000000; i++) {
+            int pos1 = r.nextInt(baraja.length - 1);
+            int pos2 = r.nextInt(baraja.length - 1);
+
+            if (baraja[pos1] != 0 && baraja[pos2] != 0) {
+                int aux = baraja[pos1];
+                baraja[pos1] = baraja[pos2];
+                baraja[pos2] = aux;
+            }
+        }
+    }
+    public void sort(int[] baraja, int cantidadJugadores) {
+        boolean continuar;
+        for (int i = 0; i <= cantidadJugadores + 1; i++) {
+            continuar = true;
+            if (baraja[i] == 0) {
+                for (int j = baraja.length - 1; j > cantidadJugadores + 1 && continuar; j--) {
+                    if (baraja[j] != 0) {
+                        baraja[i] = baraja[j];
+                        baraja[j] = 0;
+                        continuar = false;
+                    }
+                }
+            }
+        }
+    }
 
     public void numbersNoHigherFive(int[] timesNumbers) {
         Random r = getRandom();
