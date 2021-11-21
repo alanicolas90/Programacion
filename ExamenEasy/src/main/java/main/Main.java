@@ -16,7 +16,8 @@ public class Main {
                         "3) Sith exercise 1\n" +
                         "4) Sith exercise 2\n" +
                         "5) Jedi exercise 1\n" +
-                        "6) Jedi exercise 2");
+                        "6) Jedi exercise 2\n\n" +
+                        "0) Salir");
                 option = sc.nextInt();
                 if (option < 1 || option > 6)
                     System.out.println("We are sorry, the number you typed is invalid");

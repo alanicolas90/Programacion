@@ -1,10 +1,15 @@
 package main;
 
 import java.util.Random;
+import java.util.Scanner;
 
 public class Sith {
     Utilidades utils = new Utilidades();
+
     public void exercise1() {
+
+        System.out.println("SENTIMOS LAS MOLESTIAS ESTA PARTE ESTÁ EN FASE DE DESARROLLO");
+
 
     }
 
@@ -82,7 +87,7 @@ public class Sith {
     }
 
     private void generateRandomWithNegatives(int[] numbers) {
-        Random r = new Random();
+        Random r = getR();
         int number;
         for (int i = 0; i < numbers.length; i++) {
             if (i == 3 || i == 7 || i == 9)
@@ -93,6 +98,10 @@ public class Sith {
             numbers[i] = number;
         }
         utils.barajar(numbers);
+    }
+
+    private Random getR() {
+        return new Random();
     }
 
     private int sumaPos(int[] numbers) {

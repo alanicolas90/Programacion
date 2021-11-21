@@ -36,11 +36,11 @@ public class Utilidades {
 
     public void barajar(int[] baraja) {
         Random r = getRandom();
-        for (int i = 0; i < 100000; i++) {
+        for (int i = 0; i < 1000000; i++) {
             int pos1 = r.nextInt(baraja.length - 1);
             int pos2 = r.nextInt(baraja.length - 1);
-            int aux = baraja[pos1];
 
+            int aux = baraja[pos1];
             baraja[pos1] = baraja[pos2];
             baraja[pos2] = aux;
         }
@@ -76,7 +76,6 @@ public class Utilidades {
 
         return primo;
     }
-
 
     private Random getRandom() {
         return new Random();
