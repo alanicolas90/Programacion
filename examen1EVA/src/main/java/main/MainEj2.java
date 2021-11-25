@@ -1,6 +1,5 @@
 package main;
 
-import java.util.Arrays;
 
 public class MainEj2 {
 
