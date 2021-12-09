@@ -22,8 +22,7 @@ public class MainEj1 {
             cantidadJugadores = sc.nextInt();
             if (cantidadJugadores < 2) {
                 System.out.println("Valor incorrecto, prueba otra vez.\n");
-            }
-            else if(cantidadJugadores > 13){
+            } else if (cantidadJugadores > 13) {
                 System.out.println("No se puede mas de 13 jugadores, si no, no se puede inicializar el juego.");
             }
         } while (cantidadJugadores < 2 || cantidadJugadores > 13);

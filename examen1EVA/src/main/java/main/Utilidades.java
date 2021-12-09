@@ -19,8 +19,8 @@ public class Utilidades {
     public void barajar(int[] baraja) {
         Random r = new Random();
         for (int i = 0; i < 1000000; i++) {
-            int pos1 = r.nextInt(baraja.length - 1);
-            int pos2 = r.nextInt(baraja.length - 1);
+            int pos1 = r.nextInt(baraja.length );
+            int pos2 = r.nextInt(baraja.length);
 
             int aux = baraja[pos1];
             baraja[pos1] = baraja[pos2];
