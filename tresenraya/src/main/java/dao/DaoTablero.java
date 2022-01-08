@@ -6,8 +6,6 @@ public class DaoTablero {
 
     private Tablero tablero;
 
-    private int jugadas;
-
     public DaoTablero() {
         tablero = new Tablero(3, 3);
     }
@@ -43,15 +41,48 @@ public class DaoTablero {
 
         if (tablero.getCelda(0, 0) != null &&
                 tablero.getCelda(0, 0).equals(tablero.getCelda(0, 1)) &&
-                tablero.getCelda(0, 2).equals(tablero.getCelda(0, 1)))
-            bingo = true;
+                tablero.getCelda(0, 2).equals(tablero.getCelda(0, 1)) ||
 
+                tablero.getCelda(1, 0) != null &&
+                        tablero.getCelda(1, 0).equals(tablero.getCelda(1, 1)) &&
+                        tablero.getCelda(1, 2).equals(tablero.getCelda(1, 1)) ||
+
+                tablero.getCelda(2, 0) != null &&
+                        tablero.getCelda(2, 0).equals(tablero.getCelda(2, 1)) &&
+                        tablero.getCelda(2, 2).equals(tablero.getCelda(2, 1)) ||
+
+                tablero.getCelda(0, 0) != null &&
+                        tablero.getCelda(0, 0).equals(tablero.getCelda(1, 0)) &&
+                        tablero.getCelda(2, 0).equals(tablero.getCelda(1, 0)) ||
+
+                tablero.getCelda(0, 1) != null &&
+                        tablero.getCelda(0, 1).equals(tablero.getCelda(1, 1)) &&
+                        tablero.getCelda(2, 1).equals(tablero.getCelda(1, 1)) ||
+
+                tablero.getCelda(0, 2) != null &&
+                        tablero.getCelda(0, 2).equals(tablero.getCelda(1, 2)) &&
+                        tablero.getCelda(2, 2).equals(tablero.getCelda(1, 2)) ||
+
+                tablero.getCelda(0, 0) != null &&
+                        tablero.getCelda(0, 0).equals(tablero.getCelda(1, 1)) &&
+                        tablero.getCelda(2, 2).equals(tablero.getCelda(1, 1)) ||
+
+                tablero.getCelda(0, 2) != null &&
+                        tablero.getCelda(0, 2).equals(tablero.getCelda(1, 1)) &&
+                        tablero.getCelda(2, 0).equals(tablero.getCelda(1, 1))
+        )
+            bingo = true;
 
         return bingo;
     }
 
-    public boolean hayCeldaLibre() {
-        return false;
+    public boolean estaOcupado(int x, int y) {
+        boolean ocupado = false;
+
+        if (tablero.getCelda(x, y).equals("X") || tablero.getCelda(x, y).equals("O")) {
+            ocupado = true;
+        }
+        return ocupado;
     }
 
     public Tablero getTablero() {

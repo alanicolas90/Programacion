@@ -9,6 +9,13 @@ public class FilaTabla {
         this.nombreJuego = nombreJuego;
         this.puntuacion = puntuacion;
     }
+    public FilaTabla(String nombreJuego) {
+        this.nombreJuego = nombreJuego;
+    }
+
+    public FilaTabla(float puntuacion) {
+        this.puntuacion = puntuacion;
+    }
 
     public String getNombreJuego() {
         return nombreJuego;

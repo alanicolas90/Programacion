@@ -26,11 +26,11 @@ public class Main {
                 seleccionX = sc.nextInt();
                 System.out.println("Dígame la coordenada Y (0-2):");
                 seleccionY = sc.nextInt();
-                if (seleccionX > 2 || seleccionX < 0 || seleccionY > 2 || seleccionY < 0) {
+                if (seleccionX > 2 || seleccionX < 0 || seleccionY > 2 || seleccionY < 0 || dao.estaOcupado(seleccionX,seleccionY)) {
                     System.out.println("coordenadas invalidas, porfavor intentelo de nuevo.");
                 }
 
-            } while (seleccionX > 2 || seleccionX < 0 || seleccionY > 2 || seleccionY < 0);
+            } while (seleccionX > 2 || seleccionX < 0 || seleccionY > 2 || seleccionY < 0 ||dao.estaOcupado(seleccionX,seleccionY));
 
             //imprimir en las celdas correspondientes
             if (contadorJugador % 2 == 0) {
@@ -42,7 +42,11 @@ public class Main {
             System.out.println(dao.getTablero().toString());
 
             contadorJugador++;
-        } while (contadorJugador != 9);
+        } while (contadorJugador != 9 || !dao.tresLinea());
+
+        if(dao.tresLinea()){
+            System.out.println("Fleicidades hay ganador!!!");
+        }
     }
 }
 
