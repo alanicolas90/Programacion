@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE CATALOG [
+<!ELEMENT CATALOG (PRODUCT+)>
+<!ELEMENT PRODUCT
+(SPECIFICATIONS+,OPTIONS?,PRICE+,NOTES?)>
+<!ATTLIST PRODUCT
+NAME CDATA #IMPLIED
+CATEGORY (HandTool|Table|Shop-Professional) "HandTool"
+PARTNUM CDATA #IMPLIED
+PLANT (Pittsburgh|Milwaukee|Chicago) "Chicago"
+INVENTORY (InStock|Backordered|Discontinued) "InStock">
+<!ELEMENT SPECIFICATIONS (#PCDATA)>
+<!ATTLIST SPECIFICATIONS
+WEIGHT CDATA #IMPLIED
+POWER CDATA #IMPLIED>
+<!ELEMENT OPTIONS (#PCDATA)>
+<!ATTLIST OPTIONS
+FINISH (Metal|Polished|Matte) "Matte"
+ADAPTER (Included|Optional|NotApplicable) "Included"
+CASE (HardShell|Soft|NotApplicable) "HardShell">
+<!ELEMENT PRICE (#PCDATA)>
+<!ATTLIST PRICE
+MSRP CDATA #IMPLIED
+WHOLESALE CDATA #IMPLIED
+STREET CDATA #IMPLIED
+SHIPPING CDATA #IMPLIED>
+<!ELEMENT NOTES (#PCDATA)>
+]>
+
+
+
+<CATALOG>
+    <PRODUCT NAME="Secret" CATEGORY="HandTool" 
+             PLANT=" Chicago" INVENTORY="InStock"> 
+        <SPECIFICATIONS WEIGHT="2Kg" POWER="200W"/>
+        <OPTIONS FINISH="Matte" ADAPTER="Included" CASE="HardShell"/>
+        <PRICE MSRP="YES" WHOLESALE="NO" STREET="Str. mount being" SHIPPING="YES">
+            20 $
+        </PRICE>
+        <NOTES>
+            Please wrap it 2 times.
+        </NOTES>
+    </PRODUCT>
+</CATALOG> 
+
+
