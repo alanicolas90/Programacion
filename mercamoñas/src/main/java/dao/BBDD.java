@@ -8,6 +8,9 @@ import java.util.LinkedHashMap;
 
 public class BBDD {
 
+    private BBDD() {
+    }
+
     public static LinkedHashMap<String, Cliente> clientes = new LinkedHashMap<>();
     static ArrayList<Producto> productos = new ArrayList<>();
 
