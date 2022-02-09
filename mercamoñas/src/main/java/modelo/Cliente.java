@@ -2,13 +2,19 @@ package modelo;
 
 import modelo.constantes.Constantes;
 
+import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 
 public class Cliente {
 
     private String dni;
     private String nombre;
     private String apellido;
+    private Set<Monedero> monederos;
+    private List<LineaCompra> carrito;
+    private List<List<LineaCompra>> buyHistory;
+
 
 
     public Cliente(String dni, String nombre, String apellido) {
@@ -16,6 +22,14 @@ public class Cliente {
         this.nombre = nombre;
         this.apellido = apellido;
     }
+
+
+
+
+
+
+
+
 
     public String getDni() {
         return dni;

@@ -2,6 +2,8 @@ package ui;
 
 import common.Common;
 import constantes.Constantes;
+import ui.admin.UiMenuAdmin;
+import ui.client.UiMenuClient;
 
 import java.util.Scanner;
 
@@ -12,6 +14,7 @@ public class Main {
         Common common = new Common();
 
         UiMenuAdmin menuSwitchAdmin = new UiMenuAdmin();
+        UiMenuClient menuSwitchClient = new UiMenuClient();
 
         System.out.println(Constantes.BIENVENIDA);
         int optionUser;
@@ -24,10 +27,10 @@ public class Main {
 
             switch (optionUser) {
                 case 1:
-                    menuSwitchAdmin.menuAdminSwitch(sc);
+                    menuSwitchAdmin.menuSwitchAdmin(sc);
                     break;
                 case 2:
-                    System.out.println(Constantes.UNAVAILABLE);
+                    menuSwitchClient.menuSwitchClient(sc);
                     break;
 
                 default:

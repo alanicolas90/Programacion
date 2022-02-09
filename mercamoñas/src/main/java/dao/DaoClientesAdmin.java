@@ -42,4 +42,10 @@ public class DaoClientesAdmin {
                 .map(cliente -> new Cliente(cliente.getDni(), cliente.getNombre(), cliente.getApellido()))
                 .collect(Collectors.toUnmodifiableList());
     }
+
+    public List<Cliente> seeSpecificClient(String dniClient){
+        return clientes.values().stream()
+                .map(cliente -> new Cliente(cliente.getDni(), cliente.getNombre(), cliente.getApellido()))
+                .collect(Collectors.toUnmodifiableList());
+    }
 }

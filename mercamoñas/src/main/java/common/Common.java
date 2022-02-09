@@ -1,5 +1,7 @@
 package common;
 
+import constantes.Constantes;
+
 import java.util.Scanner;
 
 public class Common {
@@ -13,7 +15,7 @@ public class Common {
                 i = Integer.parseInt(sc.nextLine());
                 ok = true;
             } catch (NumberFormatException e) {
-                System.out.println("error");
+                System.out.println(Constantes.ERROR);
             }
         } while (!ok);
         return i;
@@ -28,7 +30,7 @@ public class Common {
                 i = Double.parseDouble(sc.nextLine());
                 ok = true;
             } catch (NumberFormatException e) {
-                System.out.println("error");
+                System.out.println(Constantes.ERROR);
             }
         } while (!ok);
         return i;

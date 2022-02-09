@@ -43,7 +43,7 @@ public class Constantes {
 
 
     //CLIENTES CLIENTE
-    public static final String UNAVAILABLE = "UNAVAILABLE";
+
 
     //PRODUCTOS ADMINISTRADOR
     public static final String HASTA_LA_NEXT = "Hasta la próxima.";

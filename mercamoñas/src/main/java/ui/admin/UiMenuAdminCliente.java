@@ -1,4 +1,4 @@
-package ui;
+package ui.admin;
 
 import common.Common;
 import constantes.Constantes;
@@ -7,7 +7,7 @@ import servicios.ServicioClients;
 
 import java.util.Scanner;
 
-public class UiMenuClienteAdmin {
+public class UiMenuAdminCliente {
 
     public void menuClientesAdministrador(Scanner sc) {
         Common common = new Common();

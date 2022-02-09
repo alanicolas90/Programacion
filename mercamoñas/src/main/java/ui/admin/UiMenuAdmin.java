@@ -1,4 +1,4 @@
-package ui;
+package ui.admin;
 
 import common.Common;
 import constantes.Constantes;
@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class UiMenuAdmin {
 
-    public void menuAdminSwitch(Scanner sc) {
+    public void menuSwitchAdmin(Scanner sc) {
         Common common = new Common();
         int optionMenuAdmin;
 
@@ -17,13 +17,12 @@ public class UiMenuAdmin {
 
             switch (optionMenuAdmin) {
                 case 1:
-                    UIMenuProduct menuProductos = new UIMenuProduct();
+                    UIMenuAdminProduct menuProductos = new UIMenuAdminProduct();
                     menuProductos.getOption(sc);
                     break;
                 case 2:
-                    UiMenuClienteAdmin menuClienteAdmin = new UiMenuClienteAdmin();
+                    UiMenuAdminCliente menuClienteAdmin = new UiMenuAdminCliente();
                     menuClienteAdmin.menuClientesAdministrador(sc);
-
                     break;
                 case 0:
                     System.out.println(Constantes.HASTA_LA_NEXT);
