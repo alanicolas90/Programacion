@@ -1,3 +1,13 @@
 
 7
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
+P
+ src/main/java/common/Common.java,1\f\1f0f1ac1e908685e5a5d0d50f31f2929f463cc5f
+X
+(src/main/java/constantes/Constantes.java,f\f\ff10601d1d472e7ac46f2abd85d86cedd879c082
+W
+'src/main/java/ui/admin/UiMenuAdmin.java,c\4\c40da7c9497396b9f33c290a20c7b549a33ab55a
+^
+.src/main/java/ui/admin/UiMenuAdminCliente.java,b\c\bc85f93e24f7b27d7328d68d951ac7cd5e1eb424
+^
+.src/main/java/ui/admin/UIMenuAdminProduct.java,0\6\06fa932d75ee4f6bb4901c9b339560d114c5955b

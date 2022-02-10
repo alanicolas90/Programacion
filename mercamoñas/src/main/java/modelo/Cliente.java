@@ -24,12 +24,29 @@ public class Cliente {
     }
 
 
+    public Set<Monedero> getMonederos() {
+        return monederos;
+    }
 
+    public void setMonederos(Set<Monedero> monederos) {
+        this.monederos = monederos;
+    }
 
+    public List<LineaCompra> getCarrito() {
+        return carrito;
+    }
 
+    public void setCarrito(List<LineaCompra> carrito) {
+        this.carrito = carrito;
+    }
 
+    public List<List<LineaCompra>> getBuyHistory() {
+        return buyHistory;
+    }
 
-
+    public void setBuyHistory(List<List<LineaCompra>> buyHistory) {
+        this.buyHistory = buyHistory;
+    }
 
     public String getDni() {
         return dni;

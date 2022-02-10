@@ -53,6 +53,11 @@ public class ServicioClients {
         return exists;
     }
 
+    public boolean existeCliente(String dniClient){
+        DaoClientesAdmin daoClientesAdmin = new DaoClientesAdmin();
+        return daoClientesAdmin.existClient(dniClient);
+    }
+
     public List<Cliente> showSpecificClient(String dniClient){
         DaoClientesAdmin daoClientesAdmin = new DaoClientesAdmin();
         return daoClientesAdmin.seeSpecificClient(dniClient);

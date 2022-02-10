@@ -1,20 +1,25 @@
 package dao;
 
 import modelo.Cliente;
+import modelo.LineaCompra;
+import modelo.Monedero;
 import modelo.Producto;
 
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
+import java.util.*;
 
 public class BBDD {
 
     private BBDD() {
     }
 
-    public static LinkedHashMap<String, Cliente> clientes = new LinkedHashMap<>();
+    static LinkedHashMap<String, Cliente> clientes = new LinkedHashMap<>();
     static ArrayList<Producto> productos = new ArrayList<>();
+    static List<LineaCompra> carrito = new ArrayList<>();
+    static List<List<LineaCompra>> buyHistory = new ArrayList<>();
+    static Set<Monedero> monederos = new HashSet<>();
 
-    static{
+
+    static {
         clientes.put("123", new Cliente("123", "alan", "mikolajczyk"));
         clientes.put("1", new Cliente("1", "alain", "mikolajczyk"));
         clientes.put("23", new Cliente("23", "alean", "mikolajczyk"));

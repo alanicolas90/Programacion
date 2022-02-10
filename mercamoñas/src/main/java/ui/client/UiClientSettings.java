@@ -3,12 +3,13 @@ package ui.client;
 import common.Common;
 import constantes.Constantes;
 import servicios.ServicioClients;
+import servicios.ServicioCompras;
 
 import java.util.Scanner;
 
 public class UiClientSettings {
 
-    public void settingsCliente(Scanner sc) {
+    public void settingsCliente(Scanner sc, String dniClient) {
         Common common = new Common();
         int settingsClient;
 
@@ -16,30 +17,38 @@ public class UiClientSettings {
             System.out.println("Que desea hacer?\n" +
                     "1) Cambiar nombre.\n" +
                     "2) Cambiar apellido.\n" +
-                    "3) Agregar monedero\n" +
-                    "4) Mostrar datos del usuario\n" +
-                    "5) Mostrar compras antiguas\n\n" +
+                    "3) Agregar tarjeta\n" +
+                    "4) Eliminar tarjeta\n" +
+                    "5) Agregar money\n" +
+                    "6) Mostrar datos del usuario\n" +
+                    "7) Mostrar compras antiguas\n\n" +
                     "0) Exit");
             settingsClient= common.giveInt();
 
             switch (settingsClient){
                 case 1:
-                    changeName(sc);
+                    changeName(sc, dniClient);
                     break;
                 case 2:
-                    changeSurname(sc);
+                    changeSurname(sc, dniClient);
                     break;
                 case 3:
-                    System.out.println("add money");
+                    System.out.println("Añadir tarjeta");
                     break;
                 case 4:
-                    showSpecificDataUser(sc);
+                    System.out.println("Delete tarjeta");
                     break;
                 case 5:
-                    System.out.println("mostrar compras antiguas");
+                    System.out.println("add money");
                     break;
                 case 6:
-                    deleteUser(sc);
+                    //ver tarjetas
+                    showSpecificDataUser(sc);
+                    break;
+                case 7:
+                    ServicioCompras servicioCompras = new ServicioCompras();
+                    servicioCompras.showBuyHistory();
+                    System.out.println("mostrar compras antiguas");
                     break;
                 case 0:
                     System.out.println(Constantes.BYE_BYE);
@@ -51,19 +60,6 @@ public class UiClientSettings {
         } while (settingsClient != 0);
     }
 
-    private void deleteUser(Scanner sc) {
-        ServicioClients servicioClients = new ServicioClients();
-        String dniClient;
-        System.out.println("Confirme su DNI");
-        dniClient = sc.nextLine();
-
-        if (servicioClients.removeClient(dniClient)) {
-            System.out.println(Constantes.EL_USUARIO_HA_SIDO_ELIMINADO_CON_SUCCESS);
-        } else {
-            System.out.println(Constantes.ERROR_NO_SE_HA_PODIDO_ELIMINAR_AL_CLIENTE);
-        }
-    }
-
     private void showSpecificDataUser(Scanner sc) {
         System.out.println("show client data(name surname and monedero)");
         ServicioClients servicioClients = new ServicioClients();
@@ -73,11 +69,8 @@ public class UiClientSettings {
         System.out.println(servicioClients.showSpecificClient(dniClient));
     }
 
-    private void changeSurname(Scanner sc) {
+    private void changeSurname(Scanner sc,String dniClient) {
         ServicioClients servicioClients = new ServicioClients();
-
-        System.out.println(Constantes.DIME_EL_DNI_DEL_USUARIO);
-        String dniClient = sc.nextLine();
 
         System.out.println(Constantes.DIME_EL_NUEVO_APELLIDO_DEL_CLIENTE);
         String newSurnameClient = sc.nextLine();
@@ -89,11 +82,8 @@ public class UiClientSettings {
         }
     }
 
-    private void changeName(Scanner sc) {
+    private void changeName(Scanner sc, String dniCliente) {
         ServicioClients servicioClients = new ServicioClients();
-
-        System.out.println(Constantes.DIME_EL_DNI_DEL_USUARIO);
-        String dniCliente = sc.nextLine();
 
         System.out.println(Constantes.DIME_EL_NUEVO_NOMBRE_DEL_CLIENTE);
         String newNameClient = sc.nextLine();

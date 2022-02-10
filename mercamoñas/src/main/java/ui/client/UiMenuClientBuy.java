@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class UiMenuClientBuy {
 
-    public void buyClient(Scanner sc) {
+    public void buyClient(Scanner sc, String dniClient) {
         Common common = new Common();
         int clientDecision;
 

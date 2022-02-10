@@ -25,4 +25,12 @@ public class LineaCompra {
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
+
+    @Override
+    public String toString() {
+        return "LineaCompra{" +
+                "producto=" + producto.getName() +
+                ", quantity=" + quantity +
+                '}';
+    }
 }
