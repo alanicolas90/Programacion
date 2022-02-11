@@ -11,13 +11,14 @@ import java.util.List;
 
 public class ServicioCompras {
 
-    public boolean addToCart(String dniClient,LineaCompra productoAddCarrito) {
+    public boolean addToCart(String dniClient, LineaCompra productoAddCarrito) {
         DaoCompras daoCompras = new DaoCompras();
         DaoProducto daoProducto = new DaoProducto();
         boolean seHaMetido= false;
 
         boolean productExists = daoProducto.productExists(productoAddCarrito.getProducto().getName());
         boolean inCart = !daoCompras.alreadyInCart(productoAddCarrito.getProducto(), dniClient);
+
         if (inCart && productExists) {
             daoCompras.addCart(dniClient, productoAddCarrito);
             seHaMetido = true;
@@ -25,11 +26,11 @@ public class ServicioCompras {
         return seHaMetido;
     }
 
-    public boolean removeProductCart(String dniClient, Producto producto) {
+    public boolean removeProductCart(String dniClient, String nombreProductoBorrar) {
         DaoCompras daoCompras = new DaoCompras();
-        boolean isCart = daoCompras.alreadyInCart(producto, dniClient);
+        boolean isCart = daoCompras.alreadyInCart(new Producto(nombreProductoBorrar), dniClient);
         if (isCart) {
-            daoCompras.deleteProductCart(dniClient, producto);
+            daoCompras.deleteProductCart(dniClient, nombreProductoBorrar);
         }
         return isCart;
     }

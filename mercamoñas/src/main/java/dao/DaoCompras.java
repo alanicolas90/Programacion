@@ -4,6 +4,7 @@ import modelo.LineaCompra;
 import modelo.Producto;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static dao.BBDD.clientes;
 
@@ -18,8 +19,8 @@ public class DaoCompras {
         clientes.get(dniClient).getCarrito().add(productoNuevoCarrito);
     }
 
-    public void deleteProductCart(String dniClient, Producto producto){
-        clientes.get(dniClient).getCarrito().remove(new LineaCompra(producto));
+    public void deleteProductCart(String dniClient, String nombreProductoBorrar){
+        clientes.get(dniClient).getCarrito().remove(new LineaCompra(new Producto(nombreProductoBorrar)));
     }
 
     public void guardarCompra(String dniClient, List<LineaCompra> lineaCompras){

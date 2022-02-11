@@ -4,6 +4,7 @@ import common.Common;
 import constantes.Constantes;
 import modelo.LineaCompra;
 import modelo.Producto;
+import servicios.ServicioClients;
 import servicios.ServicioCompras;
 import servicios.ServicioProductos;
 
@@ -53,13 +54,14 @@ public class UiMenuClientBuy {
 
     private void deleteProductFromCart(Scanner sc, String dniClient) {
         ServicioCompras servicioCompras = new ServicioCompras();
+        ServicioClients servicioClients = new ServicioClients();
 
-        System.out.println("Imprimir carrito solo"); //no se como se hace :)
+        //imprimir solo el carrito del cliente
+        System.out.println(servicioClients.showCarrito(dniClient));
         System.out.println("Dime el producto que desea eliminar del carrito");
         String nombreProductoBorrar = sc.nextLine();
-        Producto productoBorrar = new Producto(nombreProductoBorrar);
 
-        if (servicioCompras.removeProductCart(dniClient, productoBorrar)) {
+        if (servicioCompras.removeProductCart(dniClient, nombreProductoBorrar)) {
             System.out.println("Ha sido un éxito");
         } else {
             System.out.println(Constantes.ERROR);
@@ -70,23 +72,35 @@ public class UiMenuClientBuy {
         Common common = new Common();
         ServicioCompras servicioCompras = new ServicioCompras();
         ServicioProductos servicioProductos = new ServicioProductos();
+        ServicioClients servicioClients = new ServicioClients();
 
         System.out.println("Elija un producto de esta lista:");
         System.out.println(servicioProductos.showAllProducts());
 
         System.out.println("que producto desea agregar al carrito?");
         String productoMeterCarrito = sc.nextLine();
-        Producto producto = new Producto(productoMeterCarrito);
 
-        System.out.println("cuanta cantidad quiere?");
-        int quantity = common.giveInt();
+        if(servicioProductos.existProduct(productoMeterCarrito)){
 
-        LineaCompra productoAddCart = new LineaCompra(producto, quantity);
+            Producto productoAddCart = servicioProductos.getProductoLista(dniClient, productoMeterCarrito);
+            System.out.println("cuanta cantidad quiere?");
 
-        if (servicioCompras.addToCart(dniClient, productoAddCart)) {
-            System.out.println("Éxito");
-        } else {
-            System.out.println(Constantes.ERROR);
+            int quantity = common.giveInt();
+            LineaCompra carritoAdd= new LineaCompra(productoAddCart, quantity);
+
+            if (servicioCompras.addToCart(dniClient, carritoAdd)) {
+                System.out.println("Éxito");
+            } else {
+                System.out.println(Constantes.ERROR);
+            }
+        }else{
+            System.out.println("El producto no existe");
         }
+
+
+
+
+        System.out.println(servicioClients.verDataCliente(dniClient));
+        System.out.println(servicioClients.showCarrito(dniClient));
     }
 }

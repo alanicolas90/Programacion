@@ -51,4 +51,8 @@ public class DaoClientes {
     public List<List<LineaCompra>> showBuyHistory(String dniClient){
         return clientes.get(dniClient).getBuyHistory();
     }
+
+    public List<LineaCompra> showCarrito(String dniClient){
+        return clientes.get(dniClient).getCarrito();
+    }
 }

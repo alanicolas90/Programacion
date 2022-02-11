@@ -42,10 +42,9 @@ public class DaoProducto {
                 .map(producto -> new Producto(producto.getName(), producto.getPrice(), producto.getStock()))
                 .collect(Collectors.toUnmodifiableList());
     }
+     public Producto getProductoLista(String dniClient, String productoMeterCarrito){
+        return productos.get(productos.indexOf(new Producto(productoMeterCarrito)));
+     }
 
-    public int nuevoStock(Producto producto, int stockQuitar){
-        int viejoStock = producto.getStock();
-        int nuevoStock = viejoStock - stockQuitar;
-        return nuevoStock;
-    }
+
 }

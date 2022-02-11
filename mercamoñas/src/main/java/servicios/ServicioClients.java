@@ -3,6 +3,7 @@ package servicios;
 import dao.DaoClientes;
 import dao.DaoMonedero;
 import modelo.Cliente;
+import modelo.LineaCompra;
 import modelo.Monedero;
 
 import java.util.List;
@@ -101,6 +102,11 @@ public class ServicioClients {
     public Cliente verDataCliente(String dniClient){
         DaoClientes daoClientes = new DaoClientes();
         return daoClientes.seeSpecificClient(dniClient);
+    }
+
+    public List<LineaCompra> showCarrito(String dniClient){
+        DaoClientes daoClientes = new DaoClientes();
+        return daoClientes.showCarrito(dniClient);
     }
 
 }
