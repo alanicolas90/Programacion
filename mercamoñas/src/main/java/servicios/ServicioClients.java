@@ -1,14 +1,17 @@
 package servicios;
 
-import dao.DaoClientesAdmin;
+import dao.DaoClientes;
+import dao.DaoMonedero;
 import modelo.Cliente;
+import modelo.Monedero;
 
 import java.util.List;
+
 
 public class ServicioClients {
 
     public boolean addClient(Cliente newClient) {
-        DaoClientesAdmin daoClientesAdmin = new DaoClientesAdmin();
+        DaoClientes daoClientesAdmin = new DaoClientes();
         boolean canBeAdded = !daoClientesAdmin.existClient(newClient.getDni());
         if (canBeAdded) {
             daoClientesAdmin.addClient(newClient);
@@ -17,7 +20,7 @@ public class ServicioClients {
     }
 
     public boolean removeClient(String dniClient) {
-        DaoClientesAdmin daoClientesAdmin = new DaoClientesAdmin();
+        DaoClientes daoClientesAdmin = new DaoClientes();
         boolean exists = daoClientesAdmin.existClient(dniClient);
 
         if (exists) {
@@ -27,7 +30,7 @@ public class ServicioClients {
     }
 
     public boolean swapNameClient(String dniClient, String nuevoNombreCliente) {
-        DaoClientesAdmin daoClientesAdmin = new DaoClientesAdmin();
+        DaoClientes daoClientesAdmin = new DaoClientes();
         boolean exists = daoClientesAdmin.existClient(dniClient);
         if (exists) {
             daoClientesAdmin.swapNameClient(dniClient, nuevoNombreCliente);
@@ -36,7 +39,7 @@ public class ServicioClients {
     }
 
     public boolean swapSurnameClient(String dniClient, String newSurnameClient) {
-        DaoClientesAdmin daoClientesAdmin = new DaoClientesAdmin();
+        DaoClientes daoClientesAdmin = new DaoClientes();
         boolean exists = daoClientesAdmin.existClient(dniClient);
         if (exists) {
             daoClientesAdmin.swapSurnameClient(dniClient, newSurnameClient);
@@ -45,7 +48,7 @@ public class ServicioClients {
     }
 
     public boolean swapDni(String dniClient, String nuevoDniCliente) {
-        DaoClientesAdmin daoClientesAdmin = new DaoClientesAdmin();
+        DaoClientes daoClientesAdmin = new DaoClientes();
         boolean exists = daoClientesAdmin.existClient(dniClient);
         if (exists) {
             daoClientesAdmin.swapDni(dniClient, nuevoDniCliente);
@@ -53,18 +56,45 @@ public class ServicioClients {
         return exists;
     }
 
-    public boolean existeCliente(String dniClient){
-        DaoClientesAdmin daoClientesAdmin = new DaoClientesAdmin();
+    public boolean existeCliente(String dniClient) {
+        DaoClientes daoClientesAdmin = new DaoClientes();
         return daoClientesAdmin.existClient(dniClient);
     }
 
-    public List<Cliente> showSpecificClient(String dniClient){
-        DaoClientesAdmin daoClientesAdmin = new DaoClientesAdmin();
-        return daoClientesAdmin.seeSpecificClient(dniClient);
+    public List<Cliente> showListClients() {
+        DaoClientes daoClientes = new DaoClientes();
+        return daoClientes.verListaClientes();
     }
 
-    public List<Cliente> showListClients() {
-        DaoClientesAdmin daoClientesAdmin = new DaoClientesAdmin();
-        return daoClientesAdmin.verListaClientes();
+    public boolean addMoney(String dniCliente, String nombreTarjeta, double dineroAgregar) {
+        DaoClientes daoClientes = new DaoClientes();
+        DaoMonedero daoMonedero = new DaoMonedero();
+        boolean exists = daoMonedero.monederoExists(nombreTarjeta);
+        if (exists)
+            daoClientes.addMoney(dniCliente, nombreTarjeta, dineroAgregar);
+        return exists;
+    }
+
+    public boolean addMonedero(Monedero monedero) {
+        DaoMonedero daoMonedero = new DaoMonedero();
+        boolean canBeAdded = !daoMonedero.monederoExists(monedero.getName());
+        if (canBeAdded) {
+            daoMonedero.addMonedero(monedero);
+        }
+        return canBeAdded;
+    }
+
+    public List<Cliente> showSpecificClient(String dniClient) {
+        DaoClientes daoClientes = new DaoClientes();
+        return daoClientes.seeSpecificClient(dniClient);
+    }
+
+    public boolean removeMonedero(String nombreMonedero) {
+        DaoMonedero daoMonedero = new DaoMonedero();
+        boolean exists = daoMonedero.monederoExists(nombreMonedero);
+        if (exists) {
+            daoMonedero.removeMonedero(nombreMonedero);
+        }
+        return exists;
     }
 }

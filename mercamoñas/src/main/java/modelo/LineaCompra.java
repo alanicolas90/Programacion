@@ -5,6 +5,10 @@ public class LineaCompra {
     private Producto producto;
     private int quantity;
 
+    public LineaCompra(Producto producto) {
+        this.producto = producto;
+    }
+
     public LineaCompra(Producto producto, int quantity) {
         this.producto = producto;
         this.quantity = quantity;

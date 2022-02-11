@@ -1,7 +1,5 @@
 package modelo;
 
-import modelo.constantes.Constantes;
-
 import java.util.List;
 import java.util.Objects;
 import java.util.Set;
@@ -14,7 +12,6 @@ public class Cliente {
     private Set<Monedero> monederos;
     private List<LineaCompra> carrito;
     private List<List<LineaCompra>> buyHistory;
-
 
 
     public Cliente(String dni, String nombre, String apellido) {
@@ -87,10 +84,12 @@ public class Cliente {
 
     @Override
     public String toString() {
-        return modelo.constantes.Constantes.CLIENTE +
-                modelo.constantes.Constantes.DNI + dni + modelo.constantes.Constantes.CHAR +
-                Constantes.NOMBRE + nombre + modelo.constantes.Constantes.CHAR +
-                Constantes.APELLIDO + apellido + modelo.constantes.Constantes.CHAR +
-                Constantes.STRING;
+        return "Cliente{" +
+                "dni='" + dni + '\'' + "\n" +
+                ", nombre='" + nombre + '\'' + "\n" +
+                ", apellido='" + apellido + '\'' + "\n" +
+                ", monederos=" + monederos + "\n" +
+                ", carrito=" + carrito + "\n" +
+                "}\n";
     }
 }

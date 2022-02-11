@@ -2,9 +2,8 @@ package ui.client;
 
 import common.Common;
 import constantes.Constantes;
+import modelo.Monedero;
 import servicios.ServicioClients;
-import servicios.ServicioCompras;
-
 import java.util.Scanner;
 
 public class UiClientSettings {
@@ -23,9 +22,9 @@ public class UiClientSettings {
                     "6) Mostrar datos del usuario\n" +
                     "7) Mostrar compras antiguas\n\n" +
                     "0) Exit");
-            settingsClient= common.giveInt();
+            settingsClient = common.giveInt();
 
-            switch (settingsClient){
+            switch (settingsClient) {
                 case 1:
                     changeName(sc, dniClient);
                     break;
@@ -33,22 +32,22 @@ public class UiClientSettings {
                     changeSurname(sc, dniClient);
                     break;
                 case 3:
-                    System.out.println("Añadir tarjeta");
+                    addMonedero(sc);
                     break;
                 case 4:
-                    System.out.println("Delete tarjeta");
+                    deleteMonedero(sc);
                     break;
                 case 5:
-                    System.out.println("add money");
+                    agregarDineroMonederoExistente(sc, dniClient);
                     break;
                 case 6:
                     //ver tarjetas
-                    showSpecificDataUser(sc);
+                    showSpecificDataUser(dniClient);
                     break;
                 case 7:
-                    ServicioCompras servicioCompras = new ServicioCompras();
-                    servicioCompras.showBuyHistory();
-                    System.out.println("mostrar compras antiguas");
+                    //mostrar compras antiguas
+                    //ServicioCompras servicioCompras = new ServicioCompras();
+                    //servicioCompras.showBuyHistory();
                     break;
                 case 0:
                     System.out.println(Constantes.BYE_BYE);
@@ -60,16 +59,61 @@ public class UiClientSettings {
         } while (settingsClient != 0);
     }
 
-    private void showSpecificDataUser(Scanner sc) {
-        System.out.println("show client data(name surname and monedero)");
+    private void deleteMonedero(Scanner sc) {
         ServicioClients servicioClients = new ServicioClients();
-        System.out.println("Confirme su DNI");
-        String dniClient= sc.nextLine();
+        System.out.println("Como se llama el monedero?");
+        String nombreMonedero = sc.nextLine();
 
+        if(servicioClients.removeMonedero(nombreMonedero)){
+            System.out.println("Eliminado con éxito");
+        }else{
+            System.out.println(Constantes.ERROR);
+        }
+    }
+
+    private void addMonedero(Scanner sc) {
+        Common common = new Common();
+        ServicioClients servicioClients = new ServicioClients();
+        System.out.println("Añadir monedero");
+        System.out.println("Como desea que se llame el monedero?");
+        String nombreMonedero = sc.nextLine();
+
+        System.out.println("Cuanto dinero desea introducir al monedero?");
+        double dineroAgregarTarjeta = common.giveDouble();
+
+        Monedero monedero = new Monedero(nombreMonedero, dineroAgregarTarjeta);
+
+        if(servicioClients.addMonedero(monedero)){
+            System.out.println("Ha sido un éxito");
+        }else{
+            System.out.println(Constantes.ERROR);
+        }
+    }
+
+    private void agregarDineroMonederoExistente(Scanner sc, String dniClient) {
+        Common common = new Common();
+        ServicioClients servicioClients = new ServicioClients();
+
+        System.out.println("A que tarjeta desea agregarle dinero?");
+        //mostrar tarjetas IMPORTANTE
+        String nombreTarjeta = sc.nextLine();
+
+        System.out.println("Cuanto dinero desea agregarle?");
+        double dineroAgregar = common.giveDouble();
+
+        if(servicioClients.addMoney(dniClient, nombreTarjeta, dineroAgregar)){
+            System.out.println("Logrado con éxito");
+        }else{
+            System.out.println(Constantes.ERROR);
+        }
+    }
+
+    private void showSpecificDataUser(String dniClient) {
+        ServicioClients servicioClients = new ServicioClients();
         System.out.println(servicioClients.showSpecificClient(dniClient));
     }
 
-    private void changeSurname(Scanner sc,String dniClient) {
+    private void changeSurname(Scanner sc, String dniClient) {
         ServicioClients servicioClients = new ServicioClients();
 
         System.out.println(Constantes.DIME_EL_NUEVO_APELLIDO_DEL_CLIENTE);

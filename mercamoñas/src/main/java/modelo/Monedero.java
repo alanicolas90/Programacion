@@ -10,6 +10,10 @@ public class Monedero {
         this.money = money;
     }
 
+    public Monedero(String name) {
+        this.name = name;
+    }
+
     public String getName() {
         return name;
     }

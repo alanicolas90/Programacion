@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 
 import static dao.BBDD.clientes;
 
-public class DaoClientesAdmin {
+public class DaoClientes {
 
 
     public boolean existClient(String clientDNI) {
@@ -43,9 +43,13 @@ public class DaoClientesAdmin {
                 .collect(Collectors.toUnmodifiableList());
     }
 
-    public List<Cliente> seeSpecificClient(String dniClient){
+    public List<Cliente> seeSpecificClient(String dniClient) {
         return clientes.values().stream()
                 .map(cliente -> new Cliente(cliente.getDni(), cliente.getNombre(), cliente.getApellido()))
                 .collect(Collectors.toUnmodifiableList());
+    }
+
+    public void addMoney(String dniClient, String nombreTarjeta, double dineroAgregar) {
+
     }
 }
