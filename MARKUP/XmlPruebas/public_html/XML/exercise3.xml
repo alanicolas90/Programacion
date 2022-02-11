@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/XML/XMLDocument.xml to edit this template
+-->
+
+
+
+<books
+    xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+    xsi:noNamespaceSchemaLocation='../Schema/schemeExercise3.xsd'>
+    <book id="01">
+        <author>J.K Rowling</author>
+        <title>Harry Potter</title>
+        <genre>Fiction</genre>
+        <price>15.5</price>
+        <pub_date>2017-04-04</pub_date>
+        <review>Perfect book</review>
+    </book>
+    <book id="02">
+        <author>Somone</author>
+        <title>Book</title>
+        <genre>All</genre>
+        <price>69.6</price>
+        <pub_date>1999-04-04</pub_date>
+        <review>Absurd</review>
+    </book>
+    <book id="03">
+        <author>Alan</author>
+        <title>Conquer America</title>
+        <genre>Many</genre>
+        <price>200.00</price>
+        <pub_date>1492-07-14</pub_date>
+        <review>Sick</review>
+    </book>
+
+</books>
+
