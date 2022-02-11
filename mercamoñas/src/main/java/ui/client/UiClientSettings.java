@@ -2,8 +2,11 @@ package ui.client;
 
 import common.Common;
 import constantes.Constantes;
+import dao.DaoClientes;
 import modelo.Monedero;
 import servicios.ServicioClients;
+import servicios.ServicioCompras;
+
 import java.util.Scanner;
 
 public class UiClientSettings {
@@ -32,22 +35,26 @@ public class UiClientSettings {
                     changeSurname(sc, dniClient);
                     break;
                 case 3:
-                    addMonedero(sc);
+                    addMonedero(sc, dniClient);
                     break;
                 case 4:
-                    deleteMonedero(sc);
+                    deleteMonedero(sc, dniClient);
                     break;
                 case 5:
                     agregarDineroMonederoExistente(sc, dniClient);
                     break;
                 case 6:
                     //ver tarjetas
-                    showSpecificDataUser(dniClient);
+                    showDataCliente(dniClient);
                     break;
                 case 7:
                     //mostrar compras antiguas
-                    //ServicioCompras servicioCompras = new ServicioCompras();
-                    //servicioCompras.showBuyHistory();
+                    ServicioCompras servicioCompras = new ServicioCompras();
+                    System.out.println(servicioCompras.showBuyHistory(dniClient));
+                    break;
+                case 8:
+                    DaoClientes daoClientes = new DaoClientes();
+                    System.out.println(daoClientes.verListaClientes());
                     break;
                 case 0:
                     System.out.println(Constantes.BYE_BYE);
@@ -59,19 +66,20 @@ public class UiClientSettings {
         } while (settingsClient != 0);
     }
 
-    private void deleteMonedero(Scanner sc) {
+    private void deleteMonedero(Scanner sc, String dniClient) {
         ServicioClients servicioClients = new ServicioClients();
         System.out.println("Como se llama el monedero?");
         String nombreMonedero = sc.nextLine();
 
-        if(servicioClients.removeMonedero(nombreMonedero)){
+        if (servicioClients.removeMonedero(nombreMonedero, dniClient)) {
             System.out.println("Eliminado con éxito");
-        }else{
+            System.out.println(servicioClients.verDataCliente(dniClient));
+        } else {
             System.out.println(Constantes.ERROR);
         }
     }
 
-    private void addMonedero(Scanner sc) {
+    private void addMonedero(Scanner sc, String dniClient) {
         Common common = new Common();
         ServicioClients servicioClients = new ServicioClients();
         System.out.println("Añadir monedero");
@@ -83,9 +91,10 @@ public class UiClientSettings {
 
         Monedero monedero = new Monedero(nombreMonedero, dineroAgregarTarjeta);
 
-        if(servicioClients.addMonedero(monedero)){
+        if (servicioClients.addMonedero(monedero, dniClient)) {
             System.out.println("Ha sido un éxito");
-        }else{
+            System.out.println(servicioClients.verDataCliente(dniClient));
+        } else {
             System.out.println(Constantes.ERROR);
         }
     }
@@ -101,16 +110,17 @@ public class UiClientSettings {
         System.out.println("Cuanto dinero desea agregarle?");
         double dineroAgregar = common.giveDouble();
 
-        if(servicioClients.addMoney(dniClient, nombreTarjeta, dineroAgregar)){
+        if (servicioClients.addMoney(dniClient, nombreTarjeta, dineroAgregar)) {
             System.out.println("Logrado con éxito");
-        }else{
+            System.out.println(servicioClients.verDataCliente(dniClient));
+        } else {
             System.out.println(Constantes.ERROR);
         }
     }
 
-    private void showSpecificDataUser(String dniClient) {
+    private void showDataCliente(String dniClient) {
         ServicioClients servicioClients = new ServicioClients();
-        System.out.println(servicioClients.showSpecificClient(dniClient));
+        System.out.println(servicioClients.verDataCliente(dniClient));
     }
 
     private void changeSurname(Scanner sc, String dniClient) {

@@ -1,6 +1,7 @@
 package dao;
 
 import modelo.Cliente;
+import modelo.LineaCompra;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -39,17 +40,15 @@ public class DaoClientes {
 
     public List<Cliente> verListaClientes() {
         return clientes.values().stream()
-                .map(cliente -> new Cliente(cliente.getDni(), cliente.getNombre(), cliente.getApellido()))
+                .map(cliente -> new Cliente(cliente.getDni(), cliente.getNombre(), cliente.getApellido(), cliente.getMonederos(), cliente.getCarrito(),cliente.getBuyHistory()))
                 .collect(Collectors.toUnmodifiableList());
     }
 
-    public List<Cliente> seeSpecificClient(String dniClient) {
-        return clientes.values().stream()
-                .map(cliente -> new Cliente(cliente.getDni(), cliente.getNombre(), cliente.getApellido()))
-                .collect(Collectors.toUnmodifiableList());
+    public Cliente seeSpecificClient(String dniClient) {
+        return clientes.get(dniClient);
     }
 
-    public void addMoney(String dniClient, String nombreTarjeta, double dineroAgregar) {
-
+    public List<List<LineaCompra>> showBuyHistory(String dniClient){
+        return clientes.get(dniClient).getBuyHistory();
     }
 }

@@ -1,5 +1,6 @@
 package servicios;
 
+import dao.DaoClientes;
 import dao.DaoCompras;
 import dao.DaoProducto;
 import modelo.LineaCompra;
@@ -8,38 +9,44 @@ import modelo.Producto;
 import java.util.List;
 
 
-
 public class ServicioCompras {
 
-    public boolean addToCart(Producto producto, int quantity) {
+    public boolean addToCart(String dniClient,LineaCompra productoAddCarrito) {
         DaoCompras daoCompras = new DaoCompras();
         DaoProducto daoProducto = new DaoProducto();
-        boolean productExists = daoProducto.productExists(producto.getName());
-        boolean inCart = !daoCompras.alreadyInCart(producto);
-        if (inCart && productExists) {
-            daoCompras.addCart(producto, quantity);
+        boolean seHaMetido= false;
 
+        boolean productExists = daoProducto.productExists(productoAddCarrito.getProducto().getName());
+        boolean inCart = !daoCompras.alreadyInCart(productoAddCarrito.getProducto(), dniClient);
+        if (inCart && productExists) {
+            daoCompras.addCart(dniClient, productoAddCarrito);
+            seHaMetido = true;
         }
-        return inCart;
+        return seHaMetido;
     }
 
-    public boolean removeProductCart(Producto producto) {
+    public boolean removeProductCart(String dniClient, Producto producto) {
         DaoCompras daoCompras = new DaoCompras();
-        boolean isCart = daoCompras.alreadyInCart(producto);
+        boolean isCart = daoCompras.alreadyInCart(producto, dniClient);
         if (isCart) {
-            daoCompras.deleteProductCart(producto);
+            daoCompras.deleteProductCart(dniClient, producto);
         }
         return isCart;
     }
 
-    public void guardarHistorialCompra(List<LineaCompra> lineaCompras){
+    public void guardarHistorialCompra(String dniClient, List<LineaCompra> lineaCompras) {
         DaoCompras daoCompras = new DaoCompras();
-        daoCompras.guardarCompra(lineaCompras);
+        daoCompras.guardarCompra(dniClient, lineaCompras);
     }
 
-    public int precioCarrito(){
+    public int precioCarrito() {
         DaoCompras daoCompras = new DaoCompras();
         return 1;
+    }
+
+    public List<List<LineaCompra>> showBuyHistory(String dniClient){
+        DaoClientes daoClientes = new DaoClientes();
+        return daoClientes.showBuyHistory(dniClient);
     }
 
     // public boolean pagarCarrito(){

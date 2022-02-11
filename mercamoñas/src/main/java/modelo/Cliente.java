@@ -1,8 +1,6 @@
 package modelo;
 
-import java.util.List;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 
 public class Cliente {
 
@@ -14,12 +12,27 @@ public class Cliente {
     private List<List<LineaCompra>> buyHistory;
 
 
+    private Cliente(){
+        buyHistory = new ArrayList<>();
+        monederos = new HashSet<>();
+        carrito = new ArrayList<>();
+    }
+
     public Cliente(String dni, String nombre, String apellido) {
+        this();
         this.dni = dni;
         this.nombre = nombre;
         this.apellido = apellido;
     }
 
+    public Cliente(String dni, String nombre, String apellido, Set<Monedero> monederos, List<LineaCompra> carrito, List<List<LineaCompra>> buyHistory) {
+        this.dni = dni;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.monederos = monederos;
+        this.carrito = carrito;
+        this.buyHistory = buyHistory;
+    }
 
     public Set<Monedero> getMonederos() {
         return monederos;
@@ -84,12 +97,13 @@ public class Cliente {
 
     @Override
     public String toString() {
-        return "Cliente{" +
-                "dni='" + dni + '\'' + "\n" +
-                ", nombre='" + nombre + '\'' + "\n" +
-                ", apellido='" + apellido + '\'' + "\n" +
-                ", monederos=" + monederos + "\n" +
-                ", carrito=" + carrito + "\n" +
-                "}\n";
+        return "\nCliente{" +
+                "\ndni='" + dni + '\'' +
+                ",\nnombre='" + nombre + '\'' +
+                ",\napellido='" + apellido + '\'' +
+                ",\nmonederos=" + monederos +
+                ",\ncarrito=" + carrito +
+                ",\nbuyHistory=" + buyHistory +
+                "}\n\n";
     }
 }

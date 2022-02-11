@@ -5,26 +5,25 @@ import modelo.Producto;
 
 import java.util.List;
 
-import static dao.BBDD.buyHistory;
-import static dao.BBDD.carrito;
+import static dao.BBDD.clientes;
 
 
 public class DaoCompras {
 
-    public boolean alreadyInCart(Producto producto){
-        return carrito.contains(new LineaCompra(producto));
+    public boolean alreadyInCart(Producto producto, String dniClient){
+        return clientes.get(dniClient).getCarrito().contains(new LineaCompra(producto));
     }
 
-    public void addCart(Producto producto, int quantity) {
-        carrito.add(new LineaCompra(producto, quantity));
+    public void addCart(String dniClient, LineaCompra productoNuevoCarrito) {
+        clientes.get(dniClient).getCarrito().add(productoNuevoCarrito);
     }
 
-    public void deleteProductCart(Producto producto){
-        carrito.remove(new LineaCompra(producto));
+    public void deleteProductCart(String dniClient, Producto producto){
+        clientes.get(dniClient).getCarrito().remove(new LineaCompra(producto));
     }
 
-    public void guardarCompra(List<LineaCompra> lineaCompras){
-        buyHistory.add(lineaCompras);
+    public void guardarCompra(String dniClient, List<LineaCompra> lineaCompras){
+        clientes.get(dniClient).getBuyHistory().add(lineaCompras);
     }
 
 }

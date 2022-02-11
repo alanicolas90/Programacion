@@ -12,11 +12,8 @@ public class BBDD {
     private BBDD() {
     }
 
-    static LinkedHashMap<String, Cliente> clientes = new LinkedHashMap<>();
+    public static LinkedHashMap<String, Cliente> clientes = new LinkedHashMap<>();
     static ArrayList<Producto> productos = new ArrayList<>();
-    public static List<LineaCompra> carrito = new ArrayList<>();
-    static List<List<LineaCompra>> buyHistory = new ArrayList<>();
-    static Set<Monedero> monederos = new HashSet<>();
 
 
     static {

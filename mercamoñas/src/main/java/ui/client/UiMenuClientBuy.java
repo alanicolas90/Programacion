@@ -2,10 +2,13 @@ package ui.client;
 
 import common.Common;
 import constantes.Constantes;
+import modelo.LineaCompra;
 import modelo.Producto;
 import servicios.ServicioCompras;
 import servicios.ServicioProductos;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class UiMenuClientBuy {
@@ -26,11 +29,11 @@ public class UiMenuClientBuy {
             switch (clientDecision) {
                 case 1:
                     //agregar producto al carro de compra
-                    addProductCart(sc);
+                    addProductCart(sc, dniClient);
                     break;
                 case 2:
                     //quitar un producto del carrito de compra
-                    deleteProductFromCart(sc);
+                    deleteProductFromCart(sc, dniClient);
                     break;
                 case 3:
                     System.out.println("pagar el carrito");
@@ -48,22 +51,22 @@ public class UiMenuClientBuy {
 
     }
 
-    private void deleteProductFromCart(Scanner sc) {
+    private void deleteProductFromCart(Scanner sc, String dniClient) {
         ServicioCompras servicioCompras = new ServicioCompras();
 
         System.out.println("Imprimir carrito solo"); //no se como se hace :)
         System.out.println("Dime el producto que desea eliminar del carrito");
-        String nombreProductoBorrar= sc.nextLine();
-        Producto productoBorrar= new Producto(nombreProductoBorrar);
+        String nombreProductoBorrar = sc.nextLine();
+        Producto productoBorrar = new Producto(nombreProductoBorrar);
 
-        if(servicioCompras.removeProductCart(productoBorrar)){
+        if (servicioCompras.removeProductCart(dniClient, productoBorrar)) {
             System.out.println("Ha sido un éxito");
-        }else{
+        } else {
             System.out.println(Constantes.ERROR);
         }
     }
 
-    private void addProductCart(Scanner sc) {
+    private void addProductCart(Scanner sc, String dniClient) {
         Common common = new Common();
         ServicioCompras servicioCompras = new ServicioCompras();
         ServicioProductos servicioProductos = new ServicioProductos();
@@ -73,14 +76,16 @@ public class UiMenuClientBuy {
 
         System.out.println("que producto desea agregar al carrito?");
         String productoMeterCarrito = sc.nextLine();
-        Producto producto= new Producto(productoMeterCarrito);
+        Producto producto = new Producto(productoMeterCarrito);
 
         System.out.println("cuanta cantidad quiere?");
         int quantity = common.giveInt();
 
-        if(servicioCompras.addToCart(producto, quantity)){
+        LineaCompra productoAddCart = new LineaCompra(producto, quantity);
+
+        if (servicioCompras.addToCart(dniClient, productoAddCart)) {
             System.out.println("Éxito");
-        }else{
+        } else {
             System.out.println(Constantes.ERROR);
         }
     }

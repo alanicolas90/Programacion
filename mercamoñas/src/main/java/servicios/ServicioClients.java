@@ -6,6 +6,7 @@ import modelo.Cliente;
 import modelo.Monedero;
 
 import java.util.List;
+import java.util.Set;
 
 
 public class ServicioClients {
@@ -67,34 +68,39 @@ public class ServicioClients {
     }
 
     public boolean addMoney(String dniCliente, String nombreTarjeta, double dineroAgregar) {
-        DaoClientes daoClientes = new DaoClientes();
         DaoMonedero daoMonedero = new DaoMonedero();
-        boolean exists = daoMonedero.monederoExists(nombreTarjeta);
+        boolean exists = daoMonedero.monederoExists(nombreTarjeta, dniCliente);
         if (exists)
-            daoClientes.addMoney(dniCliente, nombreTarjeta, dineroAgregar);
+            daoMonedero.addMoneyMonedero(dniCliente, nombreTarjeta, dineroAgregar);
         return exists;
     }
 
-    public boolean addMonedero(Monedero monedero) {
+    public boolean addMonedero(Monedero monedero, String dniClient) {
         DaoMonedero daoMonedero = new DaoMonedero();
-        boolean canBeAdded = !daoMonedero.monederoExists(monedero.getName());
+        boolean canBeAdded = !daoMonedero.monederoExists(monedero.getName(), dniClient);
         if (canBeAdded) {
-            daoMonedero.addMonedero(monedero);
+            daoMonedero.addMonedero(monedero, dniClient);
         }
         return canBeAdded;
     }
 
-    public List<Cliente> showSpecificClient(String dniClient) {
+    public boolean removeMonedero(String nombreMonedero, String dniClient) {
+        DaoMonedero daoMonedero = new DaoMonedero();
+        boolean exists = daoMonedero.monederoExists(nombreMonedero, dniClient);
+        if (exists) {
+            daoMonedero.removeMonedero(dniClient, nombreMonedero);
+        }
+        return exists;
+    }
+
+    public Set<Monedero> showTarjetasCliente(String dniClient){
+        DaoMonedero daoMonedero = new DaoMonedero();
+        return daoMonedero.showTarjetasCliente(dniClient);
+    }
+
+    public Cliente verDataCliente(String dniClient){
         DaoClientes daoClientes = new DaoClientes();
         return daoClientes.seeSpecificClient(dniClient);
     }
 
-    public boolean removeMonedero(String nombreMonedero) {
-        DaoMonedero daoMonedero = new DaoMonedero();
-        boolean exists = daoMonedero.monederoExists(nombreMonedero);
-        if (exists) {
-            daoMonedero.removeMonedero(nombreMonedero);
-        }
-        return exists;
-    }
 }

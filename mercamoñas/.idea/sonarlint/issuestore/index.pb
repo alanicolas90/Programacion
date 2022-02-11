@@ -11,9 +11,3 @@ W
 .src/main/java/ui/admin/UiMenuAdminCliente.java,b\c\bc85f93e24f7b27d7328d68d951ac7cd5e1eb424
 ^
 .src/main/java/ui/admin/UIMenuAdminProduct.java,0\6\06fa932d75ee4f6bb4901c9b339560d114c5955b
-J
-src/main/java/ui/Main.java,f\5\f5f833a11c774bc6d9fec08fc87be62b89228540
-R
-"src/main/java/modelo/Producto.java,5\d\5d4aa8abd3deca94012855c0259742f56f282b32
-Y
-)src/main/java/ui/client/UiMenuClient.java,4\d\4ddf027f531b3cb845cc300f983f28692f885430
