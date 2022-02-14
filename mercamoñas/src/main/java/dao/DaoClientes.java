@@ -2,8 +2,11 @@ package dao;
 
 import modelo.Cliente;
 import modelo.LineaCompra;
+import modelo.Monedero;
+import modelo.Producto;
 
 import java.util.List;
+import java.util.concurrent.atomic.AtomicReference;
 import java.util.stream.Collectors;
 
 import static dao.BBDD.clientes;
@@ -40,7 +43,7 @@ public class DaoClientes {
 
     public List<Cliente> verListaClientes() {
         return clientes.values().stream()
-                .map(cliente -> new Cliente(cliente.getDni(), cliente.getNombre(), cliente.getApellido(), cliente.getMonederos(), cliente.getCarrito(),cliente.getBuyHistory()))
+                .map(cliente -> new Cliente(cliente.getDni(), cliente.getNombre(), cliente.getApellido(), cliente.getMonederos(), cliente.getCarrito(), cliente.getBuyHistory()))
                 .collect(Collectors.toUnmodifiableList());
     }
 
@@ -48,11 +51,29 @@ public class DaoClientes {
         return clientes.get(dniClient);
     }
 
-    public List<List<LineaCompra>> showBuyHistory(String dniClient){
+    public List<List<LineaCompra>> showBuyHistory(String dniClient) {
         return clientes.get(dniClient).getBuyHistory();
     }
 
-    public List<LineaCompra> showCarrito(String dniClient){
+    public List<LineaCompra> dameCarrito(String dniClient) {
         return clientes.get(dniClient).getCarrito();
     }
+
+    public void emptyCart(String dniClient) {
+        clientes.get(dniClient).getCarrito().clear();
+    }
+
+    public double getTodoDineroMonedero(String dniClient, String nombreMonedero) {
+        AtomicReference<Double> dineroTarjeta = new AtomicReference<>((double) 0);
+        clientes.get(dniClient).getMonederos().forEach(monedero -> {
+            if(monedero.equals(new Monedero(nombreMonedero))){
+                dineroTarjeta.set(monedero.getMoney());
+            }
+        });
+        return dineroTarjeta.get();
+    }
+
+
+
+
 }

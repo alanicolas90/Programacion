@@ -2,6 +2,7 @@ package servicios;
 
 import dao.DaoClientes;
 import dao.DaoMonedero;
+import dao.DaoProducto;
 import modelo.Cliente;
 import modelo.LineaCompra;
 import modelo.Monedero;
@@ -94,19 +95,33 @@ public class ServicioClients {
         return exists;
     }
 
-    public Set<Monedero> showTarjetasCliente(String dniClient){
+    public Set<Monedero> showTarjetasCliente(String dniClient) {
         DaoMonedero daoMonedero = new DaoMonedero();
         return daoMonedero.showTarjetasCliente(dniClient);
     }
 
-    public Cliente verDataCliente(String dniClient){
+    public Cliente verDataCliente(String dniClient) {
         DaoClientes daoClientes = new DaoClientes();
         return daoClientes.seeSpecificClient(dniClient);
     }
 
-    public List<LineaCompra> showCarrito(String dniClient){
+    public List<LineaCompra> showCarrito(String dniClient) {
         DaoClientes daoClientes = new DaoClientes();
-        return daoClientes.showCarrito(dniClient);
+        return daoClientes.dameCarrito(dniClient);
     }
+
+    public double getTotalPrice(String dniClient) {
+        DaoClientes daoClientes = new DaoClientes();
+        DaoProducto daoProducto = new DaoProducto();
+        double precioTotalCarrito = 0;
+        List<LineaCompra> carrito = daoClientes.dameCarrito(dniClient);
+        for (int i = 0; i < carrito.size(); i++) {
+            double precioProducto = daoProducto.getPriceProducto(carrito.get(i).getProducto().getName());
+            double cantidadProducto = carrito.get(i).getQuantity();
+            precioTotalCarrito = precioTotalCarrito + (cantidadProducto * precioProducto);
+        }
+        return precioTotalCarrito;
+    }
+
 
 }

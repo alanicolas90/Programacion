@@ -1,5 +1,7 @@
 package modelo;
 
+import java.util.Objects;
+
 public class LineaCompra {
 
     private Producto producto;
@@ -11,6 +13,10 @@ public class LineaCompra {
 
     public LineaCompra(Producto producto, int quantity) {
         this.producto = producto;
+        this.quantity = quantity;
+    }
+
+    public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
 
@@ -26,8 +32,17 @@ public class LineaCompra {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        LineaCompra that = (LineaCompra) o;
+        return producto.equals(that.producto);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(producto);
     }
 
     @Override

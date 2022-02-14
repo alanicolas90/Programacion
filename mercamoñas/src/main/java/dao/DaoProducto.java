@@ -2,19 +2,19 @@ package dao;
 
 import modelo.Producto;
 
-
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static dao.BBDD.clientes;
 import static dao.BBDD.productos;
 
 public class DaoProducto {
 
-    public boolean productExists(String nombreProducto){
+    public boolean productExists(String nombreProducto) {
         return productos.contains(new Producto(nombreProducto));
     }
 
-    public void  addProducto(Producto newProducto) {
+    public void addProducto(Producto newProducto) {
         productos.add(new Producto(newProducto.getName(), newProducto.getPrice(), newProducto.getStock()));
     }
 
@@ -42,9 +42,20 @@ public class DaoProducto {
                 .map(producto -> new Producto(producto.getName(), producto.getPrice(), producto.getStock()))
                 .collect(Collectors.toUnmodifiableList());
     }
-     public Producto getProductoLista(String dniClient, String productoMeterCarrito){
+
+    public Producto getProductoLista(String productoMeterCarrito) {
         return productos.get(productos.indexOf(new Producto(productoMeterCarrito)));
-     }
+    }
+
+    public double getPriceProducto(String nameProduct) {
+        int productoBusco = productos.indexOf(new Producto(nameProduct));
+        return productos.get(productoBusco).getPrice();
+    }
+
+    public int getStockProduct(String nombreProduct){
+        int positionProductoBusco= productos.indexOf(new Producto(nombreProduct));
+        return productos.get(positionProductoBusco).getStock();
+    }
 
 
 }

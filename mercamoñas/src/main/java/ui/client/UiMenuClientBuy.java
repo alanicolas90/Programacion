@@ -8,8 +8,6 @@ import servicios.ServicioClients;
 import servicios.ServicioCompras;
 import servicios.ServicioProductos;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class UiMenuClientBuy {
@@ -37,8 +35,28 @@ public class UiMenuClientBuy {
                     deleteProductFromCart(sc, dniClient);
                     break;
                 case 3:
-                    System.out.println("pagar el carrito");
+                    ServicioClients servicioClients = new ServicioClients();
+                    ServicioCompras servicioCompras = new ServicioCompras();
+                    //pagar el carrito
                     System.out.print("El precio de tu carrito es:");
+                    System.out.println(servicioClients.getTotalPrice(dniClient));
+                    //elegir que tarjeta con la que pagar
+                    System.out.println("Con que tarjeta desea pagar?");
+                    System.out.println(servicioClients.showTarjetasCliente(dniClient));
+
+                    System.out.println("Ponga el nombre de la tarjeta:");
+                    String nombreTarjetaPagar = sc.nextLine();
+
+                    //mensaje que bien o mal
+                    //hacer las deducciones
+                    if(servicioCompras.pagarCarrito(dniClient, nombreTarjetaPagar)){
+                        System.out.println("Ha sido un éxito");
+                        //guardar en historial el carrito
+                        servicioCompras.guardarHistorialCompra(dniClient);
+                    }else{
+                        System.out.println(Constantes.ERROR);
+                    }
+                    System.out.println(servicioClients.verDataCliente(dniClient));
                     break;
                 case 0:
                     System.out.println("Muchas gracias y hasta luego.");
@@ -63,6 +81,7 @@ public class UiMenuClientBuy {
 
         if (servicioCompras.removeProductCart(dniClient, nombreProductoBorrar)) {
             System.out.println("Ha sido un éxito");
+            System.out.println(servicioClients.showCarrito(dniClient));
         } else {
             System.out.println(Constantes.ERROR);
         }
@@ -82,7 +101,7 @@ public class UiMenuClientBuy {
 
         if(servicioProductos.existProduct(productoMeterCarrito)){
 
-            Producto productoAddCart = servicioProductos.getProductoLista(dniClient, productoMeterCarrito);
+            Producto productoAddCart = servicioProductos.getProductoLista(productoMeterCarrito);
             System.out.println("cuanta cantidad quiere?");
 
             int quantity = common.giveInt();

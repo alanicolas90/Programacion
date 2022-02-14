@@ -1,23 +1,17 @@
 
 7
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
-P
- src/main/java/common/Common.java,1\f\1f0f1ac1e908685e5a5d0d50f31f2929f463cc5f
-X
-(src/main/java/constantes/Constantes.java,f\f\ff10601d1d472e7ac46f2abd85d86cedd879c082
 W
 'src/main/java/ui/admin/UiMenuAdmin.java,c\4\c40da7c9497396b9f33c290a20c7b549a33ab55a
 ^
 .src/main/java/ui/admin/UiMenuAdminCliente.java,b\c\bc85f93e24f7b27d7328d68d951ac7cd5e1eb424
 ^
 .src/main/java/ui/admin/UIMenuAdminProduct.java,0\6\06fa932d75ee4f6bb4901c9b339560d114c5955b
-J
-src/main/java/ui/Main.java,f\5\f5f833a11c774bc6d9fec08fc87be62b89228540
-Y
-)src/main/java/ui/client/UiMenuClient.java,4\d\4ddf027f531b3cb845cc300f983f28692f885430
+P
+ src/main/java/common/Common.java,1\f\1f0f1ac1e908685e5a5d0d50f31f2929f463cc5f
+X
+(src/main/java/constantes/Constantes.java,f\f\ff10601d1d472e7ac46f2abd85d86cedd879c082
 R
 "src/main/java/dao/DaoMonedero.java,7\2\72275208d132a8451fcd510007f87b770044a78c
-R
-"src/main/java/modelo/Monedero.java,b\5\b50a6874689d11129d215064c2e988cfec63f315
-]
--src/main/java/ui/client/UiClientSettings.java,0\c\0c1f51b4960c72c49f23ae63a218510545d8aacc
+Y
+)src/main/java/ui/client/UiMenuClient.java,4\d\4ddf027f531b3cb845cc300f983f28692f885430

@@ -57,9 +57,9 @@ public class ServicioProductos {
         return daoProducto.showAllProducts();
     }
 
-    public Producto getProductoLista(String dniClient, String productoMeterCarrito){
+    public Producto getProductoLista(String productoMeterCarrito){
         DaoProducto daoProducto = new DaoProducto();
-        return daoProducto.getProductoLista(dniClient, productoMeterCarrito);
+        return daoProducto.getProductoLista(productoMeterCarrito);
     }
 
     public boolean existProduct(String nombreProducto){

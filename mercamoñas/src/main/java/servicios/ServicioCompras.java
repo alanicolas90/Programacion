@@ -14,13 +14,15 @@ public class ServicioCompras {
     public boolean addToCart(String dniClient, LineaCompra productoAddCarrito) {
         DaoCompras daoCompras = new DaoCompras();
         DaoProducto daoProducto = new DaoProducto();
-        boolean seHaMetido= false;
+        boolean seHaMetido = false;
 
         boolean productExists = daoProducto.productExists(productoAddCarrito.getProducto().getName());
         boolean inCart = !daoCompras.alreadyInCart(productoAddCarrito.getProducto(), dniClient);
+        int stockTiendaProducto = daoProducto.getStockProduct(productoAddCarrito.getProducto().getName());
 
-        if (inCart && productExists) {
+        if (inCart && productExists && productoAddCarrito.getQuantity() <= stockTiendaProducto) {
             daoCompras.addCart(dniClient, productoAddCarrito);
+            daoCompras.cambiarStockComprar(productoAddCarrito.getProducto().getName(),productoAddCarrito.getQuantity());
             seHaMetido = true;
         }
         return seHaMetido;
@@ -35,29 +37,38 @@ public class ServicioCompras {
         return isCart;
     }
 
-    public void guardarHistorialCompra(String dniClient, List<LineaCompra> lineaCompras) {
+    public void guardarHistorialCompra(String dniClient) {
         DaoCompras daoCompras = new DaoCompras();
+        DaoClientes daoClientes = new DaoClientes();
+
+        List<LineaCompra> lineaCompras = daoClientes.dameCarrito(dniClient);
         daoCompras.guardarCompra(dniClient, lineaCompras);
+        daoClientes.emptyCart(dniClient);
     }
 
-    public int precioCarrito() {
-        DaoCompras daoCompras = new DaoCompras();
-        return 1;
-    }
-
-    public List<List<LineaCompra>> showBuyHistory(String dniClient){
+    public List<List<LineaCompra>> showBuyHistory(String dniClient) {
         DaoClientes daoClientes = new DaoClientes();
         return daoClientes.showBuyHistory(dniClient);
     }
 
-    // public boolean pagarCarrito(){
-    //   DaoProducto daoProducto = new DaoProducto();
-    // boolean puedePagar = true;
-    //if(puedePagar){
-    //   daoProducto.updateStockProducto(producto.getName(), daoProducto.nuevoStock(producto,quantity));
-    //  puedePagar = false;
-    //}
-    //return puedePagar;
-    //}
+    public boolean pagarCarrito(String dniClient, String nombreMonedero) {
+        ServicioClients servicioClients = new ServicioClients();
+        DaoClientes daoClientes = new DaoClientes();
+        DaoCompras daoCompras = new DaoCompras();
+
+        boolean seHaPagado = false;
+        double precioTotalCarrito = servicioClients.getTotalPrice(dniClient);
+        double dineroMonedero = daoClientes.getTodoDineroMonedero(dniClient, nombreMonedero);
+
+        if (dineroMonedero >= precioTotalCarrito) {
+            //monedero quito dinero
+            double dineroRestanteMonedero = dineroMonedero - precioTotalCarrito;
+            daoCompras.ajustarDineroMonederoAfterCompra(dniClient, nombreMonedero, dineroRestanteMonedero);
+
+            seHaPagado = true;
+        }
+        return seHaPagado;
+    }
+
 
 }

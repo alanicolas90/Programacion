@@ -44,7 +44,6 @@ public class UiClientSettings {
                     agregarDineroMonederoExistente(sc, dniClient);
                     break;
                 case 6:
-                    //ver tarjetas
                     showDataCliente(dniClient);
                     break;
                 case 7:

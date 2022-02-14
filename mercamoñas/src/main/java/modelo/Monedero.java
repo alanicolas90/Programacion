@@ -22,10 +22,6 @@ public class Monedero {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public double getMoney() {
         return money;
     }

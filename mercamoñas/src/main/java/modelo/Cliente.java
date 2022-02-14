@@ -7,9 +7,9 @@ public class Cliente {
     private String dni;
     private String nombre;
     private String apellido;
-    private Set<Monedero> monederos;
-    private List<LineaCompra> carrito;
-    private List<List<LineaCompra>> buyHistory;
+    private final Set<Monedero> monederos;
+    private final List<LineaCompra> carrito;
+    private final List<List<LineaCompra>> buyHistory;
 
 
     private Cliente(){
@@ -38,24 +38,12 @@ public class Cliente {
         return monederos;
     }
 
-    public void setMonederos(Set<Monedero> monederos) {
-        this.monederos = monederos;
-    }
-
     public List<LineaCompra> getCarrito() {
         return carrito;
     }
 
-    public void setCarrito(List<LineaCompra> carrito) {
-        this.carrito = carrito;
-    }
-
     public List<List<LineaCompra>> getBuyHistory() {
         return buyHistory;
-    }
-
-    public void setBuyHistory(List<List<LineaCompra>> buyHistory) {
-        this.buyHistory = buyHistory;
     }
 
     public String getDni() {
