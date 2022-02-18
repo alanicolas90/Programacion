@@ -8,6 +8,8 @@ public class Cliente {
     private String nombre;
     private String apellido;
     private final Set<Monedero> monederos;
+
+    private List<Ingrediente> alergenos;
     private final List<LineaCompra> carrito;
     private final List<List<LineaCompra>> buyHistory;
 

@@ -1,47 +1,35 @@
 package modelo;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
 import modelo.constantes.Constantes;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+
+@Data
+@AllArgsConstructor
 
 public class Producto {
 
     private String name;
     private double price;
     private int stock;
-
-    public Producto(String name, double price, int stock) {
-        this.name = name;
-        this.price = price;
-        this.stock = stock;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public int getStock() {
-        return stock;
-    }
+    private List<Ingrediente> ingredientes;
 
     public Producto(String name) {
         this.name = name;
     }
 
-    public void setName(String name) {
+    public Producto(String name, double price, int stock){
         this.name = name;
+        this.price=price;
+        this.stock=stock;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
-    public void setStock(int stock) {
-        this.stock = stock;
+    private Producto(){
+        ingredientes = new ArrayList<>();
     }
 
     @Override
@@ -54,7 +42,7 @@ public class Producto {
 
     @Override
     public int hashCode() {
-        return Objects.hash(name);
+        return Objects.hash(name.toLowerCase());
     }
 
     @Override

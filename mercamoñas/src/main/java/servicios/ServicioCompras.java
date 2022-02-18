@@ -64,6 +64,7 @@ public class ServicioCompras {
             //monedero quito dinero
             double dineroRestanteMonedero = dineroMonedero - precioTotalCarrito;
             daoCompras.ajustarDineroMonederoAfterCompra(dniClient, nombreMonedero, dineroRestanteMonedero);
+            guardarHistorialCompra(dniClient);
 
             seHaPagado = true;
         }
