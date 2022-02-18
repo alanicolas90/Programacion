@@ -48,11 +48,12 @@ public class Constantes {
     //PRODUCTOS ADMINISTRADOR
     public static final String HASTA_LA_NEXT = "Hasta la próxima.";
     public static final String OPTIONS_PRODUCTS = "1) Añadir producto nuevo\n" +
-            "2) Eliminar producto\n" +
-            "3) Cambiar nombre de un producto\n" +
-            "4) Cambiar precio de un producto\n" +
-            "5) Cambiar stock de un producto\n" +
-            "6) Ver todos los productos\n \n" +
+            "2) Añadir producto caducable\n" +
+            "3) Eliminar producto\n" +
+            "4) Cambiar nombre de un producto\n" +
+            "5) Cambiar precio de un producto\n" +
+            "6) Cambiar stock de un producto\n" +
+            "7) Ver todos los productos\n \n" +
             "0) Salir";
     public static final String COMO_QUIERES_QUE_SE_LLAME_EL_NUEVO_PRODUCTO = "Como quieres que se llame el nuevo producto? ";
     public static final String CUANTO_STOCK_TIENES_DEL_PRODUCTO = "Cuanto stock tienes del producto? ";

@@ -5,7 +5,6 @@ import modelo.Producto;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static dao.BBDD.clientes;
 import static dao.BBDD.productos;
 
 public class DaoProducto {
@@ -55,6 +54,10 @@ public class DaoProducto {
     public int getStockProduct(String nombreProduct){
         int positionProductoBusco= productos.indexOf(new Producto(nombreProduct));
         return productos.get(positionProductoBusco).getStock();
+    }
+
+    public List<Producto> showAllProductosSinCaducables(){
+return null;
     }
 
 

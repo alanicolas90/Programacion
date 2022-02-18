@@ -35,28 +35,7 @@ public class UiMenuClientBuy {
                     deleteProductFromCart(sc, dniClient);
                     break;
                 case 3:
-                    ServicioClients servicioClients = new ServicioClients();
-                    ServicioCompras servicioCompras = new ServicioCompras();
-                    //pagar el carrito
-                    System.out.print("El precio de tu carrito es:");
-                    System.out.println(servicioClients.getTotalPrice(dniClient));
-                    //elegir que tarjeta con la que pagar
-                    System.out.println("Con que tarjeta desea pagar?");
-                    System.out.println(servicioClients.showTarjetasCliente(dniClient));
-
-                    System.out.println("Ponga el nombre de la tarjeta:");
-                    String nombreTarjetaPagar = sc.nextLine();
-
-                    //mensaje que bien o mal
-                    //hacer las deducciones
-                    if(servicioCompras.pagarCarrito(dniClient, nombreTarjetaPagar)){
-                        System.out.println("Ha sido un éxito");
-                        //guardar en historial el carrito
-                        servicioCompras.guardarHistorialCompra(dniClient);
-                    }else{
-                        System.out.println(Constantes.ERROR);
-                    }
-                    System.out.println(servicioClients.verDataCliente(dniClient));
+                    pagarElCarrito(sc, dniClient);
                     break;
                 case 0:
                     System.out.println("Muchas gracias y hasta luego.");
@@ -68,6 +47,29 @@ public class UiMenuClientBuy {
 
         } while (clientDecision != 0);
 
+    }
+
+    private void pagarElCarrito(Scanner sc, String dniClient) {
+        ServicioClients servicioClients = new ServicioClients();
+        ServicioCompras servicioCompras = new ServicioCompras();
+        //pagar el carrito
+        System.out.print("El precio de tu carrito es:");
+        System.out.println(servicioClients.getTotalPrice(dniClient));
+        //elegir que tarjeta con la que pagar
+        System.out.println("Con que tarjeta desea pagar?");
+        System.out.println(servicioClients.showTarjetasCliente(dniClient));
+
+        System.out.println("Ponga el nombre de la tarjeta:");
+        String nombreTarjetaPagar = sc.nextLine();
+
+        //mensaje que bien o mal
+        //hacer las deducciones
+        if(servicioCompras.pagarCarrito(dniClient, nombreTarjetaPagar)){
+            System.out.println("Ha sido un éxito");
+        }else{
+            System.out.println(Constantes.ERROR);
+        }
+        System.out.println(servicioClients.verDataCliente(dniClient));
     }
 
     private void deleteProductFromCart(Scanner sc, String dniClient) {
@@ -103,8 +105,8 @@ public class UiMenuClientBuy {
 
             Producto productoAddCart = servicioProductos.getProductoLista(productoMeterCarrito);
             System.out.println("cuanta cantidad quiere?");
-
             int quantity = common.giveInt();
+
             LineaCompra carritoAdd= new LineaCompra(productoAddCart, quantity);
 
             if (servicioCompras.addToCart(dniClient, carritoAdd)) {
@@ -115,9 +117,6 @@ public class UiMenuClientBuy {
         }else{
             System.out.println("El producto no existe");
         }
-
-
-
 
         System.out.println(servicioClients.verDataCliente(dniClient));
         System.out.println(servicioClients.showCarrito(dniClient));

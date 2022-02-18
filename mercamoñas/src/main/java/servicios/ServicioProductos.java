@@ -1,8 +1,11 @@
 package servicios;
 
 import dao.DaoProducto;
+import dao.DaoProductoCaducable;
 import modelo.Producto;
+import modelo.ProductoCaducable;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 public class ServicioProductos {
@@ -65,6 +68,18 @@ public class ServicioProductos {
     public boolean existProduct(String nombreProducto){
         DaoProducto daoProducto = new DaoProducto();
         return daoProducto.productExists(nombreProducto);
+    }
+
+    public boolean addProductCaducable(ProductoCaducable productoCaducable){
+        DaoProductoCaducable daoProductoCaducable = new DaoProductoCaducable();
+        boolean exist = !existProduct(productoCaducable.getName());
+        boolean caducidad = LocalDateTime.parse(productoCaducable.getCaducidad().toString()).isAfter(LocalDateTime.now());
+        boolean sePuede = false;
+        if(exist && caducidad){
+            daoProductoCaducable.addProductoCaducable(productoCaducable);
+            sePuede = true;
+        }
+        return sePuede;
     }
 
 

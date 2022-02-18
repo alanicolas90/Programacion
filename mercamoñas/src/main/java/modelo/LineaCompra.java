@@ -16,10 +16,6 @@ public class LineaCompra {
         this.quantity = quantity;
     }
 
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-
     public Producto getProducto() {
         return producto;
     }

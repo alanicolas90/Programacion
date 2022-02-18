@@ -3,8 +3,10 @@ package ui.admin;
 import common.Common;
 import constantes.Constantes;
 import modelo.Producto;
+import modelo.ProductoCaducable;
 import servicios.ServicioProductos;
 
+import java.time.LocalDateTime;
 import java.util.Scanner;
 
 public class UIMenuAdminProduct {
@@ -22,18 +24,42 @@ public class UIMenuAdminProduct {
                     addNewProduct(sc);
                     break;
                 case 2:
-                    deleteProduct(sc);
+                    //añadir producto caducable
+                    ServicioProductos servicioProductos = new ServicioProductos();
+                    System.out.println("Dime el nombre del producto");
+                    String nameProduct= sc.nextLine();
+
+                    System.out.println("Dime el precio de "+nameProduct);
+                    double priceProductCaducable = common.giveDouble();
+
+                    System.out.println("Dime ahora la cantidad del stock");
+                    int stockProductoCaducable = common.giveInt();
+
+                    System.out.println("Dime la fecha de caducidad ()");
+                    LocalDateTime fechaCaducidad = LocalDateTime.parse(sc.nextLine());
+
+
+
+                    ProductoCaducable productoCaducable= new ProductoCaducable(nameProduct,priceProductCaducable,stockProductoCaducable,fechaCaducidad);
+                    if(servicioProductos.addProductCaducable(productoCaducable)){
+                        System.out.println("Se ha añadido correctamente");
+                    }else{
+
+                    }
                     break;
                 case 3:
-                    changeNameProduct(sc);
+                    deleteProduct(sc);
                     break;
                 case 4:
-                    changePriceProduct(sc);
+                    changeNameProduct(sc);
                     break;
                 case 5:
-                    changeStockProduct(sc);
+                    changePriceProduct(sc);
                     break;
                 case 6:
+                    changeStockProduct(sc);
+                    break;
+                case 7:
                     showProductList();
                     break;
                 case 0:
