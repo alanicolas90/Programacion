@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+
+
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+
+    <xs:element name="library">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="book">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="title"/>
+                            <xs:element name="isbn"/>
+                            <xs:element name="authors">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="author">
+                                            <xs:complexType>
+                                                <xs:attribute name="id" type="xs:string"/>
+                                                
+                                                    <xs:element name="born"/>
+                                                    <xs:element name="dead"/>
+                                                    <xs:element name="name"/>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="characters"/>
+                            
+                            
+                        </xs:sequence>
+    
+                    </xs:complexType>
+                </xs:element>               
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

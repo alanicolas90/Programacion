@@ -1,0 +1,16 @@
+
+d
+java:S1854E"BRemove this useless assignment to local variable "nombreDelJuego".(Ù¸äÁˇˇˇˇˇ8√˙éÎ›/
+S	java:S106"9Replace this use of System.out or System.err by a logger.(ˇ«‚Ø˚ˇˇˇˇ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(Ôîá—˛ˇˇˇˇ
+S	java:S106$"9Replace this use of System.out or System.err by a logger.(ñÕ‰œ˘ˇˇˇˇ
+S	java:S106)"9Replace this use of System.out or System.err by a logger.(‹∆¥Ê˘ˇˇˇˇ
+N	java:S1062"9Replace this use of System.out or System.err by a logger.(Á÷à‹
+S	java:S1066"9Replace this use of System.out or System.err by a logger.(‰„π∆ˇˇˇˇˇ
+N	java:S106>"9Replace this use of System.out or System.err by a logger.(Á÷à‹
+N	java:S106D"9Replace this use of System.out or System.err by a logger.(Á÷à‹
+]	java:S125G"<This block of commented-out lines of code should be removed.(¡û¶¸˛ˇˇˇˇ8 ˙éÎ›/
+S	java:S106J"9Replace this use of System.out or System.err by a logger.(°√È∑˛ˇˇˇˇ
+Z	java:S106M"9Replace this use of System.out or System.err by a logger.(˙’Ùñ¸ˇˇˇˇ8ˇÍíÎ›/
+Ä
+java:S11922"jDefine a constant instead of duplicating this literal "D√≠agme el nombre del juego del que busca" 3 times.(Á÷à‹

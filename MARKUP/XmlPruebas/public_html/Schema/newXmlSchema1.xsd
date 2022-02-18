@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+
+
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+
+    <xs:element name="Employee">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Name">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:minLength value="6"/>
+                            <xs:maxLength value="12"/>
+                            <xs:pattern value="[A-Z]([a-z])* [A-Z]([a-z])*"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+              
+                <xs:element name="PW">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:minLength value="6"/>
+                            <xs:maxLength value="12"/>
+                            <xs:pattern value="[A-Z]([a-z])*"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="Salary" type="xs:integer"/>
+                <xs:element name="Title" type="xs:string"/>
+            </xs:sequence>            
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

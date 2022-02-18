@@ -8,7 +8,6 @@ public class Main {
         int[] lineaArrays2 = new int[]{-1, -6, -4, -3, -2, -1, 10, 3, 8, 5};
         int[] lineaArrays3 = new int[]{-10, -1, -5, -3, -2, -1, 4, 6, 7, 9};
 
-        int[] encriptado1 = new int[10];
         System.out.println(Arrays.toString(lineaArrays1));
 
         boolean line1IsOk = true;
@@ -40,7 +39,6 @@ public class Main {
         System.out.println("The line Arrays2 is: " + line2IsOk);
         System.out.println("The line Arrays3 is: " + line3IsOk);
 
-
         //ENCRIPTAR
         int aux;
         if (line1IsOk) {
@@ -69,7 +67,6 @@ public class Main {
             }
         }
         System.out.println(Arrays.toString(lineaArrays1));
-
     }
 }
 

@@ -17,14 +17,14 @@ public class Repetitivas20 {
         while (contador < cantidadPrimos) {
             esPrimo = true;
             divisor = 3;
-            while ((divisor <numero) && esPrimo) {
+            while ((divisor < numero) && esPrimo) {
                 if (numero % divisor == 0) {
                     esPrimo = false;
                 }
                 divisor = divisor + 2;
             }
             if (esPrimo) {
-                contador=contador+1;
+                contador = contador + 1;
                 System.out.println(contador + ") " + numero);
             }
             numero = numero + 2;
