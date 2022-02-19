@@ -1,8 +1,11 @@
 package modelo;
 
+import lombok.Data;
+
 import java.util.*;
 
-public class Cliente {
+@Data
+public class Cliente implements Clone<Cliente>{
 
     private String dni;
     private String nombre;
@@ -10,9 +13,18 @@ public class Cliente {
     private final Set<Monedero> monederos;
 
     private List<Ingrediente> alergenos;
-    private final List<LineaCompra> carrito;
-    private final List<List<LineaCompra>> buyHistory;
+    private List<LineaCompra> carrito;
+    private List<List<LineaCompra>> buyHistory;
 
+    public Cliente(String dni, String nombre, String apellido, Set<Monedero> monederos, List<Ingrediente> alergenos, List<LineaCompra> carrito, List<List<LineaCompra>> buyHistory) {
+        this.dni = dni;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.monederos = monederos;
+        this.alergenos = alergenos;
+        this.carrito = carrito;
+        this.buyHistory = buyHistory;
+    }
 
     private Cliente(){
         buyHistory = new ArrayList<>();
@@ -48,12 +60,28 @@ public class Cliente {
         return buyHistory;
     }
 
+    public void setCarrito(List<LineaCompra> carrito) {
+        this.carrito = carrito;
+    }
+
+    public void setBuyHistory(List<List<LineaCompra>> buyHistory) {
+        this.buyHistory = buyHistory;
+    }
+
     public String getDni() {
         return dni;
     }
 
     public String getNombre() {
         return nombre;
+    }
+
+    public List<Ingrediente> getAlergenos() {
+        return alergenos;
+    }
+
+    public void setAlergenos(List<Ingrediente> alergenos) {
+        this.alergenos = alergenos;
     }
 
     public String getApellido() {
@@ -95,5 +123,14 @@ public class Cliente {
                 ",\ncarrito=" + carrito +
                 ",\nbuyHistory=" + buyHistory +
                 "}\n\n";
+    }
+
+    @Override
+    public Cliente clone() {
+        return new Cliente(this.dni,this.nombre,this.apellido
+                ,this.monederos
+                ,this.alergenos
+                ,this.carrito
+                ,this.buyHistory);
     }
 }

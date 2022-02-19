@@ -35,16 +35,15 @@ public class UIMenuAdminProduct {
                     System.out.println("Dime ahora la cantidad del stock");
                     int stockProductoCaducable = common.giveInt();
 
-                    System.out.println("Dime la fecha de caducidad ()");
+                    System.out.println("Dime la fecha de caducidad (yyyy-mm-ddThh:mm:ss)");
                     LocalDateTime fechaCaducidad = LocalDateTime.parse(sc.nextLine());
-
 
 
                     ProductoCaducable productoCaducable= new ProductoCaducable(nameProduct,priceProductCaducable,stockProductoCaducable,fechaCaducidad);
                     if(servicioProductos.addProductCaducable(productoCaducable)){
                         System.out.println("Se ha añadido correctamente");
                     }else{
-
+                        System.out.println("ERROR");
                     }
                     break;
                 case 3:
@@ -71,7 +70,7 @@ public class UIMenuAdminProduct {
         } while (optionMenuProducts != 0);
     }
 
-    private void showProductList() {
+    private void  showProductList() {
         ServicioProductos sp = new ServicioProductos();
         System.out.println(sp.showAllProducts());
     }

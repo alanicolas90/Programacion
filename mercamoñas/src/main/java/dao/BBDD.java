@@ -3,7 +3,9 @@ package dao;
 import modelo.Cliente;
 import modelo.Monedero;
 import modelo.Producto;
+import modelo.ProductoCaducable;
 
+import java.time.LocalDateTime;
 import java.util.*;
 
 public class BBDD {
@@ -28,6 +30,9 @@ public class BBDD {
         productos.add(new Producto("pimienta", 1.25, 200));
         productos.add(new Producto("sal", 0.7, 200));
 
+        productos.add(new ProductoCaducable("pescado", 0.7, 200, LocalDateTime.now().plusMinutes(5)));
+
         clientes.get("1").getMonederos().add(new Monedero("ale", 1000));
+
     }
 }

@@ -1,8 +1,11 @@
 package modelo;
 
+import lombok.Data;
+
 import java.time.LocalDateTime;
 import java.util.Objects;
 
+@Data
 public class ProductoCaducable extends Producto{
 
     private LocalDateTime caducidad;
@@ -20,6 +23,7 @@ public class ProductoCaducable extends Producto{
         this.caducidad = caducidad;
     }
 
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -36,8 +40,11 @@ public class ProductoCaducable extends Producto{
 
     @Override
     public String toString() {
-        return "ProductoCaducable{" +
+        return super.toString() +
+                "ProductoCaducable{" +
                 "caducidad=" + caducidad +
                 '}';
     }
+
+
 }

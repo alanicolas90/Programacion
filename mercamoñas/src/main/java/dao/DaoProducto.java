@@ -38,7 +38,7 @@ public class DaoProducto {
 
     public List<Producto> showAllProducts() {
         return productos.stream()
-                .map(producto -> new Producto(producto.getName(), producto.getPrice(), producto.getStock()))
+                .map(producto -> producto.clone())
                 .collect(Collectors.toUnmodifiableList());
     }
 

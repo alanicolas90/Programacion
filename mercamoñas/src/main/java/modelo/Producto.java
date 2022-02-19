@@ -1,28 +1,35 @@
 package modelo;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import modelo.constantes.Constantes;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
+
 
 @Data
-@AllArgsConstructor
-
-public class Producto {
+public class Producto  implements Comparable<Producto>, Clone<Producto>{
 
     private String name;
     private double price;
     private int stock;
     private List<Ingrediente> ingredientes;
 
+
+    public Producto(String name, double price, int stock, List<Ingrediente> ingredientes) {
+        this.name = name;
+        this.price = price;
+        this.stock = stock;
+        this.ingredientes = ingredientes;
+    }
+
     public Producto(String name) {
         this.name = name;
     }
 
     public Producto(String name, double price, int stock){
+        this();
         this.name = name;
         this.price=price;
         this.stock=stock;
@@ -47,10 +54,25 @@ public class Producto {
 
     @Override
     public String toString() {
-        return "\n" + Constantes.PRODUCTO +
-                modelo.constantes.Constantes.NAME + name + modelo.constantes.Constantes.CHAR +
-                Constantes.PRICE + price +
-                Constantes.STOCK + stock +
-                Constantes.CHAR;
+        return "\nProducto{" +
+                "name='" + name + '\'' +
+                ", \nprice=" + price +
+                ", \nstock=" + stock +
+                ", \ningredientes=" + ingredientes +
+                "}\n";
+    }
+
+    @Override
+    public int compareTo(Producto producto) {
+        return this.getName().toLowerCase().compareTo(producto.getName().toLowerCase());
+    }
+
+    @Override
+    public Producto clone() {
+        return new Producto(this.name, this.price, this.stock
+                ,this.ingredientes
+                .stream()
+                .map(Ingrediente::clone)
+                .collect(Collectors.toUnmodifiableList()));
     }
 }

@@ -3,8 +3,8 @@ package dao;
 import modelo.Cliente;
 import modelo.LineaCompra;
 import modelo.Monedero;
-import modelo.Producto;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.stream.Collectors;
@@ -60,7 +60,7 @@ public class DaoClientes {
     }
 
     public void emptyCart(String dniClient) {
-        clientes.get(dniClient).getCarrito().clear();
+        clientes.get(dniClient).setCarrito(new ArrayList<>());
     }
 
     public double getTodoDineroMonedero(String dniClient, String nombreMonedero) {
