@@ -1,0 +1,27 @@
+
+O
+src/main/java/modelo/Clone.java,b\e\be2e8860852a1629ec07fe6e8154ca9dd6543f6b
+P
+ src/main/java/common/Common.java,1\f\1f0f1ac1e908685e5a5d0d50f31f2929f463cc5f
+_
+/src/main/java/modelo/constantes/Constantes.java,d\c\dc7f9e0727a3927cdf9ab6082cbca665cc39fed8
+Q
+!src/main/java/dao/DaoCompras.java,3\a\3a1d5fcfd1593ff8d68d97e07786b8b3f2a0f85e
+R
+"src/main/java/dao/DaoMonedero.java,7\2\72275208d132a8451fcd510007f87b770044a78c
+U
+%src/etc/eclipse-java-google-style.xml,2\2\228e5e78b7f2e7712eaca73f3c6911a65111531e
+U
+%src/main/java/modelo/Ingrediente.java,7\4\7496d234a6201418195ce1b39ca56000f561d7a9
+U
+%src/main/java/modelo/LineaCompra.java,0\5\05af67c9e746bfd53886a1d06137227434846b74
+R
+"src/main/java/modelo/Monedero.java,b\5\b50a6874689d11129d215064c2e988cfec63f315
+7
+pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
+R
+"src/main/java/modelo/Producto.java,5\d\5d4aa8abd3deca94012855c0259742f56f282b32
+W
+'src/main/java/ui/admin/UiMenuAdmin.java,c\4\c40da7c9497396b9f33c290a20c7b549a33ab55a
+Y
+)src/main/java/ui/client/UiMenuClient.java,4\d\4ddf027f531b3cb845cc300f983f28692f885430

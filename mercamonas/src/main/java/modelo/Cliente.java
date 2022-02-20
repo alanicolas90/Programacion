@@ -120,7 +120,7 @@ public class Cliente implements Clone<Cliente> {
   public String toString() {
     return "\nCliente{" + "\ndni='" + dni + '\'' + ",\nnombre='" + nombre + '\'' + ",\napellido='"
         + apellido + '\'' + ",\nmonederos=" + monederos + ",\ncarrito=" + carrito + ",\nbuyHistory="
-        + buyHistory + "}\n\n";
+        + buyHistory + "}\n";
   }
 
   @Override

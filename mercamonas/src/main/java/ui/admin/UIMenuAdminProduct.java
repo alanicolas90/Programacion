@@ -23,28 +23,7 @@ public class UIMenuAdminProduct {
           addNewProduct(sc);
           break;
         case 2:
-          // añadir producto caducable
-          ServicioProductos servicioProductos = new ServicioProductos();
-          System.out.println("Dime el nombre del producto");
-          String nameProduct = sc.nextLine();
-
-          System.out.println("Dime el precio de " + nameProduct);
-          double priceProductCaducable = common.giveDouble();
-
-          System.out.println("Dime ahora la cantidad del stock");
-          int stockProductoCaducable = common.giveInt();
-
-          System.out.println("Dime la fecha de caducidad (yyyy-mm-ddThh:mm:ss)");
-          LocalDateTime fechaCaducidad = LocalDateTime.parse(sc.nextLine());
-
-
-          ProductoCaducable productoCaducable = new ProductoCaducable(nameProduct,
-              priceProductCaducable, stockProductoCaducable, fechaCaducidad);
-          if (servicioProductos.addProductCaducable(productoCaducable)) {
-            System.out.println("Se ha añadido correctamente");
-          } else {
-            System.out.println("ERROR");
-          }
+          addProductoCaducable(sc);
           break;
         case 3:
           deleteProduct(sc);
@@ -68,6 +47,33 @@ public class UIMenuAdminProduct {
           System.out.println(Constantes.ERROR);
       }
     } while (optionMenuProducts != 0);
+  }
+
+  private void addProductoCaducable(Scanner sc) {
+    ServicioProductos servicioProductos = new ServicioProductos();
+    Common common = new Common();
+
+    System.out.println("Dime el nombre del producto");
+    String nameProduct = sc.nextLine();
+
+    System.out.println("Dime el precio de " + nameProduct);
+    double priceProductCaducable = common.giveDouble();
+
+    System.out.println("Dime ahora la cantidad del stock");
+    int stockProductoCaducable = common.giveInt();
+
+    System.out.println("Dime la fecha de caducidad (yyyy-mm-ddThh:mm:ss)");
+    LocalDateTime fechaCaducidad = LocalDateTime.parse(sc.nextLine());
+
+
+    ProductoCaducable productoCaducable = new ProductoCaducable(nameProduct,
+        priceProductCaducable, stockProductoCaducable, fechaCaducidad);
+    if (servicioProductos.addProductCaducable(productoCaducable)) {
+      System.out.println("Se ha añadido correctamente");
+    } else {
+      System.out.println("ERROR");
+    }
+    return;
   }
 
   private void showProductList() {

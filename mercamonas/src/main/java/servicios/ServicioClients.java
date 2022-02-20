@@ -101,7 +101,12 @@ public class ServicioClients {
 
   public Cliente verDataCliente(String dniClient) {
     DaoClientes daoClientes = new DaoClientes();
-    return daoClientes.seeSpecificClient(dniClient);
+    boolean esClienteConDescuento= daoClientes.clienteTieneDescuento(dniClient);
+    if(esClienteConDescuento) {
+      return daoClientes.seeSpecificClientDescuento(dniClient);
+    }else{
+      return daoClientes.seeSpecificClient(dniClient);
+    }
   }
 
   public List<LineaCompra> showCarrito(String dniClient) {
@@ -112,15 +117,22 @@ public class ServicioClients {
   public double getTotalPrice(String dniClient) {
     DaoClientes daoClientes = new DaoClientes();
     DaoProducto daoProducto = new DaoProducto();
+    boolean esClienteConDescuento = daoClientes.clienteTieneDescuento(dniClient);
     double precioTotalCarrito = 0;
+
     List<LineaCompra> carrito = daoClientes.dameCarrito(dniClient);
     for (int i = 0; i < carrito.size(); i++) {
       double precioProducto = daoProducto.getPriceProducto(carrito.get(i).getProducto().getName());
       double cantidadProducto = carrito.get(i).getQuantity();
       precioTotalCarrito = precioTotalCarrito + (cantidadProducto * precioProducto);
     }
+
+    if(esClienteConDescuento){
+      precioTotalCarrito = (precioTotalCarrito*(1-(daoClientes.getDescuentoCliente(dniClient)/100)));
+    }
     return precioTotalCarrito;
   }
+
 
 
 }

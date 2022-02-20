@@ -3,8 +3,11 @@ package ui.admin;
 import common.Common;
 import constantes.Constantes;
 import modelo.Cliente;
+import modelo.ClienteDescuento;
 import servicios.ServicioClients;
 import java.util.Scanner;
+
+
 
 public class UiMenuAdminCliente {
 
@@ -23,18 +26,44 @@ public class UiMenuAdminCliente {
           createNewClient(sc);
           break;
         case 2:
-          deleteClient(sc);
+        //add cliente nuevo con descuento
+          ServicioClients servicioClients = new ServicioClients();
+
+          System.out.println(Constantes.DIME_EL_NOMBRE_DEL_CLIENTE);
+          String nameClient = sc.nextLine();
+
+          System.out.println(Constantes.DIME_EL_APELLIDO_DEL_CLIENTE);
+          String surnameClient = sc.nextLine();
+
+          System.out.println(Constantes.DIME_EL_DNI_DEL_CLIENTE);
+          String dniClient = sc.nextLine();
+
+          System.out.println("Dime el descuento que tiene (numeros enteros)");
+          double descuentoCliente = common.giveDouble();
+
+          Cliente newClient = new ClienteDescuento(nameClient, surnameClient, dniClient,descuentoCliente);
+
+          if (servicioClients.addClient(newClient)) {
+            System.out.println(Constantes.SE_HA_AGREGADO_EL_CLIENTE_CON_SUCCESS);
+          } else {
+            System.out.println(Constantes.LO_SENTIMOS_NO_SE_HA_PODIDO_AGREGAR_AL_CLIENTE);
+          }
+
+
           break;
         case 3:
-          changeDniClient(sc);
+          deleteClient(sc);
           break;
         case 4:
-          changeNameClient(sc);
+          changeDniClient(sc);
           break;
         case 5:
-          changeSurnameClient(sc);
+          changeNameClient(sc);
           break;
         case 6:
+          changeSurnameClient(sc);
+          break;
+        case 7:
           showListClients();
           break;
         case 0:
