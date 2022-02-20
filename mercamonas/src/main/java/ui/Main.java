@@ -2,6 +2,7 @@ package ui;
 
 import common.Common;
 import constantes.Constantes;
+import servicios.ServicioProductos;
 import ui.admin.UiMenuAdmin;
 import ui.client.UiMenuClient;
 import java.util.Scanner;

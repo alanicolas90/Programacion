@@ -27,29 +27,7 @@ public class UiMenuAdminCliente {
           break;
         case 2:
         //add cliente nuevo con descuento
-          ServicioClients servicioClients = new ServicioClients();
-
-          System.out.println(Constantes.DIME_EL_NOMBRE_DEL_CLIENTE);
-          String nameClient = sc.nextLine();
-
-          System.out.println(Constantes.DIME_EL_APELLIDO_DEL_CLIENTE);
-          String surnameClient = sc.nextLine();
-
-          System.out.println(Constantes.DIME_EL_DNI_DEL_CLIENTE);
-          String dniClient = sc.nextLine();
-
-          System.out.println("Dime el descuento que tiene (numeros enteros)");
-          double descuentoCliente = common.giveDouble();
-
-          Cliente newClient = new ClienteDescuento(nameClient, surnameClient, dniClient,descuentoCliente);
-
-          if (servicioClients.addClient(newClient)) {
-            System.out.println(Constantes.SE_HA_AGREGADO_EL_CLIENTE_CON_SUCCESS);
-          } else {
-            System.out.println(Constantes.LO_SENTIMOS_NO_SE_HA_PODIDO_AGREGAR_AL_CLIENTE);
-          }
-
-
+          addClienteConDescuento(sc);
           break;
         case 3:
           deleteClient(sc);
@@ -66,6 +44,10 @@ public class UiMenuAdminCliente {
         case 7:
           showListClients();
           break;
+        case 8:
+          ServicioClients servicioClients = new ServicioClients();
+          System.out.println(servicioClients.showListClientsSotedDni());
+          break;
         case 0:
           System.out.println(Constantes.HASTA_LA_NEXT);
           break;
@@ -74,6 +56,32 @@ public class UiMenuAdminCliente {
           break;
       }
     } while (optionMenuClienteAdmin != 0);
+  }
+
+  private void addClienteConDescuento(Scanner sc) {
+    Common common = new Common();
+    ServicioClients servicioClients = new ServicioClients();
+
+    System.out.println(Constantes.DIME_EL_NOMBRE_DEL_CLIENTE);
+    String nameClient = sc.nextLine();
+
+    System.out.println(Constantes.DIME_EL_APELLIDO_DEL_CLIENTE);
+    String surnameClient = sc.nextLine();
+
+    System.out.println(Constantes.DIME_EL_DNI_DEL_CLIENTE);
+    String dniClient = sc.nextLine();
+
+    System.out.println("Dime el descuento que tiene (numeros enteros)");
+    double descuentoCliente = common.giveDouble();
+
+    Cliente newClient = new ClienteDescuento(nameClient, surnameClient, dniClient,descuentoCliente);
+
+    if (servicioClients.addClient(newClient)) {
+      System.out.println(Constantes.SE_HA_AGREGADO_EL_CLIENTE_CON_SUCCESS);
+    } else {
+      System.out.println(Constantes.LO_SENTIMOS_NO_SE_HA_PODIDO_AGREGAR_AL_CLIENTE);
+    }
+    return;
   }
 
   private void showListClients() {

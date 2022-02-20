@@ -134,5 +134,8 @@ public class ServicioClients {
   }
 
 
-
+  public List<Cliente> showListClientsSotedDni() {
+    DaoClientes daoClientes = new DaoClientes();
+    return daoClientes.showListaClientesOrdenadaDni();
+  }
 }

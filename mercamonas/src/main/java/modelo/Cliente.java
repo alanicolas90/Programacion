@@ -4,7 +4,7 @@ import lombok.Data;
 import java.util.*;
 
 @Data
-public class Cliente implements Clone<Cliente> {
+public class Cliente implements Clone<Cliente>, Comparable<Cliente> {
 
   private String dni;
   private String nombre;
@@ -101,6 +101,8 @@ public class Cliente implements Clone<Cliente> {
     this.apellido = apellido;
   }
 
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o)
@@ -127,5 +129,10 @@ public class Cliente implements Clone<Cliente> {
   public Cliente clone() {
     return new Cliente(this.dni, this.nombre, this.apellido, this.monederos, this.alergenos,
         this.carrito, this.buyHistory);
+  }
+
+  @Override
+  public int compareTo(Cliente cliente) {
+    return 0;
   }
 }

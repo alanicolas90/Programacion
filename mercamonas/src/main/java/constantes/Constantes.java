@@ -47,7 +47,8 @@ public class Constantes {
                     "4) Cambiar dni cliente\n" +
                     "5) cambiar nombre cliente\n" +
                     "6) cambiar apellido \n" +
-                    "7) ver todos los clientes \n\n" +
+                    "7) ver todos los clientes \n" +
+                    "8) Ver todos los clientes ordenados por dni\n\n" +
                     "0) Salir \n";
 
 
@@ -57,9 +58,19 @@ public class Constantes {
     // PRODUCTOS ADMINISTRADOR
     public static final String HASTA_LA_NEXT = "Hasta la próxima.";
     public static final String OPTIONS_PRODUCTS =
-            "1) Añadir producto nuevo\n" + "2) Añadir producto caducable\n" + "3) Eliminar producto\n"
-                    + "4) Cambiar nombre de un producto\n" + "5) Cambiar precio de un producto\n"
-                    + "6) Cambiar stock de un producto\n" + "7) Ver todos los productos\n \n" + "0) Salir";
+            "1) Añadir producto nuevo\n" +
+                    "2) Añadir producto caducable\n" +
+                    "3) Eliminar producto\n" +
+                    "4) Cambiar nombre de un producto\n" +
+                    "5) Cambiar precio de un producto\n" +
+                    "6) Cambiar stock de un producto\n" +
+                    "7) Añadir ingrediente a un producto\n" +
+                    "8) Ver todos los productos\n" +
+                    "9) Ver todos los productos ordenados por nombre\n" +
+                    "10) Ver todos los productos mas comprado ordenado por cantidad\n" +
+                    "11) Ver solo los productos que tienen ingredientes\n" +
+                    "0) Salir";
+
     public static final String COMO_QUIERES_QUE_SE_LLAME_EL_NUEVO_PRODUCTO =
             "Como quieres que se llame el nuevo producto? ";
     public static final String CUANTO_STOCK_TIENES_DEL_PRODUCTO =

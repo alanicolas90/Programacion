@@ -15,9 +15,15 @@ public class UiClientSettings {
     int settingsClient;
 
     do {
-      System.out.println("Que desea hacer?\n" + "1) Cambiar nombre.\n" + "2) Cambiar apellido.\n"
-          + "3) Agregar tarjeta\n" + "4) Eliminar tarjeta\n" + "5) Agregar money\n"
-          + "6) Mostrar datos del usuario\n" + "7) Mostrar compras antiguas\n\n" + "0) Exit");
+      System.out.println("Que desea hacer?\n" +
+              "1) Cambiar nombre.\n" +
+              "2) Cambiar apellido.\n" +
+              "3) Agregar tarjeta\n" +
+              "4) Eliminar tarjeta\n" +
+              "5) Agregar money\n" +
+              "6) Mostrar datos del usuario\n" +
+              "7) Mostrar compras antiguas\n\n" +
+              "0) Exit");
       settingsClient = common.giveInt();
 
       switch (settingsClient) {
@@ -40,9 +46,7 @@ public class UiClientSettings {
           showDataCliente(dniClient);
           break;
         case 7:
-          // mostrar compras antiguas
-          ServicioCompras servicioCompras = new ServicioCompras();
-          System.out.println(servicioCompras.showBuyHistory(dniClient));
+          showHistorialCompras(dniClient);
           break;
         case 8:
           DaoClientes daoClientes = new DaoClientes();
@@ -56,6 +60,11 @@ public class UiClientSettings {
           break;
       }
     } while (settingsClient != 0);
+  }
+
+  private void showHistorialCompras(String dniClient) {
+    ServicioCompras servicioCompras = new ServicioCompras();
+    System.out.println(servicioCompras.showBuyHistory(dniClient));
   }
 
   private void deleteMonedero(Scanner sc, String dniClient) {

@@ -1,8 +1,6 @@
 
 O
 src/main/java/modelo/Clone.java,b\e\be2e8860852a1629ec07fe6e8154ca9dd6543f6b
-P
- src/main/java/common/Common.java,1\f\1f0f1ac1e908685e5a5d0d50f31f2929f463cc5f
 _
 /src/main/java/modelo/constantes/Constantes.java,d\c\dc7f9e0727a3927cdf9ab6082cbca665cc39fed8
 Q
@@ -19,9 +17,15 @@ R
 "src/main/java/modelo/Monedero.java,b\5\b50a6874689d11129d215064c2e988cfec63f315
 7
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
-R
-"src/main/java/modelo/Producto.java,5\d\5d4aa8abd3deca94012855c0259742f56f282b32
 W
 'src/main/java/ui/admin/UiMenuAdmin.java,c\4\c40da7c9497396b9f33c290a20c7b549a33ab55a
-Y
-)src/main/java/ui/client/UiMenuClient.java,4\d\4ddf027f531b3cb845cc300f983f28692f885430
+[
++src/main/java/dao/DaoProductoCaducable.java,1\d\1d5e7c66421cb57ca85c9846046f88f5631207e2
+\
+,src/main/java/servicios/ServicioCompras.java,4\7\47078600c0bd41e5362e593f31cef926948576de
+Z
+*src/main/java/modelo/ClienteDescuento.java,3\f\3f2ebdd32641f3fb0df31154c31349e99f650fd1
+R
+"src/main/java/modelo/Producto.java,5\d\5d4aa8abd3deca94012855c0259742f56f282b32
+P
+ src/main/java/common/Common.java,1\f\1f0f1ac1e908685e5a5d0d50f31f2929f463cc5f

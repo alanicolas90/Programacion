@@ -3,6 +3,7 @@ package dao;
 import modelo.*;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.stream.Collectors;
@@ -84,4 +85,10 @@ public class DaoClientes {
         return ((ClienteDescuento) clientes.get(dniClient)).getDescuento();
     }
 
+    public List<Cliente> showListaClientesOrdenadaDni() {
+        return clientes.values().stream()
+                .sorted(Comparator.comparing(Cliente::getDni))
+                .map(Cliente::clone)
+                .collect(Collectors.toUnmodifiableList());
+    }
 }

@@ -2,6 +2,7 @@ package servicios;
 
 import dao.DaoProducto;
 import dao.DaoProductoCaducable;
+import modelo.Ingrediente;
 import modelo.Producto;
 import modelo.ProductoCaducable;
 import java.time.LocalDateTime;
@@ -83,4 +84,27 @@ public class ServicioProductos {
   }
 
 
+  public List<Producto> showAllProductsSinCaducados() {
+      DaoProducto daoProducto = new DaoProducto();
+      return daoProducto.showAllProductosSinCaducables();
+  }
+
+  public List<Producto> showAllProductsOrdenadosName() {
+    DaoProducto daoProducto = new DaoProducto();
+    return daoProducto.showAllProductsSortedName();
+  }
+
+  public List<Producto> showAllProductsConIngredientes() {
+  DaoProducto daoProducto = new DaoProducto();
+  return daoProducto.showAllProductsConIngrediente();
+  }
+
+    public boolean addIngredienteAlProducto(String nombreProducto, Ingrediente nuevoIngrediente) {
+    DaoProducto daoProducto = new DaoProducto();
+    boolean productoTieneEseIngrediente = !daoProducto.ingredienteExisteEnProducto(nombreProducto, nuevoIngrediente);
+    if(productoTieneEseIngrediente){
+      daoProducto.addIngredienteAlProducto(nombreProducto, nuevoIngrediente);
+    }
+    return productoTieneEseIngrediente;
+  }
 }

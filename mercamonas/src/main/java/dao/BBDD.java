@@ -16,10 +16,10 @@ public class BBDD {
 
     static {
         clientes.put("123", new Cliente("123", "alan", "mikolajczyk"));
-        clientes.put("1", new Cliente("1", "alain", "mikolajczyk"));
-        clientes.put("23", new Cliente("23", "alean", "mikolajczyk"));
-        clientes.put("3", new Cliente("3", "alaan", "mikolajczyk"));
-        clientes.put("2", new Cliente("2", "allan", "mikolajczyk"));
+        clientes.put("1", new Cliente("111", "alain", "mikolajczyk"));
+        clientes.put("23", new Cliente("233", "alean", "mikolajczyk"));
+        clientes.put("3", new Cliente("333", "alaan", "mikolajczyk"));
+        clientes.put("2", new Cliente("223", "allan", "mikolajczyk"));
 
         productos.add(new Producto("acheyese", 2.5, 200));
         productos.add(new Producto("peperoni", 0.5, 200));
@@ -27,9 +27,13 @@ public class BBDD {
         productos.add(new Producto("pimienta", 1.25, 200));
         productos.add(new Producto("sal", 0.7, 200));
 
-        productos.add(new ProductoCaducable("pescado", 0.7, 200, LocalDateTime.now().plusMinutes(5)));
+        productos.get(productos.indexOf(new Producto("sal"))).getIngredientes().add(new Ingrediente("cocaina"));
+
+        productos.add(new ProductoCaducable("pescado", 0.7, 200, LocalDateTime.now().plusSeconds(20)));
 
         clientes.get("1").getMonederos().add(new Monedero("ale", 1000));
+
+
 
         clientes.put("000", new ClienteDescuento("000", "pepe", "manute", 25));
         clientes.get("000").getMonederos().add(new Monedero("ale", 1000));

@@ -14,11 +14,16 @@ public class UiMenuClientBuy {
   public void buyClient(Scanner sc, String dniClient) {
     Common common = new Common();
     int clientDecision;
+    ServicioProductos servicioProductos = new ServicioProductos();
 
     do {
       System.out.println("LISTA DE PRODUCTOS");
-      System.out.println("Que deseas hacer\n" + "1) Añadir producto al carrito\n"
-          + "2) Eliminar un producto del carrito\n" + "3) Pagar por el carrito\n\n" + "0) Exit");
+      System.out.println(servicioProductos.showAllProductsSinCaducados());
+      System.out.println("Que deseas hacer\n" +
+              "1) Añadir producto al carrito\n" +
+              "2) Eliminar un producto del carrito\n" +
+              "3) Pagar por el carrito\n\n" +
+              "0) Exit");
       clientDecision = common.giveInt();
 
       switch (clientDecision) {
@@ -92,7 +97,7 @@ public class UiMenuClientBuy {
     ServicioClients servicioClients = new ServicioClients();
 
     System.out.println("Elija un producto de esta lista:");
-    System.out.println(servicioProductos.showAllProducts());
+    System.out.println(servicioProductos.showAllProductsSinCaducados());
 
     System.out.println("que producto desea agregar al carrito?");
     String productoMeterCarrito = sc.nextLine();
