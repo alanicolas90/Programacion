@@ -1,6 +1,7 @@
 package dao;
 
 import modelo.Ingrediente;
+import modelo.LineaCompra;
 import modelo.Producto;
 import modelo.ProductoCaducable;
 
@@ -9,6 +10,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static dao.BBDD.clientes;
 import static dao.BBDD.productos;
 
 public class DaoProducto {
@@ -91,14 +93,17 @@ public class DaoProducto {
                 .collect(Collectors.toUnmodifiableList());
     }
 
-    public boolean ingredienteExisteEnProducto(String nombreProducto, Ingrediente nuevoIngrediente) {
-        int index = productos.indexOf(new Producto(nombreProducto));
+    public boolean ingredienteExisteEnProducto(String nombreProducto, Ingrediente nuevoIngrediente, int index) {
         return productos.get(index).getIngredientes().contains(nuevoIngrediente);
     }
 
-    public void addIngredienteAlProducto(String nombreProducto, Ingrediente nuevoIngrediente) {
-        int index = productos.indexOf(new Producto(nombreProducto));
-        productos.get(index).getIngredientes().add(nuevoIngrediente);
+    public void addIngredienteAlProducto(String nombreProducto, Ingrediente nuevoIngrediente, int index) {
+        productos.get(index).getIngredientes().add(new Ingrediente(nuevoIngrediente.getNombre()));
 
+    }
+
+    //index de un producto por su nombrer
+    public int indexProduct(String nameProduct){
+        return productos.indexOf(new Producto(nameProduct));
     }
 }

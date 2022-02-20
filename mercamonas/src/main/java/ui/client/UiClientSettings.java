@@ -22,7 +22,9 @@ public class UiClientSettings {
               "4) Eliminar tarjeta\n" +
               "5) Agregar money\n" +
               "6) Mostrar datos del usuario\n" +
-              "7) Mostrar compras antiguas\n\n" +
+              "7) Mostrar compras antiguas\n" +
+              "8) Añadir alergeno\n" +
+              "9) Gasto total en la tienda\n" +
               "0) Exit");
       settingsClient = common.giveInt();
 
@@ -49,8 +51,16 @@ public class UiClientSettings {
           showHistorialCompras(dniClient);
           break;
         case 8:
-          DaoClientes daoClientes = new DaoClientes();
-          System.out.println(daoClientes.verListaClientes());
+          addAlergiaCliente(sc, dniClient);
+          break;
+        case 9:
+          ServicioClients servicioClients = new ServicioClients();
+          if(servicioClients.tieneComprasAnteriores(dniClient)){
+            System.out.println("Usted no ha comprado nunca en la tienda");
+          }else{
+            System.out.println(servicioClients.dineroTotalGastado(dniClient));
+          }
+
           break;
         case 0:
           System.out.println(Constantes.BYE_BYE);
@@ -60,6 +70,18 @@ public class UiClientSettings {
           break;
       }
     } while (settingsClient != 0);
+  }
+
+  private void addAlergiaCliente(Scanner sc, String dniClient) {
+    ServicioClients servicioClients = new ServicioClients();
+    System.out.println("Dime el ingrediente al que tienes alergia");
+    String ingrediente= sc.nextLine();
+    if(servicioClients.addIngredienteAlergia(dniClient, ingrediente)){
+      System.out.println("Ha sido un éxito");
+    }else{
+      System.out.println("ERROR");
+    }
+    return;
   }
 
   private void showHistorialCompras(String dniClient) {

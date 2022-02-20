@@ -91,4 +91,23 @@ public class DaoClientes {
                 .map(Cliente::clone)
                 .collect(Collectors.toUnmodifiableList());
     }
+
+    public void addIngredienteAlergia(String dniClient, String ingrediente) {
+        clientes.get(dniClient).getAlergenos().add(new Ingrediente(ingrediente));
+    }
+
+    public boolean ingredienteExisteCliente(String dniClient, String ingrediente) {
+        return clientes.get(dniClient).getAlergenos().contains(new Ingrediente(ingrediente));
+    }
+
+    public boolean tieneComprasAnteriores(String dniClient) {
+    return clientes.get(dniClient).getBuyHistory().isEmpty();
+    }
+
+    public List<List<LineaCompra>> dameHistorialCompra(String dniClient) {
+    return clientes.get(dniClient).getBuyHistory();
+    }
+    public List<LineaCompra> getLineaCompra(String dniClient, int index){
+        return clientes.get(dniClient).getBuyHistory().get(index);
+    }
 }

@@ -9,10 +9,6 @@ R
 "src/main/java/dao/DaoMonedero.java,7\2\72275208d132a8451fcd510007f87b770044a78c
 U
 %src/etc/eclipse-java-google-style.xml,2\2\228e5e78b7f2e7712eaca73f3c6911a65111531e
-U
-%src/main/java/modelo/Ingrediente.java,7\4\7496d234a6201418195ce1b39ca56000f561d7a9
-U
-%src/main/java/modelo/LineaCompra.java,0\5\05af67c9e746bfd53886a1d06137227434846b74
 R
 "src/main/java/modelo/Monedero.java,b\5\b50a6874689d11129d215064c2e988cfec63f315
 7
@@ -25,7 +21,5 @@ W
 ,src/main/java/servicios/ServicioCompras.java,4\7\47078600c0bd41e5362e593f31cef926948576de
 Z
 *src/main/java/modelo/ClienteDescuento.java,3\f\3f2ebdd32641f3fb0df31154c31349e99f650fd1
-R
-"src/main/java/modelo/Producto.java,5\d\5d4aa8abd3deca94012855c0259742f56f282b32
 P
  src/main/java/common/Common.java,1\f\1f0f1ac1e908685e5a5d0d50f31f2929f463cc5f

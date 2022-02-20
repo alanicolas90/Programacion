@@ -27,6 +27,7 @@ public class Cliente implements Clone<Cliente>, Comparable<Cliente> {
   }
 
   private Cliente() {
+    alergenos = new ArrayList<>();
     buyHistory = new ArrayList<>();
     monederos = new HashSet<>();
     carrito = new ArrayList<>();
@@ -102,27 +103,30 @@ public class Cliente implements Clone<Cliente>, Comparable<Cliente> {
   }
 
 
-
   @Override
   public boolean equals(Object o) {
-    if (this == o)
-      return true;
-    if (o == null || getClass() != o.getClass())
-      return false;
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
     Cliente cliente = (Cliente) o;
     return dni.equalsIgnoreCase(cliente.dni);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(dni.toLowerCase());
+    return Objects.hash(dni, alergenos);
   }
 
   @Override
   public String toString() {
-    return "\nCliente{" + "\ndni='" + dni + '\'' + ",\nnombre='" + nombre + '\'' + ",\napellido='"
-        + apellido + '\'' + ",\nmonederos=" + monederos + ",\ncarrito=" + carrito + ",\nbuyHistory="
-        + buyHistory + "}\n";
+    return "Cliente{" +
+            "dni='" + dni + '\'' +
+            ", \nnombre='" + nombre + '\'' +
+            ", \napellido='" + apellido + '\'' +
+            ", \nmonederos=" + monederos +
+            ", \nalergenos=" + alergenos +
+            ", \ncarrito=" + carrito +
+            ", \nbuyHistory=" + buyHistory +
+            '}';
   }
 
   @Override

@@ -138,4 +138,39 @@ public class ServicioClients {
     DaoClientes daoClientes = new DaoClientes();
     return daoClientes.showListaClientesOrdenadaDni();
   }
+
+  public boolean addIngredienteAlergia(String dniClient, String ingrediente) {
+    DaoClientes daoClientes = new DaoClientes();
+    boolean ingredienteExisteCliente = !daoClientes.ingredienteExisteCliente(dniClient, ingrediente);
+    if(ingredienteExisteCliente){
+      daoClientes.addIngredienteAlergia(dniClient, ingrediente);
+    }
+    return ingredienteExisteCliente;
+  }
+
+  public boolean tieneComprasAnteriores(String dniClient) {
+    DaoClientes daoClientes = new DaoClientes();
+    return daoClientes.tieneComprasAnteriores(dniClient);
+  }
+
+  public double dineroTotalGastado(String dniClient) {
+    DaoClientes daoClientes = new DaoClientes();
+    DaoProducto daoProducto = new DaoProducto();
+    boolean esClienteConDescuento = daoClientes.clienteTieneDescuento(dniClient);
+
+    double precioTotalCarrito = 0;
+    List<List<LineaCompra>> historial = daoClientes.dameHistorialCompra(dniClient);
+    for (int i = 0; i < historial.size(); i++) {
+      List<LineaCompra> carrito = daoClientes.getLineaCompra(dniClient,i);
+      for (int j = 0; j < carrito.size(); j++) {
+        double precioProducto = daoProducto.getPriceProducto(carrito.get(j).getProducto().getName());
+        double cantidadProducto = carrito.get(i).getQuantity();
+        precioTotalCarrito += (cantidadProducto * precioProducto);
+      }
+    }
+    if (esClienteConDescuento){
+      precioTotalCarrito = (precioTotalCarrito*(1-(daoClientes.getDescuentoCliente(dniClient)/100)));
+    }
+    return precioTotalCarrito;
+  }
 }

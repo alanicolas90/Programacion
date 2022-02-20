@@ -34,7 +34,6 @@ public class BBDD {
         clientes.get("1").getMonederos().add(new Monedero("ale", 1000));
 
 
-
         clientes.put("000", new ClienteDescuento("000", "pepe", "manute", 25));
         clientes.get("000").getMonederos().add(new Monedero("ale", 1000));
 
