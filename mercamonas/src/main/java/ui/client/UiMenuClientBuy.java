@@ -14,29 +14,29 @@ public class UiMenuClientBuy {
   public void buyClient(Scanner sc, String dniClient) {
     Common common = new Common();
     int clientDecision;
-    ServicioProductos servicioProductos = new ServicioProductos();
 
     do {
       System.out.println("LISTA DE PRODUCTOS");
-      System.out.println(servicioProductos.showAllProductsSinCaducados());
       System.out.println("Que deseas hacer\n" +
               "1) Añadir producto al carrito\n" +
               "2) Eliminar un producto del carrito\n" +
-              "3) Pagar por el carrito\n\n" +
+              "3) Pagar por el carrito\n" +
+              "4) Mostrar listado de productos sin mis alergias\n\n" +
               "0) Exit");
       clientDecision = common.giveInt();
 
       switch (clientDecision) {
         case 1:
-          // agregar producto al carro de compra
           addProductCart(sc, dniClient);
           break;
         case 2:
-          // quitar un producto del carrito de compra
           deleteProductFromCart(sc, dniClient);
           break;
         case 3:
           pagarElCarrito(sc, dniClient);
+          break;
+        case 4:
+          showAllProductsSinAlergiasCliente(dniClient);
           break;
         case 0:
           System.out.println("Muchas gracias y hasta luego.");
@@ -48,6 +48,11 @@ public class UiMenuClientBuy {
 
     } while (clientDecision != 0);
 
+  }
+
+  private void showAllProductsSinAlergiasCliente(String dniClient) {
+    ServicioProductos servicioProductos = new ServicioProductos();
+    System.out.println(servicioProductos.showAllProductsSinAlergiasCliente(dniClient));
   }
 
   private void pagarElCarrito(Scanner sc, String dniClient) {

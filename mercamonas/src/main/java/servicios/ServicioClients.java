@@ -121,9 +121,9 @@ public class ServicioClients {
     double precioTotalCarrito = 0;
 
     List<LineaCompra> carrito = daoClientes.dameCarrito(dniClient);
-    for (int i = 0; i < carrito.size(); i++) {
-      double precioProducto = daoProducto.getPriceProducto(carrito.get(i).getProducto().getName());
-      double cantidadProducto = carrito.get(i).getQuantity();
+    for (LineaCompra lineaCompra : carrito) {
+      double precioProducto = daoProducto.getPriceProducto(lineaCompra.getProducto().getName());
+      double cantidadProducto = lineaCompra.getQuantity();
       precioTotalCarrito = precioTotalCarrito + (cantidadProducto * precioProducto);
     }
 
@@ -162,8 +162,8 @@ public class ServicioClients {
     List<List<LineaCompra>> historial = daoClientes.dameHistorialCompra(dniClient);
     for (int i = 0; i < historial.size(); i++) {
       List<LineaCompra> carrito = daoClientes.getLineaCompra(dniClient,i);
-      for (int j = 0; j < carrito.size(); j++) {
-        double precioProducto = daoProducto.getPriceProducto(carrito.get(j).getProducto().getName());
+      for (LineaCompra lineaCompra : carrito) {
+        double precioProducto = daoProducto.getPriceProducto(lineaCompra.getProducto().getName());
         double cantidadProducto = carrito.get(i).getQuantity();
         precioTotalCarrito += (cantidadProducto * precioProducto);
       }
@@ -172,5 +172,10 @@ public class ServicioClients {
       precioTotalCarrito = (precioTotalCarrito*(1-(daoClientes.getDescuentoCliente(dniClient)/100)));
     }
     return precioTotalCarrito;
+  }
+
+  public List<Cliente> showClientesSortedDineroGastado() {
+    DaoClientes daoClientes = new DaoClientes();
+    return daoClientes.showListaClientesSortedDineroGastado();
   }
 }

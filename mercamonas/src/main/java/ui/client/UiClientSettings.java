@@ -2,7 +2,6 @@ package ui.client;
 
 import common.Common;
 import constantes.Constantes;
-import dao.DaoClientes;
 import modelo.Monedero;
 import servicios.ServicioClients;
 import servicios.ServicioCompras;
@@ -54,13 +53,7 @@ public class UiClientSettings {
           addAlergiaCliente(sc, dniClient);
           break;
         case 9:
-          ServicioClients servicioClients = new ServicioClients();
-          if(servicioClients.tieneComprasAnteriores(dniClient)){
-            System.out.println("Usted no ha comprado nunca en la tienda");
-          }else{
-            System.out.println(servicioClients.dineroTotalGastado(dniClient));
-          }
-
+          dineroTotalGastadoTienda(dniClient);
           break;
         case 0:
           System.out.println(Constantes.BYE_BYE);
@@ -72,6 +65,15 @@ public class UiClientSettings {
     } while (settingsClient != 0);
   }
 
+  private void dineroTotalGastadoTienda(String dniClient) {
+    ServicioClients servicioClients = new ServicioClients();
+    if(servicioClients.tieneComprasAnteriores(dniClient)){
+      System.out.println("Usted no ha comprado nunca en la tienda");
+    }else{
+      System.out.println(servicioClients.dineroTotalGastado(dniClient));
+    }
+  }
+
   private void addAlergiaCliente(Scanner sc, String dniClient) {
     ServicioClients servicioClients = new ServicioClients();
     System.out.println("Dime el ingrediente al que tienes alergia");
@@ -81,7 +83,6 @@ public class UiClientSettings {
     }else{
       System.out.println("ERROR");
     }
-    return;
   }
 
   private void showHistorialCompras(String dniClient) {

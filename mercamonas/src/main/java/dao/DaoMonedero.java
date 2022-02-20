@@ -15,7 +15,9 @@ public class DaoMonedero {
   }
 
   public void addMoneyMonedero(String dniCliente, String nombreMonedero, double quantity) {
-    clientes.get(dniCliente).getMonederos().forEach(monedero -> {
+    clientes.get(dniCliente)
+            .getMonederos()
+            .forEach(monedero -> {
       if (monedero.getName().equals(nombreMonedero)) {
         monedero.setMoney((monedero.getMoney() + quantity));
       }
@@ -27,7 +29,7 @@ public class DaoMonedero {
   }
 
   public Set<Monedero> showTarjetasCliente(String dniClient) {
-    return clientes.get(dniClient).getMonederos();
+    return clientes.get(dniClient).clone().getMonederos();
   }
 
 

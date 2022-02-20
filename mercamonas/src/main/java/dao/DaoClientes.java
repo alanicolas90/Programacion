@@ -46,8 +46,7 @@ public class DaoClientes {
 
     public List<Cliente> verListaClientes() {
         return clientes.values().stream()
-                .map(cliente -> new Cliente(cliente.getDni(), cliente.getNombre(), cliente.getApellido(),
-                        cliente.getMonederos(), cliente.getCarrito(), cliente.getBuyHistory()))
+                .map(Cliente::clone)
                 .collect(Collectors.toUnmodifiableList());
     }
 
@@ -56,15 +55,15 @@ public class DaoClientes {
     }
 
     public ClienteDescuento seeSpecificClientDescuento(String dniClient) {
-        return (ClienteDescuento) clientes.get(dniClient);
+        return (ClienteDescuento) clientes.get(dniClient).clone();
     }
 
     public List<List<LineaCompra>> showBuyHistory(String dniClient) {
-        return clientes.get(dniClient).getBuyHistory();
+        return clientes.get(dniClient).clone().getBuyHistory();
     }
 
     public List<LineaCompra> dameCarrito(String dniClient) {
-        return clientes.get(dniClient).getCarrito();
+        return clientes.get(dniClient).clone().getCarrito();
     }
 
     public void emptyCart(String dniClient) {
@@ -82,7 +81,7 @@ public class DaoClientes {
     }
 
     public double getDescuentoCliente(String dniClient) {
-        return ((ClienteDescuento) clientes.get(dniClient)).getDescuento();
+        return ((ClienteDescuento) clientes.get(dniClient).clone()).getDescuento();
     }
 
     public List<Cliente> showListaClientesOrdenadaDni() {
@@ -105,9 +104,19 @@ public class DaoClientes {
     }
 
     public List<List<LineaCompra>> dameHistorialCompra(String dniClient) {
-    return clientes.get(dniClient).getBuyHistory();
+    return clientes.get(dniClient).clone().getBuyHistory();
     }
     public List<LineaCompra> getLineaCompra(String dniClient, int index){
-        return clientes.get(dniClient).getBuyHistory().get(index);
+        return clientes.get(dniClient).clone().getBuyHistory().get(index);
+    }
+
+    public List<Cliente> showListaClientesSortedDineroGastado() {
+        for (int i = 0; i < clientes.size(); i++) {
+        }
+        return clientes.values()
+                .stream()
+                .sorted()
+                .map(Cliente::clone)
+                .collect(Collectors.toUnmodifiableList());
     }
 }

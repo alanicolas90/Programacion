@@ -26,7 +26,6 @@ public class UiMenuAdminCliente {
           createNewClient(sc);
           break;
         case 2:
-        //add cliente nuevo con descuento
           addClienteConDescuento(sc);
           break;
         case 3:
@@ -45,8 +44,10 @@ public class UiMenuAdminCliente {
           showListClients();
           break;
         case 8:
+          showListClientesSortedDnie();
+        case 9:
           ServicioClients servicioClients = new ServicioClients();
-          System.out.println(servicioClients.showListClientsSotedDni());
+          System.out.println(servicioClients.showClientesSortedDineroGastado());
           break;
         case 0:
           System.out.println(Constantes.HASTA_LA_NEXT);
@@ -56,6 +57,11 @@ public class UiMenuAdminCliente {
           break;
       }
     } while (optionMenuClienteAdmin != 0);
+  }
+
+  private void showListClientesSortedDnie() {
+    ServicioClients servicioClients = new ServicioClients();
+    System.out.println(servicioClients.showListClientsSotedDni());
   }
 
   private void addClienteConDescuento(Scanner sc) {
@@ -81,7 +87,6 @@ public class UiMenuAdminCliente {
     } else {
       System.out.println(Constantes.LO_SENTIMOS_NO_SE_HA_PODIDO_AGREGAR_AL_CLIENTE);
     }
-    return;
   }
 
   private void showListClients() {

@@ -104,11 +104,16 @@ public class ServicioProductos {
       int indexProduct = daoProducto.indexProduct(nombreProducto);
       boolean productoTieneEseIngrediente = false;
       if(indexProduct >=0) {
-      productoTieneEseIngrediente = !daoProducto.ingredienteExisteEnProducto(nombreProducto, nuevoIngrediente, indexProduct);
-        if(productoTieneEseIngrediente && indexProduct>=0){
-          daoProducto.addIngredienteAlProducto(nombreProducto, nuevoIngrediente, indexProduct);
+      productoTieneEseIngrediente = !daoProducto.ingredienteExisteEnProducto(nuevoIngrediente, indexProduct);
+        if(productoTieneEseIngrediente){
+          daoProducto.addIngredienteAlProducto(nuevoIngrediente, indexProduct);
         }
       }
     return productoTieneEseIngrediente;
+  }
+
+  public List<Producto> showAllProductsSinAlergiasCliente(String dniClient) {
+  DaoProducto daoProducto = new DaoProducto();
+  return daoProducto.showAllProductsSinAlergiasCliente(dniClient);
   }
 }

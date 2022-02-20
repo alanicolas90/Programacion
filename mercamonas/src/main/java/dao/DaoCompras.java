@@ -33,13 +33,16 @@ public class DaoCompras {
         .setStock((productos.get(positionProductoBusco).getStock()) - cantidadStockRestar);
   }
 
-  public void ajustarDineroMonederoAfterCompra(String dniClient, String nombreMonedero,
-      double precioRestar) {
+  public void ajustarDineroMonederoAfterCompra(String dniClient, String nombreMonedero, double precioRestar) {
     clientes.get(dniClient).getMonederos().forEach(monedero -> {
       if (monedero.equals(new Monedero(nombreMonedero))) {
         monedero.setMoney((monedero.getMoney() - precioRestar));
       }
     });
+  }
+
+  public void sumarDineroBDCliente(String dniCliente, double dineroCarrito){
+    clientes.get(dniCliente).setDineroTotalGastado(dineroCarrito);
   }
 
 

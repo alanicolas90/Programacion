@@ -48,7 +48,8 @@ public class Constantes {
                     "5) cambiar nombre cliente\n" +
                     "6) cambiar apellido \n" +
                     "7) ver todos los clientes \n" +
-                    "8) Ver todos los clientes ordenados por dni\n\n" +
+                    "8) Ver todos los clientes ordenados por dni\n" +
+                    "9) Ver todos los clientes ordenados por el dinero gastado en total\n" +
                     "0) Salir \n";
 
 

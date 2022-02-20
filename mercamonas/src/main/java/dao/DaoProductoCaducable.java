@@ -1,7 +1,6 @@
 package dao;
 
 import modelo.ProductoCaducable;
-import java.util.List;
 import static dao.BBDD.productos;
 
 public class DaoProductoCaducable {

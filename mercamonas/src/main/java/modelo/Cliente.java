@@ -15,6 +15,8 @@ public class Cliente implements Clone<Cliente>, Comparable<Cliente> {
   private List<LineaCompra> carrito;
   private List<List<LineaCompra>> buyHistory;
 
+  private double dineroTotalGastado;
+
   public Cliente(String dni, String nombre, String apellido, Set<Monedero> monederos,
       List<Ingrediente> alergenos, List<LineaCompra> carrito, List<List<LineaCompra>> buyHistory) {
     this.dni = dni;
@@ -66,28 +68,12 @@ public class Cliente implements Clone<Cliente>, Comparable<Cliente> {
     this.carrito = carrito;
   }
 
-  public void setBuyHistory(List<List<LineaCompra>> buyHistory) {
-    this.buyHistory = buyHistory;
-  }
-
   public String getDni() {
     return dni;
   }
 
-  public String getNombre() {
-    return nombre;
-  }
-
   public List<Ingrediente> getAlergenos() {
     return alergenos;
-  }
-
-  public void setAlergenos(List<Ingrediente> alergenos) {
-    this.alergenos = alergenos;
-  }
-
-  public String getApellido() {
-    return apellido;
   }
 
   public void setDni(String dni) {
@@ -102,6 +88,13 @@ public class Cliente implements Clone<Cliente>, Comparable<Cliente> {
     this.apellido = apellido;
   }
 
+  public void setDineroTotalGastado(double dineroCarrito){
+    this.dineroTotalGastado += dineroCarrito;
+  }
+
+  public double getDineroTotalGastado() {
+    return dineroTotalGastado;
+  }
 
   @Override
   public boolean equals(Object o) {
@@ -118,7 +111,7 @@ public class Cliente implements Clone<Cliente>, Comparable<Cliente> {
 
   @Override
   public String toString() {
-    return "Cliente{" +
+    return "\n\nCliente{" +
             "dni='" + dni + '\'' +
             ", \nnombre='" + nombre + '\'' +
             ", \napellido='" + apellido + '\'' +
@@ -135,8 +128,9 @@ public class Cliente implements Clone<Cliente>, Comparable<Cliente> {
         this.carrito, this.buyHistory);
   }
 
+
   @Override
   public int compareTo(Cliente cliente) {
-    return 0;
+      return (int)(cliente.getDineroTotalGastado() - this.getDineroTotalGastado());
   }
 }
