@@ -7,8 +7,6 @@ U
 %src/etc/eclipse-java-google-style.xml,2\2\228e5e78b7f2e7712eaca73f3c6911a65111531e
 R
 "src/main/java/modelo/Monedero.java,b\5\b50a6874689d11129d215064c2e988cfec63f315
-7
-pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
 W
 'src/main/java/ui/admin/UiMenuAdmin.java,c\4\c40da7c9497396b9f33c290a20c7b549a33ab55a
 P

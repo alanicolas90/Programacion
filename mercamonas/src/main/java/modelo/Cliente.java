@@ -3,7 +3,6 @@ package modelo;
 import lombok.Data;
 import java.util.*;
 
-@Data
 public class Cliente implements Clone<Cliente>, Comparable<Cliente> {
 
   private String dni;
@@ -15,7 +14,13 @@ public class Cliente implements Clone<Cliente>, Comparable<Cliente> {
   private List<LineaCompra> carrito;
   private List<List<LineaCompra>> buyHistory;
 
-  private double dineroTotalGastado;
+  public void setAlergenos(List<Ingrediente> alergenos) {
+    this.alergenos = alergenos;
+  }
+
+  public void setBuyHistory(List<List<LineaCompra>> buyHistory) {
+    this.buyHistory = buyHistory;
+  }
 
   public Cliente(String dni, String nombre, String apellido, Set<Monedero> monederos,
       List<Ingrediente> alergenos, List<LineaCompra> carrito, List<List<LineaCompra>> buyHistory) {
@@ -50,6 +55,15 @@ public class Cliente implements Clone<Cliente>, Comparable<Cliente> {
     this.monederos = monederos;
     this.carrito = carrito;
     this.buyHistory = buyHistory;
+  }
+
+
+  public String getNombre() {
+    return nombre;
+  }
+
+  public String getApellido() {
+    return apellido;
   }
 
   public Set<Monedero> getMonederos() {
@@ -88,18 +102,13 @@ public class Cliente implements Clone<Cliente>, Comparable<Cliente> {
     this.apellido = apellido;
   }
 
-  public void setDineroTotalGastado(double dineroCarrito){
-    this.dineroTotalGastado += dineroCarrito;
-  }
-
-  public double getDineroTotalGastado() {
-    return dineroTotalGastado;
-  }
 
   @Override
   public boolean equals(Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
+    if (this == o)
+      return true;
+    if (o == null || getClass() != o.getClass())
+      return false;
     Cliente cliente = (Cliente) o;
     return dni.equalsIgnoreCase(cliente.dni);
   }
@@ -111,15 +120,9 @@ public class Cliente implements Clone<Cliente>, Comparable<Cliente> {
 
   @Override
   public String toString() {
-    return "\n\nCliente{" +
-            "dni='" + dni + '\'' +
-            ", \nnombre='" + nombre + '\'' +
-            ", \napellido='" + apellido + '\'' +
-            ", \nmonederos=" + monederos +
-            ", \nalergenos=" + alergenos +
-            ", \ncarrito=" + carrito +
-            ", \nbuyHistory=" + buyHistory +
-            '}';
+    return "\n\nCliente{" + "dni='" + dni + '\'' + ", \nnombre='" + nombre + '\'' + ", \napellido='"
+        + apellido + '\'' + ", \nmonederos=" + monederos + ", \nalergenos=" + alergenos
+        + ", \ncarrito=" + carrito + ", \nbuyHistory=" + buyHistory + '}';
   }
 
   @Override
@@ -128,9 +131,8 @@ public class Cliente implements Clone<Cliente>, Comparable<Cliente> {
         this.carrito, this.buyHistory);
   }
 
-
   @Override
-  public int compareTo(Cliente cliente) {
-      return (int)(cliente.getDineroTotalGastado() - this.getDineroTotalGastado());
+  public int compareTo(Cliente o) {
+    return 0;
   }
 }

@@ -45,6 +45,7 @@ public class UiMenuAdminCliente {
           break;
         case 8:
           showListClientesSortedDnie();
+          break;
         case 9:
           ServicioClients servicioClients = new ServicioClients();
           System.out.println(servicioClients.showClientesSortedDineroGastado());
@@ -80,7 +81,8 @@ public class UiMenuAdminCliente {
     System.out.println("Dime el descuento que tiene (numeros enteros)");
     double descuentoCliente = common.giveDouble();
 
-    Cliente newClient = new ClienteDescuento(nameClient, surnameClient, dniClient,descuentoCliente);
+    Cliente newClient =
+        new ClienteDescuento(nameClient, surnameClient, dniClient, descuentoCliente);
 
     if (servicioClients.addClient(newClient)) {
       System.out.println(Constantes.SE_HA_AGREGADO_EL_CLIENTE_CON_SUCCESS);

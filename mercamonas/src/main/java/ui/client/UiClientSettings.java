@@ -14,17 +14,10 @@ public class UiClientSettings {
     int settingsClient;
 
     do {
-      System.out.println("Que desea hacer?\n" +
-              "1) Cambiar nombre.\n" +
-              "2) Cambiar apellido.\n" +
-              "3) Agregar tarjeta\n" +
-              "4) Eliminar tarjeta\n" +
-              "5) Agregar money\n" +
-              "6) Mostrar datos del usuario\n" +
-              "7) Mostrar compras antiguas\n" +
-              "8) Añadir alergeno\n" +
-              "9) Gasto total en la tienda\n" +
-              "0) Exit");
+      System.out.println("Que desea hacer?\n" + "1) Cambiar nombre.\n" + "2) Cambiar apellido.\n"
+          + "3) Agregar tarjeta\n" + "4) Eliminar tarjeta\n" + "5) Agregar money\n"
+          + "6) Mostrar datos del usuario\n" + "7) Mostrar compras antiguas\n"
+          + "8) Añadir alergeno\n" + "9) Gasto total en la tienda\n" + "0) Exit");
       settingsClient = common.giveInt();
 
       switch (settingsClient) {
@@ -67,9 +60,9 @@ public class UiClientSettings {
 
   private void dineroTotalGastadoTienda(String dniClient) {
     ServicioClients servicioClients = new ServicioClients();
-    if(servicioClients.tieneComprasAnteriores(dniClient)){
+    if (servicioClients.tieneComprasAnteriores(dniClient)) {
       System.out.println("Usted no ha comprado nunca en la tienda");
-    }else{
+    } else {
       System.out.println(servicioClients.dineroTotalGastado(dniClient));
     }
   }
@@ -77,10 +70,10 @@ public class UiClientSettings {
   private void addAlergiaCliente(Scanner sc, String dniClient) {
     ServicioClients servicioClients = new ServicioClients();
     System.out.println("Dime el ingrediente al que tienes alergia");
-    String ingrediente= sc.nextLine();
-    if(servicioClients.addIngredienteAlergia(dniClient, ingrediente)){
+    String ingrediente = sc.nextLine();
+    if (servicioClients.addIngredienteAlergia(dniClient, ingrediente)) {
       System.out.println("Ha sido un éxito");
-    }else{
+    } else {
       System.out.println("ERROR");
     }
   }

@@ -2,7 +2,6 @@ package modelo;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-
 import java.util.Objects;
 
 @Data
@@ -14,8 +13,10 @@ public class Ingrediente implements Clone {
 
   @Override
   public boolean equals(Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
+    if (this == o)
+      return true;
+    if (o == null || getClass() != o.getClass())
+      return false;
     Ingrediente that = (Ingrediente) o;
     return nombre.equalsIgnoreCase(that.nombre);
   }

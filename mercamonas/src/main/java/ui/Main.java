@@ -2,9 +2,9 @@ package ui;
 
 import common.Common;
 import constantes.Constantes;
-import servicios.ServicioProductos;
 import ui.admin.UiMenuAdmin;
 import ui.client.UiMenuClient;
+
 import java.util.Scanner;
 
 public class Main {
@@ -12,6 +12,7 @@ public class Main {
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
     Common common = new Common();
+
 
 
     UiMenuAdmin menuSwitchAdmin = new UiMenuAdmin();

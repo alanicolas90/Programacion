@@ -101,10 +101,10 @@ public class ServicioClients {
 
   public Cliente verDataCliente(String dniClient) {
     DaoClientes daoClientes = new DaoClientes();
-    boolean esClienteConDescuento= daoClientes.clienteTieneDescuento(dniClient);
-    if(esClienteConDescuento) {
+    boolean esClienteConDescuento = daoClientes.clienteTieneDescuento(dniClient);
+    if (esClienteConDescuento) {
       return daoClientes.seeSpecificClientDescuento(dniClient);
-    }else{
+    } else {
       return daoClientes.seeSpecificClient(dniClient);
     }
   }
@@ -127,8 +127,9 @@ public class ServicioClients {
       precioTotalCarrito = precioTotalCarrito + (cantidadProducto * precioProducto);
     }
 
-    if(esClienteConDescuento){
-      precioTotalCarrito = (precioTotalCarrito*(1-(daoClientes.getDescuentoCliente(dniClient)/100)));
+    if (esClienteConDescuento) {
+      precioTotalCarrito =
+          (precioTotalCarrito * (1 - (daoClientes.getDescuentoCliente(dniClient) / 100)));
     }
     return precioTotalCarrito;
   }
@@ -141,8 +142,9 @@ public class ServicioClients {
 
   public boolean addIngredienteAlergia(String dniClient, String ingrediente) {
     DaoClientes daoClientes = new DaoClientes();
-    boolean ingredienteExisteCliente = !daoClientes.ingredienteExisteCliente(dniClient, ingrediente);
-    if(ingredienteExisteCliente){
+    boolean ingredienteExisteCliente =
+        !daoClientes.ingredienteExisteCliente(dniClient, ingrediente);
+    if (ingredienteExisteCliente) {
       daoClientes.addIngredienteAlergia(dniClient, ingrediente);
     }
     return ingredienteExisteCliente;
@@ -161,15 +163,16 @@ public class ServicioClients {
     double precioTotalCarrito = 0;
     List<List<LineaCompra>> historial = daoClientes.dameHistorialCompra(dniClient);
     for (int i = 0; i < historial.size(); i++) {
-      List<LineaCompra> carrito = daoClientes.getLineaCompra(dniClient,i);
+      List<LineaCompra> carrito = daoClientes.getLineaCompra(dniClient, i);
       for (LineaCompra lineaCompra : carrito) {
         double precioProducto = daoProducto.getPriceProducto(lineaCompra.getProducto().getName());
         double cantidadProducto = carrito.get(i).getQuantity();
         precioTotalCarrito += (cantidadProducto * precioProducto);
       }
     }
-    if (esClienteConDescuento){
-      precioTotalCarrito = (precioTotalCarrito*(1-(daoClientes.getDescuentoCliente(dniClient)/100)));
+    if (esClienteConDescuento) {
+      precioTotalCarrito =
+          (precioTotalCarrito * (1 - (daoClientes.getDescuentoCliente(dniClient) / 100)));
     }
     return precioTotalCarrito;
   }

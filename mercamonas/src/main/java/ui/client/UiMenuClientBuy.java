@@ -17,12 +17,9 @@ public class UiMenuClientBuy {
 
     do {
       System.out.println("LISTA DE PRODUCTOS");
-      System.out.println("Que deseas hacer\n" +
-              "1) Añadir producto al carrito\n" +
-              "2) Eliminar un producto del carrito\n" +
-              "3) Pagar por el carrito\n" +
-              "4) Mostrar listado de productos sin mis alergias\n\n" +
-              "0) Exit");
+      System.out.println("Que deseas hacer\n" + "1) Añadir producto al carrito\n"
+          + "2) Eliminar un producto del carrito\n" + "3) Pagar por el carrito\n"
+          + "4) Mostrar listado de productos sin mis alergias\n\n" + "0) Exit");
       clientDecision = common.giveInt();
 
       switch (clientDecision) {

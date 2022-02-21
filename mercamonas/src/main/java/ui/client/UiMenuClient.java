@@ -28,7 +28,8 @@ public class UiMenuClient {
       } while (!dniExiste);
 
 
-      System.out.println("Que desea hacer?\n" + "1) Ajustes de usuario\n" + "2) Comprar\n\n" + "0) Exit");
+      System.out
+          .println("Que desea hacer?\n" + "1) Ajustes de usuario\n" + "2) Comprar\n\n" + "0) Exit");
       clientOption = common.giveInt();
 
       switch (clientOption) {

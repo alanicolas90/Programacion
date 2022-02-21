@@ -85,8 +85,8 @@ public class ServicioProductos {
 
 
   public List<Producto> showAllProductsSinCaducados() {
-      DaoProducto daoProducto = new DaoProducto();
-      return daoProducto.showAllProductosSinCaducables();
+    DaoProducto daoProducto = new DaoProducto();
+    return daoProducto.showAllProductosSinCaducables();
   }
 
   public List<Producto> showAllProductsOrdenadosName() {
@@ -95,25 +95,31 @@ public class ServicioProductos {
   }
 
   public List<Producto> showAllProductsConIngredientes() {
-  DaoProducto daoProducto = new DaoProducto();
-  return daoProducto.showAllProductsConIngrediente();
+    DaoProducto daoProducto = new DaoProducto();
+    return daoProducto.showAllProductsConIngrediente();
   }
 
-    public boolean addIngredienteAlProducto(String nombreProducto, Ingrediente nuevoIngrediente) {
+  public boolean addIngredienteAlProducto(String nombreProducto, Ingrediente nuevoIngrediente) {
     DaoProducto daoProducto = new DaoProducto();
-      int indexProduct = daoProducto.indexProduct(nombreProducto);
-      boolean productoTieneEseIngrediente = false;
-      if(indexProduct >=0) {
-      productoTieneEseIngrediente = !daoProducto.ingredienteExisteEnProducto(nuevoIngrediente, indexProduct);
-        if(productoTieneEseIngrediente){
-          daoProducto.addIngredienteAlProducto(nuevoIngrediente, indexProduct);
-        }
+    int indexProduct = daoProducto.indexProduct(nombreProducto);
+    boolean productoTieneEseIngrediente = false;
+    if (indexProduct >= 0) {
+      productoTieneEseIngrediente =
+          !daoProducto.ingredienteExisteEnProducto(nuevoIngrediente, indexProduct);
+      if (productoTieneEseIngrediente) {
+        daoProducto.addIngredienteAlProducto(nuevoIngrediente, indexProduct);
       }
+    }
     return productoTieneEseIngrediente;
   }
 
   public List<Producto> showAllProductsSinAlergiasCliente(String dniClient) {
-  DaoProducto daoProducto = new DaoProducto();
-  return daoProducto.showAllProductsSinAlergiasCliente(dniClient);
+    DaoProducto daoProducto = new DaoProducto();
+    return daoProducto.showAllProductsSinAlergiasCliente(dniClient);
+  }
+
+  public List<Producto> showAllProductsSortedCantidadComprada() {
+    DaoProducto daoProducto = new DaoProducto();
+    return daoProducto.showAllProductsSortedCantidadComprada();
   }
 }
