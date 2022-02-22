@@ -1,6 +1,8 @@
 package modelo;
 
 import lombok.Data;
+import modelo.constantes.Constantes;
+
 import java.util.*;
 
 public class Cliente implements Clone<Cliente>, Comparable<Cliente> {
@@ -120,9 +122,9 @@ public class Cliente implements Clone<Cliente>, Comparable<Cliente> {
 
   @Override
   public String toString() {
-    return "\n\nCliente{" + "dni='" + dni + '\'' + ", \nnombre='" + nombre + '\'' + ", \napellido='"
-        + apellido + '\'' + ", \nmonederos=" + monederos + ", \nalergenos=" + alergenos
-        + ", \ncarrito=" + carrito + ", \nbuyHistory=" + buyHistory + '}';
+    return Constantes.CLIENTE + Constantes.DNI + dni + Constantes.CHAR + Constantes.NOMBRE + nombre + Constantes.CHAR + Constantes.APELLIDO
+        + apellido + Constantes.CHAR + Constantes.MONEDEROS + monederos + Constantes.ALERGENOS + alergenos
+        + Constantes.CARRITO + carrito + Constantes.BUY_HISTORY + buyHistory + Constantes.CHAR2;
   }
 
   @Override

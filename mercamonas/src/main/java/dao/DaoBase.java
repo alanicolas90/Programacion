@@ -9,8 +9,6 @@ import java.util.stream.Collectors;
 
 abstract class DaoBase {
 
-    private BBDD bd;
-
     protected <T> List<T> dameListaClonadaInmutable(Collection<? extends Clone<T>> collection){
         return collection.stream()
                 .map(Clone::clone)

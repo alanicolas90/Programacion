@@ -1,6 +1,7 @@
 package modelo;
 
 import lombok.Data;
+import modelo.constantes.Constantes;
 
 import java.util.List;
 import java.util.Objects;
@@ -43,6 +44,6 @@ public class ClienteDescuento extends Cliente {
 
   @Override
   public String toString() {
-    return super.toString() + "ClienteDescuento{" + "descuento=" + descuento + "%" + "}\n";
+    return super.toString() + Constantes.CLIENTE_DESCUENTO + Constantes.DESCUENTO + descuento + Constantes.STRINGPERCENTAGE + Constantes.STRINGFINALTOSTRING;
   }
 }
