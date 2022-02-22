@@ -7,6 +7,8 @@ import modelo.Producto;
 import modelo.ProductoCaducable;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Stream;
 
 public class ServicioProductos {
 
@@ -118,8 +120,8 @@ public class ServicioProductos {
     return daoProducto.showAllProductsSinAlergiasCliente(dniClient);
   }
 
-  public List<Producto> showAllProductsSortedCantidadComprada() {
+  public List<String> showAllProductsSortedCantidadComprada() {
     DaoProducto daoProducto = new DaoProducto();
-    return daoProducto.showAllProductsSortedCantidadComprada();
+    return daoProducto.showCantidadProductosOrdenadaPorLaMasComprada();
   }
 }

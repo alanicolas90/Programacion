@@ -1,122 +1,136 @@
 package dao;
 
 import modelo.*;
+
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.stream.Collectors;
+
 import static dao.BBDD.clientes;
 
-public class DaoClientes {
+public class DaoClientes extends DaoBase {
 
 
-  public boolean clienteTieneDescuento(String dniClient) {
-    return clientes.get(dniClient) instanceof ClienteDescuento;
-  }
+    //ADD REMOVE Y ELIMINAR DE LO QUE SEA
+    //-------------------------------------------------------------------------------------------------
 
-  public boolean existClient(String clientDNI) {
-    return clientes.containsKey(clientDNI);
-  }
+    public void addClient(Cliente newClient) {
+        clientes.put(newClient.getDni(), newClient);
+    }
 
-  public void addClient(Cliente newClient) {
-    clientes.put(newClient.getDni(), newClient);
-  }
+    public void removeClient(String dniClient) {
+        clientes.remove(dniClient);
+    }
 
-  public void removeClient(String dniClient) {
-    clientes.remove(dniClient);
-  }
+    public void swapNameClient(String dniClient, String nuevoNombreCliente) {
+        clientes.get(dniClient).setNombre(nuevoNombreCliente);
+    }
 
-  public void swapNameClient(String dniClient, String nuevoNombreCliente) {
-    clientes.get(dniClient).setNombre(nuevoNombreCliente);
-  }
+    public void swapSurnameClient(String dniClient, String newSurnameClient) {
+        clientes.get(dniClient).setApellido(newSurnameClient);
 
-  public void swapSurnameClient(String dniClient, String newSurnameClient) {
-    clientes.get(dniClient).setApellido(newSurnameClient);
+    }
 
-  }
+    public void swapDni(String dniClient, String nuevoDniCliente) {
+        clientes.get(dniClient).setDni(nuevoDniCliente);
+        clientes.put(nuevoDniCliente, clientes.get(dniClient));
+        clientes.remove(dniClient);
+    }
 
-  public void swapDni(String dniClient, String nuevoDniCliente) {
-    clientes.get(dniClient).setDni(nuevoDniCliente);
-    clientes.put(nuevoDniCliente, clientes.get(dniClient));
-    clientes.remove(dniClient);
-  }
+    public double getTodoDineroMonedero(String dniClient, String nombreMonedero) {
+        AtomicReference<Double> dineroTarjeta = new AtomicReference<>((double) 0);
+        clientes.get(dniClient).getMonederos().forEach(monedero -> {
+            if (monedero.equals(new Monedero(nombreMonedero))) {
+                dineroTarjeta.set(monedero.getMoney());
+            }
+        });
+        return dineroTarjeta.get();
+    }
 
-  public List<Cliente> verListaClientes() {
-    return clientes.values().stream().map(Cliente::clone).collect(Collectors.toUnmodifiableList());
-  }
+    public double getDescuentoCliente(String dniClient) {
+        return ((ClienteDescuento) dameElementoClonado(clientes.get(dniClient))).getDescuento();
+    }
 
-  public Cliente seeSpecificClient(String dniClient) {
-    return clientes.get(dniClient).clone();
-  }
+    public Double getCosteCompras(Cliente cliente) {
+        return cliente.getBuyHistory().stream()
+                .flatMapToDouble(lineaCompras -> lineaCompras.stream()
+                        .mapToDouble(value -> value.getProducto().getPrice() * value.getQuantity()))
+                .sum();
+    }
 
-  public ClienteDescuento seeSpecificClientDescuento(String dniClient) {
-    return (ClienteDescuento) clientes.get(dniClient).clone();
-  }
 
-  public List<List<LineaCompra>> showBuyHistory(String dniClient) {
-    return clientes.get(dniClient).clone().getBuyHistory();
-  }
+//COMPROBACIONES (booleans)
+    //-------------------------------------------------------------------------------------------------
 
-  public List<LineaCompra> dameCarrito(String dniClient) {
-    return clientes.get(dniClient).clone().getCarrito();
-  }
+    public boolean clienteTieneDescuento(String dniClient) {
+        return clientes.get(dniClient) instanceof ClienteDescuento;
+    }
 
-  public void emptyCart(String dniClient) {
-    clientes.get(dniClient).setCarrito(new ArrayList<>());
-  }
+    public boolean existClient(String clientDNI) {
+        return clientes.containsKey(clientDNI);
+    }
 
-  public double getTodoDineroMonedero(String dniClient, String nombreMonedero) {
-    AtomicReference<Double> dineroTarjeta = new AtomicReference<>((double) 0);
-    clientes.get(dniClient).getMonederos().forEach(monedero -> {
-      if (monedero.equals(new Monedero(nombreMonedero))) {
-        dineroTarjeta.set(monedero.getMoney());
-      }
-    });
-    return dineroTarjeta.get();
-  }
+    public void emptyCart(String dniClient) {
+        clientes.get(dniClient).setCarrito(new ArrayList<>());
+    }
 
-  public double getDescuentoCliente(String dniClient) {
-    return ((ClienteDescuento) clientes.get(dniClient).clone()).getDescuento();
-  }
+    public void addIngredienteAlergia(String dniClient, String ingrediente) {
+        clientes.get(dniClient).getAlergenos().add(new Ingrediente(ingrediente));
+    }
 
-  public List<Cliente> showListaClientesOrdenadaDni() {
-    return clientes.values().stream().sorted(Comparator.comparing(Cliente::getDni))
-        .map(Cliente::clone).collect(Collectors.toUnmodifiableList());
-  }
+    public boolean ingredienteExisteCliente(String dniClient, String ingrediente) {
+        return clientes.get(dniClient).getAlergenos().contains(new Ingrediente(ingrediente));
+    }
 
-  public void addIngredienteAlergia(String dniClient, String ingrediente) {
-    clientes.get(dniClient).getAlergenos().add(new Ingrediente(ingrediente));
-  }
+    public boolean tieneComprasAnteriores(String dniClient) {
+        return clientes.get(dniClient).getBuyHistory().isEmpty();
+    }
 
-  public boolean ingredienteExisteCliente(String dniClient, String ingrediente) {
-    return clientes.get(dniClient).getAlergenos().contains(new Ingrediente(ingrediente));
-  }
 
-  public boolean tieneComprasAnteriores(String dniClient) {
-    return clientes.get(dniClient).getBuyHistory().isEmpty();
-  }
+    //VER COSAS
+    //-----------------------------------------------------------------------------------------------
 
-  public List<List<LineaCompra>> dameHistorialCompra(String dniClient) {
-    return clientes.get(dniClient).clone().getBuyHistory();
-  }
+    public List<Cliente> showListaClientesSortedDineroGastado() {
+        return clientes.values()
+                .stream()
+                .sorted((o1, o2) -> getCosteCompras(o2).compareTo(getCosteCompras(o1)))
+                .map(Cliente::clone)
+                .collect(Collectors.toUnmodifiableList());
+    }
 
-  public List<LineaCompra> getLineaCompra(String dniClient, int index) {
-    return clientes.get(dniClient).getBuyHistory().get(index);
-  }
+    public List<LineaCompra> getLineaCompra(String dniClient, int index) {
+        return clientes.get(dniClient).getBuyHistory().get(index);
+    }
 
-  public Double getCosteCompras(Cliente cliente){
-    return cliente.getBuyHistory().stream()
-            .flatMapToDouble(lineaCompras -> lineaCompras.stream()
-                    .mapToDouble(value -> value.getProducto().getPrice() * value.getQuantity()))
-            .sum();
-  }
+    public List<List<LineaCompra>> dameHistorialCompra(String dniClient) {
+        return dameElementoClonado(clientes.get(dniClient)).getBuyHistory();
+    }
 
-  public List<Cliente> showListaClientesSortedDineroGastado() {
-    return clientes.values()
-            .stream()
-            .sorted((o1, o2) -> getCosteCompras(o2).compareTo(getCosteCompras(o1)))
-            .map(Cliente::clone)
-            .collect(Collectors.toUnmodifiableList());
-  }
+    public List<Cliente> showListaClientesOrdenadaDni() {
+        return clientes.values().stream().sorted(Comparator.comparing(Cliente::getDni))
+                .map(Cliente::clone).collect(Collectors.toUnmodifiableList());
+    }
+
+    public List<Cliente> verListaClientes() {
+        return dameListaClonadaInmutable(clientes.values());
+    }
+
+    public List<LineaCompra> dameCarrito(String dniClient) {
+        return dameElementoClonado(clientes.get(dniClient)).getCarrito();
+    }
+
+    public Cliente seeSpecificClient(String dniClient) {
+        return dameElementoClonado(clientes.get(dniClient));
+    }
+
+    public List<List<LineaCompra>> showBuyHistory(String dniClient) {
+        return dameElementoClonado(clientes.get(dniClient)).getBuyHistory();
+    }
+
+    public ClienteDescuento seeSpecificClientDescuento(String dniClient) {
+        return (ClienteDescuento) dameElementoClonado(clientes.get(dniClient));
+    }
+
 }

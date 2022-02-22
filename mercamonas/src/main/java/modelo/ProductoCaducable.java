@@ -60,7 +60,7 @@ public class ProductoCaducable extends Producto {
 
   @Override
   public String toString() {
-    return super.toString() + "ProductoCaducable{" + "caducidad=" + caducidad + '}';
+    return super.toString() + "caducidad=" + caducidad + "}\n";
   }
 
 

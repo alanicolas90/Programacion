@@ -1,0 +1,12 @@
+
+M
+java:S2160	"+Override the "equals" method in this class.(´æ°ôúÿÿÿÿ8×·âßñ/
+f
+java:S1206("PThis class overrides "hashCode()" and should therefore also override "equals()".(ğÜşŠ
+n
+java:S2975""SRemove this "clone" implementation; use a copy constructor or copy factory instead.(Ì¤×†ùÿÿÿÿ
+c
+java:S1182""HUse super.clone() to create and seed the cloned instance to be returned.(Ì¤×†ùÿÿÿÿ
+J
+java:S1128"(Remove this unused import 'lombok.Data'.(÷í«ÿÿÿÿÿ8ğ·âßñ/
+[	java:S107"AConstructor has 8 parameters, which is greater than 7 authorized.(Úü€¤üÿÿÿÿ

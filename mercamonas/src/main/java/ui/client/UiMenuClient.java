@@ -14,19 +14,19 @@ public class UiMenuClient {
     boolean dniExiste;
 
     do {
-      do {
-        System.out.println("Dígame su dni");
-        dniClient = sc.nextLine();
+      System.out.println("Dígame su dni");
+      dniClient = sc.nextLine();
 
-        if (servicioClients.existeCliente(dniClient)) {
-          System.out.println("BIENVENIDO");
-          dniExiste = true;
-        } else {
-          System.out.println("Error inténtelo de nuevo");
-          dniExiste = false;
-        }
-      } while (!dniExiste);
+      if (servicioClients.existeCliente(dniClient)) {
+        System.out.println("BIENVENIDO");
+        dniExiste = true;
+      } else {
+        System.out.println("Error inténtelo de nuevo");
+        dniExiste = false;
+      }
+    } while (!dniExiste);
 
+    do {
 
       System.out
           .println("Que desea hacer?\n" + "1) Ajustes de usuario\n" + "2) Comprar\n\n" + "0) Exit");
@@ -40,8 +40,6 @@ public class UiMenuClient {
         case 2:
           UiMenuClientBuy uiMenuClientBuy = new UiMenuClientBuy();
           uiMenuClientBuy.buyClient(sc, dniClient);
-
-          System.out.println("Opciones de compra y ver historial");
           break;
         case 0:
           System.out.println("Hasta la próxima.");

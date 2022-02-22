@@ -49,8 +49,8 @@ public class UIMenuAdminProduct {
           break;
         case 10:
           System.out.println("en obras");
-          // ServicioProductos servicioProductos = new ServicioProductos();
-          // System.out.println(servicioProductos.showAllProductsSortedCantidadComprada());
+          ServicioProductos servicioProductos = new ServicioProductos();
+          System.out.println(servicioProductos.showAllProductsSortedCantidadComprada());
           break;
         case 11:
           showAllProductsConIngrediente();
