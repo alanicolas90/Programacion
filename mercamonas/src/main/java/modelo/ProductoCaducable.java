@@ -1,6 +1,8 @@
 package modelo;
 
 import lombok.Data;
+import modelo.constantes.Constantes;
+
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Objects;
@@ -60,7 +62,7 @@ public class ProductoCaducable extends Producto {
 
   @Override
   public String toString() {
-    return super.toString() + "caducidad=" + caducidad + "}\n";
+    return super.toString() + Constantes.CADUCIDAD + caducidad + Constantes.STRINGFINALTOSTRING;
   }
 
 

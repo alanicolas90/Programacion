@@ -34,7 +34,9 @@ public class Main {
         case 2:
           menuSwitchClient.menuSwitchClient(sc);
           break;
-
+        case 0:
+          System.out.println(Constantes.HASTA_LA_PROXIMA);
+          break;
         default:
           System.out.println(Constantes.ERROR_POR_FAVOR_TRY_AGAIN);
           break;

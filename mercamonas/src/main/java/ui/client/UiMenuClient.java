@@ -6,6 +6,9 @@ import servicios.ServicioClients;
 import java.util.Scanner;
 
 public class UiMenuClient {
+
+
+
   public void menuSwitchClient(Scanner sc) {
     ServicioClients servicioClients = new ServicioClients();
     Common common = new Common();
@@ -14,14 +17,14 @@ public class UiMenuClient {
     boolean dniExiste;
 
     do {
-      System.out.println("Dígame su dni");
+      System.out.println(Constantes.DIGAME_SU_DNI);
       dniClient = sc.nextLine();
 
       if (servicioClients.existeCliente(dniClient)) {
-        System.out.println("BIENVENIDO");
+        System.out.println(Constantes.BIENVENIDO);
         dniExiste = true;
       } else {
-        System.out.println("Error inténtelo de nuevo");
+        System.out.println(Constantes.ERROR_INTENTELO_DE_NUEVO);
         dniExiste = false;
       }
     } while (!dniExiste);
@@ -29,7 +32,7 @@ public class UiMenuClient {
     do {
 
       System.out
-          .println("Que desea hacer?\n" + "1) Ajustes de usuario\n" + "2) Comprar\n\n" + "0) Exit");
+          .println(Constantes.MENUCLIENTE);
       clientOption = common.giveInt();
 
       switch (clientOption) {
@@ -42,7 +45,7 @@ public class UiMenuClient {
           uiMenuClientBuy.buyClient(sc, dniClient);
           break;
         case 0:
-          System.out.println("Hasta la próxima.");
+          System.out.println(Constantes.HASTA_LA_NEXT);
           break;
         default:
           System.out.println(Constantes.ERROR);

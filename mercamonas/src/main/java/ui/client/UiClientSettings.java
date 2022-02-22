@@ -14,10 +14,7 @@ public class UiClientSettings {
     int settingsClient;
 
     do {
-      System.out.println("Que desea hacer?\n" + "1) Cambiar nombre.\n" + "2) Cambiar apellido.\n"
-          + "3) Agregar tarjeta\n" + "4) Eliminar tarjeta\n" + "5) Agregar money\n"
-          + "6) Mostrar datos del usuario\n" + "7) Mostrar compras antiguas\n"
-          + "8) Añadir alergeno\n" + "9) Gasto total en la tienda\n" + "0) Exit");
+      System.out.println(Constantes.MENUCLIENTEAJUSTES);
       settingsClient = common.giveInt();
 
       switch (settingsClient) {
@@ -61,7 +58,7 @@ public class UiClientSettings {
   private void dineroTotalGastadoTienda(String dniClient) {
     ServicioClients servicioClients = new ServicioClients();
     if (servicioClients.tieneComprasAnteriores(dniClient)) {
-      System.out.println("Usted no ha comprado nunca en la tienda");
+      System.out.println(Constantes.USTED_NO_HA_COMPRADO_NUNCA_EN_LA_TIENDA);
     } else {
       System.out.println(servicioClients.dineroTotalGastado(dniClient));
     }
@@ -69,12 +66,12 @@ public class UiClientSettings {
 
   private void addAlergiaCliente(Scanner sc, String dniClient) {
     ServicioClients servicioClients = new ServicioClients();
-    System.out.println("Dime el ingrediente al que tienes alergia");
+    System.out.println(Constantes.DIME_EL_INGREDIENTE_AL_QUE_TIENES_ALERGIA);
     String ingrediente = sc.nextLine();
     if (servicioClients.addIngredienteAlergia(dniClient, ingrediente)) {
-      System.out.println("Ha sido un éxito");
+      System.out.println(Constantes.HA_SIDO_UN_EXITO);
     } else {
-      System.out.println("ERROR");
+      System.out.println(Constantes.ERROR);
     }
   }
 
@@ -85,11 +82,11 @@ public class UiClientSettings {
 
   private void deleteMonedero(Scanner sc, String dniClient) {
     ServicioClients servicioClients = new ServicioClients();
-    System.out.println("Como se llama el monedero?");
+    System.out.println(Constantes.COMO_SE_LLAMA_EL_MONEDERO);
     String nombreMonedero = sc.nextLine();
 
     if (servicioClients.removeMonedero(nombreMonedero, dniClient)) {
-      System.out.println("Eliminado con éxito");
+      System.out.println(Constantes.ELIMINADO_CON_EXITO);
       System.out.println(servicioClients.verDataCliente(dniClient));
     } else {
       System.out.println(Constantes.ERROR);
@@ -99,17 +96,17 @@ public class UiClientSettings {
   private void addMonedero(Scanner sc, String dniClient) {
     Common common = new Common();
     ServicioClients servicioClients = new ServicioClients();
-    System.out.println("Añadir monedero");
-    System.out.println("Como desea que se llame el monedero?");
+    System.out.println(Constantes.ADD_MONEDERO);
+    System.out.println(Constantes.COMO_DESEA_QUE_SE_LLAME_EL_MONEDERO);
     String nombreMonedero = sc.nextLine();
 
-    System.out.println("Cuanto dinero desea introducir al monedero?");
+    System.out.println(Constantes.CUANTO_DINERO_DESEA_INTRODUCIR_AL_MONEDERO);
     double dineroAgregarTarjeta = common.giveDouble();
 
     Monedero monedero = new Monedero(nombreMonedero, dineroAgregarTarjeta);
 
     if (servicioClients.addMonedero(monedero, dniClient)) {
-      System.out.println("Ha sido un éxito");
+      System.out.println(Constantes.HA_SIDO_UN_EXITO);
       System.out.println(servicioClients.verDataCliente(dniClient));
     } else {
       System.out.println(Constantes.ERROR);
@@ -120,15 +117,15 @@ public class UiClientSettings {
     Common common = new Common();
     ServicioClients servicioClients = new ServicioClients();
 
-    System.out.println("A que tarjeta desea agregarle dinero?");
+    System.out.println(Constantes.A_QUE_TARJETA_DESEA_AGREGARLE_DINERO);
     // mostrar tarjetas IMPORTANTE
     String nombreTarjeta = sc.nextLine();
 
-    System.out.println("Cuanto dinero desea agregarle?");
+    System.out.println(Constantes.CUANTO_DINERO_DESEA_AGREGARLE);
     double dineroAgregar = common.giveDouble();
 
     if (servicioClients.addMoney(dniClient, nombreTarjeta, dineroAgregar)) {
-      System.out.println("Logrado con éxito");
+      System.out.println(Constantes.LOGRADO_CON_EXITO);
       System.out.println(servicioClients.verDataCliente(dniClient));
     } else {
       System.out.println(Constantes.ERROR);

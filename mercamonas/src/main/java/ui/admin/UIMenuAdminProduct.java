@@ -48,9 +48,7 @@ public class UIMenuAdminProduct {
           showAllProductosSortedName();
           break;
         case 10:
-          System.out.println("en obras");
-          ServicioProductos servicioProductos = new ServicioProductos();
-          System.out.println(servicioProductos.showAllProductsSortedCantidadComprada());
+          showAllProductsSortedCatidadComprada();
           break;
         case 11:
           showAllProductsConIngrediente();
@@ -62,6 +60,11 @@ public class UIMenuAdminProduct {
           System.out.println(Constantes.ERROR);
       }
     } while (optionMenuProducts != 0);
+  }
+
+  private void showAllProductsSortedCatidadComprada() {
+    ServicioProductos servicioProductos = new ServicioProductos();
+    System.out.println(servicioProductos.showAllProductsSortedCantidadComprada());
   }
 
   private void showAllProductsConIngrediente() {
@@ -78,47 +81,46 @@ public class UIMenuAdminProduct {
     ServicioProductos servicioProductos = new ServicioProductos();
     System.out.println(servicioProductos.showAllProducts());
 
-    System.out.println("A que producto le quieres incluir ingrediente");
+    System.out.println(Constantes.A_QUE_PRODUCTO_LE_QUIERES_INCLUIR_INGREDIENTE);
     String nombreDelProducto = sc.nextLine();
 
-    System.out.println("Que iingrediente le quiere introducir");
+    System.out.println(Constantes.QUE_INGREDIENTE_LE_QUIERE_INTRODUCIR);
     String ingredienteIntroducido = sc.nextLine();
 
     Ingrediente nuevoIngrediente = new Ingrediente(ingredienteIntroducido);
 
     if (servicioProductos.addIngredienteAlProducto(nombreDelProducto, nuevoIngrediente)) {
-      System.out.println("Se ha agregado conéxito");
+      System.out.println(Constantes.SE_HA_AGREGADO_CON_EXITO);
     } else {
-      System.out.println("ERROR");
+      System.out.println(Constantes.ERROR);
     }
 
     System.out.println(servicioProductos.showAllProducts());
-    return;
   }
 
   private void addProductoCaducable(Scanner sc) {
     ServicioProductos servicioProductos = new ServicioProductos();
     Common common = new Common();
 
-    System.out.println("Dime el nombre del producto");
+    System.out.println(Constantes.DIME_EL_NOMBRE_DEL_PRODUCTO);
     String nameProduct = sc.nextLine();
 
-    System.out.println("Dime el precio de " + nameProduct);
+    System.out.println(Constantes.DIME_EL_PRECIO_DE + nameProduct);
     double priceProductCaducable = common.giveDouble();
 
-    System.out.println("Dime ahora la cantidad del stock");
+    System.out.println(Constantes.DIME_AHORA_LA_CANTIDAD_DEL_STOCK);
     int stockProductoCaducable = common.giveInt();
 
-    System.out.println("Dime la fecha de caducidad (yyyy-mm-ddThh:mm:ss)");
+    System.out.println(Constantes.DIME_LA_FECHA_DE_CADUCIDAD_YYYY_MM_DD_THH_MM_SS);
     LocalDateTime fechaCaducidad = LocalDateTime.parse(sc.nextLine());
 
 
     ProductoCaducable productoCaducable = new ProductoCaducable(nameProduct, priceProductCaducable,
         stockProductoCaducable, fechaCaducidad);
     if (servicioProductos.addProductCaducable(productoCaducable)) {
-      System.out.println("Se ha añadido correctamente");
+      System.out.println(Constantes.SE_HA_ANADIDO_CORRECTAMENTE);
     } else {
-      System.out.println("ERROR");
+      System.out.println(Constantes.ERROR);
     }
   }
 

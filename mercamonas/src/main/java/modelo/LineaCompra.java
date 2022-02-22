@@ -1,6 +1,8 @@
 package modelo;
 
 import lombok.Data;
+import modelo.constantes.Constantes;
+
 import java.util.Objects;
 
 @Data
@@ -47,6 +49,6 @@ public class LineaCompra {
 
   @Override
   public String toString() {
-    return "LineaCompra{" + "producto=" + producto.getName() + ", quantity=" + quantity + '}';
+    return Constantes.LINEA_COMPRA + Constantes.PRODUCTODOS + producto.getName() + Constantes.QUANTITY + quantity + Constantes.CHAR2;
   }
 }

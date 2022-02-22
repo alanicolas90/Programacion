@@ -1,10 +1,12 @@
 package modelo;
 
+import modelo.constantes.Constantes;
+
 import java.util.Objects;
 
 public class Monedero {
 
-  private String name;
+  private final String name;
   private double money;
 
 
@@ -47,6 +49,7 @@ public class Monedero {
 
   @Override
   public String toString() {
-    return "Monedero{" + "name='" + name + '\'' + ", money=" + money + '}';
+    return Constantes.MONEDERO + Constantes.NAMESINSALTO + name
+            + Constantes.CHAR + Constantes.MONEYSINSALTO + money + Constantes.CHAR2;
   }
 }

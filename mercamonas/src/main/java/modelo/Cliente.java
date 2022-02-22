@@ -1,6 +1,5 @@
 package modelo;
 
-import lombok.Data;
 import modelo.constantes.Constantes;
 
 import java.util.*;
@@ -9,7 +8,6 @@ public class Cliente implements Clone<Cliente>, Comparable<Cliente> {
 
   private String dni;
   private String nombre;
-  private String apellido;
   private final Set<Monedero> monederos;
 
   private List<Ingrediente> alergenos;
@@ -24,11 +22,10 @@ public class Cliente implements Clone<Cliente>, Comparable<Cliente> {
     this.buyHistory = buyHistory;
   }
 
-  public Cliente(String dni, String nombre, String apellido, Set<Monedero> monederos,
+  public Cliente(String dni, String nombre, Set<Monedero> monederos,
       List<Ingrediente> alergenos, List<LineaCompra> carrito, List<List<LineaCompra>> buyHistory) {
     this.dni = dni;
     this.nombre = nombre;
-    this.apellido = apellido;
     this.monederos = monederos;
     this.alergenos = alergenos;
     this.carrito = carrito;
@@ -42,18 +39,16 @@ public class Cliente implements Clone<Cliente>, Comparable<Cliente> {
     carrito = new ArrayList<>();
   }
 
-  public Cliente(String dni, String nombre, String apellido) {
+  public Cliente(String dni, String nombre) {
     this();
     this.dni = dni;
     this.nombre = nombre;
-    this.apellido = apellido;
   }
 
-  public Cliente(String dni, String nombre, String apellido, Set<Monedero> monederos,
+  public Cliente(String dni, String nombre, Set<Monedero> monederos,
       List<LineaCompra> carrito, List<List<LineaCompra>> buyHistory) {
     this.dni = dni;
     this.nombre = nombre;
-    this.apellido = apellido;
     this.monederos = monederos;
     this.carrito = carrito;
     this.buyHistory = buyHistory;
@@ -62,10 +57,6 @@ public class Cliente implements Clone<Cliente>, Comparable<Cliente> {
 
   public String getNombre() {
     return nombre;
-  }
-
-  public String getApellido() {
-    return apellido;
   }
 
   public Set<Monedero> getMonederos() {
@@ -100,9 +91,6 @@ public class Cliente implements Clone<Cliente>, Comparable<Cliente> {
     this.nombre = nombre;
   }
 
-  public void setApellido(String apellido) {
-    this.apellido = apellido;
-  }
 
 
   @Override
@@ -122,14 +110,13 @@ public class Cliente implements Clone<Cliente>, Comparable<Cliente> {
 
   @Override
   public String toString() {
-    return Constantes.CLIENTE + Constantes.DNI + dni + Constantes.CHAR + Constantes.NOMBRE + nombre + Constantes.CHAR + Constantes.APELLIDO
-        + apellido + Constantes.CHAR + Constantes.MONEDEROS + monederos + Constantes.ALERGENOS + alergenos
+    return Constantes.CLIENTE + Constantes.DNI + dni + Constantes.CHAR + Constantes.NOMBRE + nombre + Constantes.CHAR + Constantes.CHAR + Constantes.MONEDEROS + monederos + Constantes.ALERGENOS + alergenos
         + Constantes.CARRITO + carrito + Constantes.BUY_HISTORY + buyHistory + Constantes.CHAR2;
   }
 
   @Override
   public Cliente clone() {
-    return new Cliente(this.dni, this.nombre, this.apellido, this.monederos, this.alergenos,
+    return new Cliente(this.dni, this.nombre, this.monederos, this.alergenos,
         this.carrito, this.buyHistory);
   }
 

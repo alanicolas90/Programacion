@@ -1,6 +1,8 @@
 package modelo;
 
 import lombok.Data;
+import modelo.constantes.Constantes;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -65,9 +67,11 @@ public class Producto implements Comparable<Producto>, Clone<Producto> {
   }
 
   @Override
+
   public String toString() {
-    return "\nProducto{" + "name='" + name + '\'' + ", \nprice=" + price + ", \nstock=" + stock
-        + ", \ningredientes=" + ingredientes + "}\n";
+    return Constantes.PRODUCTOCONNEWLINE + Constantes.NAMESINSALTO + name + Constantes.CHAR
+            + Constantes.PRICECONSALTO + price + Constantes.STOCKCONSALTO + stock
+        + Constantes.INGREDIENTESCONSALTO + ingredientes + Constantes.STRINGFINALTOSTRING;
   }
 
   @Override

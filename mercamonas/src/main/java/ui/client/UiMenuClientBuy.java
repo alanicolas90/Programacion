@@ -16,10 +16,7 @@ public class UiMenuClientBuy {
     int clientDecision;
 
     do {
-      System.out.println("LISTA DE PRODUCTOS");
-      System.out.println("Que deseas hacer\n" + "1) Añadir producto al carrito\n"
-          + "2) Eliminar un producto del carrito\n" + "3) Pagar por el carrito\n"
-          + "4) Mostrar listado de productos sin mis alergias\n\n" + "0) Exit");
+      System.out.println(Constantes.MENU_CLIENTE_COMPRA);
       clientDecision = common.giveInt();
 
       switch (clientDecision) {
@@ -36,7 +33,7 @@ public class UiMenuClientBuy {
           showAllProductsSinAlergiasCliente(dniClient);
           break;
         case 0:
-          System.out.println("Muchas gracias y hasta luego.");
+          System.out.println(Constantes.MUCHAS_GRACIAS_Y_HASTA_LUEGO);
           break;
         default:
           System.out.println(Constantes.ERROR);
@@ -56,19 +53,19 @@ public class UiMenuClientBuy {
     ServicioClients servicioClients = new ServicioClients();
     ServicioCompras servicioCompras = new ServicioCompras();
     // pagar el carrito
-    System.out.print("El precio de tu carrito es:");
+    System.out.print(Constantes.EL_PRECIO_DE_TU_CARRITO_ES);
     System.out.println(servicioClients.getTotalPrice(dniClient));
     // elegir que tarjeta con la que pagar
-    System.out.println("Con que tarjeta desea pagar?");
+    System.out.println(Constantes.CON_QUE_TARJETA_DESEA_PAGAR);
     System.out.println(servicioClients.showTarjetasCliente(dniClient));
 
-    System.out.println("Ponga el nombre de la tarjeta:");
+    System.out.println(Constantes.PONGA_EL_NOMBRE_DE_LA_TARJETA);
     String nombreTarjetaPagar = sc.nextLine();
 
     // mensaje que bien o mal
     // hacer las deducciones
     if (servicioCompras.pagarCarrito(dniClient, nombreTarjetaPagar)) {
-      System.out.println("Ha sido un éxito");
+      System.out.println(Constantes.HA_SIDO_UN_EXITO);
     } else {
       System.out.println(Constantes.ERROR);
     }
@@ -81,11 +78,11 @@ public class UiMenuClientBuy {
 
     // imprimir solo el carrito del cliente
     System.out.println(servicioClients.showCarrito(dniClient));
-    System.out.println("Dime el producto que desea eliminar del carrito");
+    System.out.println(Constantes.DIME_EL_PRODUCTO_QUE_DESEA_ELIMINAR_DEL_CARRITO);
     String nombreProductoBorrar = sc.nextLine();
 
     if (servicioCompras.removeProductCart(dniClient, nombreProductoBorrar)) {
-      System.out.println("Ha sido un éxito");
+      System.out.println(Constantes.HA_SIDO_UN_EXITO);
       System.out.println(servicioClients.showCarrito(dniClient));
     } else {
       System.out.println(Constantes.ERROR);
@@ -98,27 +95,27 @@ public class UiMenuClientBuy {
     ServicioProductos servicioProductos = new ServicioProductos();
     ServicioClients servicioClients = new ServicioClients();
 
-    System.out.println("Elija un producto de esta lista:");
+    System.out.println(Constantes.ELIJA_UN_PRODUCTO_DE_ESTA_LISTA);
     System.out.println(servicioProductos.showAllProductsSinCaducados());
 
-    System.out.println("que producto desea agregar al carrito?");
+    System.out.println(Constantes.QUE_PRODUCTO_DESEA_AGREGAR_AL_CARRITO);
     String productoMeterCarrito = sc.nextLine();
 
     if (servicioProductos.existProduct(productoMeterCarrito)) {
 
       Producto productoAddCart = servicioProductos.getProductoLista(productoMeterCarrito);
-      System.out.println("cuanta cantidad quiere?");
+      System.out.println(Constantes.CUANTA_CANTIDAD_QUIERE);
       int quantity = common.giveInt();
 
       LineaCompra carritoAdd = new LineaCompra(productoAddCart, quantity);
 
       if (servicioCompras.addToCart(dniClient, carritoAdd)) {
-        System.out.println("Éxito");
+        System.out.println(Constantes.HA_SIDO_UN_EXITO);
       } else {
         System.out.println(Constantes.ERROR);
       }
     } else {
-      System.out.println("El producto no existe");
+      System.out.println(Constantes.EL_PRODUCTO_NO_EXISTE);
     }
 
     System.out.println(servicioClients.verDataCliente(dniClient));
