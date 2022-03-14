@@ -1,0 +1,5 @@
+
+u
+java:S2975v"SRemove this "clone" implementation; use a copy constructor or copy factory instead.(Μ¤Χ†ωÿÿÿÿ8ΰ‹Ρυτ/
+j
+java:S1182v"HUse super.clone() to create and seed the cloned instance to be returned.(Μ¤Χ†ωÿÿÿÿ8α‹Ρυτ/

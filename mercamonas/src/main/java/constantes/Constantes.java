@@ -44,9 +44,9 @@ public class Constantes {
     public static final String MENU_CLIENTE_ADMIN =
             "Seleccione lo que quieres hacer:\n" + "1) Crear cliente nuevo\n"
                     + "2) Crear cliente nuevo pero con descuento\n" + "3) Eliminar cliente\n"
-                    + "4) Cambiar dni cliente\n" + "5) cambiar nombre cliente\n" + "6) cambiar apellido \n"
-                    + "7) ver todos los clientes \n" + "8) Ver todos los clientes ordenados por dni\n"
-                    + "9) Ver todos los clientes ordenados por el dinero gastado en total\n" + "0) Salir \n";
+                    + "4) Cambiar dni cliente\n" + "5) cambiar nombre cliente\n"
+                    + "6) ver todos los clientes \n" + "7) Ver todos los clientes ordenados por dni\n"
+                    + "8) Ver todos los clientes ordenados por el dinero gastado en total\n" + "0) Salir \n";
 
 
     // PRODUCTOS ADMINISTRADOR
@@ -98,10 +98,10 @@ public class Constantes {
 
 
     // CLIENTES CLIENTE AJUSTES
-    public static final String MENUCLIENTEAJUSTES = "Que desea hacer?\n" + "1) Cambiar nombre.\n" + "2) Cambiar apellido.\n"
-            + "3) Agregar tarjeta\n" + "4) Eliminar tarjeta\n" + "5) Agregar money\n"
-            + "6) Mostrar datos del usuario\n" + "7) Mostrar compras antiguas\n"
-            + "8) Añadir alergeno\n" + "9) Gasto total en la tienda\n" + "0) Exit";
+    public static final String MENUCLIENTEAJUSTES = "Que desea hacer?\n" + "1) Cambiar nombre.\n"
+            + "2) Agregar tarjeta\n" + "3) Eliminar tarjeta\n" + "4) Agregar money\n"
+            + "5) Mostrar datos del usuario\n" + "6) Mostrar compras antiguas\n"
+            + "7) Añadir alergeno\n" + "8) Gasto total en la tienda\n" + "0) Exit";
 
     public static final String USTED_NO_HA_COMPRADO_NUNCA_EN_LA_TIENDA = "Usted no ha comprado nunca en la tienda";
     public static final String DIME_EL_INGREDIENTE_AL_QUE_TIENES_ALERGIA = "Dime el ingrediente al que tienes alergia";

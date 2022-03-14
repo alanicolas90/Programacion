@@ -1,0 +1,33 @@
+<html>
+    <body>
+        <table border="1">
+            <tr bgcolor="#9acd32">
+                <th>Article</th><th>Detail</th><th>Price</th><th>Order</th><th>Reference</th>
+            </tr>
+            <tr>
+                <td>Socks</td><td>Leotard</td><td>1</td><td>C</td><td>C10</td>
+            </tr>
+            <tr>
+                <td>Socks</td><td>Cotton Socks</td><td>2</td><td>C</td><td>C37</td>
+            </tr>
+            <tr>
+                <td>Socks</td><td>Socks Pack</td><td>1</td><td>C</td><td>C25</td>
+            </tr>
+            <tr>
+                <td>Socks</td><td>Short Sport Socks</td><td>1</td><td>C</td><td>C27</td>
+            </tr>
+            <tr>
+                <td>Socks</td><td>Long Sport Socks</td><td>8</td><td>C</td><td>C29</td>
+            </tr>
+            <tr>
+                <td>Socks</td><td>Tight pack</td><td>4</td><td>C</td><td>C45</td>
+            </tr>
+            <tr>
+                <td>Socks</td><td>Thread socks</td><td>15</td><td>C</td><td>C06</td>
+            </tr>
+            <tr>
+                <td>Socks</td><td>Nylon Socks</td><td>2</td><td>C</td><td>C22</td>
+            </tr>
+        </table>
+    </body>
+</html>

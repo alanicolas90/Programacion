@@ -1,0 +1,17 @@
+
+i
+java:S1612"NReplace this lambda with method reference 'PersonaProfesor.class::isInstance'.(¾¨´‰úÿÿÿÿ
+i
+java:S1612"NReplace this lambda with method reference 'PersonaProfesor.class::isInstance'.(¾¨´‰úÿÿÿÿ
+i
+java:S1612!"NReplace this lambda with method reference 'PersonaProfesor.class::isInstance'.(¾¨´‰úÿÿÿÿ
+T
+java:S1128"2Remove this unused import 'modelo.PersonaAlumnos'.(¯„þ­þÿÿÿÿ8ðÌ¿üô/
+M
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8ðÌ¿üô/
+Z
+java:S1128"8Remove this unused import 'java.util.stream.Collectors'.(Óóº´úÿÿÿÿ8ðÌ¿üô/
+k
+java:S3655"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(“¹ãØùÿÿÿÿ
+k
+java:S3655"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(“¹ãØùÿÿÿÿ

@@ -38,15 +38,12 @@ public class UiMenuAdminCliente {
                     changeNameClient(sc);
                     break;
                 case 6:
-                    changeSurnameClient(sc);
-                    break;
-                case 7:
                     showListClients();
                     break;
-                case 8:
+                case 7:
                     showListClientesSortedDnie();
                     break;
-                case 9:
+                case 8:
                     ServicioClients servicioClients = new ServicioClients();
                     System.out.println(servicioClients.showClientesSortedDineroGastado());
                     break;
@@ -93,21 +90,6 @@ public class UiMenuAdminCliente {
         System.out.println(servicioClients.showListClients());
     }
 
-    private void changeSurnameClient(Scanner sc) {
-        ServicioClients servicioClients = new ServicioClients();
-        String dniClient;
-        System.out.println(Constantes.DIME_EL_DNI_DEL_USUARIO);
-        dniClient = sc.nextLine();
-
-        System.out.println(Constantes.DIME_EL_NUEVO_APELLIDO_DEL_CLIENTE);
-        String newSurnameClient = sc.nextLine();
-
-        if (servicioClients.swapSurnameClient(dniClient, newSurnameClient)) {
-            System.out.println(Constantes.EL_APELLIDO_SE_HA_CAMBIADO_CON_SUCCESS);
-        } else {
-            System.out.println(Constantes.ERROR_NO_SE_HA_PODIDO_HACER_LOS_CAMBIOS);
-        }
-    }
 
     private void changeNameClient(Scanner sc) {
         ServicioClients servicioClients = new ServicioClients();

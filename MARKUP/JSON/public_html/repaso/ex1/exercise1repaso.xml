@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<items
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../ex2/exercisetwo.xsd">
+
+    <item>
+        <article>Socks</article>
+        <detail>Leotard</detail>
+        <price>1</price>
+        <order>C</order>
+        <reference>C10</reference>
+    </item>
+    <item>
+        <article>Socks</article>
+        <detail>Cotton Socks</detail>
+        <price>2</price>
+        <order>C</order>
+        <reference>C37</reference>
+    </item>
+    <item>
+        <article>Socks</article>
+        <detail>Socks Pack</detail>
+        <price>1</price>
+        <order>C</order>
+        <reference>C25</reference>
+    </item>
+    <item>
+        <article>Socks</article>
+        <detail>Short Sport Socks</detail>
+        <price>1</price>
+        <order>C</order>
+        <reference>C27</reference>
+    </item>
+    <item>
+        <article>Socks</article>
+        <detail>Long Sport Socks</detail>
+        <price>8</price>
+        <order>C</order>
+        <reference>C29</reference>
+    </item>
+    <item>
+        <article>Socks</article>
+        <detail>Tight pack</detail>
+        <price>4</price>
+        <order>C</order>
+        <reference>C45</reference>
+    </item>
+    <item>
+        <article>Socks</article>
+        <detail>Thread socks</detail>
+        <price>15</price>
+        <order>C</order>
+        <reference>C06</reference>
+    </item>
+    <item>
+        <article>Socks</article>
+        <detail>Nylon Socks</detail>
+        <price>2</price>
+        <order>C</order>
+        <reference>C22</reference>
+    </item>
+    <item>
+        <article>Sweater</article>
+        <detail>Multicolor Sweater</detail>
+        <price>10</price>
+        <order>J</order>
+        <reference>J66</reference>
+    </item>
+    <item>
+        <article>Sweater</article>
+        <detail>Wool Sweater</detail>
+        <price>15</price>
+        <order>J</order>
+        <reference>J14</reference>
+    </item>
+    <item>
+        <article>Sweater</article>
+        <detail>Thread Sweater</detail>
+        <price>5</price>
+        <order>J</order>
+        <reference>J15</reference>
+    </item>
+    <item>
+        <article>Sweater</article>
+        <detail>Cotton Sweater</detail>
+        <price>5</price>
+        <order>J</order>
+        <reference>J33</reference>
+    </item>
+    <item>
+        <article>T-shirt</article>
+        <detail>Pack cotton t-shirt</detail>
+        <price>2</price>
+        <order>R</order>
+        <reference>M38</reference>
+    </item>
+    <item>
+        <article>T-shirt</article>
+        <detail>Nylon cotton t-shirt</detail>
+        <price>1</price>
+        <order>R</order>
+        <reference>M43</reference>
+    </item>
+    <item>
+        <article>T-shirt</article>
+        <detail>Nylon t-shirt</detail>
+        <price>2</price>
+        <order>R</order>
+        <reference>M36</reference>
+    </item>
+    <item>
+        <article>T-shirt</article>
+        <detail>Cotton t-shirt</detail>
+        <price>5</price>
+        <order>R</order>
+        <reference>M18</reference>
+    </item>
+    <item>
+        <article>Complement</article>
+        <detail>Wool Scarf</detail>
+        <price>20</price>
+        <order>M</order>
+        <reference>S08</reference>
+    </item>
+    <item>
+        <article>Complement</article>
+        <detail>Nylon cap</detail>
+        <price>4</price>
+        <order>M</order>
+        <reference>S35</reference>
+    </item>
+    <item>
+        <article>Complement</article>
+        <detail>Nylon headband</detail>
+        <price>2</price>
+        <order>C</order>
+        <reference>S09</reference>
+    </item>
+    <item>
+        <article>Complement</article>
+        <detail>luxury silk gloves</detail>
+        <price>3</price>
+        <order>M</order>
+        <reference>S80</reference>
+    </item>
+    <item>
+        <article>Complement</article>
+        <detail>Scarf pack</detail>
+        <price>1</price>
+        <order>M</order>
+        <reference>S17</reference>
+    </item>
+    <item>
+        <article>Complement</article>
+        <detail>wool hat</detail>
+        <price>1</price>
+        <order>M</order>
+        <reference>S11</reference>
+    </item>
+    <item>
+        <article>Complement</article>
+        <detail>thread hat</detail>
+        <price>3</price>
+        <order>M</order>
+        <reference>S12</reference>
+    </item>
+    <item>
+        <article>Complement</article>
+        <detail>earmuffs</detail>
+        <price>3</price>
+        <order>M</order>
+        <reference>S13</reference>
+    </item>
+</items>

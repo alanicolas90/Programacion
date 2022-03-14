@@ -17,18 +17,6 @@ public class Producto implements Comparable<Producto>, Clone<Producto> {
   private int stock;
   private List<Ingrediente> ingredientes;
 
-  private int vecesComprado;
-
-
-
-  public int getVecesComprado() {
-    return vecesComprado;
-  }
-
-  public void setVecesComprado(int cantidadComprada) {
-    this.vecesComprado += cantidadComprada;
-  }
-
   public Producto(String name, double price, int stock, List<Ingrediente> ingredientes) {
     this.name = name;
     this.price = price;
@@ -55,7 +43,7 @@ public class Producto implements Comparable<Producto>, Clone<Producto> {
   public boolean equals(Object o) {
     if (this == o)
       return true;
-    if (o == null || !(o instanceof Producto))
+    if (!(o instanceof Producto))
       return false;
     Producto producto = (Producto) o;
     return name.equalsIgnoreCase(producto.name);

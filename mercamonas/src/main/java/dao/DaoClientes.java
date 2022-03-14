@@ -28,11 +28,6 @@ public class DaoClientes extends DaoBase {
         clientes.get(dniClient).setNombre(nuevoNombreCliente);
     }
 
-    public void swapSurnameClient(String dniClient, String newSurnameClient) {
-        clientes.get(dniClient).setApellido(newSurnameClient);
-
-    }
-
     public void swapDni(String dniClient, String nuevoDniCliente) {
         clientes.get(dniClient).setDni(nuevoDniCliente);
         clientes.put(nuevoDniCliente, clientes.get(dniClient));

@@ -1,0 +1,9 @@
+
+L
+java:S1172"1Remove this unused method parameter "notaAlumno".(È“¥Ôùÿÿÿÿ
+i
+java:S1612"NReplace this lambda with method reference 'PersonaProfesor.class::isInstance'.(¾¨´‰úÿÿÿÿ
+Z
+java:S1128"8Remove this unused import 'java.util.stream.Collectors'.(Óóº´úÿÿÿÿ8ÂÙ®üô/
+f
+java:S3655"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(Œ´šî

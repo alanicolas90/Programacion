@@ -40,14 +40,6 @@ public class ServicioClients {
     return exists;
   }
 
-  public boolean swapSurnameClient(String dniClient, String newSurnameClient) {
-    DaoClientes daoClientesAdmin = new DaoClientes();
-    boolean exists = daoClientesAdmin.existClient(dniClient);
-    if (exists) {
-      daoClientesAdmin.swapSurnameClient(dniClient, newSurnameClient);
-    }
-    return exists;
-  }
 
   public boolean swapDni(String dniClient, String nuevoDniCliente) {
     DaoClientes daoClientesAdmin = new DaoClientes();

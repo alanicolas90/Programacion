@@ -22,27 +22,24 @@ public class UiClientSettings {
           changeName(sc, dniClient);
           break;
         case 2:
-          changeSurname(sc, dniClient);
-          break;
-        case 3:
           addMonedero(sc, dniClient);
           break;
-        case 4:
+        case 3:
           deleteMonedero(sc, dniClient);
           break;
-        case 5:
+        case 4:
           agregarDineroMonederoExistente(sc, dniClient);
           break;
-        case 6:
+        case 5:
           showDataCliente(dniClient);
           break;
-        case 7:
+        case 6:
           showHistorialCompras(dniClient);
           break;
-        case 8:
+        case 7:
           addAlergiaCliente(sc, dniClient);
           break;
-        case 9:
+        case 8:
           dineroTotalGastadoTienda(dniClient);
           break;
         case 0:
@@ -137,18 +134,6 @@ public class UiClientSettings {
     System.out.println(servicioClients.verDataCliente(dniClient));
   }
 
-  private void changeSurname(Scanner sc, String dniClient) {
-    ServicioClients servicioClients = new ServicioClients();
-
-    System.out.println(Constantes.DIME_EL_NUEVO_APELLIDO_DEL_CLIENTE);
-    String newSurnameClient = sc.nextLine();
-
-    if (servicioClients.swapSurnameClient(dniClient, newSurnameClient)) {
-      System.out.println(Constantes.EL_APELLIDO_SE_HA_CAMBIADO_CON_SUCCESS);
-    } else {
-      System.out.println(Constantes.ERROR_NO_SE_HA_PODIDO_HACER_LOS_CAMBIOS);
-    }
-  }
 
   private void changeName(Scanner sc, String dniCliente) {
     ServicioClients servicioClients = new ServicioClients();
