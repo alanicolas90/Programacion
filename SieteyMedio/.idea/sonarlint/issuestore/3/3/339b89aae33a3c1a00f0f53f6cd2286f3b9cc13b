@@ -1,0 +1,12 @@
+
+U
+java:S1118":Add a private constructor to hide the implicit public one.(µ³¤¡ùÿÿÿÿ
+?
+java:S2140")Use "java.util.Random.nextInt()" instead.(õ·ªŒ
+E
+java:S2440"*Remove this instantiation of "SieteMedio".(ýëÄ€ùÿÿÿÿ
+I
+java:S2209"5Change this instance-reference to a static reference.(­Š>
+K
+java:S2209"5Change this instance-reference to a static reference.(…ê‰º
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ºŽ×Ûüÿÿÿÿ
