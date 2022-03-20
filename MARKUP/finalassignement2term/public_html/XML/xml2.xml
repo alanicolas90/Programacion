@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/XML/XMLDocument.xml to edit this template
+-->
+
+<FruitStore
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../XSD/schema2.xsd">
+    <Products>
+        
+        <Product category="fruit" season="summer">
+            <name color="green">grapes</name>
+            <icon>🍇</icon>
+            <properties vitamin="K">high antioxidant</properties>
+            <prices>
+                <price>2.34</price>
+            </prices>
+            <origin continent="LATAM">
+                <country>Chile</country>
+            </origin>
+        </Product>
+        
+        
+        <Product category="fruit" season="all">
+            <name>melon</name>
+            <icon>🍈</icon>
+            <properties vitamin="A">beta carotene</properties>
+            <prices>
+                <price>0.69</price>
+            </prices>
+            <origin continent="LATAM">
+                <country>Brazil</country>
+            </origin>
+        </Product>
+        
+        
+        <Product category="fruit" season="summer">
+            <name>Watermelon</name>
+            <icon>🍉</icon>
+            <properties vitamin="A">Lycopene</properties>
+            <prices>
+                <price>0.43</price>
+            </prices>
+            <origin continent="Asia">
+                <country>India</country>
+            </origin>
+        </Product>
+        
+        
+        <Product category="fruit" season="autumn">
+            <name>lemon</name>
+            <icon>🍋</icon>
+            <properties vitamin="C">stimulate inmunity system</properties>
+            <prices>
+                <price>0.84</price>
+            </prices>
+            <origin continent="Asia">
+                <country>India</country>
+            </origin>
+        </Product>
+        
+        <Product category="fruit" season="winter">
+            <name>red apple</name>
+            <icon>🍎</icon>
+            <properties vitamin="K">antioxidants</properties>
+            <prices>
+                <price>1.10</price>
+                <price>1.34</price>
+            </prices>
+            <origin continent="North America">
+                <country>Canada</country>
+            </origin>
+        </Product>
+        
+        <Product category="fruit" season="winter">
+            <name>green apple</name>
+            <icon>🍎</icon>
+            <properties vitamin="K">antioxidants</properties>
+            <prices>
+                <price>1.56</price>
+                <price>1.11</price>
+            </prices>
+            <origin continent="North America">
+                <country>Canada</country>
+            </origin>
+        </Product>
+        
+        <Product category="vegetable" season="all">
+            <name>carrot</name>
+            <icon>🥕</icon>
+            <properties vitamin="K">carotene</properties>
+            <prices>
+                <price>0.65</price>
+            </prices>
+            <origin continent="Asia">
+                <country>Afghanistan</country>
+            </origin>
+        </Product>
+        
+        <Product category="vegetable" season="autumn">
+            <name>cucumber</name>
+            <icon>🥒</icon>
+            <properties vitamin="K">manganese</properties>
+            <prices>
+                <price>0.80</price>
+            </prices>
+            <origin continent="Asia">
+                <country>India</country>
+            </origin>
+        </Product>
+        
+        <Product category="vegetable" season="autumn">
+            <name>brocoli</name>
+            <icon>🥦</icon>
+            <properties vitamin="K">potassium</properties>
+            <prices>
+                <price>2.30</price>
+            </prices>
+            <origin continent="Europe">
+                <country>England</country>
+            </origin>
+        </Product>
+        
+        <Product category="prepared" season="all">
+            <name>eggs</name>
+            <icon>🥚</icon>
+            <properties vitamin="D">selenium</properties>
+            <prices>
+                <price>2.76</price>
+            </prices>
+            <origin continent="Europe">
+                <country>Spain</country>
+            </origin>
+        </Product>
+        
+        <Product category="prepared" season="all">
+            <name>rice</name>
+            <icon>🍚</icon>
+            <properties vitamin="B">carbohydrates</properties>
+            <prices>
+                <price>2.76</price>
+            </prices>
+            <origin continent="Asia">
+                <country>China</country>
+            </origin>
+        </Product>
+        
+        <Product category="prepared" season="all">
+            <name>salt</name>
+            <icon>🧂</icon>
+            <properties vitamin="F">sick pump</properties>
+            <prices>
+                <price>1.34</price>
+            </prices>
+            <origin continent="Asia">
+                <country>China</country>
+            </origin>
+        </Product>
+        
+        <Product category="prepared" season="all">
+            <name>honey</name>
+            <icon>🍯</icon>
+            <properties vitamin="E">niacin</properties>
+            <prices>
+                <price>8.65</price>
+            </prices>
+            <origin continent="Europe">
+                <country>Spain</country>
+            </origin>
+        </Product>
+        
+    </Products>
+</FruitStore>
+
