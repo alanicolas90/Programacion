@@ -4,6 +4,7 @@ import common.Common;
 import constantes.Constantes;
 import modelo.Cliente;
 import modelo.ClienteDescuento;
+import modelo.ClienteNormal;
 import servicios.ServicioClients;
 
 import java.util.Scanner;
@@ -147,7 +148,7 @@ public class UiMenuAdminCliente {
         System.out.println(Constantes.DIME_EL_DNI_DEL_CLIENTE);
         String dniClient = sc.nextLine();
 
-        Cliente newClient = new Cliente(nameClient, dniClient);
+        Cliente newClient = new ClienteNormal(nameClient, dniClient);
 
         if (servicioClients.addClient(newClient)) {
             System.out.println(Constantes.SE_HA_AGREGADO_EL_CLIENTE_CON_SUCCESS);

@@ -27,7 +27,7 @@ public class DaoMonedero {
   }
 
   public Set<Monedero> showTarjetasCliente(String dniClient) {
-    return clientes.get(dniClient).clone().getMonederos();
+    return clientes.get(dniClient).getMonederos();
   }
 
 

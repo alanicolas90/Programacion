@@ -13,11 +13,11 @@ public class BBDD {
 
 
   static {
-    clientes.put("123", new Cliente("123", "alan"));
-    clientes.put("111", new Cliente("111", "alain"));
-    clientes.put("233", new Cliente("233", "alean"));
-    clientes.put("333", new Cliente("333", "alaan"));
-    clientes.put("223", new Cliente("223", "allan"));
+    clientes.put("123", new ClienteNormal("123", "alan"));
+    clientes.put("111", new ClienteNormal("111", "alain"));
+    clientes.put("233", new ClienteNormal("233", "alean"));
+    clientes.put("333", new ClienteNormal("333", "alaan"));
+    clientes.put("223", new ClienteNormal("223", "allan"));
 
     productos.add(new Producto("acheyese", 2.5, 200));
     productos.add(new Producto("peperoni", 0.5, 200));
