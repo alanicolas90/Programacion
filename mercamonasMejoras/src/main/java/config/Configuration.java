@@ -10,6 +10,7 @@ import java.io.IOException;
 @Getter
 @Log4j2
 public class Configuration {
+
     private Configuration(){}
 
     private static Configuration configuracion;
