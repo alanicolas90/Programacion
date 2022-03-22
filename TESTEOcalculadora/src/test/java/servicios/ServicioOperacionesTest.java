@@ -26,7 +26,7 @@ class ServicioOperacionesTest {
     void pruebaSumaConNumeroNegativo() {
         //Given
         int num1 = 1;
-        int num2 = -2;
+        int num2 = -3;
         //When
         ServicioOperaciones sc = new ServicioOperaciones();
         int respuesta = sc.suma(num1, num2);
