@@ -1,9 +1,12 @@
 package modelo;
 
+import lombok.Getter;
 import modelo.constantes.Constantes;
 
 import java.util.*;
 
+
+@Getter
 public class Cliente implements Clone<Cliente>, Comparable<Cliente> {
 
   private String dni;
@@ -53,45 +56,6 @@ public class Cliente implements Clone<Cliente>, Comparable<Cliente> {
     this.carrito = carrito;
     this.buyHistory = buyHistory;
   }
-
-
-  public String getNombre() {
-    return nombre;
-  }
-
-  public Set<Monedero> getMonederos() {
-    return monederos;
-  }
-
-  public List<LineaCompra> getCarrito() {
-    return carrito;
-  }
-
-  public List<List<LineaCompra>> getBuyHistory() {
-    return buyHistory;
-  }
-
-  public void setCarrito(List<LineaCompra> carrito) {
-    this.carrito = carrito;
-  }
-
-  public String getDni() {
-    return dni;
-  }
-
-  public List<Ingrediente> getAlergenos() {
-    return alergenos;
-  }
-
-  public void setDni(String dni) {
-    this.dni = dni;
-  }
-
-  public void setNombre(String nombre) {
-    this.nombre = nombre;
-  }
-
-
 
   @Override
   public boolean equals(Object o) {

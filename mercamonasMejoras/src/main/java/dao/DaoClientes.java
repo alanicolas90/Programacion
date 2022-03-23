@@ -8,16 +8,27 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.stream.Collectors;
 
-import static dao.BBDD.clientes;
 
 public class DaoClientes extends DaoBase {
 
+    private BBDD db;
 
-    //ADD REMOVE Y ELIMINAR DE LO QUE SEA
+    public DaoClientes(BBDD db) {
+        this.db = db;
+    }
+//ADD REMOVE Y ELIMINAR DE LO QUE SEA
     //-------------------------------------------------------------------------------------------------
 
-    public void addClient(Cliente newClient) {
-        clientes.put(newClient.getDni(), newClient);
+    public boolean addClient(Cliente newClient) {
+        boolean ok;
+        List<Cliente> clientes = db.loadClientes();
+        if (clientes == null) {
+            clientes = new ArrayList<>();
+        }
+        clientes.add(newClient);
+        ok = db.saveClientes(clientes);
+
+        return ok;
     }
 
     public void removeClient(String dniClient) {
@@ -109,7 +120,7 @@ public class DaoClientes extends DaoBase {
     }
 
     public List<Cliente> verListaClientes() {
-        return dameListaClonadaInmutable(clientes.values());
+        return db.loadClientes();
     }
 
     public List<LineaCompra> dameCarrito(String dniClient) {

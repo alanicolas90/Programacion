@@ -11,53 +11,53 @@ import java.util.Set;
 
 
 public class ServicioClients {
+  private DaoClientes dao;
+
+  public ServicioClients(DaoClientes dao) {
+    this.dao = dao;
+  }
 
   public boolean addClient(Cliente newClient) {
-    DaoClientes daoClientesAdmin = new DaoClientes();
-    boolean canBeAdded = !daoClientesAdmin.existClient(newClient.getDni());
+
+    boolean canBeAdded = !dao.existClient(newClient.getDni());
     if (canBeAdded) {
-      daoClientesAdmin.addClient(newClient);
+      dao.addClient(newClient);
     }
     return canBeAdded;
   }
 
   public boolean removeClient(String dniClient) {
-    DaoClientes daoClientesAdmin = new DaoClientes();
-    boolean exists = daoClientesAdmin.existClient(dniClient);
+    boolean exists = dao.existClient(dniClient);
 
     if (exists) {
-      daoClientesAdmin.removeClient(dniClient);
+      dao.removeClient(dniClient);
     }
     return exists;
   }
 
   public boolean swapNameClient(String dniClient, String nuevoNombreCliente) {
-    DaoClientes daoClientesAdmin = new DaoClientes();
-    boolean exists = daoClientesAdmin.existClient(dniClient);
+    boolean exists = dao.existClient(dniClient);
     if (exists) {
-      daoClientesAdmin.swapNameClient(dniClient, nuevoNombreCliente);
+      dao.swapNameClient(dniClient, nuevoNombreCliente);
     }
     return exists;
   }
 
 
   public boolean swapDni(String dniClient, String nuevoDniCliente) {
-    DaoClientes daoClientesAdmin = new DaoClientes();
-    boolean exists = daoClientesAdmin.existClient(dniClient);
+    boolean exists = dao.existClient(dniClient);
     if (exists) {
-      daoClientesAdmin.swapDni(dniClient, nuevoDniCliente);
+      dao.swapDni(dniClient, nuevoDniCliente);
     }
     return exists;
   }
 
   public boolean existeCliente(String dniClient) {
-    DaoClientes daoClientesAdmin = new DaoClientes();
-    return daoClientesAdmin.existClient(dniClient);
+    return dao.existClient(dniClient);
   }
 
   public List<Cliente> showListClients() {
-    DaoClientes daoClientes = new DaoClientes();
-    return daoClientes.verListaClientes();
+    return dao.verListaClientes();
   }
 
   public boolean addMoney(String dniCliente, String nombreTarjeta, double dineroAgregar) {
@@ -92,27 +92,24 @@ public class ServicioClients {
   }
 
   public Cliente verDataCliente(String dniClient) {
-    DaoClientes daoClientes = new DaoClientes();
-    boolean esClienteConDescuento = daoClientes.clienteTieneDescuento(dniClient);
+    boolean esClienteConDescuento = dao.clienteTieneDescuento(dniClient);
     if (esClienteConDescuento) {
-      return daoClientes.seeSpecificClientDescuento(dniClient);
+      return dao.seeSpecificClientDescuento(dniClient);
     } else {
-      return daoClientes.seeSpecificClient(dniClient);
+      return dao.seeSpecificClient(dniClient);
     }
   }
 
   public List<LineaCompra> showCarrito(String dniClient) {
-    DaoClientes daoClientes = new DaoClientes();
-    return daoClientes.dameCarrito(dniClient);
+    return dao.dameCarrito(dniClient);
   }
 
   public double getTotalPrice(String dniClient) {
-    DaoClientes daoClientes = new DaoClientes();
     DaoProducto daoProducto = new DaoProducto();
-    boolean esClienteConDescuento = daoClientes.clienteTieneDescuento(dniClient);
+    boolean esClienteConDescuento = dao.clienteTieneDescuento(dniClient);
     double precioTotalCarrito = 0;
 
-    List<LineaCompra> carrito = daoClientes.dameCarrito(dniClient);
+    List<LineaCompra> carrito = dao.dameCarrito(dniClient);
     for (LineaCompra lineaCompra : carrito) {
       double precioProducto = daoProducto.getPriceProducto(lineaCompra.getProducto().getName());
       double cantidadProducto = lineaCompra.getQuantity();
@@ -121,41 +118,37 @@ public class ServicioClients {
 
     if (esClienteConDescuento) {
       precioTotalCarrito =
-          (precioTotalCarrito * (1 - (daoClientes.getDescuentoCliente(dniClient) / 100)));
+          (precioTotalCarrito * (1 - (dao.getDescuentoCliente(dniClient) / 100)));
     }
     return precioTotalCarrito;
   }
 
 
   public List<Cliente> showListClientsSotedDni() {
-    DaoClientes daoClientes = new DaoClientes();
-    return daoClientes.showListaClientesOrdenadaDni();
+    return dao.showListaClientesOrdenadaDni();
   }
 
   public boolean addIngredienteAlergia(String dniClient, String ingrediente) {
-    DaoClientes daoClientes = new DaoClientes();
     boolean ingredienteExisteCliente =
-        !daoClientes.ingredienteExisteCliente(dniClient, ingrediente);
+        !dao.ingredienteExisteCliente(dniClient, ingrediente);
     if (ingredienteExisteCliente) {
-      daoClientes.addIngredienteAlergia(dniClient, ingrediente);
+      dao.addIngredienteAlergia(dniClient, ingrediente);
     }
     return ingredienteExisteCliente;
   }
 
   public boolean tieneComprasAnteriores(String dniClient) {
-    DaoClientes daoClientes = new DaoClientes();
-    return daoClientes.tieneComprasAnteriores(dniClient);
+    return dao.tieneComprasAnteriores(dniClient);
   }
 
   public double dineroTotalGastado(String dniClient) {
-    DaoClientes daoClientes = new DaoClientes();
     DaoProducto daoProducto = new DaoProducto();
-    boolean esClienteConDescuento = daoClientes.clienteTieneDescuento(dniClient);
+    boolean esClienteConDescuento = dao.clienteTieneDescuento(dniClient);
 
     double precioTotalCarrito = 0;
-    List<List<LineaCompra>> historial = daoClientes.dameHistorialCompra(dniClient);
+    List<List<LineaCompra>> historial = dao.dameHistorialCompra(dniClient);
     for (int i = 0; i < historial.size(); i++) {
-      List<LineaCompra> carrito = daoClientes.getLineaCompra(dniClient, i);
+      List<LineaCompra> carrito = dao.getLineaCompra(dniClient, i);
       for (LineaCompra lineaCompra : carrito) {
         double precioProducto = daoProducto.getPriceProducto(lineaCompra.getProducto().getName());
         double cantidadProducto = carrito.get(i).getQuantity();
@@ -164,13 +157,12 @@ public class ServicioClients {
     }
     if (esClienteConDescuento) {
       precioTotalCarrito =
-          (precioTotalCarrito * (1 - (daoClientes.getDescuentoCliente(dniClient) / 100)));
+          (precioTotalCarrito * (1 - (dao.getDescuentoCliente(dniClient) / 100)));
     }
     return precioTotalCarrito;
   }
 
   public List<Cliente> showClientesSortedDineroGastado() {
-    DaoClientes daoClientes = new DaoClientes();
-    return daoClientes.showListaClientesSortedDineroGastado();
+    return dao.showListaClientesSortedDineroGastado();
   }
 }
