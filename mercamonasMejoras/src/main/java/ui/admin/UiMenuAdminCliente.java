@@ -2,9 +2,9 @@ package ui.admin;
 
 import common.Common;
 import constantes.Constantes;
-import modelo.Cliente;
-import modelo.ClienteDescuento;
-import modelo.ClienteNormal;
+import modelo.cliente.Cliente;
+import modelo.cliente.ClienteDescuento;
+import modelo.cliente.ClienteNormal;
 import servicios.ServicioClients;
 
 import java.util.Scanner;
@@ -102,7 +102,9 @@ public class UiMenuAdminCliente {
         System.out.println(Constantes.DIME_EL_NUEVO_NOMBRE_DEL_CLIENTE);
         String newNameClient = sc.nextLine();
 
-        if (servicioClients.swapNameClient(dniClient, newNameClient)) {
+        Cliente c= new ClienteNormal(dniClient);
+
+        if (servicioClients.swapNameClient(c, newNameClient)) {
             System.out.println(Constantes.EL_NOMBRE_HA_SIDO_CAMBIADO_CON_SUCCESS);
         } else {
             System.out.println(Constantes.ERROR_NO_SE_HA_PODIDO_HACER_LOS_CAMBIOS);
@@ -118,6 +120,7 @@ public class UiMenuAdminCliente {
 
         System.out.println(Constantes.DIME_EL_NUEVO_DNI_DEL_CLIENTE);
         String newDniClient = sc.nextLine();
+
         if (servicioClients.swapDni(dniClient, newDniClient)) {
             System.out.println(Constantes.EL_DNI_SE_HA_CAMBIADO_CORRECTAMENTE);
         } else {

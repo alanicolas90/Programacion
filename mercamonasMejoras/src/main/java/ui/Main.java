@@ -14,11 +14,7 @@ public class Main {
     Scanner sc = new Scanner(System.in);
     Common common = new Common();
 
-
-
     UiMenuAdmin menuSwitchAdmin = new UiMenuAdmin();
-
-
     UiMenuClient menuSwitchClient = new UiMenuClient();
 
     System.out.println(Constantes.BIENVENIDA);

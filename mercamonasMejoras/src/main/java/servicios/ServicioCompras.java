@@ -3,8 +3,8 @@ package servicios;
 import dao.DaoClientes;
 import dao.DaoCompras;
 import dao.DaoProducto;
-import modelo.LineaCompra;
-import modelo.Producto;
+import modelo.cliente.LineaCompra;
+import modelo.producto.Producto;
 import java.util.List;
 
 
@@ -15,7 +15,7 @@ public class ServicioCompras {
     DaoProducto daoProducto = new DaoProducto();
     boolean seHaMetido = false;
 
-    boolean inCart = !daoCompras.alreadyInCart(productoAddCarrito.getProducto(), dniClient);
+    boolean inCart = !daoCompras.alreadyInCart(productoAddCarrito.getProducto().getName(), dniClient);
     int stockTiendaProducto =
         daoProducto.getStockProduct(productoAddCarrito.getProducto().getName());
 
@@ -30,7 +30,7 @@ public class ServicioCompras {
 
   public boolean removeProductCart(String dniClient, String nombreProductoBorrar) {
     DaoCompras daoCompras = new DaoCompras();
-    boolean isCart = daoCompras.alreadyInCart(new Producto(nombreProductoBorrar), dniClient);
+    boolean isCart = daoCompras.alreadyInCart(nombreProductoBorrar, dniClient);
     if (isCart) {
       daoCompras.deleteProductCart(dniClient, nombreProductoBorrar);
     }

@@ -2,7 +2,9 @@ package ui.client;
 
 import common.Common;
 import constantes.Constantes;
-import modelo.Monedero;
+import modelo.cliente.Cliente;
+import modelo.cliente.ClienteNormal;
+import modelo.cliente.Monedero;
 import servicios.ServicioClients;
 import servicios.ServicioCompras;
 import java.util.Scanner;
@@ -12,6 +14,8 @@ public class UiClientSettings {
   public void settingsCliente(Scanner sc, String dniClient) {
     Common common = new Common();
     int settingsClient;
+
+
 
     do {
       System.out.println(Constantes.MENUCLIENTEAJUSTES);
@@ -141,7 +145,9 @@ public class UiClientSettings {
     System.out.println(Constantes.DIME_EL_NUEVO_NOMBRE_DEL_CLIENTE);
     String newNameClient = sc.nextLine();
 
-    if (servicioClients.swapNameClient(dniCliente, newNameClient)) {
+    Cliente c = new ClienteNormal(dniCliente);
+
+    if (servicioClients.swapNameClient(c, newNameClient)) {
       System.out.println(Constantes.EL_NOMBRE_HA_SIDO_CAMBIADO_CON_SUCCESS);
     } else {
       System.out.println(Constantes.ERROR_NO_SE_HA_PODIDO_HACER_LOS_CAMBIOS);

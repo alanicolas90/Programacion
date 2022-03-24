@@ -1,51 +1,73 @@
 package dao;
 
-import modelo.*;
+import modelo.cliente.Cliente;
+import modelo.cliente.ClienteDescuento;
+import modelo.cliente.LineaCompra;
+import modelo.cliente.Monedero;
+import modelo.producto.Ingrediente;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.stream.Collectors;
 
 
 public class DaoClientes extends DaoBase {
 
-    private BBDD db;
+    private final BBDD db;
 
-    public DaoClientes(BBDD db) {
-        this.db = db;
+    public DaoClientes() {
+        this.db = new BBDD();
     }
 //ADD REMOVE Y ELIMINAR DE LO QUE SEA
     //-------------------------------------------------------------------------------------------------
 
     public boolean addClient(Cliente newClient) {
         boolean ok;
-        List<Cliente> clientes = db.loadClientes();
+        Map<String, Cliente> clientes = db.loadClientes();
         if (clientes == null) {
-            clientes = new ArrayList<>();
+            clientes = new LinkedHashMap<>();
         }
-        clientes.add(newClient);
+        clientes.put(newClient.getDni(), newClient);
         ok = db.saveClientes(clientes);
 
         return ok;
     }
 
-    public void removeClient(String dniClient) {
+    public boolean removeClient(String dniCliente) {
+        boolean ok = false;
+        Map<String, Cliente> clientes = db.loadClientes();
+        if (clientes != null) {
+            clientes.remove(dniCliente);
+            ok = db.saveClientes(clientes);
+        }
+        return ok;
+    }
+
+    public boolean swapNameClient(Cliente c, String nuevoNombreCliente) {
+        boolean ok;
+        Map<String, Cliente> clientes = db.loadClientes();
+
+        clientes.get(c.getDni()).setNombre(nuevoNombreCliente);
+        ok = db.saveClientes(clientes);
+
+        return ok;
+    }
+
+    public boolean swapDni(String dniClient, String nuevoDniCliente) {
+        boolean ok;
+        Map<String, Cliente> clientes = db.loadClientes();
+
         clientes.remove(dniClient);
-    }
-
-    public void swapNameClient(String dniClient, String nuevoNombreCliente) {
-        clientes.get(dniClient).setNombre(nuevoNombreCliente);
-    }
-
-    public void swapDni(String dniClient, String nuevoDniCliente) {
-        clientes.get(dniClient).setDni(nuevoDniCliente);
         clientes.put(nuevoDniCliente, clientes.get(dniClient));
-        clientes.remove(dniClient);
+        clientes.get(dniClient).setDni(nuevoDniCliente);
+
+        ok = db.saveClientes(clientes);
+        return ok;
     }
 
     public double getTodoDineroMonedero(String dniClient, String nombreMonedero) {
+        Map<String, Cliente> clientes = db.loadClientes();
+
         AtomicReference<Double> dineroTarjeta = new AtomicReference<>((double) 0);
         clientes.get(dniClient).getMonederos().forEach(monedero -> {
             if (monedero.equals(new Monedero(nombreMonedero))) {
@@ -56,7 +78,9 @@ public class DaoClientes extends DaoBase {
     }
 
     public double getDescuentoCliente(String dniClient) {
-        return ((ClienteDescuento) dameElementoClonado(clientes.get(dniClient))).getDescuento();
+        Map<String, Cliente> clientes = db.loadClientes();
+
+        return ((ClienteDescuento)clientes.get(dniClient)).getDescuento();
     }
 
     public Double getCosteCompras(Cliente cliente) {
@@ -71,26 +95,35 @@ public class DaoClientes extends DaoBase {
     //-------------------------------------------------------------------------------------------------
 
     public boolean clienteTieneDescuento(String dniClient) {
+        Map<String, Cliente> clientes = db.loadClientes();
         return clientes.get(dniClient) instanceof ClienteDescuento;
     }
 
     public boolean existClient(String clientDNI) {
+        Map<String, Cliente> clientes = db.loadClientes();
+
         return clientes.containsKey(clientDNI);
     }
 
     public void emptyCart(String dniClient) {
+        Map<String, Cliente> clientes = db.loadClientes();
         clientes.get(dniClient).setCarrito(new ArrayList<>());
+        db.saveClientes(clientes);
     }
 
     public void addIngredienteAlergia(String dniClient, String ingrediente) {
+        Map<String, Cliente> clientes = db.loadClientes();
         clientes.get(dniClient).getAlergenos().add(new Ingrediente(ingrediente));
+        db.saveClientes(clientes);
     }
 
     public boolean ingredienteExisteCliente(String dniClient, String ingrediente) {
+        Map<String, Cliente> clientes = db.loadClientes();
         return clientes.get(dniClient).getAlergenos().contains(new Ingrediente(ingrediente));
     }
 
     public boolean tieneComprasAnteriores(String dniClient) {
+        Map<String, Cliente> clientes = db.loadClientes();
         return clientes.get(dniClient).getBuyHistory().isEmpty();
     }
 
@@ -99,44 +132,48 @@ public class DaoClientes extends DaoBase {
     //-----------------------------------------------------------------------------------------------
 
     public List<Cliente> showListaClientesSortedDineroGastado() {
+        Map<String, Cliente> clientes = db.loadClientes();
         return clientes.values()
                 .stream()
                 .sorted((o1, o2) -> getCosteCompras(o2).compareTo(getCosteCompras(o1)))
-                .map(Cliente::clone)
                 .collect(Collectors.toUnmodifiableList());
     }
 
     public List<LineaCompra> getLineaCompra(String dniClient, int index) {
+        Map<String, Cliente> clientes = db.loadClientes();
         return clientes.get(dniClient).getBuyHistory().get(index);
     }
 
-    public List<List<LineaCompra>> dameHistorialCompra(String dniClient) {
-        return dameElementoClonado(clientes.get(dniClient)).getBuyHistory();
+    public List<List<LineaCompra>> showBuyHistory(String dniClient) {
+        Map<String, Cliente> clientes = db.loadClientes();
+        return clientes.get(dniClient).getBuyHistory();
     }
 
     public List<Cliente> showListaClientesOrdenadaDni() {
-        return clientes.values().stream().sorted(Comparator.comparing(Cliente::getDni))
-                .map(Cliente::clone).collect(Collectors.toUnmodifiableList());
+        Map<String, Cliente> clientes = db.loadClientes();
+        return clientes.values()
+                .stream()
+                .sorted(Comparator.comparing(Cliente::getDni))
+                .collect(Collectors.toUnmodifiableList());
     }
 
-    public List<Cliente> verListaClientes() {
+    public Map<String, Cliente> verListaClientes() {
         return db.loadClientes();
     }
 
     public List<LineaCompra> dameCarrito(String dniClient) {
-        return dameElementoClonado(clientes.get(dniClient)).getCarrito();
+        Map<String, Cliente> clientes = db.loadClientes();
+        return clientes.get(dniClient).getCarrito();
     }
 
     public Cliente seeSpecificClient(String dniClient) {
-        return dameElementoClonado(clientes.get(dniClient));
-    }
-
-    public List<List<LineaCompra>> showBuyHistory(String dniClient) {
-        return dameElementoClonado(clientes.get(dniClient)).getBuyHistory();
+        Map<String, Cliente> clientes = db.loadClientes();
+        return clientes.get(dniClient);
     }
 
     public ClienteDescuento seeSpecificClientDescuento(String dniClient) {
-        return (ClienteDescuento) dameElementoClonado(clientes.get(dniClient));
+        Map<String, Cliente> clientes = db.loadClientes();
+        return (ClienteDescuento) clientes.get(dniClient);
     }
 
 }

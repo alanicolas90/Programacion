@@ -3,60 +3,61 @@ package servicios;
 import dao.DaoClientes;
 import dao.DaoMonedero;
 import dao.DaoProducto;
-import modelo.Cliente;
-import modelo.LineaCompra;
-import modelo.Monedero;
+import modelo.cliente.Cliente;
+import modelo.cliente.LineaCompra;
+import modelo.cliente.Monedero;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 
 public class ServicioClients {
+
   private DaoClientes dao;
 
-  public ServicioClients(DaoClientes dao) {
-    this.dao = dao;
+  public ServicioClients() {
+    this.dao = new DaoClientes();
   }
 
   public boolean addClient(Cliente newClient) {
 
     boolean canBeAdded = !dao.existClient(newClient.getDni());
     if (canBeAdded) {
-      dao.addClient(newClient);
+       return dao.addClient(newClient);
     }
-    return canBeAdded;
+    return false;
   }
 
   public boolean removeClient(String dniClient) {
     boolean exists = dao.existClient(dniClient);
-
     if (exists) {
-      dao.removeClient(dniClient);
+      return dao.removeClient(dniClient);
     }
-    return exists;
+    return false;
   }
 
-  public boolean swapNameClient(String dniClient, String nuevoNombreCliente) {
-    boolean exists = dao.existClient(dniClient);
+  public boolean swapNameClient(Cliente c, String nuevoNombreCliente) {
+    boolean exists = dao.existClient(c.getDni());
     if (exists) {
-      dao.swapNameClient(dniClient, nuevoNombreCliente);
+      return dao.swapNameClient(c, nuevoNombreCliente);
     }
-    return exists;
+    return false;
   }
 
 
   public boolean swapDni(String dniClient, String nuevoDniCliente) {
     boolean exists = dao.existClient(dniClient);
     if (exists) {
-      dao.swapDni(dniClient, nuevoDniCliente);
+      return dao.swapDni(dniClient, nuevoDniCliente);
     }
-    return exists;
+    return false;
   }
 
   public boolean existeCliente(String dniClient) {
     return dao.existClient(dniClient);
   }
 
-  public List<Cliente> showListClients() {
+  public Map<String, Cliente> showListClients() {
     return dao.verListaClientes();
   }
 
@@ -64,26 +65,26 @@ public class ServicioClients {
     DaoMonedero daoMonedero = new DaoMonedero();
     boolean exists = daoMonedero.monederoExists(nombreTarjeta, dniCliente);
     if (exists)
-      daoMonedero.addMoneyMonedero(dniCliente, nombreTarjeta, dineroAgregar);
-    return exists;
+      return daoMonedero.addMoneyMonedero(dniCliente, nombreTarjeta, dineroAgregar);
+    return false;
   }
 
   public boolean addMonedero(Monedero monedero, String dniClient) {
     DaoMonedero daoMonedero = new DaoMonedero();
     boolean canBeAdded = !daoMonedero.monederoExists(monedero.getName(), dniClient);
     if (canBeAdded) {
-      daoMonedero.addMonedero(monedero, dniClient);
+      return daoMonedero.addMonedero(monedero, dniClient);
     }
-    return canBeAdded;
+    return false;
   }
 
   public boolean removeMonedero(String nombreMonedero, String dniClient) {
     DaoMonedero daoMonedero = new DaoMonedero();
     boolean exists = daoMonedero.monederoExists(nombreMonedero, dniClient);
     if (exists) {
-      daoMonedero.removeMonedero(dniClient, nombreMonedero);
+      return daoMonedero.removeMonedero(dniClient, nombreMonedero);
     }
-    return exists;
+    return false;
   }
 
   public Set<Monedero> showTarjetasCliente(String dniClient) {
@@ -146,7 +147,7 @@ public class ServicioClients {
     boolean esClienteConDescuento = dao.clienteTieneDescuento(dniClient);
 
     double precioTotalCarrito = 0;
-    List<List<LineaCompra>> historial = dao.dameHistorialCompra(dniClient);
+    List<List<LineaCompra>> historial = dao.showBuyHistory(dniClient);
     for (int i = 0; i < historial.size(); i++) {
       List<LineaCompra> carrito = dao.getLineaCompra(dniClient, i);
       for (LineaCompra lineaCompra : carrito) {

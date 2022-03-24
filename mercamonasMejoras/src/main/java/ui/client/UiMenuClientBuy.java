@@ -2,8 +2,8 @@ package ui.client;
 
 import common.Common;
 import constantes.Constantes;
-import modelo.LineaCompra;
-import modelo.Producto;
+import modelo.cliente.LineaCompra;
+import modelo.producto.Producto;
 import servicios.ServicioClients;
 import servicios.ServicioCompras;
 import servicios.ServicioProductos;
@@ -99,11 +99,11 @@ public class UiMenuClientBuy {
     System.out.println(servicioProductos.showAllProductsSinCaducados());
 
     System.out.println(Constantes.QUE_PRODUCTO_DESEA_AGREGAR_AL_CARRITO);
-    String productoMeterCarrito = sc.nextLine();
+    String nombreProducto = sc.nextLine();
 
-    if (servicioProductos.existProduct(productoMeterCarrito)) {
+    if (servicioProductos.existProduct(nombreProducto)) {
 
-      Producto productoAddCart = servicioProductos.getProductoLista(productoMeterCarrito);
+      Producto productoAddCart = servicioProductos.getProductoLista(nombreProducto);
       System.out.println(Constantes.CUANTA_CANTIDAD_QUIERE);
       int quantity = common.giveInt();
 

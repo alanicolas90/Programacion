@@ -1,12 +1,24 @@
 package dao;
 
-import modelo.ProductoCaducable;
-import static dao.BBDD.productos;
+import modelo.producto.Producto;
+import modelo.producto.ProductoCaducable;
+
+import java.util.List;
 
 public class DaoProductoCaducable {
 
-  public void addProductoCaducable(ProductoCaducable productoCaducable) {
-    productos.add(new ProductoCaducable(productoCaducable.getName(), productoCaducable.getPrice(),
-        productoCaducable.getStock(), productoCaducable.getCaducidad()));
+  private final BBDD db;
+
+  public DaoProductoCaducable() {
+    this.db = new BBDD();
+  }
+
+  public boolean addProductoCaducable(ProductoCaducable productoCaducable) {
+
+    List<Producto> productos = db.loadProducto();
+
+    productos.add(productoCaducable);
+
+    return db.saveProducto(productos);
   }
 }

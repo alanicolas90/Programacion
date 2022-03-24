@@ -1,67 +1,154 @@
 package dao;
 
-import modelo.Ingrediente;
-import modelo.LineaCompra;
-import modelo.Producto;
-import modelo.ProductoCaducable;
+import modelo.cliente.Cliente;
+import modelo.cliente.LineaCompra;
+import modelo.producto.Ingrediente;
+import modelo.producto.Producto;
+import modelo.producto.ProductoCaducable;
+import modelo.producto.ProductoNormal;
 
 import java.time.LocalDateTime;
-import java.util.Collection;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
-import static dao.BBDD.clientes;
-import static dao.BBDD.productos;
 
 public class DaoProducto extends DaoBase {
+
+    private final BBDD db;
+
+    public DaoProducto() {
+        this.db = new BBDD();
+    }
 
 
     //GET SET Y MODIFICAR DE LO QUE SEA
     //-------------------------------------------------------------------------------------------------
 
-    public void addProducto(Producto newProducto) {
-        productos
-                .add(new Producto(newProducto.getName(), newProducto.getPrice(), newProducto.getStock()));
+    public boolean addProducto(Producto newProducto) {
+        boolean ok = false;
+        List<Producto> productos = db.loadProducto();
+
+        if (productos == null) {
+            productos = new ArrayList<>();
+        }
+        productos.add(newProducto);
+        return ok;
     }
 
-    public void removeProducto(String nombreProducto) {
-        productos.remove(new Producto(nombreProducto));
+    public boolean removeProducto(String nombreProducto) {
+        boolean ok = false;
+        List<Producto> productos = db.loadProducto();
+
+        Producto productoBorrar = productos.stream()
+                .filter(producto -> producto.getName().equals(nombreProducto))
+                .findFirst()
+                .orElse(null);
+
+        if (productoBorrar != null) {
+            productos.remove(productoBorrar);
+            ok = db.saveProducto(productos);
+        }
+
+        return ok;
     }
 
-    public void updateNameProducto(String nombreProducto, String newNombreProducto) {
-        int index = productos.indexOf(new Producto(nombreProducto));
+    public boolean updateNameProducto(String nombreProducto, String newNombreProducto) {
+        List<Producto> productos = db.loadProducto();
+
+        int index = productos.indexOf(new ProductoNormal(nombreProducto));
         productos.get(index).setName(newNombreProducto);
+
+        return db.saveProducto(productos);
     }
 
-    public void updatePriceProducto(String nombreProducto, double newPriceProducto) {
-        int index = productos.indexOf(new Producto(nombreProducto));
-        productos.get(index).setPrice(newPriceProducto);
+    public boolean updatePriceProducto(String nombreProducto, double newPriceProducto) {
+        boolean ok = false;
+        List<Producto> productos = db.loadProducto();
+
+        Producto productoCambiarDatos = productos.stream()
+                .filter(producto -> producto.getName().equals(nombreProducto))
+                .findFirst()
+                .orElse(null);
+
+        if (productoCambiarDatos != null) {
+            productoCambiarDatos.setPrice(newPriceProducto);
+            ok = db.saveProducto(productos);
+        }
+
+        return ok;
     }
 
-    public void updateStockProducto(String nombreProducto, int newStockProducto) {
-        int index = productos.indexOf(new Producto(nombreProducto));
-        productos.get(index).setStock(newStockProducto);
+    public boolean updateStockProducto(String nombreProducto, int newStockProducto) {
+        boolean ok = false;
+        List<Producto> productos = db.loadProducto();
+
+        Producto productoCambiarDatos = productos.stream()
+                .filter(producto -> producto.getName().equals(nombreProducto))
+                .findFirst()
+                .orElse(null);
+
+        if (productoCambiarDatos != null) {
+            productoCambiarDatos.setStock(newStockProducto);
+            ok = db.saveProducto(productos);
+        }
+        return ok;
     }
 
-    public Producto getProductoLista(String productoMeterCarrito) {
-        return productos.get(productos.indexOf(new Producto(productoMeterCarrito)));
+    public Producto getProductoLista(String productoParaMeterCarrito) {
+        List<Producto> productos = db.loadProducto();
+//
+        return productos.stream()
+                .filter(producto -> producto.getName().equals(productoParaMeterCarrito))
+                .findFirst()
+                .orElse(null);
     }
 
     public double getPriceProducto(String nameProduct) {
-        int productoBusco = productos.indexOf(new Producto(nameProduct));
-        return dameElementoClonado(productos.get(productoBusco)).getPrice();
+        double precioProductoQueBusco = 0;
+        List<Producto> productos = db.loadProducto();
+
+        Producto productoQueBusco = productos.stream()
+                .filter(producto -> producto.getName().equals(nameProduct))
+                .findFirst()
+                .orElse(null);
+
+        if (productoQueBusco != null) {
+            precioProductoQueBusco = productoQueBusco.getPrice();
+        }
+        return precioProductoQueBusco;
     }
 
     public int getStockProduct(String nombreProduct) {
-        int positionProductoBusco = productos.indexOf(new Producto(nombreProduct));
-        return dameElementoClonado(productos.get(positionProductoBusco)).getStock();
+        int stockDelProductoPedido = 0;
+        List<Producto> productos = db.loadProducto();
+
+//        int positionProductoBusco = productos.indexOf(new Producto(nombreProduct));
+//        return dameElementoClonado(productos.get(positionProductoBusco)).getStock();
+        Producto productoQueBuscamos = productos.stream()
+                .filter(producto -> producto.getName().equals(nombreProduct))
+                .findFirst()
+                .orElse(null);
+
+        if (productoQueBuscamos != null)
+            stockDelProductoPedido = productoQueBuscamos.getStock();
+
+        return stockDelProductoPedido;
     }
 
-    public void addIngredienteAlProducto(Ingrediente nuevoIngrediente, int index) {
-        productos.get(index).getIngredientes().add(new Ingrediente(nuevoIngrediente.getNombre()));
+    public boolean addIngredienteAlProducto(Ingrediente nuevoIngrediente, String nombreDelProducto) {
+        boolean ok = false;
+        List<Producto> productos = db.loadProducto();
 
+        Producto productoQueBuscamos = productos.stream()
+                .filter(producto -> producto.getName().equals(nombreDelProducto))
+                .findFirst()
+                .orElse(null);
+
+        if (productoQueBuscamos != null) {
+            productoQueBuscamos.getIngredientes().add(nuevoIngrediente);
+            ok = db.saveProducto(productos);
+        }
+        return ok;
     }
 
 
@@ -69,21 +156,50 @@ public class DaoProducto extends DaoBase {
     //-------------------------------------------------------------------------------------------------
 
     public boolean productExists(String nombreProducto) {
-        return productos.contains(new Producto(nombreProducto));
+        boolean existe = false;
+        List<Producto> productos = db.loadProducto();
+
+        Producto productoQueBuscamos = productos.stream()
+                .filter(producto -> producto.getName().equals(nombreProducto))
+                .findFirst()
+                .orElse(null);
+
+        if (productoQueBuscamos != null)
+            existe = true;
+
+        return existe;
     }
 
-    public boolean ingredienteExisteEnProducto(Ingrediente nuevoIngrediente, int index) {
-        return dameElementoClonado(productos.get(index)).getIngredientes().contains(nuevoIngrediente);
+    public boolean ingredienteExisteEnProducto(Ingrediente nuevoIngrediente, String nombreProducto) {
+        List<Producto> productos = db.loadProducto();
+
+        Producto productoQueBuscamos = productos.stream()
+                .filter(producto -> producto.getName().equals(nombreProducto))
+                .findFirst()
+                .orElse(null);
+
+        if (productoQueBuscamos != null) {
+            Ingrediente ingredienteQuebuscamosDentroDelProducto = productoQueBuscamos
+                    .getIngredientes()
+                    .stream()
+                    .filter(ingrediente -> ingrediente.equals(nuevoIngrediente))
+                    .findFirst()
+                    .orElse(null);
+            return ingredienteQuebuscamosDentroDelProducto != null;
+        }
+
+        return false;
     }
 
     // VER PRODUCTOS
     // ---------------------------------------------------------------------------------------------------
 
     public List<Producto> showAllProducts() {
-        return dameListaClonadaInmutable(productos);
+        return db.loadProducto();
     }
 
     public List<Producto> showAllProductosSinCaducables() {
+        List<Producto> productos = db.loadProducto();
         return productos.stream()
                 .filter(producto -> !(producto instanceof ProductoCaducable) || ((ProductoCaducable) producto).getCaducidad().isAfter(LocalDateTime.now()))
                 .map(Producto::clone)
@@ -91,6 +207,7 @@ public class DaoProducto extends DaoBase {
     }
 
     public List<Producto> showAllProductsSortedName() {
+        List<Producto> productos = db.loadProducto();
         return productos.stream()
                 .sorted(Comparator.comparing(Producto::getName))
                 .map(Producto::clone)
@@ -98,6 +215,7 @@ public class DaoProducto extends DaoBase {
     }
 
     public List<Producto> showAllProductsConIngrediente() {
+        List<Producto> productos = db.loadProducto();
         return productos.stream()
                 .filter(producto -> !producto.getIngredientes().isEmpty())
                 .map(Producto::clone)
@@ -105,6 +223,9 @@ public class DaoProducto extends DaoBase {
     }
 
     public List<Producto> showAllProductsSinAlergiasCliente(String dniClient) {
+        List<Producto> productos = db.loadProducto();
+        Map<String, Cliente> clientes = db.loadClientes();
+
         return productos.stream()
                 .filter(
                         producto -> !producto.getIngredientes().equals(clientes.get(dniClient).getAlergenos()))
@@ -113,6 +234,8 @@ public class DaoProducto extends DaoBase {
     }
 
     public List<String> showCantidadProductosOrdenadaPorLaMasComprada() {
+        Map<String, Cliente> clientes = db.loadClientes();
+
         Map<String, Double> map = clientes.values().stream()
                 .flatMap(cliente -> cliente.getBuyHistory().stream())
                 .flatMap(Collection::stream)
@@ -129,6 +252,7 @@ public class DaoProducto extends DaoBase {
     //**************************************************************************************************
 
     public int indexProduct(String nameProduct) {
-        return productos.indexOf(new Producto(nameProduct));
+        List<Producto> productos = db.loadProducto();
+        return productos.indexOf(new ProductoNormal(nameProduct));
     }
 }

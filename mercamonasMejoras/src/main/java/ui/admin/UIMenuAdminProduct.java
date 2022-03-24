@@ -2,9 +2,10 @@ package ui.admin;
 
 import common.Common;
 import constantes.Constantes;
-import modelo.Ingrediente;
-import modelo.Producto;
-import modelo.ProductoCaducable;
+import modelo.producto.Ingrediente;
+import modelo.producto.Producto;
+import modelo.producto.ProductoCaducable;
+import modelo.producto.ProductoNormal;
 import servicios.ServicioProductos;
 import java.time.LocalDateTime;
 import java.util.Scanner;
@@ -207,7 +208,7 @@ public class UIMenuAdminProduct {
     System.out.print(Constantes.CUANTO_STOCK_TIENES_DEL_PRODUCTO);
     int stockProducto = common.giveInt();
 
-    Producto newProduct = new Producto(nombreProducto, priceProducto, stockProducto);
+    Producto newProduct = new ProductoNormal(nombreProducto, priceProducto, stockProducto);
 
     if (sp.addProduct(newProduct)) {
       System.out.println(Constantes.PRODUCT_ADD_SUCCESS);
