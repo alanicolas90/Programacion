@@ -77,7 +77,7 @@ public class UiMenuAdminCliente {
         double descuentoCliente = common.giveDouble();
 
         Cliente newClient =
-                new ClienteDescuento(nameClient, dniClient, descuentoCliente);
+                new ClienteDescuento(dniClient, nameClient, descuentoCliente);
 
         if (servicioClients.addClient(newClient)) {
             System.out.println(Constantes.SE_HA_AGREGADO_EL_CLIENTE_CON_SUCCESS);
@@ -151,7 +151,7 @@ public class UiMenuAdminCliente {
         System.out.println(Constantes.DIME_EL_DNI_DEL_CLIENTE);
         String dniClient = sc.nextLine();
 
-        Cliente newClient = new ClienteNormal(nameClient, dniClient);
+        Cliente newClient = new ClienteNormal(dniClient,nameClient);
 
         if (servicioClients.addClient(newClient)) {
             System.out.println(Constantes.SE_HA_AGREGADO_EL_CLIENTE_CON_SUCCESS);

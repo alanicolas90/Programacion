@@ -13,6 +13,10 @@ public class ProductoCaducable extends Producto {
 
   private LocalDateTime caducidad;
 
+  public ProductoCaducable() {
+    super();
+    this.type = "ProductoNormal";
+  }
 
   public ProductoCaducable(String name, double price, int stock, List<Ingrediente> ingredientes,
       LocalDateTime caducidad) {

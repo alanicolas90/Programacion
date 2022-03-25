@@ -11,6 +11,11 @@ import java.util.Set;
 @Getter
 public class ClienteNormal extends Cliente implements Clone<ClienteNormal> {
 
+    public ClienteNormal(){
+        super();
+        this.type="ClienteNormal";
+    }
+
     public ClienteNormal(String dni) {
         super(dni);
         this.type="ClienteNormal";
@@ -48,9 +53,7 @@ public class ClienteNormal extends Cliente implements Clone<ClienteNormal> {
     @Override
     public String toString() {
 
-        return super.toString() +"ClienteNormal{" +
-                "type='" + type + '\'' +
-                '}';
+        return super.toString();
     }
 
     @Override

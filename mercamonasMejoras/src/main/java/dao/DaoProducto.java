@@ -25,14 +25,13 @@ public class DaoProducto extends DaoBase {
     //-------------------------------------------------------------------------------------------------
 
     public boolean addProducto(Producto newProducto) {
-        boolean ok = false;
         List<Producto> productos = db.loadProducto();
 
         if (productos == null) {
             productos = new ArrayList<>();
         }
         productos.add(newProducto);
-        return ok;
+        return db.saveProducto(productos);
     }
 
     public boolean removeProducto(String nombreProducto) {
@@ -159,14 +158,16 @@ public class DaoProducto extends DaoBase {
         boolean existe = false;
         List<Producto> productos = db.loadProducto();
 
-        Producto productoQueBuscamos = productos.stream()
-                .filter(producto -> producto.getName().equals(nombreProducto))
-                .findFirst()
-                .orElse(null);
+        if(productos!= null) {
+            Producto productoQueBuscamos = productos.stream()
+                    .filter(producto -> producto.getName().equals(nombreProducto))
+                    .findFirst()
+                    .orElse(null);
 
-        if (productoQueBuscamos != null)
-            existe = true;
 
+            if (productoQueBuscamos != null)
+                existe = true;
+        }
         return existe;
     }
 
@@ -195,7 +196,10 @@ public class DaoProducto extends DaoBase {
     // ---------------------------------------------------------------------------------------------------
 
     public List<Producto> showAllProducts() {
-        return db.loadProducto();
+        List<Producto> productos = db.loadProducto();
+        return productos.stream().filter(producto -> producto.getStock()!=0)
+                .map(Producto::clone)
+                .collect(Collectors.toUnmodifiableList());
     }
 
     public List<Producto> showAllProductosSinCaducables() {
@@ -229,7 +233,7 @@ public class DaoProducto extends DaoBase {
         return productos.stream()
                 .filter(
                         producto -> !producto.getIngredientes().equals(clientes.get(dniClient).getAlergenos()))
-                .map(Producto::clone).collect(Collectors.toUnmodifiableList());
+                .collect(Collectors.toUnmodifiableList());
 
     }
 

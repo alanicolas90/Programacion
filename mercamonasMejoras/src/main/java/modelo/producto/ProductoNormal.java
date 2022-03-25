@@ -5,6 +5,11 @@ import java.util.stream.Collectors;
 
 public class ProductoNormal extends Producto {
 
+    public ProductoNormal() {
+        super();
+        this.type = "ProductoNormal";
+    }
+
     public ProductoNormal(String name, double price, int stock, List<Ingrediente> ingredientes) {
         super(name, price, stock, ingredientes);
         this.type = "ProductoNormal";

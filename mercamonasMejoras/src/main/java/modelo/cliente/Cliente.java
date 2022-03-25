@@ -44,7 +44,7 @@ public abstract class Cliente implements Comparable<Cliente> {
     this.buyHistory = buyHistory;
   }
 
-  private Cliente() {
+  public Cliente() {
     alergenos = new ArrayList<>();
     buyHistory = new ArrayList<>();
     monederos = new HashSet<>();

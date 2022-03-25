@@ -20,6 +20,8 @@ public abstract class Producto implements Clone<Producto>,Comparable<Producto> {
   private int stock;
   private List<Ingrediente> ingredientes;
 
+
+
   public Producto(String name, double price, int stock, List<Ingrediente> ingredientes) {
     this.name = name;
     this.price = price;
@@ -38,7 +40,7 @@ public abstract class Producto implements Clone<Producto>,Comparable<Producto> {
     this.stock = stock;
   }
 
-  private Producto() {
+  public Producto() {
     ingredientes = new ArrayList<>();
   }
 

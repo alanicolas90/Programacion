@@ -32,13 +32,13 @@ public class BBDD {
 
         RuntimeTypeAdapterFactory<Cliente> adapterClient =
                 RuntimeTypeAdapterFactory
-                        .of(Cliente.class, "type")
+                        .of(Cliente.class, "type", true)
                         .registerSubtype(ClienteNormal.class)
                         .registerSubtype(ClienteDescuento.class);
 
         RuntimeTypeAdapterFactory<Producto> adapterProduct =
                 RuntimeTypeAdapterFactory
-                        .of(Producto.class, "type")
+                        .of(Producto.class, "type", true)
                         .registerSubtype(ProductoNormal.class)
                         .registerSubtype(ProductoCaducable.class);
 
@@ -104,7 +104,7 @@ public class BBDD {
         List<Producto> productos = null;
         try {
             productos = gson.fromJson(
-                    new FileReader(Configuration.getInstance().getClientsSource()),
+                    new FileReader(Configuration.getInstance().getProductsSource()),
                     userListType);
         } catch (FileNotFoundException e) {
             log.error(e.getMessage(), e);
@@ -113,7 +113,7 @@ public class BBDD {
     }
 
     public boolean saveProducto(List<Producto> productos) {
-        try (FileWriter w = new FileWriter(Configuration.getInstance().getClientsSource())) {
+        try (FileWriter w = new FileWriter(Configuration.getInstance().getProductsSource())) {
             gson.toJson(productos, w);
         } catch (IOException e) {
             log.error(e.getMessage(), e);

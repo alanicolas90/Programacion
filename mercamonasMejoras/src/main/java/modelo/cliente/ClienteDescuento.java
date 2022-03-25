@@ -9,7 +9,12 @@ import java.util.Set;
 
 public class ClienteDescuento extends Cliente {
 
-  private final double descuento;
+  private double descuento;
+
+  public ClienteDescuento() {
+    super();
+    this.type = "ClienteDescuento";
+  }
 
   public ClienteDescuento(String dni, String nombre, Set<Monedero> monederos, List<Ingrediente> alergenos, List<LineaCompra> carrito, List<List<LineaCompra>> buyHistory, double descuento) {
     super(dni, nombre, monederos, alergenos, carrito, buyHistory);

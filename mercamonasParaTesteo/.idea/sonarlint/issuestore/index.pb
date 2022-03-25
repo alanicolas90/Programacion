@@ -13,8 +13,6 @@ S
 #.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
 _
 /src/main/java/modelo/constantes/Constantes.java,d\c\dc7f9e0727a3927cdf9ab6082cbca665cc39fed8
-J
-src/main/java/ui/Main.java,f\5\f5f833a11c774bc6d9fec08fc87be62b89228540
 ^
 .src/main/java/ui/admin/UIMenuAdminProduct.java,0\6\06fa932d75ee4f6bb4901c9b339560d114c5955b
 Y
@@ -61,3 +59,5 @@ R
 "src/main/java/dao/DaoMonedero.java,7\2\72275208d132a8451fcd510007f87b770044a78c
 R
 "src/main/java/dao/DaoClientes.java,d\d\dde956cbbf4483ca8667efa17690520a8cba2d0d
+J
+src/main/java/ui/Main.java,f\5\f5f833a11c774bc6d9fec08fc87be62b89228540

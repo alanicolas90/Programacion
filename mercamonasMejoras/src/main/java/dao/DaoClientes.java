@@ -36,6 +36,7 @@ public class DaoClientes extends DaoBase {
     public boolean removeClient(String dniCliente) {
         boolean ok = false;
         Map<String, Cliente> clientes = db.loadClientes();
+
         if (clientes != null) {
             clientes.remove(dniCliente);
             ok = db.saveClientes(clientes);
@@ -57,9 +58,9 @@ public class DaoClientes extends DaoBase {
         boolean ok;
         Map<String, Cliente> clientes = db.loadClientes();
 
-        clientes.remove(dniClient);
         clientes.put(nuevoDniCliente, clientes.get(dniClient));
-        clientes.get(dniClient).setDni(nuevoDniCliente);
+        clientes.remove(dniClient);
+        clientes.get(nuevoDniCliente).setDni(nuevoDniCliente);
 
         ok = db.saveClientes(clientes);
         return ok;
@@ -101,8 +102,10 @@ public class DaoClientes extends DaoBase {
 
     public boolean existClient(String clientDNI) {
         Map<String, Cliente> clientes = db.loadClientes();
+        if(clientes!=null)
+            return clientes.containsKey(clientDNI);
 
-        return clientes.containsKey(clientDNI);
+        return false;
     }
 
     public void emptyCart(String dniClient) {
