@@ -121,8 +121,6 @@ public class DaoProducto extends DaoBase {
         int stockDelProductoPedido = 0;
         List<Producto> productos = db.loadProducto();
 
-//        int positionProductoBusco = productos.indexOf(new Producto(nombreProduct));
-//        return dameElementoClonado(productos.get(positionProductoBusco)).getStock();
         Producto productoQueBuscamos = productos.stream()
                 .filter(producto -> producto.getName().equals(nombreProduct))
                 .findFirst()
