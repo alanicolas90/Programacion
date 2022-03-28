@@ -1,5 +1,6 @@
 package servicios;
 
+import dao.BBDD;
 import dao.DaoClientes;
 import dao.DaoCompras;
 import dao.DaoProducto;
@@ -39,7 +40,7 @@ public class ServicioCompras {
 
   public void guardarHistorialCompra(String dniClient) {
     DaoCompras daoCompras = new DaoCompras();
-    DaoClientes daoClientes = new DaoClientes();
+    DaoClientes daoClientes = new DaoClientes(BBDD.clientes);
 
     List<LineaCompra> lineaCompras = daoClientes.dameCarrito(dniClient);
     daoCompras.guardarCompra(dniClient, lineaCompras);
@@ -47,13 +48,13 @@ public class ServicioCompras {
   }
 
   public List<List<LineaCompra>> showBuyHistory(String dniClient) {
-    DaoClientes daoClientes = new DaoClientes();
+    DaoClientes daoClientes = new DaoClientes(BBDD.clientes);
     return daoClientes.showBuyHistory(dniClient);
   }
 
   public boolean pagarCarrito(String dniClient, String nombreMonedero) {
     ServicioClients servicioClients = new ServicioClients();
-    DaoClientes daoClientes = new DaoClientes();
+    DaoClientes daoClientes = new DaoClientes(BBDD.clientes);
     DaoCompras daoCompras = new DaoCompras();
 
     boolean seHaPagado = false;

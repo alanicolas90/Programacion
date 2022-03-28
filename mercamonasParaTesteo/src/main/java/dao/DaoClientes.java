@@ -4,14 +4,19 @@ import modelo.*;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.stream.Collectors;
 
-import static dao.BBDD.clientes;
 
 public class DaoClientes extends DaoBase {
 
+    private LinkedHashMap<String,Cliente> clientes;
+
+    public DaoClientes(LinkedHashMap<String,Cliente> clientes){
+        this.clientes = clientes;
+    }
 
     //ADD REMOVE Y ELIMINAR DE LO QUE SEA
     //-------------------------------------------------------------------------------------------------
@@ -97,10 +102,6 @@ public class DaoClientes extends DaoBase {
 
     public List<LineaCompra> getLineaCompra(String dniClient, int index) {
         return clientes.get(dniClient).getBuyHistory().get(index);
-    }
-
-    public List<List<LineaCompra>> dameHistorialCompra(String dniClient) {
-        return dameElementoClonado(clientes.get(dniClient)).getBuyHistory();
     }
 
     public List<Cliente> showListaClientesOrdenadaDni() {

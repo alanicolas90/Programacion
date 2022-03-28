@@ -8,8 +8,8 @@ public class BBDD {
 
   private BBDD() {}
 
-  static LinkedHashMap<String, Cliente> clientes = new LinkedHashMap<>();
-  static ArrayList<Producto> productos = new ArrayList<>();
+  public static LinkedHashMap<String, Cliente> clientes = new LinkedHashMap<>();
+  public static ArrayList<Producto> productos = new ArrayList<>();
 
 
   static {
