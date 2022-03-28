@@ -1,10 +1,17 @@
 package dao;
 
+import modelo.Cliente;
 import modelo.Monedero;
+
+import java.util.LinkedHashMap;
 import java.util.Set;
-import static dao.BBDD.clientes;
 
 public class DaoMonedero {
+  private LinkedHashMap<String, Cliente> clientes;
+
+  public DaoMonedero(LinkedHashMap<String, Cliente> clientes) {
+    this.clientes = clientes;
+  }
 
   public boolean monederoExists(String nombreMonedero, String dniClient) {
     return clientes.get(dniClient).getMonederos().contains(new Monedero(nombreMonedero));
@@ -29,7 +36,5 @@ public class DaoMonedero {
   public Set<Monedero> showTarjetasCliente(String dniClient) {
     return clientes.get(dniClient).clone().getMonederos();
   }
-
-
 
 }

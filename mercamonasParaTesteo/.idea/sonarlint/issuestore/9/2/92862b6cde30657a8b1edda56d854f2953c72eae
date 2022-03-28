@@ -1,0 +1,17 @@
+
+2
+java:S2386"Make this member "protected".(¹›Òq
+8
+java:S2386"Make this member "protected".(ù©”ñÿÿÿÿÿ
+€
+java:S1319"kThe type of "clientes" should be an interface such as "Map" rather than the implementation "LinkedHashMap".(¹›Òq
+„
+java:S1319"iThe type of "productos" should be an interface such as "List" rather than the implementation "ArrayList".(ù©”ñÿÿÿÿÿ
+i
+java:S1104"TMake clientes a static final constant or non-public and provide accessors if needed.(¹›Òq
+p
+java:S1104"UMake productos a static final constant or non-public and provide accessors if needed.(ù©”ñÿÿÿÿÿ
+C
+java:S1444".Make this "public static clientes" field final(¹›Òq
+J
+java:S1444"/Make this "public static productos" field final(ù©”ñÿÿÿÿÿ

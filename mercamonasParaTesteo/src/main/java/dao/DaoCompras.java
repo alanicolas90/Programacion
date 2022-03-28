@@ -1,15 +1,28 @@
 package dao;
 
+import modelo.Cliente;
 import modelo.LineaCompra;
 import modelo.Monedero;
 import modelo.Producto;
-import java.util.List;
-import static dao.BBDD.clientes;
-import static dao.BBDD.productos;
 
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
 
 public class DaoCompras {
 
+  private LinkedHashMap<String, Cliente> clientes;
+  private ArrayList<Producto> productos;
+
+  public DaoCompras(ArrayList<Producto> productos) {
+    this.productos = productos;
+  }
+
+  public DaoCompras(LinkedHashMap<String, Cliente> clientes) {
+    this.clientes = clientes;
+  }
+
+// -------------------------------------------------------------------------------------------------------------------
   public boolean alreadyInCart(Producto producto, String dniClient) {
     return clientes.get(dniClient).getCarrito().contains(new LineaCompra(producto));
   }

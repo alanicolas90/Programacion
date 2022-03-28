@@ -84,7 +84,7 @@ public class DaoClientes extends DaoBase {
         return clientes.get(dniClient).getAlergenos().contains(new Ingrediente(ingrediente));
     }
 
-    public boolean tieneComprasAnteriores(String dniClient) {
+    public boolean tieneComprasAnterioresIsEmpty(String dniClient) {
         return clientes.get(dniClient).getBuyHistory().isEmpty();
     }
 

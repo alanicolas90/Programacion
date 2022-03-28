@@ -1,5 +1,6 @@
 package servicios;
 
+import dao.BBDD;
 import dao.DaoProducto;
 import dao.DaoProductoCaducable;
 import modelo.Ingrediente;
@@ -13,7 +14,7 @@ import java.util.stream.Stream;
 public class ServicioProductos {
 
   public boolean addProduct(Producto newProduct) {
-    DaoProducto daoProducto = new DaoProducto();
+    DaoProducto daoProducto = new DaoProducto(BBDD.productos);
     boolean contains = !daoProducto.productExists(newProduct.getName());
     if (contains && newProduct.getPrice() > 0 && newProduct.getStock() >= 0) {
       daoProducto.addProducto(newProduct);
@@ -22,7 +23,7 @@ public class ServicioProductos {
   }
 
   public boolean removeProduct(String nombreProducto) {
-    DaoProducto daoProducto = new DaoProducto();
+    DaoProducto daoProducto = new DaoProducto(BBDD.productos);
     boolean exists = daoProducto.productExists(nombreProducto);
     if (exists) {
       daoProducto.removeProducto(nombreProducto);
@@ -31,7 +32,7 @@ public class ServicioProductos {
   }
 
   public boolean updateNameProduct(String nombreProducto, String newNombreProducto) {
-    DaoProducto daoProducto = new DaoProducto();
+    DaoProducto daoProducto = new DaoProducto(BBDD.productos);
     boolean exists = daoProducto.productExists(nombreProducto);
     if (exists) {
       daoProducto.updateNameProducto(nombreProducto, newNombreProducto);
@@ -40,7 +41,7 @@ public class ServicioProductos {
   }
 
   public boolean updatePriceProduct(String nombreProducto, double newPriceProducto) {
-    DaoProducto daoProducto = new DaoProducto();
+    DaoProducto daoProducto = new DaoProducto(BBDD.productos);
     boolean exists = daoProducto.productExists(nombreProducto);
     if (exists && newPriceProducto > 0) {
       daoProducto.updatePriceProducto(nombreProducto, newPriceProducto);
@@ -49,7 +50,7 @@ public class ServicioProductos {
   }
 
   public boolean updateStockProduct(String nombreProducto, int newStockProducto) {
-    DaoProducto daoProducto = new DaoProducto();
+    DaoProducto daoProducto = new DaoProducto(BBDD.productos);
     boolean exists = daoProducto.productExists(nombreProducto);
     if (exists && newStockProducto >= 0) {
       daoProducto.updateStockProducto(nombreProducto, newStockProducto);
@@ -58,22 +59,22 @@ public class ServicioProductos {
   }
 
   public List<Producto> showAllProducts() {
-    DaoProducto daoProducto = new DaoProducto();
+    DaoProducto daoProducto = new DaoProducto(BBDD.productos);
     return daoProducto.showAllProducts();
   }
 
   public Producto getProductoLista(String productoMeterCarrito) {
-    DaoProducto daoProducto = new DaoProducto();
+    DaoProducto daoProducto = new DaoProducto(BBDD.productos);
     return daoProducto.getProductoLista(productoMeterCarrito);
   }
 
   public boolean existProduct(String nombreProducto) {
-    DaoProducto daoProducto = new DaoProducto();
+    DaoProducto daoProducto = new DaoProducto(BBDD.productos);
     return daoProducto.productExists(nombreProducto);
   }
 
   public boolean addProductCaducable(ProductoCaducable productoCaducable) {
-    DaoProductoCaducable daoProductoCaducable = new DaoProductoCaducable();
+    DaoProductoCaducable daoProductoCaducable = new DaoProductoCaducable(BBDD.productos);
     boolean exist = !existProduct(productoCaducable.getName());
     boolean caducidad = LocalDateTime.parse(productoCaducable.getCaducidad().toString())
         .isAfter(LocalDateTime.now());
@@ -87,22 +88,22 @@ public class ServicioProductos {
 
 
   public List<Producto> showAllProductsSinCaducados() {
-    DaoProducto daoProducto = new DaoProducto();
+    DaoProducto daoProducto = new DaoProducto(BBDD.productos);
     return daoProducto.showAllProductosSinCaducables();
   }
 
   public List<Producto> showAllProductsOrdenadosName() {
-    DaoProducto daoProducto = new DaoProducto();
+    DaoProducto daoProducto = new DaoProducto(BBDD.productos);
     return daoProducto.showAllProductsSortedName();
   }
 
   public List<Producto> showAllProductsConIngredientes() {
-    DaoProducto daoProducto = new DaoProducto();
+    DaoProducto daoProducto = new DaoProducto(BBDD.productos);
     return daoProducto.showAllProductsConIngrediente();
   }
 
   public boolean addIngredienteAlProducto(String nombreProducto, Ingrediente nuevoIngrediente) {
-    DaoProducto daoProducto = new DaoProducto();
+    DaoProducto daoProducto = new DaoProducto(BBDD.productos);
     int indexProduct = daoProducto.indexProduct(nombreProducto);
     boolean productoTieneEseIngrediente = false;
     if (indexProduct >= 0) {
@@ -116,12 +117,12 @@ public class ServicioProductos {
   }
 
   public List<Producto> showAllProductsSinAlergiasCliente(String dniClient) {
-    DaoProducto daoProducto = new DaoProducto();
+    DaoProducto daoProducto = new DaoProducto(BBDD.productos);
     return daoProducto.showAllProductsSinAlergiasCliente(dniClient);
   }
 
   public List<String> showAllProductsSortedCantidadComprada() {
-    DaoProducto daoProducto = new DaoProducto();
+    DaoProducto daoProducto = new DaoProducto(BBDD.productos);
     return daoProducto.showCantidadProductosOrdenadaPorLaMasComprada();
   }
 }

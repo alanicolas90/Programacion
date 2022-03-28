@@ -12,8 +12,8 @@ import java.util.List;
 public class ServicioCompras {
 
   public boolean addToCart(String dniClient, LineaCompra productoAddCarrito) {
-    DaoCompras daoCompras = new DaoCompras();
-    DaoProducto daoProducto = new DaoProducto();
+    DaoCompras daoCompras = new DaoCompras(BBDD.clientes);
+    DaoProducto daoProducto = new DaoProducto(BBDD.productos);
     boolean seHaMetido = false;
 
     boolean inCart = !daoCompras.alreadyInCart(productoAddCarrito.getProducto(), dniClient);
@@ -30,7 +30,7 @@ public class ServicioCompras {
   }
 
   public boolean removeProductCart(String dniClient, String nombreProductoBorrar) {
-    DaoCompras daoCompras = new DaoCompras();
+    DaoCompras daoCompras = new DaoCompras(BBDD.clientes);
     boolean isCart = daoCompras.alreadyInCart(new Producto(nombreProductoBorrar), dniClient);
     if (isCart) {
       daoCompras.deleteProductCart(dniClient, nombreProductoBorrar);
@@ -39,7 +39,7 @@ public class ServicioCompras {
   }
 
   public void guardarHistorialCompra(String dniClient) {
-    DaoCompras daoCompras = new DaoCompras();
+    DaoCompras daoCompras = new DaoCompras(BBDD.clientes);
     DaoClientes daoClientes = new DaoClientes(BBDD.clientes);
 
     List<LineaCompra> lineaCompras = daoClientes.dameCarrito(dniClient);
@@ -55,7 +55,7 @@ public class ServicioCompras {
   public boolean pagarCarrito(String dniClient, String nombreMonedero) {
     ServicioClients servicioClients = new ServicioClients();
     DaoClientes daoClientes = new DaoClientes(BBDD.clientes);
-    DaoCompras daoCompras = new DaoCompras();
+    DaoCompras daoCompras = new DaoCompras(BBDD.clientes);
 
     boolean seHaPagado = false;
     double precioTotalCarrito = servicioClients.getTotalPrice(dniClient);

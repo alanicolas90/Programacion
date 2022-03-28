@@ -1,22 +1,25 @@
 package dao;
 
-import modelo.Ingrediente;
-import modelo.LineaCompra;
-import modelo.Producto;
-import modelo.ProductoCaducable;
+import modelo.*;
 
 import java.time.LocalDateTime;
-import java.util.Collection;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
-import static dao.BBDD.clientes;
-import static dao.BBDD.productos;
 
 public class DaoProducto extends DaoBase {
 
+    private final ArrayList<Producto> productos;
+    private LinkedHashMap<String, Cliente> clientes;
+
+    public DaoProducto(ArrayList<Producto> productos, LinkedHashMap<String, Cliente> clientes) {
+        this.productos = productos;
+        this.clientes = clientes;
+    }
+
+    public DaoProducto(ArrayList<Producto> productos) {
+        this.productos = productos;
+    }
 
     //GET SET Y MODIFICAR DE LO QUE SEA
     //-------------------------------------------------------------------------------------------------

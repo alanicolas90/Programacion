@@ -63,7 +63,7 @@ public class ServicioClients {
   }
 
   public boolean addMoney(String dniCliente, String nombreTarjeta, double dineroAgregar) {
-    DaoMonedero daoMonedero = new DaoMonedero();
+    DaoMonedero daoMonedero = new DaoMonedero(BBDD.clientes);
     boolean exists = daoMonedero.monederoExists(nombreTarjeta, dniCliente);
     if (exists)
       daoMonedero.addMoneyMonedero(dniCliente, nombreTarjeta, dineroAgregar);
@@ -71,7 +71,7 @@ public class ServicioClients {
   }
 
   public boolean addMonedero(Monedero monedero, String dniClient) {
-    DaoMonedero daoMonedero = new DaoMonedero();
+    DaoMonedero daoMonedero = new DaoMonedero(BBDD.clientes);
     boolean canBeAdded = !daoMonedero.monederoExists(monedero.getName(), dniClient);
     if (canBeAdded) {
       daoMonedero.addMonedero(monedero, dniClient);
@@ -80,7 +80,7 @@ public class ServicioClients {
   }
 
   public boolean removeMonedero(String nombreMonedero, String dniClient) {
-    DaoMonedero daoMonedero = new DaoMonedero();
+    DaoMonedero daoMonedero = new DaoMonedero(BBDD.clientes);
     boolean exists = daoMonedero.monederoExists(nombreMonedero, dniClient);
     if (exists) {
       daoMonedero.removeMonedero(dniClient, nombreMonedero);
@@ -89,7 +89,7 @@ public class ServicioClients {
   }
 
   public Set<Monedero> showTarjetasCliente(String dniClient) {
-    DaoMonedero daoMonedero = new DaoMonedero();
+    DaoMonedero daoMonedero = new DaoMonedero(BBDD.clientes);
     return daoMonedero.showTarjetasCliente(dniClient);
   }
 
@@ -110,7 +110,7 @@ public class ServicioClients {
 
   public double getTotalPrice(String dniClient) {
     DaoClientes daoClientes = new DaoClientes(BBDD.clientes);
-    DaoProducto daoProducto = new DaoProducto();
+    DaoProducto daoProducto = new DaoProducto(BBDD.productos);
     boolean esClienteConDescuento = daoClientes.clienteTieneDescuento(dniClient);
     double precioTotalCarrito = 0;
 
@@ -146,12 +146,12 @@ public class ServicioClients {
 
   public boolean tieneComprasAnteriores(String dniClient) {
     DaoClientes daoClientes = new DaoClientes(BBDD.clientes);
-    return daoClientes.tieneComprasAnteriores(dniClient);
+    return daoClientes.tieneComprasAnterioresIsEmpty(dniClient);
   }
 
   public double dineroTotalGastado(String dniClient) {
     DaoClientes daoClientes = new DaoClientes(BBDD.clientes);
-    DaoProducto daoProducto = new DaoProducto();
+    DaoProducto daoProducto = new DaoProducto(BBDD.productos);
     boolean esClienteConDescuento = daoClientes.clienteTieneDescuento(dniClient);
 
     double precioTotalCarrito = 0;
