@@ -33,7 +33,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/f/ff10601d1d472e7ac46f2abd85d86cedd879c082" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/data/client.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/client.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/product.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/product.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/config/Configuration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/config/Configuration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/BBDD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/BBDD.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/DaoClientes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DaoClientes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/DaoCompras.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DaoCompras.java" afterDir="false" />
@@ -83,7 +82,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.importing" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -133,7 +132,7 @@
       <workItem from="1648107884071" duration="6348000" />
       <workItem from="1648118779865" duration="8875000" />
       <workItem from="1648194306682" duration="5464000" />
-      <workItem from="1649315064801" duration="10776000" />
+      <workItem from="1649315064801" duration="9855000" />
     </task>
     <task id="LOCAL-00001" summary="agregar proyecto arreglado y bien hecho entornos">
       <created>1649320706827</created>
