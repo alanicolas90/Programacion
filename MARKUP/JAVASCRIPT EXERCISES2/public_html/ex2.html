@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div>TODO write content</div>
+<script>
+    //simplemente suma y te da 10
+    var x = 5 + 2 + 3;
+    //sale el los 2 nombre con un espacio
+    var x = "Juan" + " " + "Antonio";
+    //suma los dos primeros valore y el tercero al ser un string lo pone al lado dando el reslñutado de 5 y un 5 al lado pareciendo un 55
+    var x = 2 + 3 + "5"
+    //sale simplemente el nombre de juan
+    var nombre = "Juan";
+    //sigue saliendo juan porque se ha guardado la informacion pero si no hubiera saldria null o undefined
+    var nombre;
+
+    //-------------------------------------------------------------------------------------------------------
+
+    //si llamo a colors me sale {favourite: 'red'} y si pongo my colors.favourite me sale red
+    let colors = new Object();
+    colors.favourite = 'blue';
+    let myColors = colors;
+    myColors.favourite = 'red';
+
+    //-------------------------------------------------------------------------------------------------------
+
+    let first_greet = "hello";
+    let second_greet = first_greet;
+    first_greet = "hi";
+    //sale hi porque se sobre escribe pero si pongo second_greet sale hello
+
+    //-------------------------------------------------------------------------------------------------------
+
+    // //var 1 no esta definido y da error
+    // //console.log ('var1 value is: ' + var1);
+    // var2 = null;
+    // //te da el resultado null porque lo hemos definido como null
+    // console.log ('var2 value is: ' + var2);
+    // let var1 = 55.55;
+    // var1 = var1 + 10;
+    // //te da el resultado 65.55 porque se ha sumado 10 a 55.55
+    // console.log ('var1 value is: ' + var1);
+    // //te da el doble del resultado anterior
+    // console.log ('The double of var1 is: ' + (var1*2));
+    // var3 = 10;
+    // //te da el resultado multiplicado
+    // console.log ('The result of multiplying var1 by var3 is: ' + (var1*var3));
+    // var1 = 'This is a text';
+    // //te devuelve el texto
+    // console.log ('var1 value is: ' + var1);
+    // //te da error y en el resultado sale NaN
+    // console.log ('The double of var1 is now: ' + (var1*2));
+    // //no funciona porque le faltan parentesis
+    // //console.log var1 = 99.55;
+    // //al nno tener operacion vuelve a salirte el texto
+    // console.log ('var1 has been declared again and its value is now: ' + var1);
+    // let $var4 = 0.55;
+    // //te da el numero sin mas
+    // console.log ('$var4 value is: ' + $var4);
+
+    //-------------------------------------------------------------------------------------------------------
+
+    let stars= 5.555, text1 = 'stars in the sky';
+    let infiniteNumber = Infinity;
+    //gives you the number defined before
+    console.log ('stars var value is: ' + stars);
+    //this number is 555500
+    stars= 5.555E5;
+    //gives you the number but not with the E notation
+    console.log ('stars var value is (multiplied by 100000): ' + stars);
+    //this number is 0.00005555
+    stars = 5.555E-5;
+    //gives you the number but not with the E notation
+    console.log (' stars var value is now a very small number: ' + stars);
+    //gives ou error (NaN) because u can´t multiply text with numbers
+    console.log ('stars var value is (Nonsense): ' + stars*text1);
+    //it translates this number to infinity because it´s too big
+    stars = 5.555e100000000000000000;
+    console.log ('stars var value is now too big: ' + stars);
+    //it translates this number to -infinity because it´s too big
+    stars = 5.555E-100000000000000000;
+    //and ut says its 0 in the alertbox
+    //alert('stars var value is now too small: ' + stars);
+    //this division gives you infinity
+    console.log ('A positive number divided by 0 returns: ' + (5/0));
+    //this division gives you -infinity
+    console.log (' A negative number divided by 0 returns: ' + (-5/0));
+    //gives you NaN
+    console.log ('Zero divided by zero returns: ' + (0/0));
+    //gives you infinity as variable was defined before
+    console.log ('infiniteNumber var value is: ' + infiniteNumber);
+    let tenCents = .1; let twentyCents = .2; let thirtyCents = .3;
+    //gives the result of 0.1 correctly
+    console.log ('0.2-0.1 equals: ' + (twentyCents-tenCents));
+    //gives you the result of 0.09999999999999998 because of the  binary floating point arithmetic and because its a floating point value and its represented in a base 2  series
+    console.log ('0.3-0.2 equals: ' + (thirtyCents-twentyCents));
+
+</script>
+</body>
+</html>

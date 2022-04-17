@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //false because its not equal
+    console.log ('' == '0')
+    //true because its value of empty is 0
+    console.log (0 == '')
+    //true because it takes its value of the text that is 0
+    console.log (0 == '0')
+    //false because one is a boolean and the other is a string
+    console.log (false == 'false')
+    //true because 0 could be false
+    console.log (false == '0')
+    //false because one is a boolean the opther another type of statement
+    console.log (false == undefined)
+    //false because one is a null type and the other one a object and its not null
+    console.log (false == null)
+    //true because object can be undefined
+    console.log (null == undefined)
+//true because there is no value
+    console.log (' \t\r\n ' == 0)
+    //false because 0 is false
+    console.log ("0" == true)
+    //true because it´s not 0
+    console.log ("0.1e1" == true)
+
+    //----------------------------------------------------------------------------------
+
+    let number1_1 = 5;
+    let number2_1 = 6;
+    let number3_1 = parseInt("10");
+    let number1_2 = 5;
+    let number2_2 = 6;
+    let number3_2 = parseFloat("10.25");
+    //21
+    console.log ((number1_1 + number2_1 + number3_1))
+    //21.5
+    console.log (number1_2 + number2_2 + number3_2)
+</script>
+</body>
+</html>
