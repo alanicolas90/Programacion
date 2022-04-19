@@ -5,8 +5,6 @@ U
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
 ^
 .src/main/java/servicios/ServicioProductos.java,4\f\4f79dee77744499f510ad9cd6e0a73290c66cf18
-P
- src/main/java/common/Common.java,1\f\1f0f1ac1e908685e5a5d0d50f31f2929f463cc5f
 W
 'src/main/java/ui/admin/UiMenuAdmin.java,c\4\c40da7c9497396b9f33c290a20c7b549a33ab55a
 S
@@ -25,8 +23,6 @@ Y
 -src/main/java/ui/client/UiClientSettings.java,0\c\0c1f51b4960c72c49f23ae63a218510545d8aacc
 \
 ,src/main/java/ui/client/UiMenuClientBuy.java,7\b\7b33ab7a662b0dfc672bf9afb4713f70ec444834
-X
-(src/main/java/constantes/Constantes.java,f\f\ff10601d1d472e7ac46f2abd85d86cedd879c082
 \
 ,src/main/java/servicios/ServicioCompras.java,4\7\47078600c0bd41e5362e593f31cef926948576de
 ^
@@ -61,3 +57,7 @@ R
 "src/main/java/dao/DaoMonedero.java,7\2\72275208d132a8451fcd510007f87b770044a78c
 R
 "src/main/java/dao/DaoClientes.java,d\d\dde956cbbf4483ca8667efa17690520a8cba2d0d
+X
+(src/main/java/constantes/Constantes.java,f\f\ff10601d1d472e7ac46f2abd85d86cedd879c082
+P
+ src/main/java/common/Common.java,1\f\1f0f1ac1e908685e5a5d0d50f31f2929f463cc5f
