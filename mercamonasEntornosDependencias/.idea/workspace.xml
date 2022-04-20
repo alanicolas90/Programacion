@@ -4,46 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df79c8f1-714e-47b5-9b1e-1c1a0dccc18d" name="Changes" comment="agregar proyecto arreglado y bien hecho entornos">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/impl/DaoClientesImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/impl/DaoComprasImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/impl/DaoMonederoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/impl/DaoProductoCaducableImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/impl/DaoProductoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/di/GsonProducer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/servicios/impl/ServicioClientsImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/servicios/impl/ServicioComprasImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/servicios/impl/ServicioProductosImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/6/06a7373c7939f8bc0b3d070c33c71107c5af3363" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/2/228e5e78b7f2e7712eaca73f3c6911a65111531e" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/6/26dd73e3a7e4de4ea3ca1ead4f020d0046c27d03" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/c/2ca2e55964ea2a3d562a275de75e8b3378818fd3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/a/5a88498ae253fa4f2633937c3f6853d4203adeca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/c/6c0d1d0470ecbdd8676903c5c52cb36b873934af" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/7/7773f7a1ba97cfe3b81efcefc5f8f6b5d9b3f2a9" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/f/7f4900c3cc263fe9e3e4632c71abc029b1f2647d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/f/7f9a1455549e9958f1cfe6993a695569484b133b" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/f/9fe84ebb15faf917b7def6236dba604453cc61e0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/c/bcad6ec07c412a076bc16f2dbc79182333a57ca2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/e/be2e8860852a1629ec07fe6e8154ca9dd6543f6b" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/c/dc7f9e0727a3927cdf9ab6082cbca665cc39fed8" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/e/ee20792ca3fa16f6d98168e0dd91b3bfffbf65bc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/0/f0e8a119d35272c802ac989415580596e1f6d57a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/e/feb93efdcdaa3adc13ef744e2f6989331041b828" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/f/ff10601d1d472e7ac46f2abd85d86cedd879c082" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/client.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/client.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/product.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/product.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/BBDD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/BBDD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/DaoClientes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DaoClientes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/DaoCompras.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DaoCompras.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/DaoMonedero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DaoMonedero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/DaoProducto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DaoProducto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/DaoProductoCaducable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DaoProductoCaducable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servicios/ServicioClients.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servicios/ServicioClients.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servicios/ServicioCompras.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servicios/ServicioCompras.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servicios/ServicioProductos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servicios/ServicioProductos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/admin/UiMenuAdminCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/admin/UiMenuAdminCliente.java" afterDir="false" />
-    </list>
+    <list default="true" id="df79c8f1-714e-47b5-9b1e-1c1a0dccc18d" name="Changes" comment="agregar proyecto arreglado y bien hecho entornos" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -133,6 +94,7 @@
       <workItem from="1648118779865" duration="8875000" />
       <workItem from="1648194306682" duration="5464000" />
       <workItem from="1649315064801" duration="9855000" />
+      <workItem from="1649326276229" duration="41000" />
     </task>
     <task id="LOCAL-00001" summary="agregar proyecto arreglado y bien hecho entornos">
       <created>1649320706827</created>
