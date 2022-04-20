@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df79c8f1-714e-47b5-9b1e-1c1a0dccc18d" name="Changes" comment="agregar proyecto arreglado y bien hecho entornos" />
+    <list default="true" id="df79c8f1-714e-47b5-9b1e-1c1a0dccc18d" name="Changes" comment="agregar proyecto arreglado y bien hecho entornos">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,7 +39,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../proyectonuevofintrimetreprogramacion" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -95,6 +97,8 @@
       <workItem from="1648194306682" duration="5464000" />
       <workItem from="1649315064801" duration="9855000" />
       <workItem from="1649326276229" duration="41000" />
+      <workItem from="1650456896974" duration="16000" />
+      <workItem from="1650456929565" duration="154000" />
     </task>
     <task id="LOCAL-00001" summary="agregar proyecto arreglado y bien hecho entornos">
       <created>1649320706827</created>
