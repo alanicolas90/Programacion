@@ -1,8 +1,4 @@
 
-U
-%src/etc/eclipse-java-google-style.xml,2\2\228e5e78b7f2e7712eaca73f3c6911a65111531e
-P
- src/main/java/common/Common.java,1\f\1f0f1ac1e908685e5a5d0d50f31f2929f463cc5f
 W
 'src/main/java/ui/admin/UiMenuAdmin.java,c\4\c40da7c9497396b9f33c290a20c7b549a33ab55a
 S
@@ -29,8 +25,6 @@ O
 +src/main/java/dao/DaoProductoCaducable.java,1\d\1d5e7c66421cb57ca85c9846046f88f5631207e2
 ^
 .src/main/java/modelo/producto/Ingrediente.java,0\6\06a7373c7939f8bc0b3d070c33c71107c5af3363
-J
-src/main/java/ui/Main.java,f\5\f5f833a11c774bc6d9fec08fc87be62b89228540
 Y
 )src/main/java/ui/client/UiMenuClient.java,4\d\4ddf027f531b3cb845cc300f983f28692f885430
 ^
@@ -41,8 +35,6 @@ a
 +src/main/java/modelo/producto/Producto.java,f\e\feb93efdcdaa3adc13ef744e2f6989331041b828
 A
 data/product.json,2\3\23d5c9fcaf8ac3245725fe9c4b91b9a4a705698e
-Y
-)src/main/java/modelo/cliente/Cliente.java,2\c\2ca2e55964ea2a3d562a275de75e8b3378818fd3
 d
 4src/main/java/modelo/producto/ProductoCaducable.java,f\0\f0e8a119d35272c802ac989415580596e1f6d57a
 b
@@ -75,3 +67,11 @@ g
 7src/main/java/servicios/ficheros/ServiciosFicheros.java,b\5\b573e44ac87aa39fa9c6202bf412ac18f974ee22
 ^
 .src/main/java/ui/admin/UiMenuAdminCliente.java,b\c\bc85f93e24f7b27d7328d68d951ac7cd5e1eb424
+U
+%src/etc/eclipse-java-google-style.xml,2\2\228e5e78b7f2e7712eaca73f3c6911a65111531e
+P
+ src/main/java/common/Common.java,1\f\1f0f1ac1e908685e5a5d0d50f31f2929f463cc5f
+J
+src/main/java/ui/Main.java,f\5\f5f833a11c774bc6d9fec08fc87be62b89228540
+Y
+)src/main/java/modelo/cliente/Cliente.java,2\c\2ca2e55964ea2a3d562a275de75e8b3378818fd3

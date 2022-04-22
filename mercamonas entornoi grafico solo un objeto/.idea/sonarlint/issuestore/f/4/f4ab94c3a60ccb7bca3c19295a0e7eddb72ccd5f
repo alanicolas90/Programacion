@@ -1,6 +1,0 @@
-
-—
-java:S1186,"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(‚’Çï
-V	java:S125m"<This block of commented-out lines of code should be removed.(ÒŸìçùÿÿÿÿ
-P
-java:S1128"5Remove this unused import 'javafx.event.ActionEvent'.(î•¯¼ýÿÿÿÿ

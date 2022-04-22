@@ -43,11 +43,9 @@ W
 .src/main/java/ui/admin/UiMenuAdminCliente.java,b\c\bc85f93e24f7b27d7328d68d951ac7cd5e1eb424
 ^
 .src/main/java/ui/admin/UIMenuAdminProduct.java,0\6\06fa932d75ee4f6bb4901c9b339560d114c5955b
+J
+src/main/java/ui/Main.java,f\5\f5f833a11c774bc6d9fec08fc87be62b89228540
 7
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
 N
 src/main/java/module-info.java,1\c\1c89a5491fbfda3fb050196d6a239f20200296e7
-L
-src/main/java/ui/MainFX.java,e\6\e68f17f51439448416d5c09930d3b281507319a3
-e
-5src/main/java/ui/controllers/PrincipalController.java,f\4\f4ab94c3a60ccb7bca3c19295a0e7eddb72ccd5f
