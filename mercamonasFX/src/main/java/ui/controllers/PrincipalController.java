@@ -57,9 +57,6 @@ public class PrincipalController implements Initializable {
         productos.add(new ProductoNormal("Hamburguesa", 10.0, 10));
         productos.add(new ProductoNormal("Pollo", 10.0, 10));
         table.getItems().addAll(productos);
-
-
-
     }
 
     @FXML
