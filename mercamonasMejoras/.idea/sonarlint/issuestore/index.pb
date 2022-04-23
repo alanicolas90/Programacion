@@ -7,8 +7,6 @@ _
 /src/main/java/modelo/constantes/Constantes.java,d\c\dc7f9e0727a3927cdf9ab6082cbca665cc39fed8
 X
 (src/main/java/constantes/Constantes.java,f\f\ff10601d1d472e7ac46f2abd85d86cedd879c082
-7
-pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
 f
 6src/main/java/gsonutils/RuntimeTypeAdapterFactory.java,5\a\5a88498ae253fa4f2633937c3f6853d4203adeca
 ]
@@ -75,3 +73,5 @@ J
 src/main/java/ui/Main.java,f\5\f5f833a11c774bc6d9fec08fc87be62b89228540
 Y
 )src/main/java/modelo/cliente/Cliente.java,2\c\2ca2e55964ea2a3d562a275de75e8b3378818fd3
+7
+pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
