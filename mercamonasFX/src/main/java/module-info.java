@@ -6,7 +6,7 @@ module javafx {
     requires MaterialFX;
 
     exports ui;
-    exports ui.controllers;
+    exports ui.productos;
 
     requires lombok;
     requires org.apache.logging.log4j;
@@ -19,7 +19,7 @@ module javafx {
     exports common;
     opens ui to javafx.fxml;
     opens modelo.producto to javafx.base, com.google.gson;
-    opens ui.controllers to javafx.fxml;
+    opens ui.productos to javafx.fxml;
 
     exports dao.impl;
     exports modelo.producto;

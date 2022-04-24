@@ -1,5 +1,8 @@
-package ui.controllers;
+package ui.productos;
 
+import config.Configuration;
+import dao.BBDD;
+import di.GsonProducer;
 import io.github.palexdev.materialfx.controls.MFXTextField;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -13,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class PrincipalController implements Initializable {
+public class ProductosController implements Initializable {
     @FXML
     private MFXTextField nombre;
     @FXML
@@ -41,9 +44,13 @@ public class PrincipalController implements Initializable {
     @FXML
     private TableColumn<Producto, Integer> columnStock;
 
-    public PrincipalController() {
+    private ProductoViewModel viewModel;
+
+    public ProductosController() {
 
     }
+
+    private BBDD db;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -52,19 +59,17 @@ public class PrincipalController implements Initializable {
         columnPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
         columnStock.setCellValueFactory(new PropertyValueFactory<>("stock"));
 
-        List<Producto> productos = new ArrayList<>();
-        productos.add(new ProductoNormal("Pizza", 10.0, 10));
-        productos.add(new ProductoNormal("Hamburguesa", 10.0, 10));
-        productos.add(new ProductoNormal("Pollo", 10.0, 10));
-        table.getItems().addAll(productos);
+
+        table.getItems().addAll(db.loadProducto());
     }
 
     @FXML
     private void add() {
 
-        Producto nuevoProduct = new ProductoNormal(txtNombre.getText(), Double.parseDouble(txtPrice.getText()), Integer.parseInt(txtStock.getText()));
+        ProductoNormal nuevoProduct = new ProductoNormal(txtNombre.getText(), Double.parseDouble(txtPrice.getText()), Integer.parseInt(txtStock.getText()));
         boolean contains = !table.getItems().contains(nuevoProduct);
         if (contains && nuevoProduct.getPrice() > 0 && nuevoProduct.getStock() >= 0) {
+            viewModel.agregarProducto(nuevoProduct);
             table.getItems().add(nuevoProduct);
         }
 

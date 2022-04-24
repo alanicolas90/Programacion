@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class MainFX extends Application {
+public class MainProductosFX extends Application {
 
     public static void main(String[] args) {
         launch(args);
@@ -17,7 +17,7 @@ public class MainFX extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
 
-        FXMLLoader loaderMenu = new FXMLLoader(getClass().getResource("/fxml/principal.fxml"));
+        FXMLLoader loaderMenu = new FXMLLoader(getClass().getResource("/fxml/productos.fxml"));
 
         AnchorPane root = loaderMenu.load();
         Scene scene = new Scene(root);
