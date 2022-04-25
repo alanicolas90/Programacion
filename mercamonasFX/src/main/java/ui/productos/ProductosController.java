@@ -60,13 +60,13 @@ public class ProductosController implements Initializable {
         columnStock.setCellValueFactory(new PropertyValueFactory<>("stock"));
 
 
-        table.getItems().addAll(db.loadProducto());
+        //table.getItems().addAll(db.loadProducto());
     }
 
     @FXML
     private void add() {
 
-        ProductoNormal nuevoProduct = new ProductoNormal(txtNombre.getText(), Double.parseDouble(txtPrice.getText()), Integer.parseInt(txtStock.getText()));
+        Producto nuevoProduct = new ProductoNormal(txtNombre.getText(), Double.parseDouble(txtPrice.getText()), Integer.parseInt(txtStock.getText()));
         boolean contains = !table.getItems().contains(nuevoProduct);
         if (contains && nuevoProduct.getPrice() > 0 && nuevoProduct.getStock() >= 0) {
             viewModel.agregarProducto(nuevoProduct);

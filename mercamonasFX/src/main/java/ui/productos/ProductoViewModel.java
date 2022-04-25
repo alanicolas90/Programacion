@@ -1,6 +1,7 @@
 package ui.productos;
 
 import dao.BBDD;
+import modelo.producto.Producto;
 import modelo.producto.ProductoNormal;
 import servicios.ServicioProductos;
 
@@ -14,7 +15,7 @@ public class ProductoViewModel {
         this.db = db;
     }
 
-    public void agregarProducto(ProductoNormal producto) {
+    public void agregarProducto(Producto producto) {
         servicioProductos.addProduct(producto);
     }
 
