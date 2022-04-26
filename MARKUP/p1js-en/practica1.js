@@ -269,8 +269,11 @@ function misterio18(array) {
 }
 
 function misterio19(json) {
+    //code = JSON.stringlyfy(json);
+    //parsedCode = JSON.parse(code);
     return json.nombre + " " + json.apellido1 + " " + json.apellido2+".";
 }
+
 
 function misterio20(arraylist,number) {
     if(arraylist.length > number){

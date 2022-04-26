@@ -6,6 +6,7 @@ import modelo.producto.Producto;
 import java.util.List;
 
 public interface DaoProducto {
+
     boolean addProducto(Producto newProducto);
 
     boolean removeProducto(String nombreProducto);

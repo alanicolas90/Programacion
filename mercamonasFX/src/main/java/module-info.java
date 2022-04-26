@@ -6,7 +6,7 @@ module javafx {
     requires MaterialFX;
 
     exports ui;
-    exports ui.productos;
+    exports ui.pantallas.productos;
 
     requires lombok;
     requires org.apache.logging.log4j;
@@ -14,13 +14,17 @@ module javafx {
     requires com.fasterxml.jackson.databind;
     requires com.google.gson;
     requires jakarta.jakartaee.web.api;
+    requires jakarta.cdi;
+    requires jakarta.inject;
 
     exports modelo.cliente;
     exports common;
     opens ui to javafx.fxml;
     opens modelo.producto to javafx.base, com.google.gson;
-    opens ui.productos to javafx.fxml;
+    opens ui.pantallas.productos to javafx.fxml;
 
+
+    exports servicios;
     exports dao.impl;
     exports modelo.producto;
     exports di;
@@ -33,4 +37,11 @@ module javafx {
     exports servicios.ficheros;
     opens modelo.constantes;
     opens modelo.cliente;
+    exports ui.main to javafx.graphics;
+    opens ui.main;
+    exports ui.pantallas.common;
+    exports ui.pantallas.principal;
+    opens ui.pantallas.principal;
+
 }
+
