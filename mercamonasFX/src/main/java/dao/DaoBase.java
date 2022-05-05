@@ -1,7 +1,7 @@
 package dao;
 
 
-import modelo.Clone;
+import domain.modelo.Clone;
 
 import java.util.Collection;
 import java.util.List;

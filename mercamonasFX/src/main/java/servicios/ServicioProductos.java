@@ -1,8 +1,8 @@
 package servicios;
 
-import modelo.producto.Ingrediente;
-import modelo.producto.Producto;
-import modelo.producto.ProductoCaducable;
+import domain.modelo.producto.Ingrediente;
+import domain.modelo.producto.Producto;
+import domain.modelo.producto.ProductoCaducable;
 
 import java.util.List;
 

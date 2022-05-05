@@ -2,46 +2,51 @@ module javafx {
     requires javafx.graphics;
     requires javafx.controls;
     requires javafx.fxml;
-    requires javafx.base;
     requires MaterialFX;
-
-    exports ui;
-    exports ui.pantallas.productos;
 
     requires lombok;
     requires org.apache.logging.log4j;
-    requires com.fasterxml.jackson.dataformat.yaml;
-    requires com.fasterxml.jackson.databind;
-    requires com.google.gson;
-    requires jakarta.jakartaee.web.api;
-    requires jakarta.cdi;
+
     requires jakarta.inject;
+    requires jakarta.cdi;
+    requires com.fasterxml.jackson.databind;
+    requires com.fasterxml.jackson.dataformat.yaml;
+    requires com.google.gson;
 
-    exports modelo.cliente;
-    exports common;
-    opens ui to javafx.fxml;
-    opens modelo.producto to javafx.base, com.google.gson;
-    opens ui.pantallas.productos to javafx.fxml;
-
-
-    exports servicios;
-    exports dao.impl;
-    exports modelo.producto;
-    exports di;
-    exports ui.admin;
-    opens constantes;
-    exports ui.client;
-    exports servicios.impl;
-    exports dao;
-    opens config;
-    exports servicios.ficheros;
-    opens modelo.constantes;
-    opens modelo.cliente;
     exports ui.main to javafx.graphics;
-    opens ui.main;
-    exports ui.pantallas.common;
     exports ui.pantallas.principal;
-    opens ui.pantallas.principal;
+    exports ui.pantallas.pantallaNueva;
+    exports ui.pantallas.pantalla1;
+    exports ui.pantallas.login;
+    exports ui.pantallas.detalle;
+    exports ui.pantallas.listado;
+    exports config;
+    exports ui.pantallas.common;
+    exports common;
+    exports dao.impl;
+    exports domain.usecases;
 
+
+    opens ui.pantallas.pantalla1 to javafx.fxml;
+    opens ui.pantallas.pantallaNueva to javafx.fxml;
+    opens ui.pantallas.listado to javafx.fxml;
+    opens ui.pantallas.login to  javafx.fxml;
+    opens ui.pantallas.detalle to  javafx.fxml;
+    opens ui.pantallas.principal;
+    opens ui.main;
+    opens config;
+    opens fxml;
+
+    exports servicios.impl;
+    exports domain.modelo.cliente;
+    exports ui.client;
+    exports dao;
+    opens domain.modelo.constantes;
+    exports domain.modelo.producto;
+    exports ui.admin;
+    exports ui;
+    exports servicios.ficheros;
+    exports di;
+    opens constantes;
 }
 

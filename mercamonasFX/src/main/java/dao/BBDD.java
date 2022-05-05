@@ -5,8 +5,8 @@ import com.google.gson.reflect.TypeToken;
 import config.Configuration;
 import jakarta.inject.Inject;
 import lombok.extern.log4j.Log4j2;
-import modelo.cliente.Cliente;
-import modelo.producto.Producto;
+import domain.modelo.cliente.Cliente;
+import domain.modelo.producto.Producto;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;

@@ -1,7 +1,7 @@
 package dao;
 
-import modelo.producto.Ingrediente;
-import modelo.producto.Producto;
+import domain.modelo.producto.Ingrediente;
+import domain.modelo.producto.Producto;
 
 import java.util.List;
 

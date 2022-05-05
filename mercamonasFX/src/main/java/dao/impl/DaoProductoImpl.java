@@ -3,12 +3,12 @@ package dao.impl;
 import dao.BBDD;
 import dao.DaoProducto;
 import jakarta.inject.Inject;
-import modelo.cliente.Cliente;
-import modelo.cliente.LineaCompra;
-import modelo.producto.Ingrediente;
-import modelo.producto.Producto;
-import modelo.producto.ProductoCaducable;
-import modelo.producto.ProductoNormal;
+import domain.modelo.cliente.Cliente;
+import domain.modelo.cliente.LineaCompra;
+import domain.modelo.producto.Ingrediente;
+import domain.modelo.producto.Producto;
+import domain.modelo.producto.ProductoCaducable;
+import domain.modelo.producto.ProductoNormal;
 
 import java.time.LocalDateTime;
 import java.util.*;

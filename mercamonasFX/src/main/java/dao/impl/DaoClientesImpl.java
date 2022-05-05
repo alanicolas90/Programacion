@@ -3,11 +3,11 @@ package dao.impl;
 import dao.BBDD;
 import dao.DaoClientes;
 import jakarta.inject.Inject;
-import modelo.cliente.Cliente;
-import modelo.cliente.ClienteDescuento;
-import modelo.cliente.LineaCompra;
-import modelo.cliente.Monedero;
-import modelo.producto.Ingrediente;
+import domain.modelo.cliente.Cliente;
+import domain.modelo.cliente.ClienteDescuento;
+import domain.modelo.cliente.LineaCompra;
+import domain.modelo.cliente.Monedero;
+import domain.modelo.producto.Ingrediente;
 
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;

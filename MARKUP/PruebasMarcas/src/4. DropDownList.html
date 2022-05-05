@@ -1,0 +1,53 @@
+<!DOCTYPE html> <html>
+
+    <head> <title>Form Validation</title> </head>
+
+
+    <body>
+        <form action="something.php" id="frm" method="get">
+            <select id="country">
+                <option value=""> Select a country: </option>
+                <option value="spain"> Spain </option>
+                <option value="france"> France </option>
+            </select>
+            <select id="city">
+                <option value=""> Select a city: </option>
+            </select>
+        </form>
+        <script>
+            function fillCities(e) {
+                let country = document.getElementById("country");
+                selCountry = country.options[country.selectedIndex].value;
+                //country.disabled = true;
+                for (var opt of document.querySelectorAll('#city option'))
+                {opt.remove(); }
+                
+                let combo = document.getElementById("city");
+
+                combo.disabled = false;
+                
+                if (selCountry == 'spain')
+                    array = ['Madrid', 'Barcelona', 'Sevilla'];
+                else
+                    array = ['Paris', 'Toulouse', 'Lyon'];
+
+                for (i = 0; i < array.length; i++) {
+                    var option = document.createElement('option');
+                    option.text = array[i];
+                    combo.add(option, 0);
+                }
+            }
+
+            function assignEvents() {
+                document.getElementById("country").addEventListener("change", fillCities);
+            }
+            function initApp() {
+                document.getElementById("city").disabled = true;
+                assignEvents();
+            }
+            document.addEventListener("DOMContentLoaded", initApp);
+        </script>
+
+    </body>
+</html>
+

@@ -1,0 +1,21 @@
+<!DOCTYPE html> <html>
+
+<head> <title>Form Validation</title> </head>
+
+<body>
+    Enter your name: <input type="text" id="fname">
+    <script>
+    function upperCaseF() {
+        var x = document.getElementById("fname");
+        x.value = x.value.toUpperCase();
+    }
+
+    function assignEvents(){
+        //Blur: fired when input element lost focus
+            document.getElementById("fname").addEventListener("blur", upperCaseF);
+        }
+    document.addEventListener("DOMContentLoaded",assignEvents);
+    </script>
+</body>
+</html>
+

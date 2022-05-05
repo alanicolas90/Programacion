@@ -1,6 +1,6 @@
 package dao;
 
-import modelo.cliente.LineaCompra;
+import domain.modelo.cliente.LineaCompra;
 
 import java.util.List;
 

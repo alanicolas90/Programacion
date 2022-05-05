@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        div {
+            background-color: coral;
+            padding: 16px;
+        }
+    </style>
+    <body>
+        <h1>The Element Object</h1>
+        <h2>The addEventListener() Method</h2>
+        <p>The difference between bubbling and capturing:</p>
+        <div id="myDiv">
+            <p id="myP">Click this paragraph, I am Bubbling.</p>
+        </div><br>
+        <div id="myDiv2">
+            <p id="myP2">Click this paragraph, I am Capturing.</p>
+        </div>
+        <p id="demo"></p>
+
+        <script>
+
+            function assignEvents() {
+                document.getElementById("myP").addEventListener("click", function () {
+                    myDisplay("You clicked the P element!");}, false);
+
+                document.getElementById("myDiv").addEventListener("click", function () {
+                    myDisplay("You clicked the DIV element!");}, false);
+
+                document.getElementById("myP2").addEventListener("click", function () {
+                    myDisplay("You clicked the P element!");}, true);
+
+                document.getElementById("myDiv2").addEventListener("click", function () {
+                    myDisplay("You clicked the DIV element!");}, true);
+
+                function myDisplay(text) {
+                    document.getElementById("demo").innerHTML += text + "<br>";
+                }
+            }
+
+            document.addEventListener("DOMContentLoaded", assignEvents);
+        </script>
+
+    </body>
+</html>

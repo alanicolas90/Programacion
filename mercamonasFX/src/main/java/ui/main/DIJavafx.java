@@ -7,7 +7,6 @@ import jakarta.enterprise.inject.se.SeContainer;
 import jakarta.enterprise.inject.se.SeContainerInitializer;
 import jakarta.enterprise.util.AnnotationLiteral;
 
-
 public class DIJavafx extends Application {
 
     public static void main(String[] args) {

@@ -37,5 +37,12 @@
     "type": "ProductoNormal",
     "stock": 101000,
     "ingredientes": []
+  },
+  {
+    "name": "zanahoria",
+    "price": 2.0,
+    "type": "ProductoNormal",
+    "stock": 2000,
+    "ingredientes": []
   }
 ]

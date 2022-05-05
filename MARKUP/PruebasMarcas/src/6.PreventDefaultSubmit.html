@@ -1,0 +1,33 @@
+<!DOCTYPE html> <html>
+
+<head> <title>Form Validation</title> </head>
+
+<body>
+
+<form id="myform" action="something.php" method="post"> 
+    username: <input type="text" id="username" value="">
+    password: <input type="password" id="pw" value="">
+    <input type="submit" value="Login"> 
+</form>
+
+<script>   
+function validate(e) {
+    let errors='';
+    let username = document.getElementById("username").value;
+    if(username == '') errors = errors + 'Please specify a username.\n';
+    let pw = document.getElementById("pw").value;
+    if(pw == '') errors = errors + 'Please specify a password.\n';
+    if(errors != '') {
+            e.preventDefault();
+            alert("Errors: " + errors);
+    }
+} 
+function assignEvents(){
+        document.getElementById("myform").addEventListener("submit", validate);
+    }
+    document.addEventListener("DOMContentLoaded",assignEvents);
+</script>
+
+</body>
+</html>
+

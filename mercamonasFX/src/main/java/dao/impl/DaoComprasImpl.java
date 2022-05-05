@@ -3,11 +3,11 @@ package dao.impl;
 import dao.BBDD;
 import dao.DaoCompras;
 import jakarta.inject.Inject;
-import modelo.cliente.Cliente;
-import modelo.cliente.LineaCompra;
-import modelo.cliente.Monedero;
-import modelo.producto.Producto;
-import modelo.producto.ProductoNormal;
+import domain.modelo.cliente.Cliente;
+import domain.modelo.cliente.LineaCompra;
+import domain.modelo.cliente.Monedero;
+import domain.modelo.producto.Producto;
+import domain.modelo.producto.ProductoNormal;
 
 import java.util.List;
 import java.util.Map;

@@ -3,8 +3,8 @@ package dao.impl;
 import dao.BBDD;
 import dao.DaoProductoCaducable;
 import jakarta.inject.Inject;
-import modelo.producto.Producto;
-import modelo.producto.ProductoCaducable;
+import domain.modelo.producto.Producto;
+import domain.modelo.producto.ProductoCaducable;
 
 import java.util.List;
 

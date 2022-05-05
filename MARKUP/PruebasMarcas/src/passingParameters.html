@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>The Element Object</h1>
+        <h2>The addEventListener() Method</h2>
+        <p>How to pass parameter values with addEventListener().</p>
+        <p>Click the button to perform a calculation.</p>
+        <button id="myBtn">Try it</button>
+        <p id="demo"></p>
+
+        <script>
+            function myFunction(a, b) {
+                document.getElementById("demo").innerHTML = a * b;
+            }
+            function assignEvents(e) {
+                let p1 = 5;
+                let p2 = 7;
+
+                document.getElementById("myBtn").addEventListener("click", function () {
+                    myFunction(p1, p2);
+                });
+            }
+
+            document.addEventListener("DOMContentLoaded", assignEvents);
+        </script>
+
+    </body>
+</html>

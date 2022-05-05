@@ -1,0 +1,70 @@
+<!DOCTYPE html> <html>
+
+<head> <title>Form Validation</title> </head>
+
+
+<body>
+    <form action="something.php" id="frm" method="get">
+        Select a country: <br/>
+        <input type="radio" name="country" value="Spain"> Spain <br/>
+        <input type="radio" name="country" value="France"> France <br/>
+        <input type="radio" name="country" value="UK"> UK <br/>
+        <input type="radio" name="country" value="Germany"> Germany <br/>
+                <br/>
+        <input type="checkbox" name="accept" value="terms">I have read and I accept the terms <br/>
+        <input type="checkbox" name="accept" value="conditions">I have read and I accept the conditions <br/>
+        <br/>
+        <select id="music">
+            <option value=""> Select a type of music: </option>
+            <option value="rap"> Rap </option>
+            <option value="rock"> Rock </option>
+            <option value="clasic"> Clasic </option>
+        </select>
+        <br/>
+        <input type="submit" value="Submit">
+    </form>
+    <script>
+    function validate(e) {
+        
+        var errors='';
+        //Validation of radioButton 
+        const radioButtons = document.querySelectorAll('input[name="country"]');
+        let selectedSize=null;
+        for (const radioButton of radioButtons) {
+                if (radioButton.checked) {
+                    selectedSize = radioButton.value;
+                    break;
+                }
+            }
+        if (selectedSize == null) 
+            errors += 'Please select a country \n';
+        
+        //Validation of checkBox
+        selected = false;
+        let chkBox = document.getElementsByName("accept");
+        for (let cb of chkBox) 
+            if (cb.checked == true)
+                selected=true;
+       
+        if (!selected) 
+            errors += 'Please accept the terms and conditions \n';
+        
+        //Validation of comboBox
+        var combo = document.getElementById("music");
+        if (combo.value == null || combo.value == '' )
+            errors += 'Please select a type of music \n';
+        if(errors != '') {
+            e.preventDefault();
+            alert("Errors: " + errors);
+        }
+    }
+
+    function assignEvents(){
+            document.getElementById("frm").addEventListener("submit", validate);
+        }
+    document.addEventListener("DOMContentLoaded",assignEvents);
+    </script>
+
+</body>
+</html>
+

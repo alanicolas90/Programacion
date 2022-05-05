@@ -3,16 +3,10 @@ K
 src/main/java/dao/BBDD.java,9\2\92862b6cde30657a8b1edda56d854f2953c72eae
 \
 ,src/test/java/dao/clientes/ClientesTest.java,6\7\671a4101ed5676692afcfb19d246fc24bf3caa52
-\
-,src/main/java/servicios/ServicioCompras.java,4\7\47078600c0bd41e5362e593f31cef926948576de
-\
-,src/main/java/servicios/ServicioClients.java,a\5\a5a783be68766073779e844470ae3406ffcc144e
 _
 /src/test/java/dao/monedero/DaoMonederoTest.java,7\c\7c7a296f6fe6dcefac20cda5306d69516110786b
 Q
 !src/main/java/dao/DaoCompras.java,3\a\3a1d5fcfd1593ff8d68d97e07786b8b3f2a0f85e
-R
-"src/main/java/dao/DaoClientes.java,d\d\dde956cbbf4483ca8667efa17690520a8cba2d0d
 ]
 -src/test/java/dao/compras/DaoComprasTest.java,4\8\48ad726005717ac7e063bbb4f2f5406d58f4cb6a
 Q
@@ -31,3 +25,17 @@ h
 8src/test/java/dao/Producto/DaoProductoCaducableTest.java,e\0\e0874b8bcf825f2b2be587c16a1117e4b0bc896a
 _
 /src/test/java/dao/Producto/DaoProductoTest.java,5\c\5c050bfccafec2af30c79c7e6a702826b879c136
+7
+pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
+P
+ src/main/java/common/Common.java,1\f\1f0f1ac1e908685e5a5d0d50f31f2929f463cc5f
+\
+,src/main/java/servicios/ServicioCompras.java,4\7\47078600c0bd41e5362e593f31cef926948576de
+\
+,src/main/java/servicios/ServicioClients.java,a\5\a5a783be68766073779e844470ae3406ffcc144e
+^
+.src/main/java/ui/admin/UiMenuAdminCliente.java,b\c\bc85f93e24f7b27d7328d68d951ac7cd5e1eb424
+R
+"src/main/java/dao/DaoClientes.java,d\d\dde956cbbf4483ca8667efa17690520a8cba2d0d
+J
+src/main/java/ui/Main.java,f\5\f5f833a11c774bc6d9fec08fc87be62b89228540

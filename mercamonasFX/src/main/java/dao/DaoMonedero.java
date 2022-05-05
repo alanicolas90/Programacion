@@ -1,6 +1,6 @@
 package dao;
 
-import modelo.cliente.Monedero;
+import domain.modelo.cliente.Monedero;
 
 import java.util.Set;
 

@@ -1,0 +1,27 @@
+<!DOCTYPE html> <html>
+
+<head> <title>Form Validation</title> </head>
+
+<body>
+
+<form id="myform" action="something.php" method="post"> 
+    username: <input type="text" id="username" value="">
+    <input type="submit" value="Login">
+    <input type="reset" value="Reset">
+</form>
+
+<script>   
+function warnReset(e) {
+    var answer = confirm ("Are you sure you want to reset the form?");
+    if(!answer) 
+        e.preventDefault();
+} 
+function assignEvents(){
+        document.getElementById("myform").addEventListener("reset", warnReset);
+    }
+    document.addEventListener("DOMContentLoaded",assignEvents);
+</script>
+
+</body>
+</html>
+

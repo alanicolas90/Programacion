@@ -3,12 +3,12 @@ package di;
 import com.google.gson.*;
 import gsonutils.RuntimeTypeAdapterFactory;
 import jakarta.enterprise.inject.Produces;
-import modelo.cliente.Cliente;
-import modelo.cliente.ClienteDescuento;
-import modelo.cliente.ClienteNormal;
-import modelo.producto.Producto;
-import modelo.producto.ProductoCaducable;
-import modelo.producto.ProductoNormal;
+import domain.modelo.cliente.Cliente;
+import domain.modelo.cliente.ClienteDescuento;
+import domain.modelo.cliente.ClienteNormal;
+import domain.modelo.producto.Producto;
+import domain.modelo.producto.ProductoCaducable;
+import domain.modelo.producto.ProductoNormal;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;

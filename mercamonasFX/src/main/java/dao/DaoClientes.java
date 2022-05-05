@@ -1,8 +1,8 @@
 package dao;
 
-import modelo.cliente.Cliente;
-import modelo.cliente.ClienteDescuento;
-import modelo.cliente.LineaCompra;
+import domain.modelo.cliente.Cliente;
+import domain.modelo.cliente.ClienteDescuento;
+import domain.modelo.cliente.LineaCompra;
 
 import java.util.List;
 import java.util.Map;

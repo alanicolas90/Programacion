@@ -3,9 +3,9 @@ package servicios.impl;
 import dao.DaoProducto;
 import dao.DaoProductoCaducable;
 import jakarta.inject.Inject;
-import modelo.producto.Ingrediente;
-import modelo.producto.Producto;
-import modelo.producto.ProductoCaducable;
+import domain.modelo.producto.Ingrediente;
+import domain.modelo.producto.Producto;
+import domain.modelo.producto.ProductoCaducable;
 import servicios.ServicioProductos;
 
 import java.time.LocalDateTime;

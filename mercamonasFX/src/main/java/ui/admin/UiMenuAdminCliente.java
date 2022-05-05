@@ -3,9 +3,9 @@ package ui.admin;
 import common.Common;
 import constantes.Constantes;
 import jakarta.inject.Inject;
-import modelo.cliente.Cliente;
-import modelo.cliente.ClienteDescuento;
-import modelo.cliente.ClienteNormal;
+import domain.modelo.cliente.Cliente;
+import domain.modelo.cliente.ClienteDescuento;
+import domain.modelo.cliente.ClienteNormal;
 import servicios.ServicioClients;
 
 import java.util.Scanner;

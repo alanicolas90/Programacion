@@ -1,8 +1,8 @@
 package servicios;
 
-import modelo.cliente.Cliente;
-import modelo.cliente.LineaCompra;
-import modelo.cliente.Monedero;
+import domain.modelo.cliente.Cliente;
+import domain.modelo.cliente.LineaCompra;
+import domain.modelo.cliente.Monedero;
 
 import java.util.List;
 import java.util.Map;

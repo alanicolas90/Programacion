@@ -3,8 +3,8 @@ package dao.impl;
 import dao.BBDD;
 import dao.DaoMonedero;
 import jakarta.inject.Inject;
-import modelo.cliente.Cliente;
-import modelo.cliente.Monedero;
+import domain.modelo.cliente.Cliente;
+import domain.modelo.cliente.Monedero;
 
 import java.util.Map;
 import java.util.Set;

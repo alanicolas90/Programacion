@@ -9,6 +9,7 @@ import javafx.stage.Stage;
 import ui.pantallas.principal.PrincipalController;
 
 import java.io.IOException;
+import java.util.Properties;
 import java.util.ResourceBundle;
 
 public class MainFX {

@@ -4,7 +4,7 @@ import dao.DaoClientes;
 import dao.DaoCompras;
 import dao.DaoProducto;
 import jakarta.inject.Inject;
-import modelo.cliente.LineaCompra;
+import domain.modelo.cliente.LineaCompra;
 import servicios.ServicioClients;
 import servicios.ServicioCompras;
 

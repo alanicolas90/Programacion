@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <body>
+
+        <p>Press a key on the keyboard in the input field to get the Unicode character code of the pressed key.</p>
+
+        <input type="text" size="40" id="idMessage">
+
+        <p id="demo"></p>
+
+        <script>
+
+            function myFunction(event) {
+                var x = event.which || event.keyCode;
+                document.getElementById("demo").innerHTML = "The Unicode value is: " + x;
+            }
+            function assignEvents() {
+                textMessage = document.getElementById('idMessage');
+                textMessage.addEventListener('keypress', myFunction);
+            }
+
+            document.addEventListener("DOMContentLoaded", assignEvents);
+        </script>
+
+    </body>

@@ -5,9 +5,9 @@ import dao.DaoClientes;
 import dao.DaoMonedero;
 import dao.DaoProducto;
 import jakarta.inject.Inject;
-import modelo.cliente.Cliente;
-import modelo.cliente.LineaCompra;
-import modelo.cliente.Monedero;
+import domain.modelo.cliente.Cliente;
+import domain.modelo.cliente.LineaCompra;
+import domain.modelo.cliente.Monedero;
 import servicios.ServicioClients;
 
 import java.util.List;

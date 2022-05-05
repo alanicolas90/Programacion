@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+
+    <body>
+        <p>Enter a number and click OK:</p>
+        <input type="text" id="txt2">
+        <input type="button" id="OKb" value="OK" />
+        <p id="p1">If the number is less than 100 or greater than 300, a message will be displayed.</p>
+        <p id="demo"></p>
+
+        <script>
+            function validate() {
+                var inpObj = document.getElementById("txt2");
+                if (inpObj.value >= 100 && inpObj.value <= 300) {
+                    document.getElementById("demo").innerHTML = "The number is between 100 and 300";
+                } else {
+                    document.getElementById("demo").innerHTML = "Try again";
+                }
+            }
+
+            function assignEvents(e) {
+                okButton = document.getElementById('OKb');
+                okButton.addEventListener('click', validate);
+            }
+
+            document.addEventListener("DOMContentLoaded", assignEvents);
+
+        </script>
+    </body>
+</html>
