@@ -3,7 +3,7 @@ package servicios.ficheros;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import config.Configuration;
-import ui.Main;
+import ui.Mains;
 
 import java.io.IOException;
 
@@ -19,7 +19,7 @@ public class ServiciosFicheros {
 
         try {
             config = mapper.readValue(
-                    Main.class.getClassLoader().getResourceAsStream("config.yaml"), Configuration.class);
+                    Mains.class.getClassLoader().getResourceAsStream("config.yaml"), Configuration.class);
         } catch (IOException e) {
             e.printStackTrace();
         }

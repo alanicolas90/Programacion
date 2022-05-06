@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>Image Changer</h1>
+<div id="div_image">
+    <img src="download.png" alt="whatsapp_image" id="img">
+</div>
+
+<script>
+
+    function assignEvents() {
+        document.getElementById("img").addEventListener("click", function () {
+            myDisplay("The image was deleted");}, false);
+
+        function myDisplay(text) {
+            document.getElementById("div_image").innerHTML= text;
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", assignEvents);
+</script>
+
+</body>
+</html>

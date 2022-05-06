@@ -1,0 +1,49 @@
+.container {
+    max-width: 500px;
+    margin: 10vh auto 0 auto;
+    border: solid 3px black;
+}
+
+#display {
+    text-align: right;
+    height: 70px;
+    line-height: 70px;
+    padding: 16px 8px;
+    font-size: 25px;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+
+.button {
+    border: 1px solid black;
+    line-height: 100px;
+    text-align: center;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+#equal,#clear,#erase {
+    background-color: blue;
+    color: white;
+}
+
+
+#divide,#multiply,#minus,#sum, #coma {
+    background-color: red;
+    color: white;
+}
+
+#equal:hover,#clear:hover,#erase:hover,#divide:hover,#multiply:hover,#minus:hover,#sum:hover, #coma:hover {
+    background-color: #323330;
+    transition: 0.3s ease-in-out;
+}
+
+.button:hover {
+    background-color: #323330;
+    color: white;
+    transition: 0.5s ease-in-out;
+}

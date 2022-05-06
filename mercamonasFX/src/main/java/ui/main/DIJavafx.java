@@ -22,6 +22,7 @@ public class DIJavafx extends Application {
         primaryStage.setMinHeight(600);
         primaryStage.setResizable(true);
         container.getBeanManager().fireEvent(primaryStage, new AnnotationLiteral<StartupScene>() {});
+
     }
 
 }

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>Image Changer</h1>
+<div id="div_image" onclick="removeEvent()">
+    <img src="download.png" alt="whatsapp_image" id="img">
+</div>
+
+<script>
+    function removeEvent() {
+        var child = document.getElementById("img");
+        var parent = document.getElementById("div_image");
+        parent.removeChild(child);
+        parent.innerHTML = "<p>Tu imagen ha sido eliminado con exito</p>";
+    }
+</script>
+</body>
+</html>
