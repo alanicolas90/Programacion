@@ -64,7 +64,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                 <div class="card" style="border-radius: 15px;">
                     <div class="card-body p-5">
                         <h2 class="text-uppercase text-center mb-5 border-bottom">Contact Us</h2>
-                        <form>
+                        <form id="form">
                             <div class="row">
                                 <div class="form-outline mb-2 col-md-6">
                                     <label class="form-label" for="name">Name</label>
@@ -83,7 +83,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 
                             <div class="form-outline mb-2">
                                 <label class="form-label" for="topic">Why you want to contact us</label>
-                                <select class="form-select" id="topic">
+                                <select class="form-select" id="topic" onchange="alertTopic()">
                                     <option>Question about something</option>
                                     <option>Problem related to delivery</option>
                                     <option>Complaint</option>
@@ -111,7 +111,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 
                             <div class="d-flex justify-content-center">
                                 <button type="submit"
-                                        class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Send
+                                        class="btn btn-success btn-block btn-lg gradient-custom-4 text-body mx-3">Send
+                                </button>
+                                <button type="reset"
+                                        class="btn btn-success btn-block btn-lg gradient-custom-4 text-body mx-3">Reset
                                 </button>
                             </div>
                         </form>
@@ -153,16 +156,65 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             <div class="footer-col col-md-3">
                 <h4>follow us</h4>
                 <div class="social-links">
-                    <a href="https://www.facebook.com/"><ion-icon name="logo-facebook"></ion-icon></a>
-                    <a href="https://twitter.com/"><ion-icon name="logo-twitter"></ion-icon></a>
-                    <a href="https://instagram.com/"><ion-icon name="logo-instagram"></ion-icon></a>
-                    <a href="https://linkedin.com/"><ion-icon name="logo-linkedin"></ion-icon></a>
+                    <a href="https://www.facebook.com/">
+                        <ion-icon name="logo-facebook"></ion-icon>
+                    </a>
+                    <a href="https://twitter.com/">
+                        <ion-icon name="logo-twitter"></ion-icon>
+                    </a>
+                    <a href="https://instagram.com/">
+                        <ion-icon name="logo-instagram"></ion-icon>
+                    </a>
+                    <a href="https://linkedin.com/">
+                        <ion-icon name="logo-linkedin"></ion-icon>
+                    </a>
                 </div>
             </div>
         </div>
-        <div class="row mt-4">Copyright © 2021 Defecto Fruta. All rights reserved.  Powered by nopCommerce</div>
+        <div class="row mt-4">Copyright © 2021 Defecto Fruta. All rights reserved. Powered by nopCommerce</div>
     </div>
 </div>
+<script>
+    var form = document.getElementById('form');
 
+    function submitLog() {
+        alert("Submitted correctly!!");
+    }
+
+    function upperCaseName() {
+        var x = document.getElementById("name");
+        x.value = x.value.charAt(0).toUpperCase() + x.value.slice(1);
+    }
+
+    function upperCaseSurname() {
+        var x = document.getElementById("Surname");
+        x.value = x.value.charAt(0).toUpperCase() + x.value.slice(1);
+    }
+
+    var topic = document.getElementById('topic');
+
+    function alertTopic() {
+        alert("u selected this CARE. Ur selection is: " + topic.value);
+    }
+
+    function warningReset(e) {
+        var answer = confirm("Are you sure you want to reset the form?");
+        if (!answer) {
+            e.preventDefault();
+        }
+    }
+
+
+    function assignEvents() {
+        document.getElementById("name").addEventListener("blur", upperCaseName);
+        document.getElementById("Surname").addEventListener("blur", upperCaseSurname);
+        document.getElementById("form").addEventListener("reset", warningReset);
+        form.addEventListener("submit", submitLog);
+    }
+
+    document.addEventListener("DOMContentLoaded", assignEvents);
+
+
+</script>
 
 </body>
