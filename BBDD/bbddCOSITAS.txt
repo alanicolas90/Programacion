@@ -1,0 +1,22 @@
+CREATE OR REPLACE PROCEDURE MostrarSuma (p_num1 NUMBER, p_num2 NUMBER, p_num3 NUMBER, p_num4 NUMBER, p_num5 NUMBER)
+IS
+	v_suma NUMBER;
+BEGIN
+	v_suma:=p_num1+p_num2+p_num3+p_num4+p_num5;
+	dbms_output.put_line('Suma=' || v_suma);
+END MostrarSuma;
+/
+
+execute mostrarsuma(1,1,1,1,1);
+
+
+
+CREATE OR REPLACE FUNCTION FUNCION1(a number, b number) RETURN NUMBER AS
+c number;
+BEGIN
+c:=a*b;
+RETURN c;
+END FUNCION1;
+/
+
+SELECT funcion1(3,2) from dual;

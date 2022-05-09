@@ -1,0 +1,207 @@
+SQL> CREATE TABLE DEPART (
+  2   DEPT_NO  NUMBER(2) primary key,
+  3   DNOMBRE  VARCHAR2(14),
+  4   LOC      VARCHAR2(14) ) ;
+
+Tabla creada.
+
+SQL> desc depart
+ Nombre                                    ¿Nulo?   Tipo
+ ----------------------------------------- -------- ----------------------------
+ DEPT_NO                                   NOT NULL NUMBER(2)
+ DNOMBRE                                            VARCHAR2(14)
+ LOC                                                VARCHAR2(14)
+
+SQL> INSERT INTO DEPART VALUES (10,'Contabilidad','SEVILLA');
+
+1 fila creada.
+
+SQL> INSERT INTO DEPART VALUES (20,NULL,'MADRID');
+
+1 fila creada.
+
+SQL> INSERT INTO DEPART VALUES (30,'VENTAS',NULL);
+
+1 fila creada.
+
+SQL> INSERT INTO DEPART VALUES (40,'PRODUCCI?N','bilbao');
+
+1 fila creada.
+
+SQL> desc depart
+ Nombre                                    ¿Nulo?   Tipo
+ ----------------------------------------- -------- ----------------------------
+ DEPT_NO                                   NOT NULL NUMBER(2)
+ DNOMBRE                                            VARCHAR2(14)
+ LOC                                                VARCHAR2(14)
+
+SQL> select * from depart
+  2  ;
+
+   DEPT_NO DNOMBRE        LOC                                                   
+---------- -------------- --------------                                        
+        10 Contabilidad   SEVILLA                                               
+        20                MADRID                                                
+        30 VENTAS                                                               
+        40 PRODUCCI?N     bilbao                                                
+
+SQL> CREATE TABLE EMPLE (
+  2   EMP_NO    NUMBER(4) primary key,
+  3   APELLIDO  VARCHAR2(10)  ,
+  4   OFICIO    VARCHAR2(10)  ,
+  5   DIR       NUMBER(4) ,
+  6   FECHA_ALT DATE      ,
+  7   SALARIO   NUMBER(10),
+  8   COMISION  NUMBER(10),
+  9   DEPT_NO  NUMBER(2),
+ 10   foreign key (DEPT_NO) references depart;
+ foreign key (DEPT_NO) references depart
+                                       *
+ERROR en línea 10:
+ORA-00907: falta el paréntesis derecho 
+
+
+SQL> CREATE TABLE EMPLE (
+  2   EMP_NO    NUMBER(4) primary key,
+  3   APELLIDO  VARCHAR2(10)  ,
+  4   OFICIO    VARCHAR2(10)  ,
+  5   DIR       NUMBER(4) ,
+  6   FECHA_ALT DATE      ,
+  7   SALARIO   NUMBER(10),
+  8   COMISION  NUMBER(10),
+  9   DEPT_NO  NUMBER(2),
+ 10   foreign key (DEPT_NO) references depart);
+
+Tabla creada.
+
+SQL> INSERT INTO EMPLE VALUES (7369,'S?NCHEZ','EMPLEADO',7902,'17/12/1980',104000,NULL,20);
+
+1 fila creada.
+
+SQL> INSERT INTO EMPLE VALUES (7499,'ARROYO','VENDEDOR',7698,'20/02/1980',208000,39000,30);
+
+1 fila creada.
+
+SQL> INSERT INTO EMPLE VALUES (7521,'SALA','VENDEDOR',7698,'22/02/1981',162500,65000,30);
+
+1 fila creada.
+
+SQL> INSERT INTO EMPLE VALUES (7566,'JIM?NEZ','DIRECTOR',7839,'02/04/1981',386750,NULL,20);
+
+1 fila creada.
+
+SQL> INSERT INTO EMPLE VALUES (7654,'MART?N','VENDEDOR',7698,'29/09/1981',162500,182000,30);
+
+1 fila creada.
+
+SQL> INSERT INTO EMPLE VALUES (7698,'NEGRO','DIRECTOR',7839,'01/05/1981',370500,NULL,30);
+
+1 fila creada.
+
+SQL> INSERT INTO EMPLE VALUES (7782,'CEREZO','DIRECTOR',7839,'09/06/1981',318500,NULL,10);
+
+1 fila creada.
+
+SQL> INSERT INTO EMPLE VALUES (7788,'GIL','ANALISTA',7566,'09/11/1981',390000,NULL,20);
+
+1 fila creada.
+
+SQL> INSERT INTO EMPLE VALUES (7839,'REY','PRESIDENTE',NULL,'17/11/1981',50000,NULL,10);
+
+1 fila creada.
+
+SQL> INSERT INTO EMPLE VALUES (7844,'TOVAR','VENDEDOR',7698,'08/09/1981',195000,0,30);
+
+1 fila creada.
+
+SQL> INSERT INTO EMPLE VALUES (7876,'ALONSO','EMPLEADO',7788,'23/09/1981',143000,NULL,20);
+
+1 fila creada.
+
+SQL> INSERT INTO EMPLE VALUES (7900,'JIMENO','EMPLEADO',7698,'03/12/1981',123500,NULL,30);
+
+1 fila creada.
+
+SQL> INSERT INTO EMPLE VALUES (7902,'FERN?NDEZ','ANALISTA',7566,'03/12/1981',390000,NULL,20);
+
+1 fila creada.
+
+SQL> INSERT INTO EMPLE VALUES (7934,'MU?OZ','EMPLEADO',7782,'23/01/1982',169000,NULL,10);
+
+1 fila creada.
+
+SQL> select * from emple
+  2  ;
+
+    EMP_NO APELLIDO   OFICIO            DIR FECHA_AL    SALARIO   COMISION      
+---------- ---------- ---------- ---------- -------- ---------- ----------      
+   DEPT_NO                                                                      
+----------                                                                      
+      7369 S?NCHEZ    EMPLEADO         7902 17/12/80     104000                 
+        20                                                                      
+                                                                                
+      7499 ARROYO     VENDEDOR         7698 20/02/80     208000      39000      
+        30                                                                      
+                                                                                
+      7521 SALA       VENDEDOR         7698 22/02/81     162500      65000      
+        30                                                                      
+                                                                                
+
+    EMP_NO APELLIDO   OFICIO            DIR FECHA_AL    SALARIO   COMISION      
+---------- ---------- ---------- ---------- -------- ---------- ----------      
+   DEPT_NO                                                                      
+----------                                                                      
+      7566 JIM?NEZ    DIRECTOR         7839 02/04/81     386750                 
+        20                                                                      
+                                                                                
+      7654 MART?N     VENDEDOR         7698 29/09/81     162500     182000      
+        30                                                                      
+                                                                                
+      7698 NEGRO      DIRECTOR         7839 01/05/81     370500                 
+        30                                                                      
+                                                                                
+
+    EMP_NO APELLIDO   OFICIO            DIR FECHA_AL    SALARIO   COMISION      
+---------- ---------- ---------- ---------- -------- ---------- ----------      
+   DEPT_NO                                                                      
+----------                                                                      
+      7782 CEREZO     DIRECTOR         7839 09/06/81     318500                 
+        10                                                                      
+                                                                                
+      7788 GIL        ANALISTA         7566 09/11/81     390000                 
+        20                                                                      
+                                                                                
+      7839 REY        PRESIDENTE            17/11/81      50000                 
+        10                                                                      
+                                                                                
+
+    EMP_NO APELLIDO   OFICIO            DIR FECHA_AL    SALARIO   COMISION      
+---------- ---------- ---------- ---------- -------- ---------- ----------      
+   DEPT_NO                                                                      
+----------                                                                      
+      7844 TOVAR      VENDEDOR         7698 08/09/81     195000          0      
+        30                                                                      
+                                                                                
+      7876 ALONSO     EMPLEADO         7788 23/09/81     143000                 
+        20                                                                      
+                                                                                
+      7900 JIMENO     EMPLEADO         7698 03/12/81     123500                 
+        30                                                                      
+                                                                                
+
+    EMP_NO APELLIDO   OFICIO            DIR FECHA_AL    SALARIO   COMISION      
+---------- ---------- ---------- ---------- -------- ---------- ----------      
+   DEPT_NO                                                                      
+----------                                                                      
+      7902 FERN?NDEZ  ANALISTA         7566 03/12/81     390000                 
+        20                                                                      
+                                                                                
+      7934 MU?OZ      EMPLEADO         7782 23/01/82     169000                 
+        10                                                                      
+                                                                                
+
+14 filas seleccionadas.
+
+SQL> show spool
+spool ON
+SQL> spool off

@@ -1,0 +1,5 @@
+IF (Decisión=Envío España) && (Envío= Envío 1comunidad) THEN (Impacto=NO)
+IF (decisión = Envío España) && (Envío = Envío +1 comunidad) THEN (Impacto = SI)
+IF (Decisión = Envío Europeo) THEN (Impacto=SI)
+IF (Decisión = consolidación)&& (Cambiar=Si) THEN (Impacto=SI)
+IF (Decisión = consolidación)&& (Cambiar=NO) THEN (Impacto=NO)
