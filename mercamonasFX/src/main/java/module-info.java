@@ -15,7 +15,7 @@ module javafx {
 
     exports ui.main to javafx.graphics;
     exports ui.pantallas.principal;
-    exports ui.pantallas.pantallaNueva;
+    exports ui.pantallas.productos;
     exports ui.pantallas.pantalla1;
     exports ui.pantallas.login;
     exports ui.pantallas.detalle;
@@ -28,7 +28,7 @@ module javafx {
 
 
     opens ui.pantallas.pantalla1 to javafx.fxml;
-    opens ui.pantallas.pantallaNueva to javafx.fxml;
+    opens ui.pantallas.productos;
     opens ui.pantallas.listado to javafx.fxml;
     opens ui.pantallas.login to  javafx.fxml;
     opens ui.pantallas.detalle to  javafx.fxml;
@@ -48,5 +48,6 @@ module javafx {
     exports servicios.ficheros;
     exports di;
     opens constantes;
+    opens domain.modelo.producto;
 }
 

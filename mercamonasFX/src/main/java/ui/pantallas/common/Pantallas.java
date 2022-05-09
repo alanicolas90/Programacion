@@ -6,7 +6,7 @@ public enum Pantallas {
     LOGIN ("/fxml/login.fxml"),
     LISTADO ("/fxml/listado.fxml"),
     DETALLE ("/fxml/detalle.fxml"),
-    PANTALLANUEVA (ConstantesPantallas.FXML_PANTALLA_NUEVA_FXML);
+    PRODUCTOS("/fxml/productos.fxml");
 
     private String ruta;
     Pantallas(String ruta) {

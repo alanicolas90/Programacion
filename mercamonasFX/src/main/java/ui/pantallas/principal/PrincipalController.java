@@ -101,10 +101,6 @@ public class PrincipalController {
         return panePantalla;
     }
 
-
-
-
-
     public void logout() {
         actualUser = null;
         menuPrincipal.setVisible(false);
@@ -209,16 +205,11 @@ public class PrincipalController {
     private void cambiarcss(ActionEvent actionEvent) {
         System.out.println(primaryStage.getScene().getRoot().getStylesheets().stream().findFirst().get());
 
-
         primaryStage.getScene().getRoot().getStylesheets().clear();
-
-
 
         primaryStage.getScene().getRoot().getStylesheets().add(getClass().getResource("/css/darkmode.css").toExternalForm());
 
     }
-
-
 
     public double getHeight() {
         return root.getScene().getWindow().getHeight();
@@ -229,7 +220,6 @@ public class PrincipalController {
 //        return 600;
         return root.getScene().getWindow().getWidth();
     }
-
 
     @FXML
     private void menuClick(ActionEvent actionEvent) {
@@ -242,13 +232,12 @@ public class PrincipalController {
                 cargarPantalla(Pantallas.LISTADO);
                 break;
             case "menuItemPantallaNueva":
-                cargarPantalla(Pantallas.PANTALLANUEVA);
+                cargarPantalla(Pantallas.PRODUCTOS);
                 break;
             case "menuItemLogout":
                 logout();
                 break;
         }
-
 
     }
 
@@ -266,8 +255,6 @@ public class PrincipalController {
     public void onSeleccionCromo(Cromo p) {
         this.cromoSeleccionado = p;
         cargarPantalla(Pantallas.DETALLE);
-
-
 
     }
 }
