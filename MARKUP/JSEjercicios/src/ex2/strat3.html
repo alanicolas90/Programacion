@@ -8,26 +8,28 @@
 
 <h1>Image Changer</h1>
 <div id="div_image">
-    <img src="download.png" alt="whatsapp_image" id="img" onclick="hideEvent()">
-    <p id="paragraph" onclick="hideEvent()" style="display: none">Image is hidden</p>
+    <img src="download.png" alt="whatsapp_image" id="img" >
+    <p id="paragraph"  style="display: none">Image is hidden</p>
 </div>
 
 <script>
+    function assignEvents() {
+        document.getElementById("paragraph").addEventListener("click", hideEvent);
 
-    function hideEvent() {
-        var image = document.getElementById("img");
-        var pararagraph = document.getElementById("paragraph");
+        function hideEvent() {
+            var image = document.getElementById("img");
+            var pararagraph = document.getElementById("paragraph");
 
-        if(image.style.display != "none") {
-            image.style.display = "none";
-            pararagraph.style.display = "block";
-        } else {
-            image.style.display = "block";
-            pararagraph.style.display = "none";
+            if (image.style.display != "none") {
+                image.style.display = "none";
+                pararagraph.style.display = "block";
+            } else {
+                image.style.display = "block";
+                pararagraph.style.display = "none";
+            }
+           document.getElementById("div_image").style.display = "none";
         }
-        // document.getElementById("div_image").style.display = "none";
     }
-
     document.addEventListener("DOMContentLoaded", assignEvents);
 </script>
 

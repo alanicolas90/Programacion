@@ -7,17 +7,27 @@
 <body>
 
 <h1>Image Changer</h1>
-<div id="div_image" onclick="removeEvent()">
+<div id="div_image">
     <img src="download.png" alt="whatsapp_image" id="img">
 </div>
 
 <script>
-    function removeEvent() {
-        var child = document.getElementById("img");
-        var parent = document.getElementById("div_image");
-        parent.removeChild(child);
-        parent.innerHTML = "<p>Tu imagen ha sido eliminado con exito</p>";
+    function assignEvents() {
+        let img = document.getElementById("div_image");
+        img.addEventListener('click',removeEvent);
+
+        function removeEvent() {
+            let paragraph = document.createElement("p");
+            paragraph.id = "paragraph";
+            paragraph.innerHTML = "su imagen ha sido eliminada";
+
+            let child = document.getElementById("img");
+            let parent = document.getElementById("div_image");
+            parent.removeChild(child);
+            parent.innerHTML = paragraph.outerHTML;
+        }
     }
+    document.addEventListener("DOMContentLoaded", assignEvents);
 </script>
 </body>
 </html>

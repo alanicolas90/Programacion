@@ -1,0 +1,21 @@
+fieldset{
+    max-width: 500px;
+    margin: 2vh auto 0 auto;
+    border: solid 3px black;
+}
+
+#title{
+    font-size: 2em;
+    text-align: center;
+    color: blue;
+}
+#container {
+    max-width: 530px;
+    margin: 1vh auto 0 auto;
+}
+
+#field{
+    max-width: 500px;
+    margin: 2vh auto 0 auto;
+    text-align: center;
+}

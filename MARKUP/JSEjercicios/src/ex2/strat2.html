@@ -14,11 +14,15 @@
 <script>
 
     function assignEvents() {
+        let paragraph = document.createElement("p");
+        paragraph.id = "paragraph";
+
         document.getElementById("img").addEventListener("click", function () {
-            myDisplay("The image was deleted");}, false);
+            myDisplay("The image was changed");}, false);
 
         function myDisplay(text) {
-            document.getElementById("div_image").innerHTML= text;
+            paragraph.innerHTML = text;
+            document.getElementById("div_image").innerHTML = paragraph.innerHTML;
         }
     }
 
