@@ -225,6 +225,9 @@ public class PrincipalController {
     private void menuClick(ActionEvent actionEvent) {
         switch (((MenuItem)actionEvent.getSource()).getId())
         {
+            case "menuItemClientes":
+                cargarPantalla(Pantallas.CLIENTES);
+                break;
             case "menuItemPantalla1":
                 cargarPantalla(Pantallas.PANTALLA1);
                 break;

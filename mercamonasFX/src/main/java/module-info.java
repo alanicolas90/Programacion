@@ -49,5 +49,6 @@ module javafx {
     exports di;
     opens constantes;
     opens domain.modelo.producto;
+    exports ui.pantallas.clientes;
 }
 
