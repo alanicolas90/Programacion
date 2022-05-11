@@ -33,11 +33,18 @@ function drawField() {
         for (let j = 0; j < cols.value; j++) {
             btn.id = i + "_" + j;
             btn.className = 'buttons';
-            btn.style.backgroundColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+            btn.style.backgroundColor = randomColor()
             field.innerHTML += btn.outerHTML;
         }
         field.innerHTML += '<br>';
     }
+}
+
+function random(number){
+    return Math.floor(Math.random()*number);;
+}
+function randomColor(){
+    return 'rgb('+random(255)+','+random(255)+','+random(255)+')';
 }
 
 function playGame() {
@@ -49,7 +56,7 @@ function playGame() {
 
 function check(e) {
     let paragraph = document.getElementById('text');
-    paragraph.innerText = 'You clicked the button: ' + e.target.id;
+    paragraph.innerText = 'You clicked the button: (' + e.target.id.split('_')[0] + ',' + e.target.id.split('_')[1]+')';
 }
 
 function assignEvents() {
