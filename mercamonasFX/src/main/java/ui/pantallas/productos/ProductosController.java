@@ -43,11 +43,11 @@ public class ProductosController extends BasePantallaController  implements Init
     private TableColumn<Producto, Integer> columnStock;
 
 
-    private final ProductoViewModel viewModel;
+    private ProductoViewModel viewModel;
 
 
-    public ProductosController(ProductoViewModel viewModel) {
-        this.viewModel = viewModel;
+    public ProductosController() {
+
     }
 
 
@@ -56,7 +56,7 @@ public class ProductosController extends BasePantallaController  implements Init
         columnPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
         columnStock.setCellValueFactory(new PropertyValueFactory<>("stock"));
 
-        table.getItems().addAll(viewModel.allProducts());
+        //table.getItems().addAll(viewModel.allProducts());
     }
 
 
@@ -71,9 +71,9 @@ public class ProductosController extends BasePantallaController  implements Init
         Producto nuevoProduct = new ProductoNormal(txtNombre.getText(), Double.parseDouble(txtPrice.getText()), Integer.parseInt(txtStock.getText()));
         boolean contains = !table.getItems().contains(nuevoProduct);
         if (contains && nuevoProduct.getPrice() > 0 && nuevoProduct.getStock() >= 0) {
-            viewModel.agregarProducto(nuevoProduct);
-            table.getItems().removeAll();
-            table.getItems().addAll(viewModel.allProducts());
+//            viewModel.agregarProducto(nuevoProduct);
+//            table.getItems().removeAll();
+            table.getItems().add(nuevoProduct);
         }
     }
 
