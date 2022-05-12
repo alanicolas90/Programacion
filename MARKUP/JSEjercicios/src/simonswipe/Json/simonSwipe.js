@@ -83,7 +83,9 @@ function playGame(sequence) {
     disableEventsField();
 
     if (roundNr < sequence.length / 2) {
-        setInterval(showElement, 1000);
+        for (let i = 0; i < roundNr; i++) {
+             setInterval(showElement, 1000);
+        }
     } else if (roundNr === sequence.length) {
         alert('You win!');
     } else {
@@ -94,8 +96,8 @@ function playGame(sequence) {
 }
 
 function showElement(sequence) {
-    disableEventsField();
-    let element = document.getElementById(sequence[i][0] + '_' + sequence[i][1]);
+    //disableEventsField();
+    //let element = document.getElementById(sequence[i][0] + '_' + sequence[i][1]);
 
 }
 
