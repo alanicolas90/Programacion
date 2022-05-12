@@ -50,5 +50,6 @@ module javafx {
     opens constantes;
     opens domain.modelo.producto;
     exports ui.pantallas.clientes;
+    exports ui.pantallas.carrito;
 }
 

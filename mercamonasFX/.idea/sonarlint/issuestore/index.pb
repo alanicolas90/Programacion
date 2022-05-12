@@ -17,5 +17,3 @@ m
 =src/main/java/ui/pantallas/principal/PrincipalController.java,6\8\6854908843d482996cd7f7c9ccd44ffdc547ca45
 k
 ;src/main/java/ui/pantallas/productos/ProductoViewModel.java,e\7\e76564d8909868347dd3961bd7b256d1064adb8a
-m
-=src/main/java/ui/pantallas/productos/ProductosController.java,6\c\6c4b57b357b1f1d590603970c5ba56ee5d74dce6
