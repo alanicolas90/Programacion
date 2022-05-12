@@ -1,0 +1,21 @@
+
+e
+5src/main/java/ui/pantallas/login/LoginController.java,0\0\00a168197ce395305c37a33f896012577da7634b
+d
+4src/main/java/ui/pantallas/login/LoginViewModel.java,e\7\e7d8d195a68c5e0e3b34a11a1a18d22d5e312b65
+_
+/src/main/java/domain/usecases/LoginUseCase.java,2\e\2e7ed3f63e50c10ff7a66a7fadc414025b80ef54
+c
+3src/main/java/domain/usecases/LoginUseCaseImpl.java,4\0\40ddd7f394b516943aa3ee4cd4ad4c3ae424ad13
+O
+src/main/java/dao/DaoLogin.java,8\7\87d42a8a6967e707d6c44eb756c4666397d7a7d2
+S
+#.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
+X
+(src/main/java/dao/impl/DaoLoginImpl.java,d\c\dc93d87f6f192408bc0bee328c8f77e509e08153
+m
+=src/main/java/ui/pantallas/principal/PrincipalController.java,6\8\6854908843d482996cd7f7c9ccd44ffdc547ca45
+k
+;src/main/java/ui/pantallas/productos/ProductoViewModel.java,e\7\e76564d8909868347dd3961bd7b256d1064adb8a
+m
+=src/main/java/ui/pantallas/productos/ProductosController.java,6\c\6c4b57b357b1f1d590603970c5ba56ee5d74dce6

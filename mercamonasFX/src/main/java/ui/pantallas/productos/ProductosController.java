@@ -43,8 +43,6 @@ public class ProductosController extends BasePantallaController  implements Init
     private TableColumn<Producto, Integer> columnStock;
 
 
-    private ProductoViewModel viewModel;
-
 
     public ProductosController() {
 
