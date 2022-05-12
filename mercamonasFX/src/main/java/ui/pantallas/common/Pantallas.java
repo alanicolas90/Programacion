@@ -6,7 +6,8 @@ public enum Pantallas {
     LOGIN ("/fxml/login.fxml"),
     LISTADO ("/fxml/listado.fxml"),
     DETALLE ("/fxml/detalle.fxml"),
-    PRODUCTOS("/fxml/productos.fxml");
+    PRODUCTOS("/fxml/productos.fxml"),
+    CLIENTES("/fxml/clientes.fxml");
 
     private String ruta;
     Pantallas(String ruta) {
