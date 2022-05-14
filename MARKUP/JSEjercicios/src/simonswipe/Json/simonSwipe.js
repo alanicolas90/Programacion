@@ -90,7 +90,7 @@ function playGame(sequence) {
     if (roundNr < sequence.length) {
 
         roundNr++;
-        
+
     } else if (roundNr === sequence.length) {
         alert('You win!');
     } else {
@@ -101,6 +101,7 @@ function playGame(sequence) {
 function showSequence(sequence,roundNr) {
     setTimeout(showElement, 500, sequence);
     setTimeout(hideElement, 1000, sequence);
+    roundNr++;
 }
 
 function hideElement(sequence) {
