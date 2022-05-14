@@ -1,27 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import io.github.palexdev.materialfx.controls.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="ui.pantallas.clientes.ClientesController">
-    <Label layoutX="37.0" layoutY="26.0" text="CLIENTES">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.pantallas.clientes.ClientesController">
+    <Label layoutX="378.0" layoutY="38.0" text="CLIENTES">
         <font>
-            <Font size="24.0"/>
+            <Font size="24.0" />
         </font>
     </Label>
-    <Label layoutX="41.0" layoutY="82.0" text="Nombre"/>
-    <Label layoutX="63.0" layoutY="133.0" text="Dni"/>
-    <TextField fx:id="txtNombre" accessibleRole="TEXT_AREA" layoutX="125.0" layoutY="88.0" prefHeight="25.0"
-               prefWidth="88.0"/>
-    <TextField fx:id="txtDni" accessibleRole="TEXT_AREA" layoutX="125.0" layoutY="133.0" prefHeight="25.0"
-               prefWidth="88.0"/>
-    <TableView fx:id="table" layoutX="347.0" layoutY="74.0" onMouseClicked="#update" prefHeight="200.0"
-               prefWidth="227.0">
+    <Label layoutX="56.0" layoutY="47.0" text="Nombre" />
+    <Label layoutX="69.0" layoutY="84.0" text="Dni" />
+    <TextField fx:id="txtNombre" accessibleRole="TEXT_AREA" layoutX="109.0" layoutY="43.0" prefHeight="25.0" prefWidth="88.0" />
+    <TextField fx:id="txtDni" accessibleRole="TEXT_AREA" layoutX="109.0" layoutY="80.0" prefHeight="25.0" prefWidth="88.0" />
+    <TableView fx:id="table" layoutX="45.0" layoutY="132.0" onMouseClicked="#update" prefHeight="200.0" prefWidth="227.0">
         <columns>
-            <TableColumn fx:id="columnDni" prefWidth="75.0" text="dni"/>
-            <TableColumn fx:id="columnNombre" prefWidth="75.0" text="nombre"/>
+            <TableColumn fx:id="columnDni" prefWidth="96.0" text="dni" />
+            <TableColumn fx:id="columnNombre" prefWidth="130.0" text="nombre" />
         </columns>
     </TableView>
+   <Button layoutX="222.0" layoutY="68.0" mnemonicParsing="false" text="Add" />
+   <Button layoutX="138.0" layoutY="345.0" mnemonicParsing="false" text="Remove" />
+    <MFXTextField fx:id="nombre" floatingText="nombre" layoutX="385.0" layoutY="118.0" />
+    <MFXTextField fx:id="dni" floatingText="dni" layoutX="385.0" layoutY="189.0" />
+   <Button layoutX="401.0" layoutY="266.0" mnemonicParsing="false" text="Update" />
 </AnchorPane>
