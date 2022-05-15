@@ -51,5 +51,6 @@ module javafx {
     opens domain.modelo.producto;
     exports ui.pantallas.clientes;
     exports ui.pantallas.carrito;
+    opens ui.pantallas.clientes;
 }
 

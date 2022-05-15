@@ -22,9 +22,10 @@ import java.util.Optional;
 
 @Log4j2
 public class PrincipalController {
-
+@FXML
+    public Menu menuAdmin;
     @FXML
-    private Menu menuHelp;
+    private Menu menuCliente;
     // objeto especial para DI
     Instance<Object> instance;
 
@@ -249,7 +250,9 @@ public class PrincipalController {
         actualUser = usuario;
         menuPrincipal.setVisible(true);
         if (actualUser.getNombre().equals("admin")) {
-            menuHelp.setVisible(false);
+            menuCliente.setVisible(false);
+        }else if(actualUser.getNombre().equals("user")){
+            menuAdmin.setVisible(false);
         }
 
         cargarPantalla(Pantallas.PANTALLA1);

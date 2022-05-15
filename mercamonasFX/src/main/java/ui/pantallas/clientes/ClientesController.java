@@ -1,5 +1,11 @@
 package ui.pantallas.clientes;
 
+import domain.modelo.cliente.Cliente;
+import domain.modelo.cliente.ClienteNormal;
+import domain.modelo.producto.Producto;
+import domain.modelo.producto.ProductoNormal;
+import io.github.palexdev.materialfx.controls.MFXTextField;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
@@ -19,25 +25,60 @@ public class ClientesController extends BasePantallaController implements Initia
     @FXML
     public TextField txtDni;
     @FXML
-    public TableView table;
+    public TableView<Cliente> table;
     @FXML
-    public TableColumn columnDni;
+    public TableColumn<Cliente, String> columnDni;
     @FXML
-    public TableColumn columnNombre;
+    public TableColumn<Cliente, String> columnNombre;
+    @FXML
+    public MFXTextField nombre;
+    @FXML
+    public MFXTextField dni;
 
     private ClientesViewModel viewModel;
 
     public ClientesController() {
     }
 
-    public void update(MouseEvent mouseEvent) {
-
+    public void update() {
+        Cliente productTabla = table.getSelectionModel().getSelectedItem();
+        if (productTabla != null) {
+            nombre.setText(productTabla.getNombre());
+            dni.setText(String.valueOf(productTabla.getDni()));
+        }
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        columnNombre.setCellValueFactory(new PropertyValueFactory<>("name"));
+        columnNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
         columnDni.setCellValueFactory(new PropertyValueFactory<>("dni"));
         //table.getItems().addAll(viewModel.allProducts());
+    }
+
+    @FXML
+    private void add() {
+        Cliente nuevoProduct = new ClienteNormal(txtDni.getText(), txtNombre.getText());
+        boolean contains = !table.getItems().contains(nuevoProduct);
+        if (contains) {
+            table.getItems().add(nuevoProduct);
+        }
+    }
+
+    @FXML
+    private void remove() {
+
+        Cliente productTabla = table.getSelectionModel().getSelectedItem();
+        if (productTabla != null) {
+            table.getItems().remove(productTabla);
+        }
+
+    }
+
+    public void updateData() {
+        Cliente productTabla = table.getSelectionModel().getSelectedItem();
+        if (productTabla != null) {
+            table.getItems().remove(productTabla);
+            table.getItems().add(new ClienteNormal(dni.getText(), nombre.getText()));
+        }
     }
 }

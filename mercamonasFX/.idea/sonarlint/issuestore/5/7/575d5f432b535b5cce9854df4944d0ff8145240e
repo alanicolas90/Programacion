@@ -1,0 +1,14 @@
+
+œ
+java:S1186("€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ºô®Òüÿÿÿÿ
+V	java:S1257"<This block of commented-out lines of code should be removed.(µ¸¨œþÿÿÿÿ
+Y
+java:S1128"<Remove this unused import 'domain.modelo.producto.Producto'.(ÊÝÓè8µÞÐŒ0
+^
+java:S1128"BRemove this unused import 'domain.modelo.producto.ProductoNormal'.(ôÂçg8µÞÐŒ0
+W
+java:S1128"5Remove this unused import 'javafx.event.ActionEvent'.(î•¯¼ýÿÿÿÿ8¶ÞÐŒ0
+\
+java:S1128":Remove this unused import 'javafx.scene.input.MouseEvent'.(˜¬‹æÿÿÿÿÿ8¶ÞÐŒ0
+C
+java:S1068&"-Remove this unused "viewModel" private field.(ã£¬
