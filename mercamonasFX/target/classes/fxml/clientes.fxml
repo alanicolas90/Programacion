@@ -6,7 +6,7 @@
 <?import javafx.scene.text.*?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.pantallas.clientes.ClientesController">
-    <Label layoutX="378.0" layoutY="38.0" text="CLIENTES">
+    <Label layoutX="396.0" layoutY="67.0" text="CLIENTES">
         <font>
             <Font size="24.0" />
         </font>
@@ -21,9 +21,9 @@
             <TableColumn fx:id="columnNombre" prefWidth="130.0" text="nombre" />
         </columns>
     </TableView>
-   <Button layoutX="222.0" layoutY="68.0" mnemonicParsing="false" text="Add" />
-   <Button layoutX="138.0" layoutY="345.0" mnemonicParsing="false" text="Remove" />
-    <MFXTextField fx:id="nombre" floatingText="nombre" layoutX="385.0" layoutY="118.0" />
-    <MFXTextField fx:id="dni" floatingText="dni" layoutX="385.0" layoutY="189.0" />
-   <Button layoutX="401.0" layoutY="266.0" mnemonicParsing="false" text="Update" />
+   <Button layoutX="222.0" layoutY="68.0" mnemonicParsing="false" text="Add" onAction="#add"/>
+   <Button layoutX="138.0" layoutY="345.0" mnemonicParsing="false" text="Remove" onAction="#remove"/>
+    <MFXTextField fx:id="nombre" floatingText="nombre" layoutX="428.0" layoutY="151.0" />
+    <MFXTextField fx:id="dni" floatingText="dni" layoutX="428.0" layoutY="232.0" />
+   <Button layoutX="442.0" layoutY="307.0" mnemonicParsing="false" text="Update" onAction="#updateData"/>
 </AnchorPane>

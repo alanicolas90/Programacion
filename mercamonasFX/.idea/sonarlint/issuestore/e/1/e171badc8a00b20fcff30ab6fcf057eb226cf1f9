@@ -1,0 +1,7 @@
+
+d
+java:S1192"NDefine a constant instead of duplicating this literal "ClienteNormal" 5 times.(°Îìë
+n
+java:S2975<"SRemove this "clone" implementation; use a copy constructor or copy factory instead.(®â¬°øÿÿÿÿ
+c
+java:S1182<"HUse super.clone() to create and seed the cloned instance to be returned.(®â¬°øÿÿÿÿ
