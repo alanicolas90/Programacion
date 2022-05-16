@@ -1,15 +1,27 @@
 let button = document.getElementById('create field');
-let roundNr = 0;
+let rows = document.getElementById('rows');
+let cols = document.getElementById('columns');
+let level = document.getElementById('level');
+let message = document.getElementById('message');
 
+let buttonId = 0;
+
+let roundNr = 0;
+let win = false;
+let winRound = false;
 let humanSequence = [];
+let robotSequence = [];
+
+let m = 0;
+let s = 0;
+let h = 0;
 
 function startGame() {
-    let rows = document.getElementById('rows');
-    let cols = document.getElementById('columns');
-    let level = document.getElementById('level');
-    let message = document.getElementById('message');
-    let crono = document.getElementById('crono');
+
+
+    let crono = document.getElementById('hms');
     let score = document.getElementById('score');
+
 
     rows.disabled = true;
     cols.disabled = true;
@@ -19,20 +31,17 @@ function startGame() {
     crono.innerText = crono.innerText + '00:00:00';
     score.innerText = score.innerText + '0';
     drawField();
+    enableEventsField();
 
-    const myArray = generateSequence(cols.value, rows.value, level.value);
 
-    showSequence(myArray,roundNr);
-
-    playGame(myArray);
-
-    console.log(roundNr);
+    playGame();
+    console.log(humanSequence);
+    console.log(robotSequence);
 }
 
 function drawField() {
     let field = document.getElementById('field');
-    let rows = document.getElementById('rows');
-    let cols = document.getElementById('columns');
+
     let btn = document.createElement('input');
     btn.type = 'button';
     btn.style.width = '75px';
@@ -41,39 +50,20 @@ function drawField() {
 
     for (let i = 0; i < rows.value; i++) {
         for (let j = 0; j < cols.value; j++) {
-            btn.id = i + "_" + j;
+            btn.id = buttonId.toString();
             btn.className = 'buttons';
             btn.style.backgroundColor = randomColor()
             btn.style.color = btn.style.backgroundColor;
             field.innerHTML += btn.outerHTML;
+            buttonId++;
         }
         field.innerHTML += '<br>';
     }
 }
 
-function generateSequence(width, height, level) {
-    let realLevel = level * 5;
-    const sequence = new Array(realLevel);
-
-    for (let i = 0; i < realLevel; i++) {
-        sequence[i] = new Array(2);
-        for (let j = 0; j < 2; j++) {
-            if (j === 0) {
-                sequence[i][j] = Math.floor(Math.random() * (height));
-            }
-            if (j === 1) {
-                sequence[i][j] = Math.floor(Math.random() * (width));
-            }
-        }
-    }
-    console.log(sequence);
-
-    return sequence;
-}
 
 function random(number) {
     return Math.floor(Math.random() * number);
-
 }
 
 function changeColor(e) {
@@ -84,51 +74,110 @@ function randomColor() {
     return 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
 }
 
-function playGame(sequence) {
+function stopGame(text) {
+    disableEventsField();
+    if(win===true){
+        message.innerText = 'YOU WON';
+    }else{
+        message.innerText = 'YOU LOST';
+    }
+    alert(text);
+    //clearInterval(timer);
+}
 
-    enableEventsField();
-    if (roundNr < sequence.length) {
+function playGame() {
+    cronometro();
+    roundNr += 1;
 
-        roundNr++;
-
-    } else if (roundNr === sequence.length) {
-        alert('You win!');
-    } else {
-        alert('GAME OVER');
+    let firstNum = Math.floor(Math.random() * (rows.value * cols.value));
+    robotSequence.push(firstNum.toString());
+    while(showSequence()){
+        disableEventsField();
     }
 }
 
-function showSequence(sequence,roundNr) {
-    setTimeout(showElement, 500, sequence);
-    setTimeout(hideElement, 1000, sequence);
-    roundNr++;
+function showSequence() {
+    if (level.value == 1) {
+        robotSequence.forEach(lightIt1);
+    } else if (level.value == 2) {
+        robotSequence.forEach(lightIt2);
+    } else if (level.value == 3) {
+        robotSequence.forEach(lightIt3);
+    }
 }
 
-function hideElement(sequence) {
-    let element = document.getElementById(sequence[1][0] + '_' + sequence[1][1]);
-    element.style.backgroundColor = element.style.color;
-
+function lightIt1(buttonNum, i) {
+    setTimeout(() => {
+        if (buttonNum >= 0 && buttonNum < rows.value * cols.value) {
+            setTimeout(function () {
+                document.getElementById(buttonNum.toString()).style.backgroundColor = '#ffff';
+            }, 500);
+            setTimeout(function () {
+                document.getElementById(buttonNum.toString()).style.backgroundColor = document.getElementById(buttonNum.toString()).style.color;
+            }, 1000);
+        }
+    }, i * 1000);
 }
 
-function showElement(sequence) {
+function lightIt2(buttonNum, i) {
+    setTimeout(() => {
+        if (buttonNum >= 0 && buttonNum < rows.value * cols.value) {
+            setTimeout(function () {
+                document.getElementById(buttonNum.toString()).style.backgroundColor = '#ffff';
+            }, 500);
+            setTimeout(function () {
+                document.getElementById(buttonNum.toString()).style.backgroundColor = document.getElementById(buttonNum.toString()).style.color;
+            }, 1000);
+        }
+    }, i * 800);
+}
 
-    let element = document.getElementById(sequence[1][0] + '_' + sequence[1][1]);
-    element.style.backgroundColor = "#ffff";
-
-
+function lightIt3(buttonNum, i) {
+    setTimeout(() => {
+        if (buttonNum >= 0 && buttonNum < rows.value * cols.value) {
+            setTimeout(function () {
+                document.getElementById(buttonNum.toString()).style.backgroundColor = '#ffff';
+            }, 500);
+            setTimeout(function () {
+                document.getElementById(buttonNum.toString()).style.backgroundColor = document.getElementById(buttonNum.toString()).style.color;
+            }, 1000);
+        }
+    }, i * 500);
 }
 
 function check(e) {
-    let paragraph = document.getElementById('text');
-    paragraph.innerText = 'You clicked the button: (' + e.target.id.split('_')[0] + ',' + e.target.id.split('_')[1] + ')';
+    document.getElementById('text').innerText = e.target.id;
+    humanSequence.push(e.target.id);
+    checkSolution();
+}
+
+function checkSolution() {
+    if (humanSequence.length === robotSequence.length) {
+        for (let i = 0; i < humanSequence.length; i++) {
+            if (humanSequence[i] === robotSequence[i]) {
+                winRound = true;
+                if (roundNr == level.value * 5) {
+                    win = true;
+                    stopGame('You win!');
+                    return winRound = false;
+                }
+            } else {
+                win = false;
+                stopGame('YOU LOSE');
+            }
+        }
+        if ((winRound = true)) {
+            let nextNum = Math.floor(Math.random() * (rows.value * cols.value));
+            robotSequence.push(nextNum.toString());
+            humanSequence = [];
+            showSequence();
+            roundNr += 1;
+        }
+    }
 }
 
 function changeColorOriginal(e) {
     e.target.style.backgroundColor = e.target.style.color;
-}
-
-function nextRound() {
-    roundNr ++;
 }
 
 function enableEventsField() {
@@ -141,11 +190,59 @@ function enableEventsField() {
     }
 }
 
+
 function disableEventsField() {
     let buttons = document.getElementsByClassName('buttons');
-    for (let i = 0; i < buttons.length; i++) {
-        buttons[i].removeEventListener('click', check);
+    for (const element of buttons) {
+        element.removeEventListener('mouseup', changeColorOriginal);
+        element.removeEventListener('mouseout', changeColorOriginal);
+        element.removeEventListener('mousedown', changeColor);
+        element.removeEventListener('click', check);
     }
+}
+
+//CRONOMETRO
+
+function cronometro() {
+    escribir();
+    setInterval(escribir, 1000);
+
+    //clearInterval(timer);
+
+}
+
+function escribir() {
+    let hAux, mAux, sAux;
+    s++;
+    if (s > 59) {
+        m++;
+        s = 0;
+    }
+    if (m > 59) {
+        h++;
+        m = 0;
+    }
+    if (h > 24) {
+        h = 0;
+    }
+
+    if (s < 10) {
+        sAux = "0" + s;
+    } else {
+        sAux = s;
+    }
+    if (m < 10) {
+        mAux = "0" + m;
+    } else {
+        mAux = m;
+    }
+    if (h < 10) {
+        hAux = "0" + h;
+    } else {
+        hAux = h;
+    }
+
+    document.getElementById("hms").innerHTML = hAux + ":" + mAux + ":" + sAux;
 }
 
 function assignEvents() {
