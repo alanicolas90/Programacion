@@ -29,8 +29,6 @@ f
 6src/main/java/ui/pantallas/clientes/ClientesState.java,4\c\4c2dc108a147007167bcf4263b63d2e40c29a87c
 m
 =src/main/java/ui/pantallas/common/BasePantallaController.java,c\c\cc1ae912583ea46a90bdbcb27df07083ec460f34
-m
-=src/main/java/ui/pantallas/principal/PrincipalController.java,6\8\6854908843d482996cd7f7c9ccd44ffdc547ca45
 U
 %src/etc/eclipse-java-google-style.xml,2\2\228e5e78b7f2e7712eaca73f3c6911a65111531e
 `

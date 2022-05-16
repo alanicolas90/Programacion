@@ -250,9 +250,9 @@ public class PrincipalController {
         actualUser = usuario;
         menuPrincipal.setVisible(true);
         if (actualUser.getNombre().equals("admin")) {
-            menuCliente.setVisible(false);
+            menuCliente.setVisible(true);
         }else if(actualUser.getNombre().equals("user")){
-            menuAdmin.setVisible(false);
+            menuAdmin.setVisible(true);
         }
 
         cargarPantalla(Pantallas.PANTALLA1);

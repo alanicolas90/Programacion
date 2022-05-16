@@ -1,3 +1,18 @@
 {
-
+  "a": {
+    "BilleteraFamiliar": "BilleteraFamiliar",
+    "nombreGrupoFamiliar": "a",
+    "lider": "a",
+    "type": "BilleteraFamiliar",
+    "integrantes": [],
+    "solicitudes": [
+      {
+        "solicitante": "b",
+        "mensaje": "a",
+        "aceptado": false
+      }
+    ],
+    "dineroBilletera": 0.0,
+    "gastos": []
+  }
 }

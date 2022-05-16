@@ -3,6 +3,8 @@ package servicios;
 import dao.DaoBilletera;
 import dao.DaoUsuario;
 import domain.modelo.billetera.BilleteraFamiliar;
+import domain.modelo.gasto.Gasto;
+import domain.modelo.solicitud.Solicitud;
 import domain.modelo.usuario.Usuario;
 import jakarta.inject.Inject;
 
@@ -44,5 +46,45 @@ public class ServicioBilletera {
 
     public BilleteraFamiliar getBilletera(String nombreBilletera) {
         return daoBilletera.getBilletera(nombreBilletera);
+    }
+
+    public boolean solicitarEntrarBilletera(String nombreBilletera, Solicitud solicitud) {
+        return daoBilletera.solicitarEntrarBilletera(nombreBilletera, solicitud);
+    }
+
+    public boolean usuarioPerteneceBilletera(String user, String nombreBilletera) {
+        return daoBilletera.usuarioPerteneceBilletera(user, nombreBilletera);
+    }
+
+    public boolean esLider(String user, String nombreBilletera) {
+        return daoBilletera.esLider(user, nombreBilletera);
+    }
+
+    public BilleteraFamiliar verDatosBilletera(String nombreBilletera) {
+        return daoBilletera.getBilletera(nombreBilletera);
+    }
+
+    public List<Solicitud> verSolicitudesBilletera(String nombreBilletera) {
+        return daoBilletera.verSolicitudesBilletera(nombreBilletera);
+    }
+
+    public List<Gasto> verGastosBilletera(String nombreBilletera) {
+        return daoBilletera.verGastosBilletera(nombreBilletera);
+    }
+
+    public List<Gasto> verGastosOrdenadosBilletera(String nombreBilletera) {
+        return daoBilletera.verGastosOrdenadosBilletera(nombreBilletera);
+    }
+
+    public Double verBalanceBilletera(String nombreBilletera) {
+        return daoBilletera.verBalanceBilletera(nombreBilletera);
+    }
+
+    public boolean haySolicitudes(String nombreBilletera) {
+        return  daoBilletera.haySolicitudes(nombreBilletera);
+    }
+
+    public boolean billeteraTieneGastos(String nombreBilletera) {
+        return daoBilletera.billeteraTieneGastos(nombreBilletera);
     }
 }
