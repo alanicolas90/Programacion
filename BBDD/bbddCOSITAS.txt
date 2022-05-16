@@ -1,22 +1,125 @@
-CREATE OR REPLACE PROCEDURE MostrarSuma (p_num1 NUMBER, p_num2 NUMBER, p_num3 NUMBER, p_num4 NUMBER, p_num5 NUMBER)
-IS
-	v_suma NUMBER;
+
+----------------------------------------------------------------------------
+Una funcion que reciba una fecha y devuelva el año en número.
+
+CREATE OR REPLACE FUNCTION anio(fecha DATE)
+RETURN NUMBER AS
+v_anio NUMBER(4);
 BEGIN
-	v_suma:=p_num1+p_num2+p_num3+p_num4+p_num5;
-	dbms_output.put_line('Suma=' || v_suma);
-END MostrarSuma;
+v_anio:=TO_NUMBER(TO_CHAR(fecha,'YYYY'));
+RETURN v_anio;
+END anio;
 /
 
-execute mostrarsuma(1,1,1,1,1);
-
-
-
-CREATE OR REPLACE FUNCTION FUNCION1(a number, b number) RETURN NUMBER AS
-c number;
+Ejemplo que funciona
+DECLARE 
+n NUMBER(4);
 BEGIN
-c:=a*b;
-RETURN c;
-END FUNCION1;
+n:=anio(sysdate);
+DBMS_OUTPUT.PUT_LINE('AÑO: '||n);
+END;
 /
 
-SELECT funcion1(3,2) from dual;
+----------------------------------------------------------------------------
+
+Procedimiento que te encuentra el nombre de los departamentos y la cantidad de empleados que hay
+ 
+CREATE OR REPLACE PROCEDURE ver_emple_depart
+AS
+CURSOR c_emple IS
+SELECT dnombre, COUNT(emp_no)
+FROM emple e, depart d
+WHERE d.dept_no = e.dept_no(+)
+GROUP BY dnombre;
+v_dnombre depart.dnombre%TYPE;
+v_num_emple BINARY_INTEGER;
+BEGIN
+OPEN c_emple;
+FETCH c_emple into v_dnombre, v_num_emple;
+WHILE c_emple%FOUND LOOP
+DBMS_OUTPUT.PUT_LINE(v_dnombre||' = '||v_num_emple);
+FETCH c_emple into v_dnombre,v_num_emple;
+END LOOP;
+CLOSE c_emple;
+END ver_emple_depart;
+/
+
+
+
+-------------------------------------------------------------------------------
+Visualiza a los 5 empleados que mas ganan
+
+CREATE OR REPLACE PROCEDURE emp_5maxsal
+AS
+CURSOR c_emp IS
+SELECT apellido, salario FROM emple
+ORDER BY salario DESC;
+vr_emp c_emp%ROWTYPE;
+i NUMBER;
+BEGIN
+i:=1;
+OPEN c_emp;
+FETCH c_emp INTO vr_emp;
+WHILE c_emp%FOUND AND i<=5 LOOP
+DBMS_OUTPUT.PUT_LINE(vr_emp.apellido ||' = '|| vr_emp.salario);
+FETCH c_emp INTO vr_emp;
+i:=I+1;
+END LOOP;
+CLOSE c_emp;
+END emp_5maxsal;
+/
+
+execute emp_5maxsal;
+-----------------------------------------------------------------------------
+Visualiza a los 3 empleados que menos ganan
+
+CREATE OR REPLACE PROCEDURE emp_3minsal
+AS
+CURSOR c_emp IS
+SELECT apellido, salario FROM emple
+ORDER BY salario ASC;
+vr_emp c_emp%ROWTYPE;
+i NUMBER;
+BEGIN
+i:=1;
+OPEN c_emp;
+FETCH c_emp INTO vr_emp;
+WHILE c_emp%FOUND AND i<=3 LOOP
+DBMS_OUTPUT.PUT_LINE(vr_emp.apellido ||' = '|| vr_emp.salario);
+FETCH c_emp INTO vr_emp;
+i:=I+1;
+END LOOP;
+CLOSE c_emp;
+END emp_3minsal;
+/
+
+execute emp_3minsal;
+-------------------------------------------------------------------------------
+
+Descuenta un x porciento a un numero que le pongas.
+
+CREATE OR REPLACE FUNCTION descuento10(numero NUMBER, descuento NUMBER) RETURN NUMBER AS
+number_descuento NUMBER;
+BEGIN
+number_descuento:=numero-(numero*descuento/100);
+RETURN number_descuento;
+END descuento10;
+/
+
+ejemplo: select descuento10(100,30) from dual;
+
+
+--------------------------------------------------------------------------------
+
+Funcion que suba un x porciento un numero
+
+CREATE OR REPLACE FUNCTION subida_sueldo(sueldo NUMBER, aumento NUMBER) RETURN NUMBER AS
+sueldo_aumentado NUMBER;
+BEGIN
+sueldo_aumentado:=sueldo+(sueldo*aumento/100);
+RETURN sueldo_aumentado;
+END subida_sueldo;
+/
+
+ejemplo: selecto subida_sueldo(4000,10) from dual;
+
