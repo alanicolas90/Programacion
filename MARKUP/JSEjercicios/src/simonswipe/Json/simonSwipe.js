@@ -3,6 +3,8 @@ let rows = document.getElementById('rows');
 let cols = document.getElementById('columns');
 let level = document.getElementById('level');
 let message = document.getElementById('message');
+let crono = document.getElementById('hms');
+let score = document.getElementById('score');
 
 let buttonId = 0;
 
@@ -17,22 +19,15 @@ let s = 0;
 let h = 0;
 
 function startGame() {
-
-
-    let crono = document.getElementById('hms');
-    let score = document.getElementById('score');
-
-
     rows.disabled = true;
     cols.disabled = true;
     level.disabled = true;
     button.disabled = true;
     message.innerText = 'PLAYING...';
+    message.style.textAlign = 'center';
     crono.innerText = crono.innerText + '00:00:00';
-    score.innerText = score.innerText + '0';
     drawField();
     enableEventsField();
-
 
     playGame();
     console.log(humanSequence);
@@ -74,14 +69,17 @@ function randomColor() {
     return 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
 }
 
-function stopGame(text) {
+function stopGame() {
     disableEventsField();
-    if(win===true){
-        message.innerText = 'YOU WON';
-    }else{
+    if (win === true) {
+        message.innerText = 'YOU WON!!!';
+        score.innerText = 'Score: ' + roundNr;
+        alert('YOU WON');
+    } else {
         message.innerText = 'YOU LOST';
+        score.innerText = 'Score: ' + roundNr;
+        alert('YOU LOST');
     }
-    alert(text);
     //clearInterval(timer);
 }
 
@@ -91,22 +89,14 @@ function playGame() {
 
     let firstNum = Math.floor(Math.random() * (rows.value * cols.value));
     robotSequence.push(firstNum.toString());
-    while(showSequence()){
-        disableEventsField();
-    }
+    showSequence()
 }
 
 function showSequence() {
-    if (level.value == 1) {
-        robotSequence.forEach(lightIt1);
-    } else if (level.value == 2) {
-        robotSequence.forEach(lightIt2);
-    } else if (level.value == 3) {
-        robotSequence.forEach(lightIt3);
-    }
+        robotSequence.forEach(lightIt);
 }
 
-function lightIt1(buttonNum, i) {
+function lightIt(buttonNum, i) {
     setTimeout(() => {
         if (buttonNum >= 0 && buttonNum < rows.value * cols.value) {
             setTimeout(function () {
@@ -116,37 +106,11 @@ function lightIt1(buttonNum, i) {
                 document.getElementById(buttonNum.toString()).style.backgroundColor = document.getElementById(buttonNum.toString()).style.color;
             }, 1000);
         }
-    }, i * 1000);
+    }, i * (1250 - (level.value * 250)));
 }
 
-function lightIt2(buttonNum, i) {
-    setTimeout(() => {
-        if (buttonNum >= 0 && buttonNum < rows.value * cols.value) {
-            setTimeout(function () {
-                document.getElementById(buttonNum.toString()).style.backgroundColor = '#ffff';
-            }, 500);
-            setTimeout(function () {
-                document.getElementById(buttonNum.toString()).style.backgroundColor = document.getElementById(buttonNum.toString()).style.color;
-            }, 1000);
-        }
-    }, i * 800);
-}
-
-function lightIt3(buttonNum, i) {
-    setTimeout(() => {
-        if (buttonNum >= 0 && buttonNum < rows.value * cols.value) {
-            setTimeout(function () {
-                document.getElementById(buttonNum.toString()).style.backgroundColor = '#ffff';
-            }, 500);
-            setTimeout(function () {
-                document.getElementById(buttonNum.toString()).style.backgroundColor = document.getElementById(buttonNum.toString()).style.color;
-            }, 1000);
-        }
-    }, i * 500);
-}
 
 function check(e) {
-    document.getElementById('text').innerText = e.target.id;
     humanSequence.push(e.target.id);
     checkSolution();
 }
@@ -156,14 +120,17 @@ function checkSolution() {
         for (let i = 0; i < humanSequence.length; i++) {
             if (humanSequence[i] === robotSequence[i]) {
                 winRound = true;
+                score.innerText = 'Score:' + roundNr;
                 if (roundNr == level.value * 5) {
+                    score.innerText = roundNr.value + 1;
                     win = true;
-                    stopGame('You win!');
+                    stopGame();
                     return winRound = false;
                 }
             } else {
                 win = false;
-                stopGame('YOU LOSE');
+                stopGame();
+                return winRound = false;
             }
         }
         if ((winRound = true)) {
