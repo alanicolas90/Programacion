@@ -27,9 +27,7 @@
             <menus>
                 <Menu fx:id="menuFile" mnemonicParsing="false" text="File">
                     <items>
-                        <MenuItem fx:id="menuItemNew" mnemonicParsing="false" text="New" />
                         <MenuItem fx:id="menuItemPantalla1" mnemonicParsing="false" onAction="#menuClick" text="Pantalla Bienvenida" />
-                        <MenuItem fx:id="menuItemListado" mnemonicParsing="false" onAction="#menuClick" text="listado" />
                         <MenuItem fx:id="menuItemLogout" mnemonicParsing="false" onAction="#menuClick" text="Logout" />
                         <MenuItem fx:id="menuItemExit" mnemonicParsing="false" onAction="#exit" text="Exit" />
                     </items>
@@ -45,7 +43,11 @@
                         <MenuItem fx:id="menuItemSelectAll" mnemonicParsing="false" text="Select All" />
                     </items>
                 </Menu>
-                <Menu fx:id="menuCliente" mnemonicParsing="false" onAction="#help" onShowing="#help" text="Pantalla">
+                <Menu fx:id="menuCliente" mnemonicParsing="false" text="Pantalla">
+                    <items>
+                        <MenuItem fx:id="menuItemListado" mnemonicParsing="false" onAction="#menuClick" text="Historial Compras" />
+                        <MenuItem fx:id="menuItemCarrito" mnemonicParsing="false" onAction="#menuClick" text="Carrito" />
+                    </items>
                 </Menu>
                 <Menu fx:id="menuAdmin" mnemonicParsing="false" text="Pantallas">
                     <items>

@@ -1,4 +1,4 @@
-package ui.pantallas.listado;
+package ui.pantallas.historial_compras;
 
 import domain.modelo.Cromo;
 import lombok.Data;
@@ -6,7 +6,7 @@ import lombok.Data;
 import java.util.List;
 
 @Data
-public class ListadoState {
+public class HistorialCompraState {
 
     private final List<Cromo> cromos;
     private final String error;

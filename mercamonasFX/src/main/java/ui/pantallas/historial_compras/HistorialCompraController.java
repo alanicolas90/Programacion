@@ -1,6 +1,7 @@
-package ui.pantallas.listado;
+package ui.pantallas.historial_compras;
 
 import domain.modelo.Cromo;
+import domain.modelo.cliente.LineaCompra;
 import io.github.palexdev.materialfx.controls.MFXTableColumn;
 import io.github.palexdev.materialfx.controls.MFXTableView;
 import io.github.palexdev.materialfx.controls.cell.MFXTableRowCell;
@@ -11,24 +12,24 @@ import ui.pantallas.common.BasePantallaController;
 
 import java.util.Comparator;
 
-public class ListadoController extends BasePantallaController {
+public class HistorialCompraController extends BasePantallaController {
 
 
-    private final ListadoViewModel viewModel ;
+    private final HistorialCompraViewModel viewModel ;
 
     @Inject
-    public ListadoController(ListadoViewModel viewModel) {
+    public HistorialCompraController(HistorialCompraViewModel viewModel) {
         this.viewModel = viewModel;
     }
 
     @FXML
-    private MFXTableView<Cromo> tabla;
+    private MFXTableView<LineaCompra> tabla;
 
     @FXML
     private void ver(ActionEvent actionEvent) {
 //        getPrincipalController().cargarPantalla(Pantallas.DETALLE);
         tabla.getSelectionModel().getSelection().values().stream().findFirst()
-                .ifPresent(cromo -> getPrincipalController().onSeleccionCromo(cromo));
+                .ifPresent(lineaCompra -> getPrincipalController().onSeleccionLineaCompra(LineaCompra));                //.ifPresent(cromo -> getPrincipalController().onSeleccionCromo(cromo));
 
     }
 

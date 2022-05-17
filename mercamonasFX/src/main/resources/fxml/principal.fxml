@@ -5,19 +5,21 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane fx:id="root" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.pantallas.principal.PrincipalController">
+<BorderPane fx:id="root" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.pantallas.principal.PrincipalController">
     <center>
         <StackPane prefHeight="150.0" prefWidth="200.0">
             <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="background" BorderPane.alignment="CENTER">
                 <children>
-                    <MFXTextField fx:id="txtField" layoutX="274.0" layoutY="71.0" />
-                    <MFXButton fx:id="button" layoutX="289.0" layoutY="157.0" mnemonicParsing="false" onAction="#cambiarcss" text="Button">
+                    <MFXTextField fx:id="txtField" layoutX="274.0" layoutY="71.0"/>
+                    <MFXButton fx:id="button" layoutX="289.0" layoutY="157.0" mnemonicParsing="false"
+                               onAction="#cambiarcss" text="Button">
                         <font>
-                            <Font name="Alef Regular" size="12.0" />
+                            <Font name="Alef Regular" size="12.0"/>
                         </font>
                     </MFXButton>
-                    <TextField fx:id="txtNormal" layoutX="242.0" layoutY="120.0" />
-                    <StackPane prefHeight="150.0" prefWidth="200.0" />
+                    <TextField fx:id="txtNormal" layoutX="242.0" layoutY="120.0"/>
+                    <StackPane prefHeight="150.0" prefWidth="200.0"/>
                 </children>
             </AnchorPane>
         </StackPane>
@@ -27,30 +29,38 @@
             <menus>
                 <Menu fx:id="menuFile" mnemonicParsing="false" text="File">
                     <items>
-                        <MenuItem fx:id="menuItemPantalla1" mnemonicParsing="false" onAction="#menuClick" text="Pantalla Bienvenida" />
-                        <MenuItem fx:id="menuItemLogout" mnemonicParsing="false" onAction="#menuClick" text="Logout" />
-                        <MenuItem fx:id="menuItemExit" mnemonicParsing="false" onAction="#exit" text="Exit" />
+                        <MenuItem fx:id="menuItemPantalla1" mnemonicParsing="false" onAction="#menuClick"
+                                  text="Pantalla Bienvenida"/>
+                        <MenuItem fx:id="menuItemLogout" mnemonicParsing="false" onAction="#menuClick" text="Logout"/>
+                        <MenuItem fx:id="menuItemExit" mnemonicParsing="false" onAction="#exit" text="Exit"/>
                     </items>
                 </Menu>
                 <Menu fx:id="menuEdit" mnemonicParsing="false" text="Edit">
                     <items>
-                        <MenuItem fx:id="menuItemUndo" mnemonicParsing="false" onAction="#cambiarcss" text="Undo" />
-                        <MenuItem fx:id="menuItemRedo" mnemonicParsing="false" text="Redo" />
-                        <MenuItem fx:id="menuItemCut" mnemonicParsing="false" text="Cut" />
-                        <MenuItem fx:id="menuItemCopy" mnemonicParsing="false" text="Copy" />
-                        <MenuItem fx:id="menuItemPaste" mnemonicParsing="false" text="Paste" />
-                        <MenuItem fx:id="menuItemDelete" mnemonicParsing="false" text="Delete" />
-                        <MenuItem fx:id="menuItemSelectAll" mnemonicParsing="false" text="Select All" />
+                        <MenuItem fx:id="menuItemUndo" mnemonicParsing="false" onAction="#cambiarcss" text="Undo"/>
+                        <MenuItem fx:id="menuItemRedo" mnemonicParsing="false" text="Redo"/>
+                        <MenuItem fx:id="menuItemCut" mnemonicParsing="false" text="Cut"/>
+                        <MenuItem fx:id="menuItemCopy" mnemonicParsing="false" text="Copy"/>
+                        <MenuItem fx:id="menuItemPaste" mnemonicParsing="false" text="Paste"/>
+                        <MenuItem fx:id="menuItemDelete" mnemonicParsing="false" text="Delete"/>
+                        <MenuItem fx:id="menuItemSelectAll" mnemonicParsing="false" text="Select All"/>
                     </items>
                 </Menu>
-                <Menu fx:id="menuCliente" mnemonicParsing="false" onAction="#help" onShowing="#help" text="Pantalla">
-               <items>
-                        <MenuItem fx:id="menuItemListado" mnemonicParsing="false" onAction="#menuClick" text="listado" />
-               </items></Menu>
+                <Menu fx:id="menuCliente" mnemonicParsing="false" text="Pantalla">
+                    <items>
+                        <MenuItem fx:id="menuItemListado" mnemonicParsing="false" onAction="#menuClick"
+                                  text="Historial Compras"/>
+                        <MenuItem fx:id="menuItemCarrito" mnemonicParsing="false" onAction="#menuClick" text="Carrito"/>
+                        <MenuItem fx:id="menuItemMonedero" mnemonicParsing="false" onAction="#menuClick" text="Monederos"/>
+                        <MenuItem fx:id="menuItemTienda" mnemonicParsing="false" onAction="#menuClick" text="Tienda"/>
+                    </items>
+                </Menu>
                 <Menu fx:id="menuAdmin" mnemonicParsing="false" text="Pantallas">
                     <items>
-                        <MenuItem fx:id="menuItemPantallaNueva" mnemonicParsing="false" onAction="#menuClick" text="Productos" />
-                        <MenuItem fx:id="menuItemClientes" mnemonicParsing="false" onAction="#menuClick" text="Clientes" />
+                        <MenuItem fx:id="menuItemPantallaNueva" mnemonicParsing="false" onAction="#menuClick"
+                                  text="Productos"/>
+                        <MenuItem fx:id="menuItemClientes" mnemonicParsing="false" onAction="#menuClick"
+                                  text="Clientes"/>
                     </items>
                 </Menu>
             </menus>

@@ -3,6 +3,7 @@ package ui.pantallas.principal;
 
 import domain.modelo.Cromo;
 import domain.modelo.Usuario;
+import domain.modelo.cliente.LineaCompra;
 import jakarta.enterprise.inject.Instance;
 import jakarta.inject.Inject;
 import javafx.event.ActionEvent;
@@ -41,13 +42,13 @@ public class PrincipalController {
     }
     public Cromo getActualCromo(){return cromoSeleccionado;}
 
+
     @FXML
     private BorderPane root;
 
 
     private Alert alert;
 
-    private Pane pantallaBienvenida;
 
 
     @Inject
@@ -162,7 +163,6 @@ public class PrincipalController {
     public void initialize() {
         menuPrincipal.setVisible(false);
         cargarPantalla(Pantallas.LOGIN);
-
     }
 
     private void closeWindowEvent(WindowEvent event) {
@@ -181,14 +181,6 @@ public class PrincipalController {
                 event.consume();
             }
         });
-    }
-
-    public void help(ActionEvent actionEvent) {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Ayuda");
-        alert.setHeaderText("Ayuda");
-        alert.setContentText("Este es un mensaje de ayuda");
-        alert.showAndWait();
     }
 
     public void exit(ActionEvent actionEvent) {
@@ -212,16 +204,6 @@ public class PrincipalController {
 
     }
 
-    public double getHeight() {
-        return root.getScene().getWindow().getHeight();
-    }
-
-    public double getWidth()
-    {
-//        return 600;
-        return root.getScene().getWindow().getWidth();
-    }
-
     @FXML
     private void menuClick(ActionEvent actionEvent) {
         switch (((MenuItem)actionEvent.getSource()).getId())
@@ -241,6 +223,15 @@ public class PrincipalController {
             case "menuItemLogout":
                 logout();
                 break;
+            case "menuItemCarrito":
+                cargarPantalla(Pantallas.CARRITO);
+                break;
+            case "menuItemMonedero":
+                cargarPantalla(Pantallas.MONEDERO);
+                break;
+            case "menuItemTienda":
+                cargarPantalla(Pantallas.TIENDA);
+                break;
         }
 
     }
@@ -251,9 +242,12 @@ public class PrincipalController {
         menuPrincipal.setVisible(true);
         if (actualUser.getNombre().equals("admin")) {
             menuCliente.setVisible(false);
+            menuAdmin.setVisible(true);
         }else if(actualUser.getNombre().equals("user")){
             menuAdmin.setVisible(false);
+            menuCliente.setVisible(true);
         }
+
 
         cargarPantalla(Pantallas.PANTALLA1);
     }

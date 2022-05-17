@@ -1,14 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
+<?import io.github.palexdev.materialfx.controls.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="ui.pantallas.carrito.CarritoController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="ui.pantallas.carrito.CarritoController">
+    <children>
+        <Label layoutX="386.0" layoutY="33.0" prefHeight="47.0" prefWidth="138.0" text="CARRITO">
+            <font>
+                <Font size="32.0"/>
+            </font>
+        </Label>
+        <TableView fx:id="table" layoutX="28.0" layoutY="57.0" prefHeight="200.0" prefWidth="280.0">
+            <columns>
+                <TableColumn fx:id="columnName" prefWidth="121.20000839233398" text="name"/>
+                <TableColumn fx:id="columnPrice" prefWidth="84.19998168945312" text="price"/>
+                <TableColumn fx:id="columnQuantity" prefWidth="73.00001525878906" text="quantity"/>
+            </columns>
+        </TableView>
+        <Button fx:id="bttnRemove" layoutX="28.0" layoutY="292.0" mnemonicParsing="false" text="Remove"/>
+        <MFXTextField fx:id="txtField" layoutX="447.0" layoutY="120.0"/>
+        <Label layoutX="376.0" layoutY="135.0" text="Precio total:"/>
+        <Button fx:id="bttnPagar" layoutX="463.0" layoutY="232.0" mnemonicParsing="false" text="Pagar"/>
+        <MFXTextField fx:id="txtField1" layoutX="224.0" layoutY="304.0"/>
+        <Button layoutX="324.0" layoutY="316.0" mnemonicParsing="false" text="Actualizar cantidad"/>
+        <Label layoutX="194.0" layoutY="274.0" text="Cantidad producto seleccionado"/>
+    </children>
 </AnchorPane>

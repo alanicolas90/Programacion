@@ -2,12 +2,15 @@ package ui.pantallas.common;
 
 public enum Pantallas {
 
-    PANTALLA1 ("/fxml/pantalla1.fxml"),
+    PANTALLA1 ("/fxml/bienvenida.fxml"),
     LOGIN ("/fxml/login.fxml"),
-    LISTADO ("/fxml/listado.fxml"),
+    LISTADO ("/fxml/historialCompras.fxml"),
     DETALLE ("/fxml/detalle.fxml"),
     PRODUCTOS("/fxml/productos.fxml"),
-    CLIENTES("/fxml/clientes.fxml");
+    CLIENTES("/fxml/clientes.fxml"),
+    CARRITO("/fxml/carrito.fxml"),
+    MONEDERO("fxml/monedero.fxml"),
+    TIENDA("fxml/compra.fxml");
 
     private String ruta;
     Pantallas(String ruta) {

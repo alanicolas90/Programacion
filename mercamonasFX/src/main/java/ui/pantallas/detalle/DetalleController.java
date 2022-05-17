@@ -1,6 +1,7 @@
 package ui.pantallas.detalle;
 
 import domain.modelo.Cromo;
+import domain.modelo.cliente.LineaCompra;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import ui.pantallas.common.BasePantallaController;
