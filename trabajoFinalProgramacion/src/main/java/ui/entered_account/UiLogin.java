@@ -1,6 +1,7 @@
 package ui.entered_account;
 
 import common.Common;
+import constantes.Constantes;
 import domain.modelo.billetera.BilleteraFamiliar;
 import domain.modelo.solicitud.Solicitud;
 import jakarta.inject.Inject;
@@ -12,15 +13,15 @@ import ui.entered_account.menu_billeteras.UiMenuBilletero;
 import java.util.Scanner;
 
 public class UiLogin {
-    private final ServicioUsuario servicioUsuario;
+    private final ServicioUsuario servicioUsuarioImpl;
     private final UiAjustesUsuario uiAjustesUsuario;
-    private final ServicioBilletera servicioBilletera;
+    private final ServicioBilletera servicioBilleteraImpl;
     private final UiMenuBilletero uiMenuBilletero;
 
     @Inject
-    public UiLogin(ServicioUsuario servicioUsuario, ServicioBilletera servicioBilletera, UiAjustesUsuario uiAjustesUsuario, UiMenuBilletero uiMenuBilletero) {
-        this.servicioUsuario = servicioUsuario;
-        this.servicioBilletera = servicioBilletera;
+    public UiLogin(ServicioUsuario servicioUsuarioImpl, ServicioBilletera servicioBilleteraImpl, UiAjustesUsuario uiAjustesUsuario, UiMenuBilletero uiMenuBilletero) {
+        this.servicioUsuarioImpl = servicioUsuarioImpl;
+        this.servicioBilleteraImpl = servicioBilleteraImpl;
         this.uiAjustesUsuario = uiAjustesUsuario;
         this.uiMenuBilletero = uiMenuBilletero;
     }
@@ -32,29 +33,23 @@ public class UiLogin {
         String user;
         String password;
 
-        System.out.println("Ingrese los datos:");
+        System.out.println(Constantes.INGRESE_LOS_DATOS);
         do {
             do {
-                System.out.print("Usuario: ");
+                System.out.print(Constantes.USUARIO);
                 user = sc.nextLine();
-                servicioUsuario.existeUsuario(user);
-            } while (!servicioUsuario.existeUsuario(user));
-            System.out.print("Contraseña: ");
+                servicioUsuarioImpl.existeUsuario(user);
+            } while (!servicioUsuarioImpl.existeUsuario(user));
+            System.out.print(Constantes.CONTRASENA);
             password = sc.nextLine();
-            if (!servicioUsuario.existeUsuario(user)) {
-                System.out.println("contraseña incorrecta");
+            if (!servicioUsuarioImpl.existeUsuario(user)) {
+                System.out.println(Constantes.CONTRASENA_INCORRECTA);
             }
-        } while (!servicioUsuario.logIn(user, password));
-        if (servicioUsuario.logIn(user, password)) {
-            System.out.println("Bienvenido " + user);
+        } while (!servicioUsuarioImpl.logIn(user, password));
+        if (servicioUsuarioImpl.logIn(user, password)) {
+            System.out.println(Constantes.BIENVENIDO + user);
             do {
-                System.out.println("1. Ver perfil\n" +
-                        "2. Crear Billetera familiar\n" +
-                        "3. Eliminar Billetera familiar\n"+
-                        "4. Entrar en una billetera\n" +
-                        "5. Solicitar entrar en una billetera\n"+
-                        "6. Ajustes de usuario\n" +
-                        "7. Salir");
+                System.out.println(Constantes.VER_PERFIL_2_CREAR_BILLETERA_FAMILIAR_3_ELIMINAR_BILLETERA_FAMILIAR_4_ENTRAR_EN_UNA_BILLETERA_5_SOLICITAR_ENTRAR_EN_UNA_BILLETERA_6_AJUSTES_DE_USUARIO_7_SALIR);
                 option = common.giveInt();
                 switch (option) {
                     case 1:
@@ -67,19 +62,19 @@ public class UiLogin {
                         eliminarBilletera(sc, user);
                         break;
                     case 4:
-                        uiMenuBilletero.menuBilletero(sc, servicioUsuario.getUsuario(user));
+                        uiMenuBilletero.menuBilletero(sc, servicioUsuarioImpl.getUsuario(user));
                         break;
                     case 5:
                         solicitarEntrarBilletera(sc, user);
                         break;
                     case 6:
-                        uiAjustesUsuario.ajustesUsuario(sc, servicioUsuario.getUsuario(user));
+                        uiAjustesUsuario.ajustesUsuario(sc, servicioUsuarioImpl.getUsuario(user));
                         break;
                     case 7:
-                        System.out.println("Saliendo...");
+                        System.out.println(Constantes.SALIENDO);
                         break;
                     default:
-                        System.out.println("Opcion no valida");
+                        System.out.println(Constantes.OPCION_NO_VALIDA);
                         break;
                 }
             } while (option != 7);
@@ -88,61 +83,60 @@ public class UiLogin {
 
     private void solicitarEntrarBilletera(Scanner sc, String user) {
         String nombreBilletera;
-        System.out.println("Ingrese el id de la billetera a la que desea entrar");
+        System.out.println(Constantes.INGRESE_EL_ID_DE_LA_BILLETERA_A_LA_QUE_DESEA_ENTRAR);
         nombreBilletera = sc.nextLine();
-        if (servicioBilletera.billeteraExiste(nombreBilletera)){
-            if(!servicioBilletera.usuarioPerteneceBilletera(user,nombreBilletera)){
-                if(!servicioBilletera.esLider(user,nombreBilletera)){
-                    System.out.println("Ingrese el mensaje de invitacion para que le acpeten (recomendamos identificarse)");
+        if (servicioBilleteraImpl.billeteraExiste(nombreBilletera)){
+            if(!servicioBilleteraImpl.usuarioPerteneceBilletera(user,nombreBilletera)){
+                if(!servicioBilleteraImpl.esLider(user,nombreBilletera)){
+                    System.out.println(Constantes.INGRESE_EL_MENSAJE_DE_INVITACION_PARA_QUE_LE_ACPETEN_RECOMENDAMOS_IDENTIFICARSE);
                     String mensaje = sc.nextLine();
                     Solicitud solicitud = new Solicitud(user, mensaje);
-                    if (servicioBilletera.solicitarEntrarBilletera(nombreBilletera, solicitud)) {
-                        System.out.println("Solicitud enviada");
+                    if (servicioBilleteraImpl.solicitarEntrarBilletera(nombreBilletera, solicitud)) {
+                        System.out.println(Constantes.SOLICITUD_ENVIADA);
                     }
                 }else{
-                    System.out.println("No puede solicitar entrar a una billetera que es lider");
+                    System.out.println(Constantes.NO_PUEDE_SOLICITAR_ENTRAR_A_UNA_BILLETERA_QUE_ES_LIDER);
                 }
             }else{
-                System.out.println("Ya perteneces a esta billetera");
+                System.out.println(Constantes.YA_PERTENECES_A_ESTA_BILLETERA);
             }
         }else {
-            System.out.println("Billetera no existe con ese nombre, intentelo de nuevo");
+            System.out.println(Constantes.BILLETERA_NO_EXISTE_CON_ESE_NOMBRE_INTENTELO_DE_NUEVO);
         }
     }
 
 
     private void eliminarBilletera(Scanner sc, String user) {
-        if(!servicioBilletera.getBilleteras(servicioUsuario.getUsuario(user)).isEmpty()) {
+        if(!servicioBilleteraImpl.getBilleteras(servicioUsuarioImpl.getUsuario(user)).isEmpty()) {
 
-            System.out.println(servicioBilletera.getBilleteras(servicioUsuario.getUsuario(user)));
-            System.out.println("De la lista mostrada anteriormente, que billetera desea eliminar?");
+            System.out.println(servicioBilleteraImpl.getBilleteras(servicioUsuarioImpl.getUsuario(user)));
+            System.out.println(Constantes.DE_LA_LISTA_MOSTRADA_ANTERIORMENTE_QUE_BILLETERA_DESEA_ELIMINAR);
             String nombreBilletera = sc.nextLine();
 
-            if(servicioBilletera.billeteraExisteUsuarioSpecific(nombreBilletera,servicioUsuario.getUsuario(user))){
-                if(servicioBilletera.eliminarBilletera(servicioUsuario.getUsuario(user),servicioBilletera.getBilletera(nombreBilletera))){
-                    System.out.println("Billetera eliminada");
+            if(servicioBilleteraImpl.billeteraExisteUsuarioSpecific(nombreBilletera, servicioUsuarioImpl.getUsuario(user))){
+                if(servicioBilleteraImpl.eliminarBilletera(servicioUsuarioImpl.getUsuario(user), servicioBilleteraImpl.getBilletera(nombreBilletera))){
+                    System.out.println(Constantes.BILLETERA_ELIMINADA);
                 }else{
-                    System.out.println("No se pudo eliminar la billetera");
+                    System.out.println(Constantes.NO_SE_PUDO_ELIMINAR_LA_BILLETERA);
                 }
             }
         }else{
-            System.out.println("No tiene billeteras ");
+            System.out.println(Constantes.NO_TIENE_BILLETERAS);
         }
     }
 
 
     private void crearBilletera(Scanner sc, String user) {
-        System.out.println("crear billetera");
-        System.out.println("Nombre de la billetera: ");
+        System.out.println(Constantes.NOMBRE_DE_LA_BILLETERA);
         String nombreBilletera = sc.nextLine();
 
-        BilleteraFamiliar billeteraFamiliar = new BilleteraFamiliar(nombreBilletera, servicioUsuario.getNombreUsuario(user));
+        BilleteraFamiliar billeteraFamiliar = new BilleteraFamiliar(nombreBilletera, servicioUsuarioImpl.getNombreUsuario(user));
 
-        servicioBilletera.crearBilletera(servicioUsuario.getUsuario(user), billeteraFamiliar);
+        servicioBilleteraImpl.crearBilletera(servicioUsuarioImpl.getUsuario(user), billeteraFamiliar);
     }
 
     private void verPerfil(String user) {
-        System.out.println("Tus datos: ");
-        System.out.println(servicioUsuario.getUsuario(user));
+        System.out.println(Constantes.TUS_DATOS);
+        System.out.println(servicioUsuarioImpl.getUsuario(user));
     }
 }

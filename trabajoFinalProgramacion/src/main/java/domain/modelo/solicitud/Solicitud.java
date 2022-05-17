@@ -19,6 +19,10 @@ public class Solicitud implements Comparable<Solicitud> {
         this.mensaje = mensaje;
     }
 
+    public Solicitud(String solicitante) {
+        this.solicitante = solicitante;
+    }
+
     public Solicitud() {
         aceptado = false;
     }

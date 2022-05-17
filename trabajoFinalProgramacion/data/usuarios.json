@@ -8,34 +8,6 @@
     "apellido": "a",
     "correo": "a@gmail.com",
     "dinero": 7000.0,
-    "billeteras": [
-      {
-        "BilleteraFamiliar": "BilleteraFamiliar",
-        "nombreGrupoFamiliar": "a",
-        "lider": "a",
-        "type": "BilleteraFamiliar",
-        "integrantes": [],
-        "solicitudes": [
-          {
-            "solicitante": "b",
-            "mensaje": "a",
-            "aceptado": false
-          }
-        ],
-        "dineroBilletera": 0.0,
-        "gastos": []
-      }
-    ]
-  },
-  "b": {
-    "Usuario": "Usuario",
-    "username": "b",
-    "password": "b",
-    "type": "Usuario",
-    "nombre": "b",
-    "apellido": "b",
-    "correo": "b@gmail.com",
-    "dinero": 7000.0,
     "billeteras": []
   }
 }

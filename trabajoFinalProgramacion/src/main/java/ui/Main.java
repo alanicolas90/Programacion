@@ -1,6 +1,7 @@
 package ui;
 
 import common.Common;
+import constantes.Constantes;
 import domain.modelo.usuario.Usuario;
 import jakarta.enterprise.inject.se.SeContainer;
 import jakarta.enterprise.inject.se.SeContainerInitializer;
@@ -18,26 +19,26 @@ public class Main {
         Common common = new Common();
         Scanner sc = new Scanner(System.in);
 
-        ServicioUsuario servicioUsuario = container.select(ServicioUsuario.class).get();
+        ServicioUsuario servicioUsuarioImpl = container.select(ServicioUsuario.class).get();
         UiLogin uiLogin = container.select(UiLogin.class).get();
 
-        System.out.println("Bienvenido a la aplicacion");
+        System.out.println(Constantes.BIENVENIDO_A_LA_APLICACION);
         int option;
         do {
-            System.out.println("Que desea hacer?\n" + "1. Ingresar a una cuenta existente\n" + "2. Crear una nueva cuenta\n" + "3. Salir");
+            System.out.println(Constantes.QUE_DESEA_HACER_1_INGRESAR_A_UNA_CUENTA_EXISTENTE_2_CREAR_UNA_NUEVA_CUENTA_3_SALIR);
             option = common.giveInt();
             switch (option) {
                 case 1:
                     uiLogin.login(sc);
                     break;
                 case 2:
-                    registrarUsuario(common, sc, servicioUsuario);
+                    registrarUsuario(common, sc, servicioUsuarioImpl);
                     break;
                 case 3:
-                    System.out.println("Bye bye");
+                    System.out.println(Constantes.BYE_BYE);
                     break;
                 default:
-                    System.out.println("Opcion no valida");
+                    System.out.println(Constantes.OPCION_NO_VALIDA);
                     break;
             }
         } while (option != 3);
@@ -45,48 +46,48 @@ public class Main {
     }
 
 
-    private static void registrarUsuario(Common common, Scanner sc, ServicioUsuario servicioUsuario) {
+    private static void registrarUsuario(Common common, Scanner sc, ServicioUsuario servicioUsuarioImpl) {
         String user;
         String password;
         String email;
-        System.out.println("Por favor rellene el siguiente formulario");
+        System.out.println(Constantes.POR_FAVOR_RELLENE_EL_SIGUIENTE_FORMULARIO);
         do {
-            System.out.print("Ususario: ");
+            System.out.print(Constantes.USUSARIO);
             user = sc.nextLine();
-            if (servicioUsuario.existeUsuario(user)) {
-                System.out.println("El usuario ya existe");
+            if (servicioUsuarioImpl.existeUsuario(user)) {
+                System.out.println(Constantes.EL_USUARIO_YA_EXISTE);
             }
-        } while (servicioUsuario.existeUsuario(user));
+        } while (servicioUsuarioImpl.existeUsuario(user));
 
         do {
-            System.out.print("Contraseña: ");
+            System.out.print(Constantes.CONTRASENA);
             password = sc.nextLine();
             if (password.length() == 0) {
-                System.out.println("La contraseña no puede estar vacia");
+                System.out.println(Constantes.LA_CONTRASENA_NO_PUEDE_ESTAR_VACIA);
             }
         } while (password.length() == 0);
 
-        System.out.print("Nombre: ");
+        System.out.print(Constantes.NOMBRE);
         String name = sc.nextLine();
-        System.out.print("Apellido: ");
+        System.out.print(Constantes.APELLIDO);
         String lastName = sc.nextLine();
         do {
-            System.out.print("Correo: ");
+            System.out.print(Constantes.CORREO);
             email = sc.nextLine();
-            if (!email.contains("@gmail.com")) {
-                System.out.println("Por favor ponga un correo valido");
+            if (!email.contains(Constantes.GMAIL_COM)) {
+                System.out.println(Constantes.POR_FAVOR_PONGA_UN_CORREO_VALIDO);
             }
-        } while (!email.contains("@gmail.com"));
+        } while (!email.contains(Constantes.GMAIL_COM));
 
-        System.out.print("Sueldo: ");
+        System.out.print(Constantes.SUELDO);
         double money = common.giveDouble();
 
         Usuario usuario = new Usuario(user, password, name, lastName, email, money);
 
-        if (servicioUsuario.registarUsuario(usuario)) {
-            System.out.println("Usuario registrado con exito");
+        if (servicioUsuarioImpl.registarUsuario(usuario)) {
+            System.out.println(Constantes.USUARIO_REGISTRADO_CON_EXITO);
         } else {
-            System.out.println("Usuario ya existe");
+            System.out.println(Constantes.USUARIO_YA_EXISTE);
         }
     }
 }

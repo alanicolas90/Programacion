@@ -4,112 +4,45 @@ import domain.modelo.billetera.BilleteraFamiliar;
 import domain.modelo.gasto.Gasto;
 import domain.modelo.solicitud.Solicitud;
 import domain.modelo.usuario.Usuario;
-import jakarta.inject.Inject;
 
-import java.util.Comparator;
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
 
-public class DaoBilletera {
+public interface DaoBilletera {
+    boolean crearBilletera(BilleteraFamiliar billeteraFamiliar);
 
-    private final BBDD db;
+    boolean billeteraExiste(String nombreBilletera);
 
-    @Inject
-    public DaoBilletera(BBDD db) {
-        this.db = db;
-    }
+    List<BilleteraFamiliar> getBilleteras(Usuario usuario);
 
-    public boolean crearBilletera(BilleteraFamiliar billeteraFamiliar) {
-        boolean ok;
-        Map<String,BilleteraFamiliar> billeteras = db.loadBilletera();
-        if(billeteras == null){
-            billeteras = new LinkedHashMap<>();
-        }
-        billeteras.put(billeteraFamiliar.getNombreGrupoFamiliar(),billeteraFamiliar);
-        ok = db.saveBilletera(billeteras);
-        return ok;
-    }
+    boolean billeteraExisteUsuarioSpecific(String nombreBilletera, Usuario user);
 
-    public boolean billeteraExiste(String nombreBilletera) {
-        Map<String,BilleteraFamiliar> billeteras = db.loadBilletera();
-        return billeteras.containsKey(nombreBilletera);
-    }
+    boolean eliminarBilletera(Usuario usuario, BilleteraFamiliar billeteraFamiliar);
 
-    public List<BilleteraFamiliar> getBilleteras(Usuario usuario) {
-        Map<String,Usuario> usuarios = db.loadUsers();
-        return usuarios.get(usuario.getUsername()).getBilleteras();
+    boolean esLider(String usuario, String nombreBilleteraFamiliar);
 
-    }
+    BilleteraFamiliar getBilletera(String nombreBilletera);
 
-    public boolean billeteraExisteUsuarioSpecific(String nombreBilletera,Usuario user) {
-        Map<String,BilleteraFamiliar> billeteras = db.loadBilletera();
-        Map<String, Usuario> users = db.loadUsers();
-        return users.get(user.getUsername()).getBilleteras().contains(billeteras.get(nombreBilletera));
-    }
+    boolean solicitarEntrarBilletera(String nombreBilletera, Solicitud solicitud);
 
-    public boolean eliminarBilletera(Usuario usuario,BilleteraFamiliar billeteraFamiliar) {
-        Map<String,Usuario> usuarios = db.loadUsers();
-        Map<String,BilleteraFamiliar> billeteras = db.loadBilletera();
-        usuarios.get(usuario.getUsername()).getBilleteras().remove(billeteraFamiliar);
-        billeteras.remove(billeteraFamiliar.getNombreGrupoFamiliar());
-        return db.saveBilletera(billeteras) && db.saveUsers(usuarios);
-    }
+    boolean usuarioPerteneceBilletera(String user, String nombreBilletera);
 
-    public boolean esLider(String usuario, String nombreBilleteraFamiliar) {
-        Map<String, BilleteraFamiliar> billeteras = db.loadBilletera();
-        return billeteras.get(nombreBilleteraFamiliar).getLider().equals(usuario);
-    }
-    public BilleteraFamiliar getBilletera(String nombreBilletera) {
-        Map<String,BilleteraFamiliar> billeteras = db.loadBilletera();
-        return billeteras.get(nombreBilletera);
-    }
+    List<Solicitud> verSolicitudesBilletera(String nombreBilletera);
 
-    public boolean solicitarEntrarBilletera(String nombreBilletera, Solicitud solicitud) {
-        Map<String,BilleteraFamiliar> billeteras = db.loadBilletera();
-        Map<String,Usuario> usuarios = db.loadUsers();
-        usuarios.forEach((s, usuario) -> usuario.getBilleteras()
-                .stream()
-                .filter(billeteraFamiliar -> billeteraFamiliar.getNombreGrupoFamiliar().equals(nombreBilletera))
-                .forEach(billeteraFamiliar -> billeteraFamiliar.getSolicitudes().add(solicitud)));
-        billeteras.get(nombreBilletera).getSolicitudes().add(solicitud);
-        return db.saveBilletera(billeteras) && db.saveUsers(usuarios);
-    }
+    List<Gasto> verGastosBilletera(String nombreBilletera);
 
-    public boolean usuarioPerteneceBilletera(String user, String nombreBilletera) {
-        Map<String,BilleteraFamiliar> billeteras = db.loadBilletera();
-        return billeteras.get(nombreBilletera).getIntegrantes().stream().anyMatch(usuario -> usuario.getUsername().equals(user));
-    }
+    List<Gasto> verGastosOrdenadosBilletera(String nombreBilletera);
 
-    public List<Solicitud> verSolicitudesBilletera(String nombreBilletera) {
-        Map<String,BilleteraFamiliar> billeteras = db.loadBilletera();
-        return billeteras.get(nombreBilletera).getSolicitudes();
-    }
+    Double verBalanceBilletera(String nombreBilletera);
 
-    public List<Gasto> verGastosBilletera(String nombreBilletera) {
-        Map<String,BilleteraFamiliar> billeteras = db.loadBilletera();
-        return billeteras.get(nombreBilletera).getGastos();
-    }
+    boolean haySolicitudes(String nombreBilletera);
 
+    boolean billeteraTieneGastos(String nombreBilletera);
 
-    public List<Gasto> verGastosOrdenadosBilletera(String nombreBilletera) {
-        Map<String,BilleteraFamiliar> billeteras = db.loadBilletera();
-        return billeteras.get(nombreBilletera).getGastos().stream().sorted(Comparator.comparing(Gasto::getCantidadGasto)).collect(Collectors.toList());
-    }
+    boolean aceptarSolicitud(String nombreBilletera, String user);
 
-    public Double verBalanceBilletera(String nombreBilletera) {
-        Map<String,BilleteraFamiliar> billeteras = db.loadBilletera();
-        return billeteras.get(nombreBilletera).getDineroBilletera();
-    }
+    boolean rechazarSolicitud(String nombreBilletera, String users);
 
-    public boolean haySolicitudes(String nombreBilletera) {
-        Map<String,BilleteraFamiliar> billeteras = db.loadBilletera();
-        return !billeteras.get(nombreBilletera).getSolicitudes().isEmpty();
-    }
+    boolean meterGastoBilletera(String nombreBilletera, Gasto gasto);
 
-    public boolean billeteraTieneGastos(String nombreBilletera) {
-        Map<String,BilleteraFamiliar> billeteras = db.loadBilletera();
-        return !billeteras.get(nombreBilletera).getGastos().isEmpty();
-    }
+    boolean addDineroBilletera(String nombreBilletera, double monto, Usuario user);
 }

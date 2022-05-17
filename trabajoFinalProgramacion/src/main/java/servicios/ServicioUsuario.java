@@ -1,59 +1,29 @@
 package servicios;
 
-import dao.DaoUsuario;
 import domain.modelo.usuario.Usuario;
-import jakarta.inject.Inject;
 
-public class ServicioUsuario {
+public interface ServicioUsuario {
+    boolean registarUsuario(Usuario u);
 
-    private final DaoUsuario daoUsuario;
+    boolean existeUsuario(String user);
 
-    @Inject
-    public ServicioUsuario(DaoUsuario daoUsuario) {
-        this.daoUsuario = daoUsuario;
-    }
+    boolean logIn(String user, String password);
 
-    public boolean registarUsuario(Usuario u) {
-        return daoUsuario.registrarUsuario(u);
-    }
+    Usuario getUsuario(String user);
 
-    public boolean existeUsuario(String user) {
-        return daoUsuario.existeUsuario(user);
-    }
+    String getNombreUsuario(String user);
 
-    public boolean logIn(String user, String password) {
-        return daoUsuario.logIn(user, password);
-    }
+    boolean tieneBilletera(String user);
 
-    public Usuario getUsuario(String user) {
-        return daoUsuario.verPerfil(user);
-    }
+    boolean changePassword(Usuario user, String newPassword);
 
-    public String getNombreUsuario(String user) {
-        return daoUsuario.getNombreUsuario(user);
-    }
+    boolean changeName(Usuario user, String newName);
 
-    public boolean tieneBilletera(String user) {
-        return daoUsuario.tieneBilletera(user);
-    }
+    boolean changeLastName(Usuario user, String newLastName);
 
-    public boolean changePassword(Usuario user, String newPassword) {
-        return daoUsuario.changePassword(user, newPassword);
-    }
+    boolean changeEmail(Usuario user, String newEmail);
 
-    public boolean changeName(Usuario user, String newName) {
-        return daoUsuario.changeName(user, newName);
-    }
+    boolean changeSalary(Usuario user, double newSalary);
 
-    public boolean changeLastName(Usuario user, String newLastName) {
-        return daoUsuario.changeLastName(user, newLastName);
-    }
-
-    public boolean changeEmail(Usuario user, String newEmail) {
-        return daoUsuario.changeEmail(user, newEmail);
-    }
-
-    public boolean changeSalary(Usuario user, double newSalary) {
-        return daoUsuario.changeSalary(user, newSalary);
-    }
+    boolean tieneSuficienteDinero(String nombre, double monto);
 }

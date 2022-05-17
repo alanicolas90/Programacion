@@ -3,16 +3,8 @@ e
 5src/main/java/ui/pantallas/login/LoginController.java,0\0\00a168197ce395305c37a33f896012577da7634b
 d
 4src/main/java/ui/pantallas/login/LoginViewModel.java,e\7\e7d8d195a68c5e0e3b34a11a1a18d22d5e312b65
-_
-/src/main/java/domain/usecases/LoginUseCase.java,2\e\2e7ed3f63e50c10ff7a66a7fadc414025b80ef54
-c
-3src/main/java/domain/usecases/LoginUseCaseImpl.java,4\0\40ddd7f394b516943aa3ee4cd4ad4c3ae424ad13
-O
-src/main/java/dao/DaoLogin.java,8\7\87d42a8a6967e707d6c44eb756c4666397d7a7d2
 S
 #.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
-X
-(src/main/java/dao/impl/DaoLoginImpl.java,d\c\dc93d87f6f192408bc0bee328c8f77e509e08153
 k
 ;src/main/java/ui/pantallas/productos/ProductoViewModel.java,e\7\e76564d8909868347dd3961bd7b256d1064adb8a
 i
@@ -39,8 +31,6 @@ a
 1src/main/java/domain/modelo/cliente/Monedero.java,1\d\1db02f6e7f0b8e823dc2bbd498f59ec523d01cd9
 f
 6src/main/java/domain/modelo/cliente/ClienteNormal.java,e\1\e171badc8a00b20fcff30ab6fcf057eb226cf1f9
-g
-7src/main/java/servicios/ficheros/ServiciosFicheros.java,b\5\b573e44ac87aa39fa9c6202bf412ac18f974ee22
 P
  src/main/java/common/Common.java,1\f\1f0f1ac1e908685e5a5d0d50f31f2929f463cc5f
 X
@@ -51,5 +41,3 @@ N
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
 A
 data/product.json,2\3\23d5c9fcaf8ac3245725fe9c4b91b9a4a705698e
-N
-src/main/java/dao/DaoBase.java,e\e\ee20792ca3fa16f6d98168e0dd91b3bfffbf65bc
