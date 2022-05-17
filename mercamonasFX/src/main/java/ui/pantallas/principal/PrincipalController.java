@@ -252,9 +252,4 @@ public class PrincipalController {
         cargarPantalla(Pantallas.PANTALLA1);
     }
 
-    public void onSeleccionCromo(Cromo p) {
-        this.cromoSeleccionado = p;
-        cargarPantalla(Pantallas.DETALLE);
-
-    }
 }

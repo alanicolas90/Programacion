@@ -66,7 +66,7 @@ public class UiMenuAdminCliente {
     }
 
     private void showListClientesSortedDnie() {
-        System.out.println(servicioClients.showListClientsSotedDni());
+        System.out.println(servicioClients.showListClientsSortedDni());
     }
 
     private void addClienteConDescuento(Scanner sc) {

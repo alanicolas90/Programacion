@@ -24,5 +24,8 @@
         <MFXTextField fx:id="txtField" layoutX="447.0" layoutY="120.0"/>
         <Label layoutX="376.0" layoutY="135.0" text="Precio total:"/>
         <Button fx:id="bttnPagar" layoutX="463.0" layoutY="232.0" mnemonicParsing="false" text="Pagar"/>
+        <MFXTextField fx:id="txtField1" layoutX="224.0" layoutY="304.0"/>
+        <Button layoutX="324.0" layoutY="316.0" mnemonicParsing="false" text="Actualizar cantidad"/>
+        <Label layoutX="194.0" layoutY="274.0" text="Cantidad producto seleccionado"/>
     </children>
 </AnchorPane>

@@ -1,41 +1,34 @@
 package ui.pantallas.productos;
 
-import dao.BBDD;
 import domain.modelo.producto.Producto;
-import servicios.ServicioProductos;
+import jakarta.inject.Inject;
+import servicios.impl.ServicioProductosImpl;
 
 import java.util.List;
 
 public class ProductoViewModel {
-    private final ServicioProductos servicioProductos;
-    private final BBDD db;
+    private final ServicioProductosImpl servicioProductos;
 
-    public ProductoViewModel(ServicioProductos servicioProductos, BBDD db) {
+    @Inject
+    public ProductoViewModel(ServicioProductosImpl servicioProductos) {
         this.servicioProductos = servicioProductos;
-        this.db = db;
     }
 
-    public void agregarProducto(Producto producto) {
+    public List<Producto> getProductos() {
+        return servicioProductos.showAllProducts();
+    }
+
+    public void addProducto(Producto producto) {
         servicioProductos.addProduct(producto);
     }
 
-    public void eliminarProducto(String nombreProducto) {
-        servicioProductos.removeProduct(nombreProducto);
+    public void deleteProducto(Producto producto) {
+        servicioProductos.removeProduct(producto.getName());
     }
 
-    public void modificarNombreProducto(String nombre, String newNombre) {
-        servicioProductos.updateNameProduct(nombre, newNombre);
-    }
+//    public void updateProducto(Producto producto) {
+//        servicioProductos.updateProducto(producto);
+//    }
 
-    public void modificarPrecioProducto(String nombre, double newPrice) {
-        servicioProductos.updatePriceProduct(nombre, newPrice);
-    }
-
-    public void modificarStockProducto(String nombre, int newStock) {
-        servicioProductos.updateStockProduct(nombre, newStock);
-    }
-
-    public List<Producto> allProducts() {
-        return servicioProductos.showAllProducts();
-    }
 }
+

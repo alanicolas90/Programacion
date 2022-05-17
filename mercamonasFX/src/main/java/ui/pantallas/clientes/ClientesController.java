@@ -2,17 +2,14 @@ package ui.pantallas.clientes;
 
 import domain.modelo.cliente.Cliente;
 import domain.modelo.cliente.ClienteNormal;
-import domain.modelo.producto.Producto;
-import domain.modelo.producto.ProductoNormal;
 import io.github.palexdev.materialfx.controls.MFXTextField;
-import javafx.event.ActionEvent;
+import jakarta.inject.Inject;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.input.MouseEvent;
 import ui.pantallas.common.BasePantallaController;
 
 import java.net.URL;
@@ -35,9 +32,11 @@ public class ClientesController extends BasePantallaController implements Initia
     @FXML
     public MFXTextField dni;
 
-    private ClientesViewModel viewModel;
+    private final ClientesViewModel viewModel;
 
-    public ClientesController() {
+    @Inject
+    public ClientesController(ClientesViewModel viewModel) {
+        this.viewModel = viewModel;
     }
 
     public void update() {
@@ -52,7 +51,7 @@ public class ClientesController extends BasePantallaController implements Initia
     public void initialize(URL url, ResourceBundle resourceBundle) {
         columnNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
         columnDni.setCellValueFactory(new PropertyValueFactory<>("dni"));
-        //table.getItems().addAll(viewModel.allProducts());
+        table.getItems().addAll(viewModel.allClients());
     }
 
     @FXML

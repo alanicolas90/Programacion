@@ -5,6 +5,7 @@ let level = document.getElementById('level');
 let message = document.getElementById('message');
 let crono = document.getElementById('hms');
 let score = document.getElementById('score');
+let timer;
 
 let buttonId = 0;
 
@@ -80,7 +81,8 @@ function stopGame() {
         score.innerText = 'Score: ' + roundNr;
         alert('YOU LOST');
     }
-    //clearInterval(timer);
+    clearInterval(timer);
+
 }
 
 function playGame() {
@@ -93,12 +95,17 @@ function playGame() {
 }
 
 function showSequence() {
-        robotSequence.forEach(lightIt);
+
+    robotSequence.forEach(lightIt);
+
+
 }
 
 function lightIt(buttonNum, i) {
     setTimeout(() => {
+        disableEventsField();
         if (buttonNum >= 0 && buttonNum < rows.value * cols.value) {
+
             setTimeout(function () {
                 document.getElementById(buttonNum.toString()).style.backgroundColor = '#ffff';
             }, 500);
@@ -106,7 +113,12 @@ function lightIt(buttonNum, i) {
                 document.getElementById(buttonNum.toString()).style.backgroundColor = document.getElementById(buttonNum.toString()).style.color;
             }, 1000);
         }
+
     }, i * (1250 - (level.value * 250)));
+    setTimeout(()=>{
+        enableEventsField();
+    }, i*(1250 - (level.value * 250)) + (1100*roundNr));
+
 }
 
 
@@ -125,15 +137,15 @@ function checkSolution() {
                     score.innerText = roundNr.value + 1;
                     win = true;
                     stopGame();
-                    return winRound = false;
+                    return winRound === false;
                 }
             } else {
                 win = false;
                 stopGame();
-                return winRound = false;
+                return winRound === false;
             }
         }
-        if ((winRound = true)) {
+        if ((winRound === true)) {
             let nextNum = Math.floor(Math.random() * (rows.value * cols.value));
             robotSequence.push(nextNum.toString());
             humanSequence = [];
@@ -157,7 +169,6 @@ function enableEventsField() {
     }
 }
 
-
 function disableEventsField() {
     let buttons = document.getElementsByClassName('buttons');
     for (const element of buttons) {
@@ -171,11 +182,7 @@ function disableEventsField() {
 //CRONOMETRO
 
 function cronometro() {
-    escribir();
-    setInterval(escribir, 1000);
-
-    //clearInterval(timer);
-
+    timer = setInterval(escribir, 1000);
 }
 
 function escribir() {

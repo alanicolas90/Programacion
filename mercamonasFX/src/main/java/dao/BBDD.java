@@ -22,41 +22,6 @@ public class BBDD {
 
     private Configuration configuration;
 
-//    public BBDD() {
-//
-//        RuntimeTypeAdapterFactory<Cliente> adapterClient =
-//                RuntimeTypeAdapterFactory
-//                        .of(Cliente.class, "type", true)
-//                        .registerSubtype(ClienteNormal.class)
-//                        .registerSubtype(ClienteDescuento.class);
-//
-//        RuntimeTypeAdapterFactory<Producto> adapterProduct =
-//                RuntimeTypeAdapterFactory
-//                        .of(Producto.class, "type", true)
-//                        .registerSubtype(ProductoNormal.class)
-//                        .registerSubtype(ProductoCaducable.class);
-//
-//
-//        this.gson = new GsonBuilder()
-//                .registerTypeAdapter(LocalDateTime.class,
-//                        (JsonDeserializer<LocalDateTime>) (json, type, jsonDeserializationContext) ->
-//                                LocalDateTime.parse(json.getAsJsonPrimitive().getAsString()))
-//                .registerTypeAdapter(LocalDateTime.class,
-//                        (JsonSerializer<LocalDateTime>) (localDateTime, type, jsonSerializationContext) ->
-//                                new JsonPrimitive(localDateTime.toString()))
-//                .registerTypeAdapter(LocalDate.class,
-//                        (JsonDeserializer<LocalDate>) (json, type, jsonDeserializationContext) ->
-//                                LocalDate.parse(json.getAsJsonPrimitive().getAsString()))
-//                .registerTypeAdapter(LocalDate.class,
-//                        (JsonSerializer<LocalDate>) (localDateTime, type, jsonSerializationContext) ->
-//                                new JsonPrimitive(localDateTime.toString()))
-//                .registerTypeAdapterFactory(adapterClient)
-//                .registerTypeAdapterFactory(adapterProduct)
-//                .create();
-//
-//
-//        this.configuration = Configuration.getInstance();
-//    }
 
     @Inject
     public BBDD(Gson gson, Configuration configuration) {

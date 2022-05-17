@@ -33,6 +33,7 @@ public interface DaoClientes {
     boolean ingredienteExisteCliente(String dniClient, String ingrediente);
 
     boolean tieneComprasAnteriores(String dniClient);
+    List<Cliente> showClientes();
 
     List<Cliente> showListaClientesSortedDineroGastado();
 

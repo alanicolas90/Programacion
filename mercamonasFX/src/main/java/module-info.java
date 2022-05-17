@@ -52,5 +52,8 @@ module javafx {
     exports ui.pantallas.clientes;
     exports ui.pantallas.carrito;
     opens ui.pantallas.clientes;
+    exports ui.pantallas.monedero;
+    exports ui.pantallas.compra;
+    opens domain.modelo.cliente;
 }
 

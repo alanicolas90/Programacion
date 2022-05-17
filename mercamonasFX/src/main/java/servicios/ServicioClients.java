@@ -24,6 +24,7 @@ public interface ServicioClients {
     boolean addMoney(String dniCliente, String nombreTarjeta, double dineroAgregar);
 
     boolean addMonedero(Monedero monedero, String dniClient);
+    List<Cliente> getListClientes();
 
     boolean removeMonedero(String nombreMonedero, String dniClient);
 
@@ -35,7 +36,7 @@ public interface ServicioClients {
 
     double getTotalPrice(String dniClient);
 
-    List<Cliente> showListClientsSotedDni();
+    List<Cliente> showListClientsSortedDni();
 
     boolean addIngredienteAlergia(String dniClient, String ingrediente);
 

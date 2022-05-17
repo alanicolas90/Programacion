@@ -9,10 +9,10 @@ public enum Pantallas {
     PRODUCTOS("/fxml/productos.fxml"),
     CLIENTES("/fxml/clientes.fxml"),
     CARRITO("/fxml/carrito.fxml"),
-    MONEDERO("fxml/monedero.fxml"),
-    TIENDA("fxml/compra.fxml");
+    MONEDERO("/fxml/monedero.fxml"),
+    TIENDA("/fxml/compra.fxml");
 
-    private String ruta;
+    private final String ruta;
     Pantallas(String ruta) {
         this.ruta=ruta;
     }

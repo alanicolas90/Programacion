@@ -1,63 +1,56 @@
 package ui.pantallas.historial_compras;
 
-import domain.modelo.Cromo;
-import domain.modelo.cliente.LineaCompra;
-import io.github.palexdev.materialfx.controls.MFXTableColumn;
-import io.github.palexdev.materialfx.controls.MFXTableView;
-import io.github.palexdev.materialfx.controls.cell.MFXTableRowCell;
+
+import domain.modelo.producto.Producto;
 import jakarta.inject.Inject;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import ui.pantallas.common.BasePantallaController;
 
-import java.util.Comparator;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class HistorialCompraController extends BasePantallaController {
-
+public class HistorialCompraController extends BasePantallaController implements Initializable {
 
     private final HistorialCompraViewModel viewModel ;
+
+    @FXML
+    public TableView<Producto> table;
+    @FXML
+    public TableColumn<Producto,String> columnName;
+    @FXML
+    public TableColumn<Producto,String> columnPrice;
+    @FXML
+    public TableColumn<Producto,String> columnQuantity;
 
     @Inject
     public HistorialCompraController(HistorialCompraViewModel viewModel) {
         this.viewModel = viewModel;
     }
 
-    @FXML
-    private MFXTableView<LineaCompra> tabla;
-
-    @FXML
-    private void ver(ActionEvent actionEvent) {
-//        getPrincipalController().cargarPantalla(Pantallas.DETALLE);
-        tabla.getSelectionModel().getSelection().values().stream().findFirst()
-                .ifPresent(lineaCompra -> getPrincipalController().onSeleccionLineaCompra(LineaCompra));                //.ifPresent(cromo -> getPrincipalController().onSeleccionCromo(cromo));
-
-    }
-
-    public void initialize() {
-// tabla materialFX
-        MFXTableColumn<Cromo> collecionColumn = new MFXTableColumn<>("collecion", true, Comparator.comparing(Cromo::getCollecion));
-        MFXTableColumn<Cromo> descriptionColumn = new MFXTableColumn<>("descripcion", true, Comparator.comparing(Cromo::getDescripcion));
-        MFXTableColumn<Cromo> numberColumn = new MFXTableColumn<>("numero", true, Comparator.comparing(Cromo::getNumero));
-        collecionColumn.setRowCellFactory(persona -> new MFXTableRowCell<>(Cromo::getCollecion));
-        descriptionColumn.setRowCellFactory(persona -> new MFXTableRowCell<>(Cromo::getDescripcion));
-        numberColumn.setRowCellFactory(persona -> new MFXTableRowCell<>(Cromo::getNumero));
 
 
-        tabla.getTableColumns().addAll(collecionColumn, descriptionColumn, numberColumn);
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        columnName.setCellValueFactory(new PropertyValueFactory<>("name"));
+        columnPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
+        columnQuantity.setCellValueFactory(new PropertyValueFactory<>("stock"));
 
-        viewModel.getState().addListener((observableValue, listadoState, listadoStateNew) -> {
-            if (listadoStateNew.getError()!=null){
-                getPrincipalController().sacarAlertError(listadoStateNew.getError());
-            }
-            if (listadoStateNew.getCromos() != null)
-            {
-                tabla.getItems().clear();
-                tabla.getItems().addAll(listadoStateNew.getCromos());
-            }
+        //table.setItems(viewModel.getProductos());
 
 
-        });
-        viewModel.loadCromos();
-        // tabla.setItems(viewModel.getState().get().getPersonas());
+//        MFXTableColumn<Cromo> collecionColumn = new MFXTableColumn<>("collecion", true, Comparator.comparing(Cromo::getCollecion));
+//        MFXTableColumn<Cromo> descriptionColumn = new MFXTableColumn<>("descripcion", true, Comparator.comparing(Cromo::getDescripcion));
+//        MFXTableColumn<Cromo> numberColumn = new MFXTableColumn<>("numero", true, Comparator.comparing(Cromo::getNumero));
+//        collecionColumn.setRowCellFactory(persona -> new MFXTableRowCell<>(Cromo::getCollecion));
+//        descriptionColumn.setRowCellFactory(persona -> new MFXTableRowCell<>(Cromo::getDescripcion));
+//        numberColumn.setRowCellFactory(persona -> new MFXTableRowCell<>(Cromo::getNumero));
+//
+//
+//        tabla.getTableColumns().addAll(collecionColumn, descriptionColumn, numberColumn);
+
+
     }
 }

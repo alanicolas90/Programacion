@@ -3,6 +3,7 @@ package ui.pantallas.productos;
 import domain.modelo.producto.Producto;
 import domain.modelo.producto.ProductoNormal;
 import io.github.palexdev.materialfx.controls.MFXTextField;
+import jakarta.inject.Inject;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -42,10 +43,12 @@ public class ProductosController extends BasePantallaController  implements Init
     @FXML
     private TableColumn<Producto, Integer> columnStock;
 
+    private final ProductoViewModel viewModel;
 
 
-    public ProductosController() {
-
+@Inject
+    public ProductosController(ProductoViewModel viewModel) {
+        this.viewModel = viewModel;
     }
 
 
@@ -54,7 +57,7 @@ public class ProductosController extends BasePantallaController  implements Init
         columnPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
         columnStock.setCellValueFactory(new PropertyValueFactory<>("stock"));
 
-        //table.getItems().addAll(viewModel.allProducts());
+        table.getItems().addAll(viewModel.getProductos());
     }
 
 

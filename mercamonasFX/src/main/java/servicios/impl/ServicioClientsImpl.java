@@ -76,6 +76,11 @@ public class ServicioClientsImpl implements ServicioClients {
   }
 
   @Override
+  public List<Cliente> getListClientes() {
+    return daoClientes.showClientes();
+  }
+
+  @Override
   public boolean addMoney(String dniCliente, String nombreTarjeta, double dineroAgregar) {
     boolean exists = daoMonedero.monederoExists(nombreTarjeta, dniCliente);
     if (exists)
@@ -142,14 +147,13 @@ public class ServicioClientsImpl implements ServicioClients {
 
 
   @Override
-  public List<Cliente> showListClientsSotedDni() {
+  public List<Cliente> showListClientsSortedDni() {
     return daoClientes.showListaClientesOrdenadaDni();
   }
 
   @Override
   public boolean addIngredienteAlergia(String dniClient, String ingrediente) {
-    boolean ingredienteExisteCliente =
-        !daoClientes.ingredienteExisteCliente(dniClient, ingrediente);
+    boolean ingredienteExisteCliente = !daoClientes.ingredienteExisteCliente(dniClient, ingrediente);
     if (ingredienteExisteCliente) {
       daoClientes.addIngredienteAlergia(dniClient, ingrediente);
     }

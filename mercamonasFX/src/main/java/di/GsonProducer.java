@@ -15,8 +15,6 @@ import java.time.LocalDateTime;
 
 public class GsonProducer {
 
-
-
     @Produces
     public Gson getGson() {
         RuntimeTypeAdapterFactory<Cliente> adapterClient =

@@ -187,6 +187,12 @@ public class DaoClientesImpl implements DaoClientes {
     }
 
     @Override
+    public List<Cliente> showClientes(){
+        return new ArrayList<>(db.loadClientes().values());
+    }
+
+
+    @Override
     public List<LineaCompra> dameCarrito(String dniClient) {
         Map<String, Cliente> clientes = db.loadClientes();
         return clientes.get(dniClient).getCarrito();

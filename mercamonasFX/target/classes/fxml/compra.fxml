@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.pantallas.compra.CompraController">
+
+    <TableView fx:id="table" layoutX="61.0" layoutY="100.0" prefHeight="200.0" prefWidth="227.0">
+        <columns>
+            <TableColumn fx:id="columnNombre" prefWidth="75.0" text="nombre" />
+            <TableColumn fx:id="columnPrice" prefWidth="75.0" text="precio" />
+            <TableColumn fx:id="columnStock" prefWidth="75.0" text="stock" />
+        </columns>
+    </TableView>
+   <Label layoutX="239.0" layoutY="28.0" text="TIENDA">
+      <font>
+         <Font size="36.0" />
+      </font>
+   </Label>
+   <Label layoutX="336.0" layoutY="100.0" text="Selecciona en la tabla el producto " />
+   <Label layoutX="352.0" layoutY="117.0" text="y la cantidad escribela abajo" />
+   <TextField layoutX="352.0" layoutY="156.0" />
+   <Button layoutX="401.0" layoutY="210.0" mnemonicParsing="false" text="Comprar" />
+
+</AnchorPane>

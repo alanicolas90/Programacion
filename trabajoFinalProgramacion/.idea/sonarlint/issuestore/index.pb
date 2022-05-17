@@ -5,8 +5,6 @@ P
  src/main/java/common/Common.java,1\f\1f0f1ac1e908685e5a5d0d50f31f2929f463cc5f
 7
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
-`
-0src/main/java/domain/modelo/usuario/Usuario.java,5\7\578c99c34455d6326e37eb3f78fe6d8a4a5b1697
 l
 <src/main/java/domain/modelo/billetera/BilleteraFamiliar.java,1\6\169da9847c4a228151eb112831b910ef4c58609f
 d
@@ -15,12 +13,8 @@ d
 ,src/main/java/domain/modelo/gasto/Gasto.java,c\6\c6f4561b0733c3c0ec30b1d6ff4b4a568209c8f3
 b
 2src/main/java/domain/modelo/gasto/GastoNormal.java,7\3\73af64ece7992f569935439f59fa5fe308b7cd9f
-]
--src/main/java/ui/entered_account/UiLogin.java,7\0\7096643e211de9b3cdb43a82bd69771efa352f69
 X
 (src/main/java/constantes/Constantes.java,f\f\ff10601d1d472e7ac46f2abd85d86cedd879c082
-v
-Fsrc/main/java/ui/entered_account/ajustes_usuario/UiAjustesUsuario.java,a\3\a34bdc0537ae7ee34b4b745ea0715f934719be1c
 S
 #src/main/java/dao/DaoBilletera.java,0\5\05cf0e4aaf48e22f81ac5af86585bb499ce742df
 \
@@ -33,5 +27,3 @@ Q
 !src/main/java/dao/DaoUsuario.java,4\9\491ff314333424da71ae410582f59337863d4961
 u
 Esrc/main/java/ui/entered_account/menu_billeteras/UiMenuBilletero.java,a\2\a26f79c1a9f271aea8242c16919016822ffd4532
-J
-src/main/java/ui/Main.java,f\5\f5f833a11c774bc6d9fec08fc87be62b89228540
