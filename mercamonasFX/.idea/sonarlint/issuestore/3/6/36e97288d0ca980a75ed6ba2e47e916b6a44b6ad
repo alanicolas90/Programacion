@@ -1,0 +1,7 @@
+
+h
+java:S1192"RDefine a constant instead of duplicating this literal "ProductoCaducable" 3 times.(ÇíÚ’
+i
+java:S2975."SRemove this "clone" implementation; use a copy constructor or copy factory instead.(ÿİ¨İ
+^
+java:S1182."HUse super.clone() to create and seed the cloned instance to be returned.(ÿİ¨İ
