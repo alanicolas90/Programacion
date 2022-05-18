@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>GUESS THE BRAND</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="js/exam.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/exam.css">
+    </head>
+
+    <body>
+
+        <h1 id="tit">GUESS THE BRAND</h1>
+        <label for="mode">Level:</label>
+        <select  id="mode">
+            <option value="2" selected="selected">Easy game </option>
+            <option value="1">Medium game </option>
+            <option value="0">Hard game </option>
+        </select>
+
+        <h1 class="res"> Right answers</h1>
+        <input type="text" id="right" readonly  size=5 value="0">
+        <br>
+        <h1 class="res"> Wrong answers </h1>
+        <input type="text" id="wrong" readonly  size=5 value="0">
+        <br>
+        <br>
+        <input type="button"  id="start" value="Start game" >
+
+        <div id="block" >
+            <!-- Div for OK/Error message (Image) -->
+            <h1>Brand</h1>
+            <h2 id="brand"></h2>
+
+            <div id="images">
+                <img id="ima"  width=200 height=200>
+            </div>
+        </div>
+
+
+    </body>
+</html>

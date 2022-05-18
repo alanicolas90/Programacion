@@ -5,14 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="08ae8d33-e798-4952-a6cd-ea4c4f8d80e2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../mercamonasFX/.idea/sonarlint/issuestore/0/0/00a168197ce395305c37a33f896012577da7634b" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mercamonasFX/.idea/sonarlint/issuestore/2/e/2e7ed3f63e50c10ff7a66a7fadc414025b80ef54" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mercamonasFX/.idea/sonarlint/issuestore/4/0/40ddd7f394b516943aa3ee4cd4ad4c3ae424ad13" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mercamonasFX/.idea/sonarlint/issuestore/6/8/6854908843d482996cd7f7c9ccd44ffdc547ca45" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mercamonasFX/.idea/sonarlint/issuestore/8/7/87d42a8a6967e707d6c44eb756c4666397d7a7d2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mercamonasFX/.idea/sonarlint/issuestore/d/c/dc93d87f6f192408bc0bee328c8f77e509e08153" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../mercamonasFX/.idea/sonarlint/issuestore/e/7/e7d8d195a68c5e0e3b34a11a1a18d22d5e312b65" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JSEjercicios/src/Exam documents/js/exam.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSEjercicios/.idea/sonarlint/issuestore/4/6/463395780156f6d727ba65beb1dedf5bb61ae4db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSEjercicios/.idea/sonarlint/issuestore/5/0/50ed4912025d407476b59ee15c810bc656a0ebe1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSEjercicios/.idea/sonarlint/issuestore/7/c/7c7e13cab086400f2519e0bcd7bd24ce34a8ae50" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSEjercicios/.idea/sonarlint/issuestore/a/6/a6c2e0e6e073cd17bff2b421d55940f38038cb7c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSEjercicios/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/../JSEjercicios/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../mercamonasFX/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/../../mercamonasFX/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mercamonasFX/data/client.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../mercamonasFX/data/client.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mercamonasFX/src/main/java/ui/pantallas/clientes/ClientesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../mercamonasFX/src/main/java/ui/pantallas/clientes/ClientesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mercamonasFX/src/main/java/ui/pantallas/clientes/ClientesViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../mercamonasFX/src/main/java/ui/pantallas/clientes/ClientesViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mercamonasFX/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../mercamonasFX/target/classes/module-info.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mercamonasFX/target/classes/ui/pantallas/clientes/ClientesController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../mercamonasFX/target/classes/ui/pantallas/clientes/ClientesController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mercamonasFX/target/classes/ui/pantallas/clientes/ClientesViewModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../mercamonasFX/target/classes/ui/pantallas/clientes/ClientesViewModel.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +49,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/alani/Desktop/Programacion/MARKUP/JSEjercicios"
+    "last_opened_file_path": "C:/Users/alani/Desktop/Programacion/MARKUP/JAVASCRIPT EXERCISES2"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -56,6 +62,7 @@
       <updated>1650107994846</updated>
       <workItem from="1650107996089" duration="5047000" />
       <workItem from="1652089550629" duration="14000" />
+      <workItem from="1652865478329" duration="8000" />
     </task>
     <servers />
   </component>

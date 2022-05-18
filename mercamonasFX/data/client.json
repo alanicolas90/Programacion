@@ -46,16 +46,6 @@
       ]
     ]
   },
-  "0002": {
-    "descuento": 25.0,
-    "dni": "0002",
-    "nombre": "mama",
-    "monederos": [],
-    "type": "ClienteDescuento",
-    "alergenos": [],
-    "carrito": [],
-    "buyHistory": []
-  },
   "01": {
     "dni": "01",
     "nombre": "alan",
@@ -65,11 +55,21 @@
     "carrito": [],
     "buyHistory": []
   },
-  "000000002": {
-    "dni": "000000002",
+  "2": {
+    "dni": "2",
     "nombre": "juan",
     "monederos": [],
     "type": "ClienteNormal",
+    "alergenos": [],
+    "carrito": [],
+    "buyHistory": []
+  },
+  "0022": {
+    "descuento": 25.0,
+    "dni": "0022",
+    "nombre": "mamasita",
+    "monederos": [],
+    "type": "ClienteDescuento",
     "alergenos": [],
     "carrito": [],
     "buyHistory": []

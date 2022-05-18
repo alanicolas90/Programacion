@@ -39,6 +39,14 @@ public class ClientesController extends BasePantallaController implements Initia
         this.viewModel = viewModel;
     }
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        columnNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
+        columnDni.setCellValueFactory(new PropertyValueFactory<>("dni"));
+        table.getItems().removeAll(table.getItems());
+        table.getItems().addAll(viewModel.allClients());
+    }
+
     public void update() {
         Cliente productTabla = table.getSelectionModel().getSelectedItem();
         if (productTabla != null) {
@@ -47,37 +55,33 @@ public class ClientesController extends BasePantallaController implements Initia
         }
     }
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        columnNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
-        columnDni.setCellValueFactory(new PropertyValueFactory<>("dni"));
-        table.getItems().addAll(viewModel.allClients());
-    }
-
     @FXML
     private void add() {
-        Cliente nuevoProduct = new ClienteNormal(txtDni.getText(), txtNombre.getText());
-        boolean contains = !table.getItems().contains(nuevoProduct);
-        if (contains) {
-            table.getItems().add(nuevoProduct);
+        Cliente cliente = new ClienteNormal(txtDni.getText(), txtNombre.getText());
+        boolean contains = !table.getItems().contains(cliente);
+        if (contains && viewModel.addClient(cliente)) {
+            table.getItems().add(cliente);
         }
     }
 
     @FXML
     private void remove() {
-
-        Cliente productTabla = table.getSelectionModel().getSelectedItem();
-        if (productTabla != null) {
-            table.getItems().remove(productTabla);
+        Cliente cliente = table.getSelectionModel().getSelectedItem();
+        if (cliente != null && viewModel.removeClient(cliente)) {
+            table.getItems().remove(cliente);
         }
 
     }
 
+    @FXML
     public void updateData() {
-        Cliente productTabla = table.getSelectionModel().getSelectedItem();
-        if (productTabla != null) {
-            table.getItems().remove(productTabla);
-            table.getItems().add(new ClienteNormal(dni.getText(), nombre.getText()));
+        Cliente cliente = table.getSelectionModel().getSelectedItem();
+        Cliente clienteNuevo = new ClienteNormal(dni.getText(), nombre.getText());
+        if (cliente != null && !cliente.equals(clienteNuevo)) {
+            if (viewModel.updateDniCliente(cliente, dni.getText())) {
+                table.getItems().removeAll(table.getItems());
+                table.getItems().addAll(viewModel.allClients());
+            }
         }
     }
 }
