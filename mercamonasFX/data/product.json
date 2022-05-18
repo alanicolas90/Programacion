@@ -1,16 +1,1 @@
-[
-  {
-    "name": "zanahoria",
-    "price": 2.0,
-    "type": "ProductoNormal",
-    "stock": 999,
-    "ingredientes": []
-  },
-  {
-    "name": "te",
-    "price": 3.0,
-    "type": "ProductoNormal",
-    "stock": 2100,
-    "ingredientes": []
-  }
-]
+[{"name":"zanahoria","price":2.0,"type":"ProductoNormal","stock":909,"ingredientes":[]},{"name":"te","price":4.0,"type":"ProductoNormal","stock":2100,"ingredientes":[]}]

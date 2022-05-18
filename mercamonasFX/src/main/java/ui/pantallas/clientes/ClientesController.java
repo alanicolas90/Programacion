@@ -80,6 +80,9 @@ public class ClientesController extends BasePantallaController implements Initia
         Cliente clienteNuevo = new ClienteNormal(dni.getText(), nombre.getText());
         if (cliente != null && !cliente.getDni().equals(clienteNuevo.getDni())) {
             if (viewModel.updateDniCliente(cliente, dni.getText())) {
+                if(!cliente.getNombre().equals(clienteNuevo.getNombre())){
+                    viewModel.updateNombreCliente(cliente, nombre.getText());
+                }
                 table.getItems().removeAll(table.getItems());
                 table.getItems().addAll(viewModel.allClients());
             }

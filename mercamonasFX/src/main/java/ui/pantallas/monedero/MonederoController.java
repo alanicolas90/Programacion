@@ -10,6 +10,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import ui.pantallas.common.BasePantallaController;
 
 import java.net.URL;
@@ -51,5 +52,31 @@ public class MonederoController extends BasePantallaController implements Initia
         table.getItems().addAll(viewModel.getMonedero());
     }
 
+    public void addMonedero() {
+        if(!txtFieldNombreMonedero.getText().isEmpty() && !txtFiedDineroMonedero.getText().isEmpty()) {
+            viewModel.addMonedero(txtFieldNombreMonedero.getText(), Double.parseDouble(txtFiedDineroMonedero.getText()));
+        }else if(!txtFieldNombreMonedero.getText().isEmpty() && txtFiedDineroMonedero.getText().isEmpty()){
+            viewModel.addMonedero(txtFieldNombreMonedero.getText(), 0);
+        }
+        table.getItems().removeAll(table.getItems());
+        table.getItems().addAll(viewModel.getMonedero());
+    }
 
+
+    public void removeMonedero() {
+        Monedero monedero = table.getSelectionModel().getSelectedItem();
+        if(viewModel.removeMonedero(monedero)){
+            table.getItems().removeAll(table.getItems());
+            table.getItems().addAll(viewModel.getMonedero());
+        }
+    }
+
+
+    public void addDineroMonedero() {
+        Monedero monedero = table.getSelectionModel().getSelectedItem();
+        if(monedero != null && viewModel.addDineroMonedero(monedero, Double.parseDouble(txtFieldAddDinero.getText()))){
+            table.getItems().removeAll(table.getItems());
+            table.getItems().addAll(viewModel.getMonedero());
+        }
+    }
 }

@@ -65,7 +65,3 @@ d
 4src/main/java/domain/modelo/cliente/LineaCompra.java,a\0\a09f5420d180941e27737635415c16bceac28faf
 `
 0src/main/java/ui/pantallas/common/Pantallas.java,0\f\0f6b33d1a9a5694be1bfe44edd12d4d8db6849d0
-g
-7src/main/java/ui/pantallas/compra/CompraController.java,b\d\bdb5b5fb989be77efed6d47d2bd792fbeaf9730b
-j
-:src/main/java/ui/pantallas/clientes/ClientesViewModel.java,0\9\099629c3411e37beff6c3813a0009ccfe9182d3d

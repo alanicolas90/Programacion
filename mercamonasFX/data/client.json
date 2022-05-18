@@ -6,6 +6,10 @@
       {
         "name": "ale",
         "money": 9.998E8
+      },
+      {
+        "name": "monede",
+        "money": 4600.0
       }
     ],
     "type": "ClienteNormal",
@@ -14,7 +18,18 @@
         "nombre": "proteinas"
       }
     ],
-    "carrito": [],
+    "carrito": [
+      {
+        "producto": {
+          "name": "zanahoria",
+          "price": 2.0,
+          "type": "ProductoNormal",
+          "stock": 999,
+          "ingredientes": []
+        },
+        "quantity": 90
+      }
+    ],
     "buyHistory": [
       [
         {
@@ -64,9 +79,9 @@
     "carrito": [],
     "buyHistory": []
   },
-  "0022": {
+  "002": {
     "descuento": 25.0,
-    "dni": "0022",
+    "dni": "002",
     "nombre": "mama",
     "monederos": [],
     "type": "ClienteDescuento",

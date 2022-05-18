@@ -20,7 +20,7 @@
    </Label>
    <Label layoutX="336.0" layoutY="100.0" text="Selecciona en la tabla el producto " />
    <Label layoutX="352.0" layoutY="117.0" text="y la cantidad escribela abajo" />
-   <TextField layoutX="352.0" layoutY="156.0" />
-   <Button layoutX="401.0" layoutY="210.0" mnemonicParsing="false" text="Comprar" />
+   <TextField fx:id="cantProducto" layoutX="352.0" layoutY="156.0" />
+   <Button layoutX="401.0" layoutY="210.0" mnemonicParsing="false" text="Comprar" onMouseClicked="#meterAlCarrito" />
 
 </AnchorPane>
