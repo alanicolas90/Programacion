@@ -5,5 +5,12 @@
     "type": "ProductoNormal",
     "stock": 999,
     "ingredientes": []
+  },
+  {
+    "name": "te",
+    "price": 3.0,
+    "type": "ProductoNormal",
+    "stock": 2100,
+    "ingredientes": []
   }
 ]

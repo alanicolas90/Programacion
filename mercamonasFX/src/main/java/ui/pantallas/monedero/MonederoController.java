@@ -48,7 +48,7 @@ public class MonederoController extends BasePantallaController implements Initia
     public void initialize(URL url, ResourceBundle resourceBundle) {
         columnaNombreMonedero.setCellValueFactory(new PropertyValueFactory<>("name"));
         columnaDineroMonedero.setCellValueFactory(new PropertyValueFactory<>("money"));
-        //table.getItems().addAll(viewModel.getMonedero());
+        table.getItems().addAll(viewModel.getMonedero());
     }
 
 

@@ -88,10 +88,17 @@ public class DaoClientesImpl implements DaoClientes {
     }
 
     @Override
+    public List<Monedero> getMonederosCliente(String dniClient) {
+        Map<String, Cliente> clientes = db.loadClientes();
+
+        return new ArrayList<>(clientes.get(dniClient).getMonederos());
+    }
+
+    @Override
     public double getDescuentoCliente(String dniClient) {
         Map<String, Cliente> clientes = db.loadClientes();
 
-        return ((ClienteDescuento)clientes.get(dniClient)).getDescuento();
+        return ((ClienteDescuento) clientes.get(dniClient)).getDescuento();
     }
 
     @Override
@@ -115,7 +122,7 @@ public class DaoClientesImpl implements DaoClientes {
     @Override
     public boolean existClient(String clientDNI) {
         Map<String, Cliente> clientes = db.loadClientes();
-        if(clientes!=null)
+        if (clientes != null)
             return clientes.containsKey(clientDNI);
 
         return false;
@@ -187,7 +194,7 @@ public class DaoClientesImpl implements DaoClientes {
     }
 
     @Override
-    public List<Cliente> showClientes(){
+    public List<Cliente> showClientes() {
         return new ArrayList<>(db.loadClientes().values());
     }
 

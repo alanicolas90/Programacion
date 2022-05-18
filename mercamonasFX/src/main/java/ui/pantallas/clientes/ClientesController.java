@@ -47,6 +47,7 @@ public class ClientesController extends BasePantallaController implements Initia
         table.getItems().addAll(viewModel.allClients());
     }
 
+    @FXML
     public void update() {
         Cliente productTabla = table.getSelectionModel().getSelectedItem();
         if (productTabla != null) {
@@ -77,8 +78,13 @@ public class ClientesController extends BasePantallaController implements Initia
     public void updateData() {
         Cliente cliente = table.getSelectionModel().getSelectedItem();
         Cliente clienteNuevo = new ClienteNormal(dni.getText(), nombre.getText());
-        if (cliente != null && !cliente.equals(clienteNuevo)) {
+        if (cliente != null && !cliente.getDni().equals(clienteNuevo.getDni())) {
             if (viewModel.updateDniCliente(cliente, dni.getText())) {
+                table.getItems().removeAll(table.getItems());
+                table.getItems().addAll(viewModel.allClients());
+            }
+        }if(cliente != null && !cliente.getNombre().equals(clienteNuevo.getNombre())){
+            if(viewModel.updateNombreCliente(cliente, nombre.getText())){
                 table.getItems().removeAll(table.getItems());
                 table.getItems().addAll(viewModel.allClients());
             }

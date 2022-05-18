@@ -45,4 +45,6 @@ public interface ServicioClients {
     double dineroTotalGastado(String dniClient);
 
     List<Cliente> showClientesSortedDineroGastado();
+
+    List<Monedero> getMonederosCliente(String dniUser);
 }

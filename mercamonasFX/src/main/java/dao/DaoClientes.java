@@ -3,6 +3,7 @@ package dao;
 import domain.modelo.cliente.Cliente;
 import domain.modelo.cliente.ClienteDescuento;
 import domain.modelo.cliente.LineaCompra;
+import domain.modelo.cliente.Monedero;
 
 import java.util.List;
 import java.util.Map;
@@ -50,4 +51,6 @@ public interface DaoClientes {
     Cliente seeSpecificClient(String dniClient);
 
     ClienteDescuento seeSpecificClientDescuento(String dniClient);
+
+    List<Monedero> getMonederosCliente(String dniClient);
 }

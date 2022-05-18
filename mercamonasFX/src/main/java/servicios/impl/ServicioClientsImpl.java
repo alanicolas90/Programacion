@@ -190,4 +190,9 @@ public class ServicioClientsImpl implements ServicioClients {
   public List<Cliente> showClientesSortedDineroGastado() {
     return daoClientes.showListaClientesSortedDineroGastado();
   }
+
+  @Override
+  public List<Monedero> getMonederosCliente(String dniUser) {
+    return daoClientes.getMonederosCliente(dniUser);
+  }
 }

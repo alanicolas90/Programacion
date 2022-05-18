@@ -40,6 +40,11 @@ public class PrincipalController {
     public Usuario getActualUser() {
         return actualUser;
     }
+
+    public String getDni(){
+        return "0001";
+    }
+
     public Cromo getActualCromo(){return cromoSeleccionado;}
 
 
@@ -110,52 +115,6 @@ public class PrincipalController {
     }
 
     private void cambioPantalla(Pane pantallaNueva) {
-
-        //            FadeTransition fade = new FadeTransition();
-//            fade.setNode(root.getCenter());
-//            fade.setDuration(Duration.millis(2000));
-//            fade.setCycleCount(1);
-//            fade.setInterpolator(Interpolator.LINEAR);
-//            fade.setFromValue(1);
-//            fade.setToValue(0);
-//            fade.play();
-//            fade.setOnFinished(event -> {
-//                root.setCenter(panePantalla);
-//            });
-        //            TranslateTransition translate = new TranslateTransition();
-//            translate.setNode(stackPane.getChildren().get(1));
-//            translate.setDuration(Duration.millis(1000));
-//            translate.setCycleCount(1);
-//            translate.setInterpolator(Interpolator.LINEAR);
-//            translate.setFromX(0);
-//            translate.setToX(root.getWidth());
-//            translate.play();
-//            translate.setOnFinished(event -> {
-//                stackPane.getChildren().remove(1);
-//            });
-
-//        StackPane stackPane = (StackPane) root.getCenter();
-//
-//        if (stackPane.getChildren().get(0) != pantallaNueva) {
-//
-//            stackPane.getChildren().add(0, pantallaNueva);
-//
-//            ScaleTransition scaleTransition = new ScaleTransition();
-//            scaleTransition.setNode(stackPane.getChildren().get(1));
-//            scaleTransition.setDuration(Duration.millis(500));
-//            scaleTransition.setFromX(stackPane.getChildren().get(1).getScaleX());
-//            scaleTransition.setFromY(stackPane.getChildren().get(1).getScaleY());
-//            scaleTransition.setToX(0);
-//            scaleTransition.setToY(0);
-//            scaleTransition.setInterpolator(Interpolator.EASE_OUT);
-//            scaleTransition.play();
-//            scaleTransition.setOnFinished(event -> {
-//                Node node = stackPane.getChildren().remove(1);
-//                node.setScaleX(1);
-//                node.setScaleY(1);
-//            });
-//        }
-
         root.setCenter(pantallaNueva);
     }
 

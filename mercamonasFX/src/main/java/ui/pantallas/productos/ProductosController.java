@@ -72,20 +72,19 @@ public class ProductosController extends BasePantallaController  implements Init
         Producto nuevoProduct = new ProductoNormal(txtNombre.getText(), Double.parseDouble(txtPrice.getText()), Integer.parseInt(txtStock.getText()));
         boolean contains = !table.getItems().contains(nuevoProduct);
         if (contains && nuevoProduct.getPrice() > 0 && nuevoProduct.getStock() >= 0) {
-//            viewModel.agregarProducto(nuevoProduct);
-//            table.getItems().removeAll();
-            table.getItems().add(nuevoProduct);
+            viewModel.addProducto(nuevoProduct);
+            table.getItems().removeAll(table.getItems());
+            table.getItems().addAll(viewModel.getProductos());
         }
     }
 
     @FXML
     private void remove() {
-
         Producto productTabla = table.getSelectionModel().getSelectedItem();
-        if (productTabla != null) {
-            table.getItems().remove(productTabla);
+        if (productTabla != null && viewModel.removeProducto(productTabla)) {
+            table.getItems().removeAll(table.getItems());
+            table.getItems().addAll(viewModel.getProductos());
         }
-
     }
 
     @FXML
@@ -100,13 +99,25 @@ public class ProductosController extends BasePantallaController  implements Init
 
     }
 
+    @FXML
     public void updateData() {
         Producto productTabla = table.getSelectionModel().getSelectedItem();
-        if (productTabla != null) {
-            table.getItems().remove(productTabla);
-            table.getItems().add(new ProductoNormal(nombre.getText(), Double.parseDouble(precio.getText()), Integer.parseInt(stock.getText())));
+        Producto productoActualizado = new ProductoNormal(nombre.getText(), Double.parseDouble(precio.getText()), Integer.parseInt(stock.getText()));
+        if (productTabla != null && !productoActualizado.getName().equals(productTabla.getName())) {
+            if(viewModel.updateNombreProducto(productTabla, productoActualizado)){
+                table.getItems().removeAll(table.getItems());
+                table.getItems().addAll(viewModel.getProductos());
+            }
+        }if (productTabla != null && productoActualizado.getPrice() != productTabla.getPrice()) {
+            if(viewModel.updatePriceProducto(productTabla, productoActualizado)){
+                table.getItems().removeAll(table.getItems());
+                table.getItems().addAll(viewModel.getProductos());
+            }
+        }if (productTabla != null && productoActualizado.getStock() != (productTabla.getStock())) {
+            if (viewModel.updateStockProducto(productTabla, productoActualizado)) {
+                table.getItems().removeAll(table.getItems());
+                table.getItems().addAll(viewModel.getProductos());
+            }
         }
-
-
     }
 }
