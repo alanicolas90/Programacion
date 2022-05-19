@@ -1,5 +1,10 @@
 
+<<<<<<< Updated upstream
 7
 java:S1170"!Make this final field static too.(‘Î¶¨
+=======
+>
+java:S1170"!Make this final field static too.(‘Î¶¨8‚•¿¾0
+>>>>>>> Stashed changes
 N
 java:S1068"3Remove this unused "servicioCompras" private field.(Ê£Æ©ýÿÿÿÿ

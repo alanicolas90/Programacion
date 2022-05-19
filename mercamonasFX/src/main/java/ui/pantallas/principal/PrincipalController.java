@@ -173,9 +173,6 @@ public class PrincipalController {
             case "menuItemPantalla1":
                 cargarPantalla(Pantallas.PANTALLA1);
                 break;
-            case "menuItemListado":
-                cargarPantalla(Pantallas.LISTADO);
-                break;
             case "menuItemPantallaNueva":
                 cargarPantalla(Pantallas.PRODUCTOS);
                 break;

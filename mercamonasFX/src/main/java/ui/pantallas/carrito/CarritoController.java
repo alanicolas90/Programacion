@@ -1,6 +1,9 @@
 package ui.pantallas.carrito;
 
+import domain.modelo.cliente.LineaCompra;
+import domain.modelo.producto.Producto;
 import io.github.palexdev.materialfx.controls.MFXTextField;
+import jakarta.inject.Inject;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -14,28 +17,58 @@ import java.util.ResourceBundle;
 
 public class CarritoController extends BasePantallaController implements Initializable {
     @FXML
-    public TableView table;
+    public TableView<LineaCompra> table;
     @FXML
     public Button bttnRemove;
     @FXML
-    public MFXTextField txtField;
-    @FXML
     public Button bttnPagar;
     @FXML
-    public TableColumn columnName;
+    public TableColumn<String, Producto> columnName;
     @FXML
-    public TableColumn columnPrice;
+    public TableColumn<String,LineaCompra> columnQuantity;
     @FXML
-    public TableColumn columnQuantity;
+    public MFXTextField txtTotalPrice;
+    @FXML
+    public MFXTextField txtNewQuantity;
 
-    public CarritoController() {
+    private CarritoViewModel viewModel;
+    @Inject
+    public CarritoController(CarritoViewModel viewModel) {
+        this.viewModel = viewModel;
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        columnName.setCellValueFactory(new PropertyValueFactory<>("nombre"));
-        columnPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
+
+        columnName.setCellValueFactory(new PropertyValueFactory<>("producto"));
         columnQuantity.setCellValueFactory(new PropertyValueFactory<>("quantity"));
-        //table.getItems().addAll(viewModel.allProducts());
+        table.getItems().addAll(viewModel.getCarrito());
+    }
+
+    public void getData() {
+        LineaCompra lineaCompra = table.getSelectionModel().getSelectedItem();
+        if(lineaCompra != null) {
+            txtNewQuantity.setText(String.valueOf(lineaCompra.getQuantity()));
+        }
+
+    }
+
+    public void removeItemDelCarrito() {
+        LineaCompra lineaCompra = table.getSelectionModel().getSelectedItem();
+        if(lineaCompra != null) {
+            if(viewModel.removeItem(lineaCompra)) {
+                table.getItems().removeAll(table.getItems());
+                table.getItems().addAll(viewModel.getCarrito());
+
+            }
+        }
+    }
+
+    public void pagarPorElCarrito() {
+
+    }
+
+    public void changeQuantity() {
+
     }
 }

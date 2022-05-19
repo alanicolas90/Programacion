@@ -89,14 +89,12 @@ public class ProductosController extends BasePantallaController  implements Init
 
     @FXML
     private void update() {
-
         Producto productTabla = table.getSelectionModel().getSelectedItem();
         if (productTabla != null) {
             nombre.setText(productTabla.getName());
             precio.setText(String.valueOf(productTabla.getPrice()));
             stock.setText(String.valueOf(productTabla.getStock()));
         }
-
     }
 
     @FXML

@@ -28,6 +28,26 @@
           "ingredientes": []
         },
         "quantity": 90
+      },
+      {
+        "producto": {
+          "name": "zanahoria",
+          "price": 2.0,
+          "type": "ProductoNormal",
+          "stock": 909,
+          "ingredientes": []
+        },
+        "quantity": 9
+      },
+      {
+        "producto": {
+          "name": "zanahoria",
+          "price": 2.0,
+          "type": "ProductoNormal",
+          "stock": 900,
+          "ingredientes": []
+        },
+        "quantity": 5
       }
     ],
     "buyHistory": [

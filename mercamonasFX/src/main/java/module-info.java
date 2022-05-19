@@ -19,7 +19,6 @@ module javafx {
     exports ui.pantallas.pantalla1;
     exports ui.pantallas.login;
     exports ui.pantallas.detalle;
-    exports ui.pantallas.historial_compras;
     exports config;
     exports ui.pantallas.common;
     exports common;
@@ -29,7 +28,6 @@ module javafx {
 
     opens ui.pantallas.pantalla1 to javafx.fxml;
     opens ui.pantallas.productos;
-    opens ui.pantallas.historial_compras to javafx.fxml;
     opens ui.pantallas.login to  javafx.fxml;
     opens ui.pantallas.detalle to  javafx.fxml;
     opens ui.pantallas.principal;

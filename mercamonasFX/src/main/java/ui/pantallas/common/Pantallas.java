@@ -4,7 +4,7 @@ public enum Pantallas {
 
     PANTALLA1 ("/fxml/bienvenida.fxml"),
     LOGIN ("/fxml/login.fxml"),
-    LISTADO ("/fxml/historialCompras.fxml"),
+
     DETALLE ("/fxml/detalle.fxml"),
     PRODUCTOS("/fxml/productos.fxml"),
     CLIENTES("/fxml/clientes.fxml"),
