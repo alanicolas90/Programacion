@@ -14,6 +14,8 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 import static org.mockito.Mockito.*;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
@@ -293,14 +295,14 @@ class ServicioClientsImplTest {
     }
 
     //como hacer un when con un map
-//    @Test
-//    void showListClients() {
-//        String dni = "12345678A";
-//        Cliente c = new ClienteNormal(dni);
-//        Map<String, Cliente> clientes = Map.of(dni , c);
-//        when(daoClientes.showClientes());
-//        servicioClients.showListClients();
-//    }
+    @Test
+    void showListClients() {
+        String dni = "12345678A";
+        Cliente c = new ClienteNormal(dni);
+        Map<String, Cliente> clientes = Map.of(c.getDni() , c);
+        when(daoClientes.showClientes());
+        servicioClients.showListClients();
+    }
 
     @Test
     void getListClientes() {
@@ -317,8 +319,10 @@ class ServicioClientsImplTest {
     void showTarjetasCliente() {
         //given
         String dni = "12345678A";
+        //when(daoMonedero.showTarjetasCliente(dni)).thenReturn();
         //when
-        //Set<Monedero> set = servicioClients.showTarjetasCliente(dni);
+        Set<Monedero> set = servicioClients.showTarjetasCliente(dni);
+
         //then
     }
 

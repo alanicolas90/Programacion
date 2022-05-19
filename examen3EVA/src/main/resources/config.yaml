@@ -1,0 +1,3 @@
+peliculasSource: data/peliculas.json
+seriesSource: data/series.json
+usuariosSource: data/usuarios.json

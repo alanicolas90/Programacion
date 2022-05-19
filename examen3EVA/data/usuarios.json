@@ -1,0 +1,9 @@
+{
+  "pepe": {
+    "username": "pepe",
+    "password": "flipas",
+    "peliculasVistas": [],
+    "seriesVistas": [],
+    "type": "Usuario"
+  }
+}

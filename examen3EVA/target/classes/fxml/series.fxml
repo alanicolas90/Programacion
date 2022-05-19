@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="359.0" prefWidth="874.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.pantallas.series.SeriesController">
+    <Button fx:id="bttnAdd" layoutX="268.0" layoutY="63.0" mnemonicParsing="false" onAction="#addSerie" text="add" />
+    <TextField fx:id="txtNombreSerie" accessibleRole="TEXT_AREA" layoutX="93.0" layoutY="63.0" />
+    <TableView fx:id="tableSeries" onMouseClicked="#updateTableEpisodios" layoutX="10.0" layoutY="119.0" prefHeight="200.0" prefWidth="389.0">
+        <columns>
+            <TableColumn fx:id="columnNombre" prefWidth="75.0" text="nombre" />
+            <TableColumn fx:id="columnValoracion" prefWidth="75.0" text="valoracion" />
+            <TableColumn fx:id="columnVisto" prefWidth="75.0" text="visto" />
+         <TableColumn fx:id="columnEpisodios" prefWidth="162.40001220703124" text="episodios" />
+        </columns>
+    </TableView>
+    <Label layoutX="10.0" layoutY="67.0" prefHeight="17.0" prefWidth="70.0" text="nombreSerie" />
+    <Label layoutX="81.0" layoutY="14.0" text="SERIES">
+        <font>
+            <Font size="28.0" />
+        </font>
+    </Label>
+   <TableView fx:id="tableEpisodios" onMouseClicked="#updateTableActores" layoutX="432.0" layoutY="119.0" prefHeight="200.0" prefWidth="239.0">
+      <columns>
+         <TableColumn fx:id="columnIdEpisodio" prefWidth="75.0" text="id" />
+         <TableColumn fx:id="columnActores" prefWidth="162.40001220703124" text="actores" />
+      </columns>
+   </TableView>
+   <TextField fx:id="txtNombreEpisodio" accessibleRole="TEXT_AREA" layoutX="448.0" layoutY="50.0" />
+   <Button fx:id="bttnAddEpisodio" layoutX="477.0" layoutY="84.0" mnemonicParsing="false" onAction="#addEpisodio" text="addEpisodio" />
+   <TableView fx:id="tableActores" layoutX="700.0" layoutY="119.0" prefHeight="200.0" prefWidth="159.0">
+      <columns>
+         <TableColumn fx:id="columnActoresTableActores" prefWidth="162.40001220703124" text="actor" />
+      </columns>
+   </TableView>
+   <TextField fx:id="txtNombreActor" accessibleRole="TEXT_AREA" layoutX="705.0" layoutY="54.0" />
+   <Button fx:id="bttnAddActor" layoutX="700.0" layoutY="84.0" mnemonicParsing="false" onAction="#addActor" text="addActor" />
+   <Label layoutX="448.0" layoutY="25.0" prefHeight="17.0" prefWidth="70.0" text="idEpisodio" />
+   <Label layoutX="705.0" layoutY="25.0" prefHeight="17.0" prefWidth="82.0" text="nombreActor" />
+
+</AnchorPane>

@@ -1,0 +1,49 @@
+
+E
+java:S3740$"/Provide the parametrized type for this generic.(é©½Æ
+E
+java:S3740'"/Provide the parametrized type for this generic.(ó•¬©
+L
+java:S1066U"/Merge this if statement with the enclosing one.(´ŞÛ¥8Êğ¿ß0
+u
+java:S1104"ZMake txtNombreSerie a static final constant or non-public and provide accessors if needed.(šÙ÷Œûÿÿÿÿ
+m
+java:S1104"WMake tableSeries a static final constant or non-public and provide accessors if needed.(â­ş©
+s
+java:S1104"XMake columnNombre a static final constant or non-public and provide accessors if needed.(Ê¤ú€ÿÿÿÿÿ
+r
+java:S1104"\Make columnValoracion a static final constant or non-public and provide accessors if needed.(Œå™î
+r
+java:S1104"WMake columnVisto a static final constant or non-public and provide accessors if needed.(Œİ°ÿÿÿÿÿ
+q
+java:S1104"[Make columnEpisodios a static final constant or non-public and provide accessors if needed.(Ï¯Ì
+u
+java:S1104"ZMake tableEpisodios a static final constant or non-public and provide accessors if needed.(„ÿÚÛÿÿÿÿÿ
+w
+java:S1104 "\Make columnIdEpisodio a static final constant or non-public and provide accessors if needed.(®ôÇüÿÿÿÿ
+o
+java:S1104!"YMake columnActores a static final constant or non-public and provide accessors if needed.(¡Æú’
+s
+java:S1104""]Make txtNombreEpisodio a static final constant or non-public and provide accessors if needed.(¡—™Å
+v
+java:S1104#"[Make bttnAddEpisodio a static final constant or non-public and provide accessors if needed.(Û»š›ùÿÿÿÿ
+n
+java:S1104$"XMake tableActores a static final constant or non-public and provide accessors if needed.(é©½Æ
+u
+java:S1104%"ZMake txtNombreActor a static final constant or non-public and provide accessors if needed.(¯½ÉŠüÿÿÿÿ
+n
+java:S1104&"XMake bttnAddActor a static final constant or non-public and provide accessors if needed.(Óô¹
+{
+java:S1104'"eMake columnActoresTableActores a static final constant or non-public and provide accessors if needed.(ó•¬©
+M
+java:S2589T"7Remove this expression which always evaluates to "true"(İŞíà
+
+java:S1186L"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ÿ™î*8–ÔÀß0
+œ
+java:S1186]"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¤Á²úÿÿÿÿ
+T
+java:S1172Q"2Remove this unused method parameter "actionEvent".(Ü¡­¡üÿÿÿÿ8åğ¿ß0
+L
+java:S1172a"1Remove this unused method parameter "mouseEvent".(°Ùùÿÿÿÿ
+S
+java:S1172l"1Remove this unused method parameter "mouseEvent".(µûäÇüÿÿÿÿ8ßäçŞ0
