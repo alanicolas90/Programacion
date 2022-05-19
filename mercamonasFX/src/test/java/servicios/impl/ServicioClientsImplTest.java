@@ -13,9 +13,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 import static org.mockito.Mockito.*;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
@@ -33,14 +31,8 @@ class ServicioClientsImplTest {
     @Mock
     DaoMonederoImpl daoMonedero;
 
-//    //mock
-//    @BeforeEach
-//    void setUp() {
-//        daoClientes = mock(DaoClientesImpl.class);
-//        daoProducto = mock(DaoProductoImpl.class);
-//        daoMonedero = mock(DaoMonederoImpl.class);
-//        servicioClients = new ServicioClientsImpl(daoClientes, daoProducto, daoMonedero);
-//    }
+
+
 
     @Nested
     @DisplayName("Test de adds")
@@ -118,6 +110,7 @@ class ServicioClientsImplTest {
             //given
             String dni = "dni";
             String nombreIngrediente = "nombreIngrediente";
+            Map<String,Cliente> clientes = new HashMap<>();
 
             when(!daoClientes.ingredienteExisteCliente(dni, nombreIngrediente)).thenReturn(false);
             //when(daoClientes.addIngredienteAlergia(dni,nombreIngrediente)).thenReturn(true);
@@ -297,11 +290,15 @@ class ServicioClientsImplTest {
     //como hacer un when con un map
     @Test
     void showListClients() {
+        //given
         String dni = "12345678A";
         Cliente c = new ClienteNormal(dni);
-        Map<String, Cliente> clientes = Map.of(c.getDni() , c);
-        when(daoClientes.showClientes());
-        servicioClients.showListClients();
+        List<Cliente> clientes = List.of(c);
+        when(daoClientes.showClientes()).thenReturn(clientes);
+        //when
+        List<Cliente> resultado = servicioClients.showListClients();
+        //then
+        assertThat(clientes).asList().contains(c);
     }
 
     @Test
@@ -319,11 +316,13 @@ class ServicioClientsImplTest {
     void showTarjetasCliente() {
         //given
         String dni = "12345678A";
-        //when(daoMonedero.showTarjetasCliente(dni)).thenReturn();
+        Set<Monedero> monederos = new HashSet<>(List.of(new Monedero(dni,0.0)));
+        when(daoMonedero.showTarjetasCliente(dni)).thenReturn(monederos);
         //when
         Set<Monedero> set = servicioClients.showTarjetasCliente(dni);
 
         //then
+        assertThat(set).matches(monederos::containsAll);
     }
 
     @Test
@@ -397,5 +396,16 @@ class ServicioClientsImplTest {
         List<Cliente> list = servicioClients.showClientesSortedDineroGastado();
         //then
         assertThat(list).asList().contains(c);
+    }
+    @Test
+    void getMonederosCliente() {
+        //given
+        String dni = "12345678A";
+        String nombreMonedero = "monedero1";
+        when(daoClientes.getMonederosCliente(dni)).thenReturn(List.of(new Monedero(nombreMonedero,0.0)));
+        //when
+        List<Monedero> resultado = servicioClients.getMonederosCliente(dni);
+        //then
+        assertThat(resultado).asList().contains(new Monedero(nombreMonedero,0.0));
     }
 }

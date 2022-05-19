@@ -44,7 +44,7 @@ public interface DaoClientes {
 
     List<Cliente> showListaClientesOrdenadaDni();
 
-    Map<String, Cliente> verListaClientes();
+    List<Cliente> verListaClientes();
 
     List<LineaCompra> dameCarrito(String dniClient);
 

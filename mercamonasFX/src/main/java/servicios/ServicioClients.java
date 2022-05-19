@@ -5,7 +5,6 @@ import domain.modelo.cliente.LineaCompra;
 import domain.modelo.cliente.Monedero;
 
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 public interface ServicioClients {
@@ -19,7 +18,7 @@ public interface ServicioClients {
 
     boolean existeCliente(String dniClient);
 
-    Map<String, Cliente> showListClients();
+    List<Cliente> showListClients();
 
     boolean addMoney(String dniCliente, String nombreTarjeta, double dineroAgregar);
 

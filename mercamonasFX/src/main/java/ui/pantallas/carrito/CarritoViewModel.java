@@ -2,7 +2,6 @@ package ui.pantallas.carrito;
 
 import domain.modelo.cliente.LineaCompra;
 import jakarta.inject.Inject;
-import servicios.ServicioCompras;
 import servicios.impl.ServicioClientsImpl;
 import servicios.impl.ServicioComprasImpl;
 

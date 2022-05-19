@@ -36,11 +36,11 @@ public class BBDD {
         Type userListType = new TypeToken<LinkedHashMap<String, Cliente>>() {
         }.getType();
         LinkedHashMap<String, Cliente> clientes = null;
-        try {
+        try( FileReader r = new FileReader(Configuration.getInstance().getClientsSource())) {
             clientes = gson.fromJson(
-                    new FileReader(Configuration.getInstance().getClientsSource()),
+                    r,
                     userListType);
-        } catch (FileNotFoundException e) {
+        } catch (IOException e) {
             log.error(e.getMessage(), e);
         }
         return clientes;

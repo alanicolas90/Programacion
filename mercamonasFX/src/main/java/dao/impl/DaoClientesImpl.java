@@ -189,13 +189,13 @@ public class DaoClientesImpl implements DaoClientes {
     }
 
     @Override
-    public Map<String, Cliente> verListaClientes() {
-        return db.loadClientes();
+    public List<Cliente> verListaClientes() {
+        return db.loadClientes().values().stream().collect(Collectors.toUnmodifiableList());
     }
 
     @Override
     public List<Cliente> showClientes() {
-        return new ArrayList<>(db.loadClientes().values());
+        return db.loadClientes().values().stream().collect(Collectors.toUnmodifiableList());
     }
 
 

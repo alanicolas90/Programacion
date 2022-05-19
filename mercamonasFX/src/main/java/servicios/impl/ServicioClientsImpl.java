@@ -11,7 +11,6 @@ import domain.modelo.cliente.Monedero;
 import servicios.ServicioClients;
 
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 
@@ -27,7 +26,6 @@ public class ServicioClientsImpl implements ServicioClients {
     this.daoProducto = daoProducto;
     this.daoMonedero = daoMonedero;
   }
-
   @Override
   public boolean addClient(Cliente newClient) {
     boolean canBeAdded = !daoClientes.existClient(newClient.getDni());
@@ -36,7 +34,6 @@ public class ServicioClientsImpl implements ServicioClients {
     }
     return false;
   }
-
   @Override
   public boolean removeClient(String dniClient) {
     boolean exists = daoClientes.existClient(dniClient);
@@ -45,7 +42,6 @@ public class ServicioClientsImpl implements ServicioClients {
     }
     return false;
   }
-
   @Override
   public boolean swapNameClient(Cliente c, String nuevoNombreCliente) {
     boolean exists = daoClientes.existClient(c.getDni());
@@ -54,8 +50,6 @@ public class ServicioClientsImpl implements ServicioClients {
     }
     return false;
   }
-
-
   @Override
   public boolean swapDni(String dniClient, String nuevoDniCliente) {
     boolean exists = daoClientes.existClient(dniClient);
@@ -64,22 +58,17 @@ public class ServicioClientsImpl implements ServicioClients {
     }
     return false;
   }
-
   @Override
   public boolean existeCliente(String dniClient) {
-    return daoClientes.existClient(dniClient);
-  }
-
+    return daoClientes.existClient(dniClient);}
   @Override
-  public Map<String, Cliente> showListClients() {
+  public List<Cliente> showListClients() {
     return daoClientes.verListaClientes();
   }
-
   @Override
   public List<Cliente> getListClientes() {
     return daoClientes.showClientes();
   }
-
   @Override
   public boolean addMoney(String dniCliente, String nombreTarjeta, double dineroAgregar) {
     boolean exists = daoMonedero.monederoExists(nombreTarjeta, dniCliente);
@@ -87,7 +76,6 @@ public class ServicioClientsImpl implements ServicioClients {
       return daoMonedero.addMoneyMonedero(dniCliente, nombreTarjeta, dineroAgregar);
     return false;
   }
-
   @Override
   public boolean addMonedero(Monedero monedero, String dniClient) {
     boolean canBeAdded = !daoMonedero.monederoExists(monedero.getName(), dniClient);
@@ -96,7 +84,6 @@ public class ServicioClientsImpl implements ServicioClients {
     }
     return false;
   }
-
   @Override
   public boolean removeMonedero(String nombreMonedero, String dniClient) {
     boolean exists = daoMonedero.monederoExists(nombreMonedero, dniClient);
@@ -105,12 +92,10 @@ public class ServicioClientsImpl implements ServicioClients {
     }
     return false;
   }
-
   @Override
   public Set<Monedero> showTarjetasCliente(String dniClient) {
     return daoMonedero.showTarjetasCliente(dniClient);
   }
-
   @Override
   public Cliente verDataCliente(String dniClient) {
     boolean esClienteConDescuento = daoClientes.clienteTieneDescuento(dniClient);
@@ -120,12 +105,10 @@ public class ServicioClientsImpl implements ServicioClients {
       return daoClientes.seeSpecificClient(dniClient);
     }
   }
-
   @Override
   public List<LineaCompra> showCarrito(String dniClient) {
     return daoClientes.dameCarrito(dniClient);
   }
-
   @Override
   public double getTotalPrice(String dniClient) {
     boolean esClienteConDescuento = daoClientes.clienteTieneDescuento(dniClient);
