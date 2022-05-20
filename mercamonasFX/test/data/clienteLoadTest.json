@@ -1,13 +1,11 @@
-[
-  {
-    "Pepe": {
-      "dni": "Pepe",
-      "nombre": "Pérez",
-      "monederos": [],
-      "type": "ClienteNormal",
-      "alergenos": [],
-      "carrito": [],
-      "buyHistory": []
-    }
+{
+  "Pepe": {
+    "dni": "Pepe",
+    "nombre": "Pérez",
+    "monederos": [],
+    "type": "ClienteNormal",
+    "alergenos": [],
+    "carrito": [],
+    "buyHistory": []
   }
-]
+}

@@ -294,11 +294,11 @@ class ServicioClientsImplTest {
         String dni = "12345678A";
         Cliente c = new ClienteNormal(dni);
         List<Cliente> clientes = List.of(c);
-        when(daoClientes.showClientes()).thenReturn(clientes);
+        when(daoClientes.verListaClientes()).thenReturn(clientes);
         //when
         List<Cliente> resultado = servicioClients.showListClients();
         //then
-        assertThat(clientes).asList().contains(c);
+        assertThat(resultado).asList().contains(c);
     }
 
     @Test

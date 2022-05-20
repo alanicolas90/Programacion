@@ -36,7 +36,7 @@ class DaoClientesImplTest {
     @Test
     void addClientNormal() {
         //given
-        Cliente cliente = new ClienteNormal("name", "dni");
+        Cliente cliente = new ClienteNormal( "dni","name");
         when(db.loadClientes()).thenReturn(new HashMap<>());
         Map<String, Cliente> map = new HashMap<>();
         doAnswer(invocation -> {
