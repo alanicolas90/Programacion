@@ -29,4 +29,6 @@ public interface DaoUsuario {
     boolean changeSalary(Usuario user, double newSalary);
 
     boolean tieneSuficienteDinero(String nombre, double monto);
+
+    boolean doLogin(Usuario user);
 }

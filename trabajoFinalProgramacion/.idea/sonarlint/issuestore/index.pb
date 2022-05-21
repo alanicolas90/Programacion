@@ -21,8 +21,6 @@ S
 ,src/main/java/dao/impl/DaoBilleteraImpl.java,e\c\ec8c8dd15440f420ac144a7d0dfd1888490357a9
 D
 data/billeteras.json,3\9\39561d72fac92f5862b9aa82a01880cbf6e2776a
-B
-data/usuarios.json,e\2\e209a555e4db35c2d577550ee878bb092fe0305f
 Q
 !src/main/java/dao/DaoUsuario.java,4\9\491ff314333424da71ae410582f59337863d4961
 u

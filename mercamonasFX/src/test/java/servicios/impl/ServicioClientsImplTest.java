@@ -15,6 +15,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.*;
 
+import static org.assertj.core.api.AssertionsForClassTypes.setRemoveAssertJRelatedElementsFromStackTrace;
 import static org.mockito.Mockito.*;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
@@ -365,8 +366,31 @@ class ServicioClientsImplTest {
     @Test
     void getTotalPrice() {
         //given
+        String dni = "12345678A";
+        LineaCompra l = new LineaCompra(new ProductoNormal("12345678A",15,10),2);
+        when(daoClientes.clienteTieneDescuento(dni)).thenReturn(false);
+        when(daoClientes.dameCarrito(dni)).thenReturn(List.of(l));
+        when(daoProducto.getPriceProducto(l.getProducto().getName())).thenReturn(l.getProducto().getPrice());
+
         //when
+        double precioTotal = servicioClients.getTotalPrice(dni);
         //then
+        assertThat(precioTotal).isEqualTo(30);
+    }
+    @Test
+    void getTotalPriceConDescuento() {
+        //given
+        String dni = "12345678A";
+        LineaCompra l = new LineaCompra(new ProductoNormal("12345678A",15,10),2);
+        when(daoClientes.clienteTieneDescuento(dni)).thenReturn(true);
+        when(daoClientes.dameCarrito(dni)).thenReturn(List.of(l));
+        when(daoProducto.getPriceProducto(l.getProducto().getName())).thenReturn(l.getProducto().getPrice());
+        when(daoClientes.getDescuentoCliente(dni)).thenReturn(50.0);
+
+        //when
+        double precioTotal = servicioClients.getTotalPrice(dni);
+        //then
+        assertThat(precioTotal).isEqualTo(15);
     }
 
     @Test
@@ -383,8 +407,36 @@ class ServicioClientsImplTest {
     @Test
     void dineroTotalGastado() {
         //given
+        String dni = "12345678A";
+        LineaCompra l = new LineaCompra(new ProductoNormal("12345678A",15,10),2);
+        int index = 0;
+        when(daoClientes.clienteTieneDescuento(dni)).thenReturn(false);
+        when(daoClientes.showBuyHistory(dni)).thenReturn(List.of(List.of(l)));
+        when(daoClientes.getLineaCompra(dni,index)).thenReturn(List.of(l));
+        when(daoProducto.getPriceProducto(l.getProducto().getName())).thenReturn(l.getProducto().getPrice());
+
         //when
+        double resultado = servicioClients.dineroTotalGastado(dni);
         //then
+        assertThat(resultado).isEqualTo(30);
+    }
+
+    @Test
+    void dineroTotalGastadoConDescuento() {
+        //given
+        String dni = "12345678A";
+        LineaCompra l = new LineaCompra(new ProductoNormal("12345678A",15,10),2);
+        int index = 0;
+        when(daoClientes.clienteTieneDescuento(dni)).thenReturn(true);
+        when(daoClientes.showBuyHistory(dni)).thenReturn(List.of(List.of(l)));
+        when(daoClientes.getLineaCompra(dni,index)).thenReturn(List.of(l));
+        when(daoProducto.getPriceProducto(l.getProducto().getName())).thenReturn(l.getProducto().getPrice());
+        when(daoClientes.getDescuentoCliente(dni)).thenReturn(50.0);
+
+        //when
+        double resultado = servicioClients.dineroTotalGastado(dni);
+        //then
+        assertThat(resultado).isEqualTo(15);
     }
 
     @Test

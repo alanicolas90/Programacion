@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.pantallas.funcionesUsuario.FuncionesUsuarioController">
+    <children>
+        <TableView fx:id="table" layoutX="10.0" layoutY="119.0" onMouseClicked="#update" prefHeight="200.0" prefWidth="389.0">
+        <columns>
+            <TableColumn fx:id="columnNombre" prefWidth="75.0" text="nombre" />
+            <TableColumn fx:id="columnValoracion" prefWidth="75.0" text="valoracion" />
+            <TableColumn fx:id="columnVisto" prefWidth="75.0" text="visto" />
+            <TableColumn fx:id="columnEpisodios" prefWidth="162.40001220703124" text="episodios" />
+        </columns>
+    </TableView>
+        <Label layoutX="27.0" layoutY="14.0" prefHeight="53.0" prefWidth="408.0" text="funciones Cliente">
+            <font>
+                <Font size="36.0" />
+            </font>
+        </Label>
+        <MFXTextField fx:id="valoracion" floatingText="valoracion" layoutX="469.0" layoutY="101.0" />
+        <MFXTextField fx:id="visto" floatingText="visto" layoutX="469.0" layoutY="252.0" />
+      <Button layoutX="455.0" onMouseClicked="#updateValoracion" layoutY="165.0" mnemonicParsing="false" text="UpdateValoracion" />
+      <Button layoutX="470.0" onMouseClicked="#updateVisto" layoutY="319.0" mnemonicParsing="false" text="UpdateVisto" />
+    </children>
+</AnchorPane>

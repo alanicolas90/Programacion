@@ -42,6 +42,12 @@ public class Usuario implements Comparable<Usuario> {
 
     }
 
+    public Usuario (String username, String password) {
+        this();
+        this.username = username;
+        this.password = password;
+    }
+
     public Usuario() {
         billeteras = new ArrayList<>();
         type="Usuario";
