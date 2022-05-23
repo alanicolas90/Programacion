@@ -3,10 +3,12 @@ package dao.impl;
 import dao.BBDD;
 import dao.DaoUsuario;
 import domain.modelo.billetera.BilleteraFamiliar;
+import domain.modelo.solicitud.Solicitud;
 import domain.modelo.usuario.Usuario;
 import jakarta.inject.Inject;
 
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 public class DaoUsuarioImpl implements DaoUsuario {
@@ -127,4 +129,35 @@ public class DaoUsuarioImpl implements DaoUsuario {
         }
         return false;
     }
+
+    @Override
+    public boolean existeCorreo(String correo){
+        Map<String, Usuario> usuarios = bbdd.loadUsers();
+        return usuarios.values().stream().anyMatch(usuario -> usuario.getCorreo().equals(correo));
+    }
+
+    @Override
+    public List<BilleteraFamiliar> getBilleteras(Usuario user){
+        Map<String,Usuario> users = bbdd.loadUsers();
+        return users.get(user.getUsername()).getBilleteras();
+    }
+
+    @Override
+    public boolean updateUsuario(Usuario usuarioActualizado){
+        Map<String,Usuario> users = bbdd.loadUsers();
+        users.get(usuarioActualizado.getUsername()).setNombre(usuarioActualizado.getNombre());
+        users.get(usuarioActualizado.getUsername()).setApellido(usuarioActualizado.getApellido());
+        users.get(usuarioActualizado.getUsername()).setCorreo(usuarioActualizado.getCorreo());
+        users.get(usuarioActualizado.getUsername()).setPassword(usuarioActualizado.getPassword());
+
+        return bbdd.saveUsers(users);
+    }
+
+    @Override
+    public List<Solicitud> getSolicitudes(BilleteraFamiliar billetera, Usuario user){
+        Map<String,Usuario> users = bbdd.loadUsers();
+        int index = users.get(user.getUsername()).getBilleteras().indexOf(billetera);
+        return users.get(user.getUsername()).getBilleteras().get(index).getSolicitudes();
+    }
+
 }

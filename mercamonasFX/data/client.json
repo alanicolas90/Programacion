@@ -1,1 +1,113 @@
-{"0001":{"dni":"0001","nombre":"alan","monederos":[{"name":"ale","money":9.998E8},{"name":"monede","money":4600.0}],"type":"ClienteNormal","alergenos":[{"nombre":"proteinas"}],"carrito":[{"producto":{"name":"zanahoria","price":2.0,"type":"ProductoNormal","stock":999,"ingredientes":[]},"quantity":90},{"producto":{"name":"zanahoria","price":2.0,"type":"ProductoNormal","stock":909,"ingredientes":[]},"quantity":9},{"producto":{"name":"zanahoria","price":2.0,"type":"ProductoNormal","stock":900,"ingredientes":[]},"quantity":5},{"producto":{"name":"zanahoria","price":2.0,"type":"ProductoNormal","stock":895,"ingredientes":[]},"quantity":45}],"buyHistory":[[{"producto":{"name":"bacalao salado","price":500.0,"type":"ProductoNormal","stock":5,"ingredientes":[{"nombre":"proteinas"}]},"quantity":5}],[{"producto":{"name":"limones","price":2.0,"type":"ProductoNormal","stock":892031,"ingredientes":[]},"quantity":100000}]]},"01":{"dni":"01","nombre":"alan","monederos":[],"type":"ClienteNormal","alergenos":[],"carrito":[],"buyHistory":[]},"002":{"descuento":25.0,"dni":"002","nombre":"mama","monederos":[],"type":"ClienteDescuento","alergenos":[],"carrito":[],"buyHistory":[]}}
+{
+  "0001": {
+    "dni": "0001",
+    "nombre": "alan",
+    "monederos": [
+      {
+        "name": "ale",
+        "money": 9.998E8
+      },
+      {
+        "name": "monede",
+        "money": 4600.0
+      }
+    ],
+    "type": "ClienteNormal",
+    "alergenos": [
+      {
+        "nombre": "proteinas"
+      }
+    ],
+    "carrito": [
+      {
+        "producto": {
+          "name": "zanahoria",
+          "price": 2.0,
+          "type": "ProductoNormal",
+          "stock": 999,
+          "ingredientes": []
+        },
+        "quantity": 90
+      },
+      {
+        "producto": {
+          "name": "zanahoria",
+          "price": 2.0,
+          "type": "ProductoNormal",
+          "stock": 909,
+          "ingredientes": []
+        },
+        "quantity": 9
+      },
+      {
+        "producto": {
+          "name": "zanahoria",
+          "price": 2.0,
+          "type": "ProductoNormal",
+          "stock": 900,
+          "ingredientes": []
+        },
+        "quantity": 5
+      },
+      {
+        "producto": {
+          "name": "zanahoria",
+          "price": 2.0,
+          "type": "ProductoNormal",
+          "stock": 895,
+          "ingredientes": []
+        },
+        "quantity": 45
+      }
+    ],
+    "buyHistory": [
+      [
+        {
+          "producto": {
+            "name": "bacalao salado",
+            "price": 500.0,
+            "type": "ProductoNormal",
+            "stock": 5,
+            "ingredientes": [
+              {
+                "nombre": "proteinas"
+              }
+            ]
+          },
+          "quantity": 5
+        }
+      ],
+      [
+        {
+          "producto": {
+            "name": "limones",
+            "price": 2.0,
+            "type": "ProductoNormal",
+            "stock": 892031,
+            "ingredientes": []
+          },
+          "quantity": 100000
+        }
+      ]
+    ]
+  },
+  "01": {
+    "dni": "01",
+    "nombre": "alan",
+    "monederos": [],
+    "type": "ClienteNormal",
+    "alergenos": [],
+    "carrito": [],
+    "buyHistory": []
+  },
+  "002": {
+    "descuento": 25.0,
+    "dni": "002",
+    "nombre": "mama",
+    "monederos": [],
+    "type": "ClienteDescuento",
+    "alergenos": [],
+    "carrito": [],
+    "buyHistory": []
+  }
+}

@@ -15,7 +15,7 @@ public class LoginViewModel {
     @Inject
     public LoginViewModel(LoginUseCase loginUseCase) {
         this.loginUseCase = loginUseCase;
-        state = new SimpleObjectProperty<>(new LoginState(false,null));
+        state = new SimpleObjectProperty<>(new LoginState(false,null,null));
     }
 
     private final ObjectProperty<LoginState> state;
@@ -27,11 +27,11 @@ public class LoginViewModel {
     public void doLogin(Usuario usuario) {
         if (loginUseCase.doLogin(usuario))
         {
-            state.setValue(new LoginState(true,null));
+            state.setValue(new LoginState(true,null,usuario));
         }
         else
         {
-            state.setValue(new LoginState(false,"usuario o pass no valido"));
+            state.setValue(new LoginState(false,"usuario o pass no valido",null));
         }
     }
 }

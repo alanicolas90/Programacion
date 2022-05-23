@@ -59,6 +59,25 @@ class DaoClientesImplTest {
 
     @Test
     void removeClient() {
+        //given
+        Cliente cliente = new ClienteNormal( "dni","name");
+        when(db.loadClientes()).thenReturn(new HashMap<>(Map.of(cliente.getDni(), cliente)));
+        Map<String, Cliente> map = new HashMap<>();
+        doAnswer(invocation -> {
+            map.remove(invocation.getArgument(0));
+            return null;
+        }).when(db).saveClientes(Map.of());
+
+        //when
+        daoClientes.removeClient(cliente.getDni());
+
+
+        assertAll(() -> assertThat(map).isEmpty(),
+                () -> {
+                    verify(db).saveClientes(Map.of());
+
+                }
+        );
     }
 
     @Test

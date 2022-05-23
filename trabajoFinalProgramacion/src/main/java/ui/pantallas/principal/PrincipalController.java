@@ -21,6 +21,7 @@ import java.util.Optional;
 
 @Log4j2
 public class PrincipalController {
+
     @FXML
     public Menu menuAdmin;
     @FXML
@@ -141,29 +142,17 @@ public class PrincipalController {
     private void menuClick(ActionEvent actionEvent) {
         switch (((MenuItem)actionEvent.getSource()).getId())
         {
-            case "menuItemClientes":
-                cargarPantalla(Pantallas.CLIENTES);
-                break;
             case "menuItemPantalla1":
                 cargarPantalla(Pantallas.PANTALLA1);
                 break;
             case "menuItemListado":
                 cargarPantalla(Pantallas.LISTADO);
                 break;
-            case "menuItemPantallaNueva":
-                cargarPantalla(Pantallas.PRODUCTOS);
-                break;
             case "menuItemLogout":
                 logout();
                 break;
-            case "menuItemCarrito":
-                cargarPantalla(Pantallas.CARRITO);
-                break;
-            case "menuItemMonedero":
+            case "menuItemBilleteras":
                 cargarPantalla(Pantallas.MONEDERO);
-                break;
-            case "menuItemTienda":
-                cargarPantalla(Pantallas.TIENDA);
                 break;
         }
 
@@ -173,16 +162,20 @@ public class PrincipalController {
     public void onLoginHecho(Usuario usuario) {
         actualUser = usuario;
         menuPrincipal.setVisible(true);
-        if (actualUser.getUsername().equals("admin")) {
-            menuCliente.setVisible(false);
-            menuAdmin.setVisible(true);
-        }else{
-            menuAdmin.setVisible(false);
-            menuCliente.setVisible(true);
-        }
+
 
 
         cargarPantalla(Pantallas.PANTALLA1);
     }
 
-}
+
+    public void onRegisterClick(){
+        cargarPantalla(Pantallas.REGISTRO);
+    }
+
+    public void onRegisterFinish(){
+        cargarPantalla(Pantallas.LOGIN);
+    }
+    }
+
+

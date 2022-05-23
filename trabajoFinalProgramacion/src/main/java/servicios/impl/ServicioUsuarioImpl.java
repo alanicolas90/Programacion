@@ -1,9 +1,13 @@
 package servicios.impl;
 
 import dao.DaoUsuario;
+import domain.modelo.billetera.BilleteraFamiliar;
+import domain.modelo.solicitud.Solicitud;
 import domain.modelo.usuario.Usuario;
 import jakarta.inject.Inject;
 import servicios.ServicioUsuario;
+
+import java.util.List;
 
 public class ServicioUsuarioImpl implements ServicioUsuario {
 
@@ -61,4 +65,21 @@ public class ServicioUsuarioImpl implements ServicioUsuario {
     @Override public boolean tieneSuficienteDinero(String nombre, double monto) {
         return daoUsuarioImpl.tieneSuficienteDinero(nombre, monto);
     }
+
+    public boolean existeCorreo(String email) {
+        return daoUsuarioImpl.existeCorreo(email);
+    }
+
+    public List<BilleteraFamiliar> getBilleteras(Usuario user) {
+        return daoUsuarioImpl.getBilleteras(user);
+    }
+
+    public boolean updateUsuario(Usuario usuarioActualizado) {
+        return daoUsuarioImpl.updateUsuario(usuarioActualizado);
+    }
+
+    public List<Solicitud> getSolicitudes(BilleteraFamiliar billetera, Usuario user) {
+        return daoUsuarioImpl.getSolicitudes(billetera,user);
+    }
+
 }

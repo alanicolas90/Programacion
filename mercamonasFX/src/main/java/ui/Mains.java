@@ -15,7 +15,6 @@ public class Mains {
     SeContainerInitializer initializer = SeContainerInitializer.newInstance();
     final SeContainer container = initializer.initialize();
 
-    Scanner sc = new Scanner(System.in);
     Common common = new Common();
 
     UiMenuAdmin menuSwitchAdmin = container.select(UiMenuAdmin.class).get();
@@ -30,10 +29,10 @@ public class Mains {
 
       switch (optionUser) {
         case 1:
-          menuSwitchAdmin.menuSwitchAdmin(sc);
+          menuSwitchAdmin.menuSwitchAdmin();
           break;
         case 2:
-          menuSwitchClient.menuSwitchClient(sc);
+          menuSwitchClient.menuSwitchClient();
           break;
         case 0:
           System.out.println(Constantes.HASTA_LA_PROXIMA);

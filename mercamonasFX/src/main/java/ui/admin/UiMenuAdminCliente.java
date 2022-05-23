@@ -14,13 +14,15 @@ import java.util.Scanner;
 public class UiMenuAdminCliente {
 
     private final ServicioClients servicioClients;
+    private final Scanner sc;
 
     @Inject
-    public UiMenuAdminCliente(ServicioClients servicioClients) {
+    public UiMenuAdminCliente(ServicioClients servicioClients, Scanner sc) {
         this.servicioClients = servicioClients;
+        this.sc = sc;
     }
 
-    public void menuClientesAdministrador(Scanner sc) {
+    public void menuClientesAdministrador() {
         Common common = new Common();
         int optionMenuClienteAdmin;
 
@@ -94,7 +96,6 @@ public class UiMenuAdminCliente {
     private void showListClients() {
         System.out.println(servicioClients.showListClients());
     }
-
 
     private void changeNameClient(Scanner sc) {
         String dniClient;

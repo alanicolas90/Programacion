@@ -1,0 +1,31 @@
+
+e
+5src/main/java/servicios/impl/ServicioClientsImpl.java,6\9\69d9b6d55c843e4833f68c5600b77a878b6bfbc6
+k
+;src/test/java/servicios/impl/ServicioProductosImplTest.java,4\2\4205e01ef2e7c2297020dbfe54e7f884843a8d14
+P
+ src/main/java/di/UiProduces.java,5\6\562fe90c0cfa5e7c56e1dc9073014e3e3c007911
+^
+.src/main/java/ui/admin/UIMenuAdminProduct.java,0\6\06fa932d75ee4f6bb4901c9b339560d114c5955b
+@
+data/client.json,a\2\a28d022179aae488f3818abf16bc4ade3c58fbe2
+W
+'src/main/java/ui/admin/UiMenuAdmin.java,c\4\c40da7c9497396b9f33c290a20c7b549a33ab55a
+X
+(src/main/java/constantes/Constantes.java,f\f\ff10601d1d472e7ac46f2abd85d86cedd879c082
+a
+1src/test/java/ui/client/UiClientSettingsTest.java,c\f\cf1087be83ac64921a7118abce02e895a23bae65
+Y
+)src/main/java/ui/client/UiMenuClient.java,4\d\4ddf027f531b3cb845cc300f983f28692f885430
+]
+-src/test/java/ui/client/UiMenuClientTest.java,f\0\f0c4ee531dd99780988296a3e76166191408172d
+K
+src/main/java/ui/Mains.java,0\a\0a3d7e6be6c63046e15001cbdd671a3ccff7d29c
+^
+.src/main/java/ui/admin/UiMenuAdminCliente.java,b\c\bc85f93e24f7b27d7328d68d951ac7cd5e1eb424
+O
+src/test/java/dao/BBDDTest.java,2\f\2f12daecaf4e8a9960bdac6c2dadb33af527a740
+k
+;src/main/java/ui/pantallas/clientes/ClientesController.java,5\7\575d5f432b535b5cce9854df4944d0ff8145240e
+]
+-src/main/java/ui/client/UiClientSettings.java,0\c\0c1f51b4960c72c49f23ae63a218510545d8aacc

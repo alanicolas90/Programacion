@@ -5,24 +5,31 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.pantallas.funcionesUsuario.FuncionesUsuarioController">
+<AnchorPane prefHeight="400.0" prefWidth="816.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.pantallas.funciones_usuario.FuncionesUsuarioController">
     <children>
-        <TableView fx:id="table" layoutX="10.0" layoutY="119.0" onMouseClicked="#update" prefHeight="200.0" prefWidth="389.0">
-        <columns>
-            <TableColumn fx:id="columnNombre" prefWidth="75.0" text="nombre" />
-            <TableColumn fx:id="columnValoracion" prefWidth="75.0" text="valoracion" />
-            <TableColumn fx:id="columnVisto" prefWidth="75.0" text="visto" />
-            <TableColumn fx:id="columnEpisodios" prefWidth="162.40001220703124" text="episodios" />
-        </columns>
-    </TableView>
         <Label layoutX="27.0" layoutY="14.0" prefHeight="53.0" prefWidth="408.0" text="funciones Cliente">
             <font>
                 <Font size="36.0" />
             </font>
         </Label>
-        <MFXTextField fx:id="valoracion" floatingText="valoracion" layoutX="469.0" layoutY="101.0" />
-        <MFXTextField fx:id="visto" floatingText="visto" layoutX="469.0" layoutY="252.0" />
-      <Button layoutX="455.0" onMouseClicked="#updateValoracion" layoutY="165.0" mnemonicParsing="false" text="UpdateValoracion" />
-      <Button layoutX="470.0" onMouseClicked="#updateVisto" layoutY="319.0" mnemonicParsing="false" text="UpdateVisto" />
+        <MFXTextField fx:id="password" floatingText="password" layoutX="61.0" layoutY="85.0" />
+        <MFXTextField fx:id="nombre" floatingText="nombre" layoutX="61.0" layoutY="153.0" />
+      <Button layoutX="113.0" layoutY="352.0" mnemonicParsing="false" onAction="#update" onMouseClicked="#updateDatos" text="UpdateDatos" />
+      <Button layoutX="521.0" layoutY="308.0" mnemonicParsing="false" onMouseClicked="#aceptarSolicitud" text="ACEPTAR" />
+        <Button layoutX="677.0" layoutY="308.0" mnemonicParsing="false" onMouseClicked="#rechazarSolicitud" text="RECHAZAR" />
+      <MFXTextField fx:id="apellido" floatingText="apeliido" layoutX="61.0" layoutY="219.0" />
+      <MFXTextField fx:id="correo" floatingText="correo" layoutX="61.0" layoutY="283.0" prefHeight="49.0" prefWidth="142.0" />
+      <TableView fx:id="tablaSolicitudes" layoutX="489.0" layoutY="78.0" prefHeight="200.0" prefWidth="289.0">
+        <columns>
+          <TableColumn fx:id="colSolicitante" prefWidth="75.0" text="solicitante" />
+          <TableColumn fx:id="colMensaje" prefWidth="155.0" text="mensaje" />
+            <TableColumn fx:id="colAceptado" prefWidth="58.0" text="aceptado" />
+        </columns>
+      </TableView>
+      <TableView fx:id="tablaBilleteras" layoutX="248.0" layoutY="78.0" onMouseClicked="#updateTableSolicitud" prefHeight="200.0" prefWidth="160.0">
+        <columns>
+          <TableColumn fx:id="colBilleteras" prefWidth="160.0" text="C1" />
+        </columns>
+      </TableView>
     </children>
 </AnchorPane>

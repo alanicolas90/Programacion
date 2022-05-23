@@ -11,13 +11,14 @@ public class UiMenuAdmin {
   private final UiMenuAdminCliente menuClienteAdmin;
   private final UIMenuAdminProduct menuProductos;
 
+
   @Inject
   public UiMenuAdmin(UiMenuAdminCliente menuClienteAdmin, UIMenuAdminProduct menuProductos) {
     this.menuClienteAdmin = menuClienteAdmin;
     this.menuProductos = menuProductos;
   }
 
-  public void menuSwitchAdmin(Scanner sc) {
+  public void menuSwitchAdmin() {
     Common common = new Common();
     int optionMenuAdmin;
 
@@ -27,10 +28,10 @@ public class UiMenuAdmin {
 
       switch (optionMenuAdmin) {
         case 1:
-          menuProductos.getOption(sc);
+          menuProductos.getOption();
           break;
         case 2:
-          menuClienteAdmin.menuClientesAdministrador(sc);
+          menuClienteAdmin.menuClientesAdministrador();
           break;
         case 0:
           System.out.println(Constantes.HASTA_LA_NEXT);

@@ -14,13 +14,15 @@ import java.util.Scanner;
 public class UIMenuAdminProduct {
 
   private final ServicioProductos servicioProductos;
+  private final Scanner sc;
 
   @Inject
-  public UIMenuAdminProduct(ServicioProductos servicioProductos) {
+  public UIMenuAdminProduct(ServicioProductos servicioProductos,Scanner sc) {
     this.servicioProductos = servicioProductos;
+    this.sc = sc;
   }
 
-  public void getOption(Scanner sc) {
+  public void getOption() {
     Common common = new Common();
     int optionMenuProducts;
 

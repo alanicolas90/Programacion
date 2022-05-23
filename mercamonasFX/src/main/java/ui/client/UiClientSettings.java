@@ -14,14 +14,16 @@ public class UiClientSettings {
 
   private final ServicioClients servicioClients;
   private final ServicioCompras servicioCompras;
+  private final Scanner sc;
 
   @Inject
-  public UiClientSettings(ServicioClients servicioClients, ServicioCompras servicioCompras) {
+  public UiClientSettings(ServicioClients servicioClients, ServicioCompras servicioCompras, Scanner sc) {
     this.servicioClients = servicioClients;
     this.servicioCompras = servicioCompras;
+    this.sc = sc;
   }
 
-  public void settingsCliente(Scanner sc, String dniClient) {
+  public void settingsCliente(String dniClient) {
     Common common = new Common();
     int settingsClient;
 

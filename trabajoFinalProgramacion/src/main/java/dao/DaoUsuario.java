@@ -1,7 +1,10 @@
 package dao;
 
 import domain.modelo.billetera.BilleteraFamiliar;
+import domain.modelo.solicitud.Solicitud;
 import domain.modelo.usuario.Usuario;
+
+import java.util.List;
 
 public interface DaoUsuario {
     boolean registrarUsuario(Usuario user);
@@ -31,4 +34,13 @@ public interface DaoUsuario {
     boolean tieneSuficienteDinero(String nombre, double monto);
 
     boolean doLogin(Usuario user);
+
+    boolean existeCorreo(String correo);
+
+    List<BilleteraFamiliar> getBilleteras(Usuario user);
+
+    boolean updateUsuario(Usuario usuarioActualizado);
+
+    List<Solicitud> getSolicitudes(BilleteraFamiliar billetera, Usuario user);
+
 }

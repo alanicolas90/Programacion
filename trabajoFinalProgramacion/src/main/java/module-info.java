@@ -40,6 +40,7 @@ module trabajoFinalProgramacion {
     opens domain.modelo.gasto;
     exports ui.pantallas.pantalla1;
     opens ui.pantallas.pantalla1;
-    exports ui.pantallas.funcionesUsuario;
-    exports ui.pantallas.series;
+    exports ui.pantallas.funciones_usuario;
+    exports ui.pantallas.register;
+    exports ui.pantallas.billeteras;
 }

@@ -1,13 +1,1 @@
-{
-  "a": {
-    "Usuario": "Usuario",
-    "username": "a",
-    "password": "a",
-    "type": "Usuario",
-    "nombre": "a",
-    "apellido": "a",
-    "correo": "a@gmail.com",
-    "dinero": 7000.0,
-    "billeteras": []
-  }
-}
+{"a":{"Usuario":"Usuario","username":"a","password":"a","type":"Usuario","nombre":"a","apellido":"a","correo":"a@gmail.com","dinero":7000.0,"billeteras":[{"BilleteraFamiliar":"BilleteraFamiliar","nombreGrupoFamiliar":"au","lider":"a","type":"BilleteraFamiliar","integrantes":[],"solicitudes":[{"solicitante":"alanicolas90","mensaje":"pofavor soy tonto","aceptado":false}],"dineroBilletera":0.0,"gastos":[]},{"BilleteraFamiliar":"BilleteraFamiliar","nombreGrupoFamiliar":"eu","lider":"a","type":"BilleteraFamiliar","integrantes":[],"solicitudes":[],"dineroBilletera":0.0,"gastos":[]},{"BilleteraFamiliar":"BilleteraFamiliar","nombreGrupoFamiliar":"io","lider":"a","type":"BilleteraFamiliar","integrantes":[],"solicitudes":[{"solicitante":"alanicolas90","mensaje":"eueueueuue","aceptado":false}],"dineroBilletera":0.0,"gastos":[]}]},"alanicolas90":{"Usuario":"Usuario","username":"alanicolas90","password":"12345678","type":"Usuario","nombre":"alan","apellido":"mikko","correo":"mikko69@gmail.com","dinero":1.23445667E8,"billeteras":[]},"alalalalal":{"Usuario":"Usuario","username":"alalalalal","password":"12312313123","type":"Usuario","nombre":"12312313","apellido":"12312312312","correo":"12312312@gmail.com","dinero":1235113.0,"billeteras":[]}}

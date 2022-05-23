@@ -12,15 +12,17 @@ public class UiMenuClient {
     private final ServicioClients servicioClients;
     private final UiClientSettings uiClientSettings;
     private final UiMenuClientBuy uiMenuClientBuy;
+    private final Scanner sc;
 
     @Inject
-    public UiMenuClient(ServicioClients servicioClients, UiClientSettings uiClientSettings, UiMenuClientBuy uiMenuClientBuy) {
+    public UiMenuClient(ServicioClients servicioClients, UiClientSettings uiClientSettings, UiMenuClientBuy uiMenuClientBuy, Scanner sc) {
         this.servicioClients = servicioClients;
         this.uiClientSettings = uiClientSettings;
         this.uiMenuClientBuy = uiMenuClientBuy;
+        this.sc = sc;
     }
 
-    public void menuSwitchClient(Scanner sc) {
+    public void menuSwitchClient() {
         Common common = new Common();
         int clientOption;
         String dniClient;
@@ -46,7 +48,7 @@ public class UiMenuClient {
 
             switch (clientOption) {
                 case 1:
-                    uiClientSettings.settingsCliente(sc, dniClient);
+                    uiClientSettings.settingsCliente(dniClient);
                     break;
                 case 2:
                     uiMenuClientBuy.buyClient(sc, dniClient);

@@ -50,6 +50,7 @@ public class LoginController extends BasePantallaController {
     }
 
 
-
-
+    public void doRegister() {
+        this.getPrincipalController().onRegisterClick();
+    }
 }
