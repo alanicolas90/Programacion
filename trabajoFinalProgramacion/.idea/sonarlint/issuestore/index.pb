@@ -3,8 +3,6 @@ f
 6src/main/java/domain/modelo/gasto/GastoRecurrente.java,a\b\ab73aa229a0765bcd2e9d1652004fc1cab1a3bc6
 7
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
-\
-,src/main/java/domain/modelo/gasto/Gasto.java,c\6\c6f4561b0733c3c0ec30b1d6ff4b4a568209c8f3
 b
 2src/main/java/domain/modelo/gasto/GastoNormal.java,7\3\73af64ece7992f569935439f59fa5fe308b7cd9f
 X
@@ -25,12 +23,6 @@ l
 <src/main/java/ui/pantallas/register/ResgisterController.java,b\e\be28f6513766cf39482b2fbf6cbdbc8c2f9932ee
 `
 0src/main/java/ui/pantallas/login/LoginState.java,3\f\3f9d70bbcc32e1f8140fe99632e772f8d5fce1e9
-N
-src/main/java/module-info.java,1\c\1c89a5491fbfda3fb050196d6a239f20200296e7
-d
-4src/main/java/ui/pantallas/login/LoginViewModel.java,e\7\e7d8d195a68c5e0e3b34a11a1a18d22d5e312b65
-e
-5src/main/java/ui/pantallas/login/LoginController.java,0\0\00a168197ce395305c37a33f896012577da7634b
 d
 4src/main/java/domain/modelo/solicitud/Solicitud.java,1\a\1af4b24011d6b781e1e997913c53959dc4678655
 `
@@ -51,14 +43,8 @@ m
 =src/main/java/ui/pantallas/common/BasePantallaController.java,c\c\cc1ae912583ea46a90bdbcb27df07083ec460f34
 l
 <src/main/java/domain/modelo/billetera/BilleteraFamiliar.java,1\6\169da9847c4a228151eb112831b910ef4c58609f
-m
-=src/main/java/ui/pantallas/principal/PrincipalController.java,6\8\6854908843d482996cd7f7c9ccd44ffdc547ca45
 B
 data/usuarios.json,e\2\e209a555e4db35c2d577550ee878bb092fe0305f
-J
-src/main/java/ui/Main.java,f\5\f5f833a11c774bc6d9fec08fc87be62b89228540
-S
-#src/main/java/ui/main/DIJavafx.java,5\3\535169814ef8dd70f8f23c95a2032d8268f48d6d
 Q
 !src/main/java/dao/DaoUsuario.java,4\9\491ff314333424da71ae410582f59337863d4961
 e
@@ -77,3 +63,7 @@ S
 ,src/main/java/dao/impl/DaoBilleteraImpl.java,e\c\ec8c8dd15440f420ac144a7d0dfd1888490357a9
 D
 data/billeteras.json,3\9\39561d72fac92f5862b9aa82a01880cbf6e2776a
+J
+src/main/java/ui/Main.java,f\5\f5f833a11c774bc6d9fec08fc87be62b89228540
+S
+#src/main/java/ui/main/DIJavafx.java,5\3\535169814ef8dd70f8f23c95a2032d8268f48d6d

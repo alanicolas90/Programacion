@@ -1,0 +1,15 @@
+
+f
+java:S1301C"KReplace this "switch" statement by "if" statements to increase readability.(ØŞ«ğúÿÿÿÿ
+l
+java:S3655"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(¯ğÕåøÿÿÿÿ
+O
+java:S3400-"9Remove this method and declare a constant for this value.(’ÏîË
+V	java:S125E"<This block of commented-out lines of code should be removed.(“Â­şøÿÿÿÿ
+U
+java:S1117€"9Rename "alert" which hides the field declared at line 55.(Ö×Íõÿÿÿÿÿ
+N
+java:S1172‘"2Remove this unused method parameter "actionEvent".(ˆ÷‰àøÿÿÿÿ
+R	java:S125’"<This block of commented-out lines of code should be removed.(ôö’€
+T	java:S106"9Replace this use of System.out or System.err by a logger.(¯ğÕåøÿÿÿÿ
+=	java:S131¨""Add a default case to this switch.(¥Û¢ñùÿÿÿÿ
